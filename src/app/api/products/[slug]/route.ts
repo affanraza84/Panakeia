@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { Product } from "@/models/Product";
+import { productSlugSchema } from "@/lib/validations";
+import { sanitizeInput } from "@/lib/sanitize";
 import { ApiResponse, IProduct } from "@/types";
 
 export const dynamic = "force-dynamic";
@@ -14,23 +16,26 @@ export async function GET(
   { params }: RouteParams
 ): Promise<NextResponse<ApiResponse<IProduct>>> {
   try {
-    const { slug } = await params;
+    const rawParams = await params;
+    const validationResult = productSlugSchema.safeParse(rawParams);
 
-    if (!slug) {
+    if (!validationResult.success) {
       return NextResponse.json(
         {
           success: false,
-          error: "Product slug is required",
-          code: "SLUG_REQUIRED",
+          error: "Invalid product slug format",
+          code: "INVALID_SLUG",
         },
         { status: 400 }
       );
     }
 
+    const cleanSlug = sanitizeInput(validationResult.data.slug.toLowerCase());
+
     await connectToDatabase();
 
     const product = await Product.findOne({
-      slug: slug.toLowerCase(),
+      slug: cleanSlug,
       published: true,
     }).lean<IProduct>();
 
@@ -38,7 +43,7 @@ export async function GET(
       return NextResponse.json(
         {
           success: false,
-          error: `Product '${slug}' not found`,
+          error: "Requested product was not found",
           code: "PRODUCT_NOT_FOUND",
         },
         { status: 404 }
@@ -50,12 +55,11 @@ export async function GET(
       data: product,
     });
   } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : "Internal Server Error";
     console.error("[GET /api/products/[slug] error]:", error);
     return NextResponse.json(
       {
         success: false,
-        error: message,
+        error: "Failed to retrieve product details. Please try again later.",
         code: "PRODUCT_FETCH_FAILED",
       },
       { status: 500 }

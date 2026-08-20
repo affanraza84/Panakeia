@@ -4,13 +4,16 @@ import { IEnquiry } from "@/types";
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
-export async function sendEnquiryNotification(enquiry: IEnquiry): Promise<{ success: boolean; id?: string }> {
+export async function sendEnquiryNotification(
+  enquiry: IEnquiry
+): Promise<{ success: boolean; id?: string }> {
   const recipient = process.env.ENQUIRY_NOTIFICATION_EMAIL || "panakeia.india@gmail.com";
   const fromEmail = process.env.RESEND_FROM_EMAIL || "Panakeia Web <enquiries@panakeiamedtech.com>";
 
   if (!resend) {
+    // Note: Do not log PII (names, emails, phone numbers) in plaintext to console/logs
     console.info(
-      `[Email Notification Mock] RESEND_API_KEY not configured. Skipping email dispatch. New enquiry received from: ${enquiry.name} (${enquiry.email}) [Type: ${enquiry.type}]`
+      `[Email Notification Mock] RESEND_API_KEY not configured. Skipping email dispatch. [Enquiry Type: ${enquiry.type}]`
     );
     return { success: true, id: "mock-email-id" };
   }
@@ -23,7 +26,7 @@ export async function sendEnquiryNotification(enquiry: IEnquiry): Promise<{ succ
       "product-enquiry": `Product Specific Quote Request (${enquiry.productSlug || "Device"})`,
     };
 
-    const subject = `[Panakeia MedTech Lead] ${typeLabels[enquiry.type] || "New Enquiry"} - ${enquiry.hospitalOrOrg || enquiry.name}`;
+    const subject = `[Panakeia MedTech Lead] ${typeLabels[enquiry.type] || "New Enquiry"} - ${enquiry.hospitalOrOrg || "Institutional Inquiry"}`;
 
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
@@ -95,13 +98,13 @@ export async function sendEnquiryNotification(enquiry: IEnquiry): Promise<{ succ
     });
 
     if (error) {
-      console.error("[Resend Error]:", error);
+      console.error("[Resend Error]: Failed to send notification email", error.name);
       return { success: false };
     }
 
     return { success: true, id: data?.id };
-  } catch (err) {
-    console.error("[Email Notification Failed]:", err);
+  } catch {
+    console.error("[Email Notification Error]: Failed to dispatch lead notification email");
     return { success: false };
   }
 }

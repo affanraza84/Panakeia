@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { Product } from "@/models/Product";
+import { productQuerySchema } from "@/lib/validations";
+import { sanitizeInput } from "@/lib/sanitize";
 import { ApiResponse, IProduct } from "@/types";
 
 export const dynamic = "force-dynamic";
@@ -9,14 +11,29 @@ export async function GET(
   request: NextRequest
 ): Promise<NextResponse<ApiResponse<IProduct[]>>> {
   try {
-    await connectToDatabase();
-
     const { searchParams } = new URL(request.url);
-    const category = searchParams.get("category");
+    const rawCategory = searchParams.get("category") || undefined;
+
+    // Validate query parameter against strict enum
+    const parseResult = productQuerySchema.safeParse({ category: rawCategory });
+    if (!parseResult.success) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Invalid category filter parameter",
+          code: "INVALID_CATEGORY",
+        },
+        { status: 400 }
+      );
+    }
+
+    const { category } = parseResult.data;
+
+    await connectToDatabase();
 
     const query: Record<string, unknown> = { published: true };
     if (category) {
-      query.category = category;
+      query.category = sanitizeInput(category);
     }
 
     const products = await Product.find(query)
@@ -28,12 +45,11 @@ export async function GET(
       data: products,
     });
   } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : "Internal Server Error";
     console.error("[GET /api/products error]:", error);
     return NextResponse.json(
       {
         success: false,
-        error: message,
+        error: "Failed to retrieve products. Please try again later.",
         code: "PRODUCTS_FETCH_FAILED",
       },
       { status: 500 }

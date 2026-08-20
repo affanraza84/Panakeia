@@ -18,12 +18,11 @@ export async function GET(): Promise<NextResponse<ApiResponse<ICertification[]>>
       data: certifications,
     });
   } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : "Internal Server Error";
     console.error("[GET /api/certifications error]:", error);
     return NextResponse.json(
       {
         success: false,
-        error: message,
+        error: "Failed to retrieve regulatory certifications. Please try again later.",
         code: "CERTIFICATIONS_FETCH_FAILED",
       },
       { status: 500 }

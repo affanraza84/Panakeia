@@ -200,6 +200,9 @@ export function Footer() {
               &copy; {currentYear} Panakeia Medtech Private Limited. All rights reserved. Indigenous Critical Care Engineering.
             </div>
             <div className="flex items-center gap-6">
+              <Link href="/privacy" className="hover:text-clinical-300 transition-colors">
+                Privacy Policy
+              </Link>
               <Link href="/quality" className="hover:text-clinical-300 transition-colors">
                 Quality Policy
               </Link>

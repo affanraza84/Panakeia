@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -37,6 +38,11 @@ export function ContactFormClient() {
   const [submissionId, setSubmissionId] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
   const [shakeError, setShakeError] = useState(false);
+  const [formStartTime, setFormStartTime] = useState<number>(Date.now());
+
+  useEffect(() => {
+    setFormStartTime(Date.now());
+  }, []);
 
   const {
     register,
@@ -86,7 +92,7 @@ export function ContactFormClient() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, formStartTime }),
       });
 
       const result = await response.json();
@@ -101,6 +107,7 @@ export function ContactFormClient() {
       setSubmitSuccess(true);
       setSubmissionId(result.data?.id || "Lead Recorded");
       reset();
+      setFormStartTime(Date.now());
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Network error. Please try again.";
       setServerError(message);
@@ -110,6 +117,7 @@ export function ContactFormClient() {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -159,14 +167,29 @@ export function ContactFormClient() {
         )}
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          {/* Honeypot hidden input for anti-bot protection */}
-          <input
-            type="text"
-            {...register("hp")}
-            className="hidden"
-            tabIndex={-1}
-            autoComplete="off"
-          />
+          {/* Honeypot hidden input for anti-bot protection (off-screen, aria-hidden) */}
+          <div
+            style={{
+              position: "absolute",
+              opacity: 0,
+              zIndex: -1,
+              pointerEvents: "none",
+              left: "-9999px",
+              width: "1px",
+              height: "1px",
+              overflow: "hidden",
+            }}
+            aria-hidden="true"
+          >
+            <label htmlFor="hp_field">Leave this field blank</label>
+            <input
+              id="hp_field"
+              type="text"
+              {...register("hp")}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
 
           {/* Enquiry Type Selector */}
           <div>
@@ -348,8 +371,15 @@ export function ContactFormClient() {
             </Button>
           </motion.div>
 
-          <p className="text-center text-[11px] text-clinical-500 font-mono">
-            Rate limited for security (5 requests/minute). Your contact details are stored securely.
+          <p className="text-center text-[11px] text-clinical-500">
+            By submitting, you agree to our{" "}
+            <Link
+              href="/privacy"
+              className="text-med-teal-600 hover:underline font-semibold"
+            >
+              Privacy Policy
+            </Link>
+            . Form protected by rate limiting (5 req/min) and anti-spam verification.
           </p>
         </form>
       </div>

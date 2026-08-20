@@ -1,20 +1,58 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
+import { timingSafeEqual } from "crypto";
+import { revalidateRateLimiter, getClientIp } from "@/lib/rate-limiter";
+import { revalidateSchema } from "@/lib/validations";
+import { sanitizeInput } from "@/lib/sanitize";
 
 export const dynamic = "force-dynamic";
 
+function safeCompareSecrets(a: string, b: string): boolean {
+  try {
+    const bufferA = Buffer.from(a, "utf-8");
+    const bufferB = Buffer.from(b, "utf-8");
+    if (bufferA.length !== bufferB.length) {
+      return false;
+    }
+    return timingSafeEqual(bufferA, bufferB);
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(request: NextRequest): Promise<NextResponse> {
-  const secretHeader =
-    request.headers.get("x-revalidate-secret") ||
-    request.headers.get("authorization")?.replace("Bearer ", "");
+  // 1. Rate limiting check
+  const ip = getClientIp(request);
+  const rateLimit = revalidateRateLimiter.check(ip);
 
-  const expectedSecret = process.env.REVALIDATE_SECRET;
-
-  if (!expectedSecret || secretHeader !== expectedSecret) {
+  if (!rateLimit.success) {
     return NextResponse.json(
       {
         success: false,
-        error: "Unauthorized: Invalid or missing revalidation token",
+        error: "Too many revalidation requests. Please wait.",
+        code: "RATE_LIMIT_EXCEEDED",
+      },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(Math.max(1, rateLimit.reset - Math.ceil(Date.now() / 1000))),
+        },
+      }
+    );
+  }
+
+  // 2. Secret authentication check with constant-time comparison
+  const secretHeader =
+    request.headers.get("x-revalidate-secret") ||
+    request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
+
+  const expectedSecret = process.env.REVALIDATE_SECRET;
+
+  if (!expectedSecret || !secretHeader || !safeCompareSecrets(secretHeader, expectedSecret)) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: "Unauthorized: Invalid or missing revalidation credentials",
         code: "UNAUTHORIZED",
       },
       { status: 401 }
@@ -22,32 +60,44 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   }
 
   try {
-    const body = (await request.json().catch(() => ({}))) as {
-      path?: string;
-      tag?: string;
-    };
+    const rawBody = (await request.json().catch(() => ({}))) as unknown;
+    const sanitizedBody = sanitizeInput(rawBody);
 
-    if (body.path) {
-      revalidatePath(body.path);
+    const validationResult = revalidateSchema.safeParse(sanitizedBody);
+    if (!validationResult.success) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Invalid revalidation parameters",
+          code: "INVALID_PARAMETERS",
+        },
+        { status: 400 }
+      );
+    }
+
+    const { path, tag } = validationResult.data;
+
+    if (path) {
+      revalidatePath(path);
       return NextResponse.json({
         success: true,
         revalidated: true,
-        path: body.path,
+        path,
         now: Date.now(),
       });
     }
 
-    if (body.tag) {
-      revalidateTag(body.tag, "max");
+    if (tag) {
+      revalidateTag(tag, "max");
       return NextResponse.json({
         success: true,
         revalidated: true,
-        tag: body.tag,
+        tag,
         now: Date.now(),
       });
     }
 
-    // Default revalidate all major routes if nothing specified
+    // Default revalidate all major routes if no path/tag specified
     revalidatePath("/", "layout");
 
     return NextResponse.json({
@@ -57,11 +107,11 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       now: Date.now(),
     });
   } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : "Revalidation failed";
+    console.error("[POST /api/revalidate error]:", error);
     return NextResponse.json(
       {
         success: false,
-        error: message,
+        error: "Revalidation operation failed",
         code: "REVALIDATION_FAILED",
       },
       { status: 500 }

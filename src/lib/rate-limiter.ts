@@ -84,12 +84,15 @@ class InMemoryRateLimiter {
 
 // Global instance to persist in-memory across warm serverless invocations
 declare global {
-  // eslint-disable-next-line no-var
   var globalRateLimiter: InMemoryRateLimiter | undefined;
+  var globalRevalidateLimiter: InMemoryRateLimiter | undefined;
 }
 
 export const enquiryRateLimiter =
   global.globalRateLimiter || (global.globalRateLimiter = new InMemoryRateLimiter(5, 60 * 1000));
+
+export const revalidateRateLimiter =
+  global.globalRevalidateLimiter || (global.globalRevalidateLimiter = new InMemoryRateLimiter(10, 60 * 1000));
 
 /**
  * Utility to extract client IP from Next.js Request headers
@@ -105,3 +108,4 @@ export function getClientIp(request: Request): string {
   }
   return "127.0.0.1";
 }
+
