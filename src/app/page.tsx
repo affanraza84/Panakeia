@@ -66,7 +66,6 @@ export default async function HomePage() {
             />
             <StatCounter
               value={100}
-              prefix="🇮🇳 "
               suffix="%"
               label="Indigenous Manufacturing"
               sublabel="Make in India / DPIIT Recognized"
