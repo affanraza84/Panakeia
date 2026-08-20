@@ -5,7 +5,7 @@ const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 export async function sendEnquiryNotification(enquiry: IEnquiry): Promise<{ success: boolean; id?: string }> {
-  const recipient = process.env.ENQUIRY_NOTIFICATION_EMAIL || "info@panakeiamedtech.com";
+  const recipient = process.env.ENQUIRY_NOTIFICATION_EMAIL || "panakeia.india@gmail.com";
   const fromEmail = process.env.RESEND_FROM_EMAIL || "Panakeia Web <enquiries@panakeiamedtech.com>";
 
   if (!resend) {

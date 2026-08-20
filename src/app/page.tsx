@@ -8,7 +8,7 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { StatCounter } from "@/components/ui/StatCounter";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { CertificationCard } from "@/components/ui/CertificationCard";
-import { FullScreenHeroVideo } from "@/components/ui/FullScreenHeroVideo";
+import { CleanHeroVideo } from "@/components/ui/CleanHeroVideo";
 import { getProducts, getClients, getCertifications } from "@/lib/data";
 import {
   ShieldCheck,
@@ -35,13 +35,16 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col gap-0 overflow-hidden">
-      {/* 1. FULL-SCREEN CINEMATIC HERO VIDEO */}
-      <FullScreenHeroVideo videoSrc="/video/introVideo.mp4" />
+      {/* 1. CLEAN FULL SCREEN INTRO VIDEO (No text overlay written on the video) */}
+      <CleanHeroVideo videoSrc="/video/introVideo.mp4" />
 
-      {/* 2. STAT COUNTER STRIP */}
-      <section className="bg-white border-b border-clinical-200 py-10 shadow-xs relative z-20">
-        <Container>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-clinical-200">
+      {/* 2. STAT COUNTER STRIP (Matching reference screenshot) */}
+      <section id="home-content" className="bg-white border-b border-clinical-200 py-10 lg:py-14 shadow-xs relative z-20 overflow-hidden">
+        {/* Subtle medical watermark backdrop */}
+        <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1e40af_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+
+        <Container className="relative z-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <StatCounter
               value={30}
               suffix="+"

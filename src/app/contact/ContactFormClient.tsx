@@ -375,7 +375,7 @@ export function ContactFormClient() {
                   Manufacturing Facility & Registered Office:
                 </strong>
                 <span>
-                  Unit A84, Andhra Pradesh Medtech Zone (AMTZ), Nadupuru, Visakhapatnam, Andhra Pradesh 530031, India
+                  C-20, IHUB Building, AMTZ Campus, Pragati Maidan, Visakhapatnam - 530031, Andhra Pradesh, India.
                 </span>
               </div>
             </div>
@@ -387,10 +387,10 @@ export function ContactFormClient() {
                   General & Procurement Inquiries:
                 </strong>
                 <a
-                  href="mailto:info@panakeiamedtech.com"
-                  className="text-med-teal-300 hover:underline"
+                  href="mailto:panakeia.india@gmail.com"
+                  className="text-med-teal-300 hover:underline font-mono text-xs"
                 >
-                  info@panakeiamedtech.com
+                  panakeia.india@gmail.com
                 </a>
               </div>
             </div>
@@ -402,10 +402,10 @@ export function ContactFormClient() {
                   Procurement & Clinical Support Desk:
                 </strong>
                 <a
-                  href="tel:+918912899000"
+                  href="tel:+919811340469"
                   className="text-med-teal-300 hover:underline font-mono"
                 >
-                  +91 (0891) 289-9000
+                  +91-9811340469
                 </a>
               </div>
             </div>

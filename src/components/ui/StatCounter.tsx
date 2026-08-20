@@ -51,29 +51,34 @@ export function StatCounter({
   }, [isInView, value, duration]);
 
   return (
-    <div ref={ref} className={cn("text-center p-6", className)}>
+    <div ref={ref} className={cn("text-center py-6 px-4 flex flex-col items-center justify-center", className)}>
+      {/* Massive Bold Medical Numbers styled like reference */}
       <div
         className={cn(
-          "text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight",
-          dark ? "text-white" : "text-navy-950"
+          "text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight flex items-baseline justify-center gap-0.5",
+          dark ? "text-white" : "text-[#2563eb] text-navy-950"
         )}
       >
-        <span className="text-med-teal-500 font-bold">{prefix}</span>
-        <span>{displayValue.toLocaleString()}</span>
-        <span className="text-med-teal-500 font-bold">{suffix}</span>
+        {prefix && <span className="text-med-teal-600 text-2xl sm:text-3xl font-bold">{prefix}</span>}
+        <span className="text-[#1e40af]">{displayValue.toLocaleString()}</span>
+        {suffix && <span className="text-[#3b82f6] font-extrabold">{suffix}</span>}
       </div>
+
+      {/* Label */}
       <div
         className={cn(
-          "mt-2 text-sm sm:text-base font-semibold",
-          dark ? "text-clinical-200" : "text-clinical-900"
+          "mt-2.5 text-sm sm:text-base font-bold tracking-tight",
+          dark ? "text-white" : "text-navy-950"
         )}
       >
         {label}
       </div>
+
+      {/* Sublabel */}
       {sublabel && (
         <div
           className={cn(
-            "mt-1 text-xs sm:text-sm",
+            "mt-1 text-xs sm:text-xs text-clinical-500 font-medium max-w-[220px]",
             dark ? "text-clinical-400" : "text-clinical-500"
           )}
         >

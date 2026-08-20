@@ -39,9 +39,7 @@ export const fallbackProducts: IProduct[] = [
       { label: "Manufacturing Standard", value: "ISO 80601-2-13, IEC 60601-1, CDSCO Test License Compliant" },
     ],
     images: [
-      "/images/products/aesthetica-700.webp",
-      "/images/products/aesthetica-700-side.webp",
-      "/images/products/aesthetica-700-screen.webp",
+      "/images/products/aesthetica-700.jpg",
     ],
     brochurePdfUrl: "/brochures/panakeia-aesthetica-700-specsheet.pdf",
     order: 1,
@@ -77,8 +75,7 @@ export const fallbackProducts: IProduct[] = [
       { label: "Dimensions & Weight", value: "1350mm (H) x 700mm (W) x 650mm (D), 85 kg" },
     ],
     images: [
-      "/images/products/aesthetica-500.webp",
-      "/images/products/aesthetica-500-angle.webp",
+      "/images/products/aesthetica-500.jpg",
     ],
     brochurePdfUrl: "/brochures/panakeia-aesthetica-500-specsheet.pdf",
     order: 2,
@@ -117,9 +114,7 @@ export const fallbackProducts: IProduct[] = [
       { label: "Battery Capacity", value: "4 hours internal dual lithium battery pack" },
     ],
     images: [
-      "/images/products/respicare-900.webp",
-      "/images/products/respicare-900-screen.webp",
-      "/images/products/respicare-900-cart.webp",
+      "/images/products/respicare-900.jpg",
     ],
     brochurePdfUrl: "/brochures/panakeia-respicare-900-specsheet.pdf",
     order: 3,
@@ -155,8 +150,7 @@ export const fallbackProducts: IProduct[] = [
       { label: "Weight", value: "4.5 kg" },
     ],
     images: [
-      "/images/products/respicare-300.webp",
-      "/images/products/respicare-300-side.webp",
+      "/images/products/respicare-300.jpg",
     ],
     brochurePdfUrl: "/brochures/panakeia-respicare-300-specsheet.pdf",
     order: 4,

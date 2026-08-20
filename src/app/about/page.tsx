@@ -34,7 +34,7 @@ export default function AboutPage() {
       "Indigenous Indian manufacturer of critical care Anaesthesia Workstations and Intensive Care Ventilators at AMTZ Visakhapatnam.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Unit A84, Andhra Pradesh Medtech Zone (AMTZ), Nadupuru",
+      streetAddress: "C-20, IHUB Building, AMTZ Campus, Pragati Maidan",
       addressLocality: "Visakhapatnam",
       addressRegion: "Andhra Pradesh",
       postalCode: "530031",
@@ -42,7 +42,7 @@ export default function AboutPage() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+91-891-2899000",
+      telephone: "+91-9811340469",
       contactType: "customer support",
     },
   };

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,11 +10,7 @@ import { Button } from "../ui/Button";
 import {
   Menu,
   X,
-  Activity,
-  ShieldCheck,
   ChevronDown,
-  Building2,
-  Phone,
   ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -39,13 +36,8 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -59,55 +51,31 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300 w-full",
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-xs border-b border-clinical-200 py-3"
-          : "bg-white border-b border-clinical-100 py-4"
+        "sticky top-0 z-50 transition-all duration-200 w-full bg-white border-b border-clinical-200",
+        isScrolled ? "shadow-sm py-2 sm:py-2.5" : "py-2.5 sm:py-3"
       )}
     >
-      {/* Top micro-bar on desktop: AMTZ manufacturing location & DPIIT status */}
-      <div className="hidden lg:block border-b border-clinical-100 pb-2 mb-2">
-        <Container className="flex items-center justify-between text-xs text-clinical-600">
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 font-medium text-navy-900">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Indigenous Critical Care Manufacturing Facility • AMTZ, Visakhapatnam
-            </span>
-            <span className="text-clinical-300">|</span>
-            <span className="text-clinical-500 font-mono text-[11px]">
-              DPIIT Recognized • MSME Registered
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/contact"
-              className="text-clinical-600 hover:text-med-teal-600 transition-colors flex items-center gap-1 font-medium"
-            >
-              <Phone className="w-3 h-3 text-med-teal-500" />
-              Procurement Desk: +91 (0891) 289-9000
-            </Link>
-          </div>
-        </Container>
-      </div>
-
       <Container className="flex items-center justify-between">
-        {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-10 h-10 rounded-xl bg-navy-900 flex items-center justify-center text-white shadow-xs group-hover:bg-navy-950 transition-colors">
-            <Activity className="w-6 h-6 text-med-teal-400" />
-          </div>
-          <div>
-            <span className="text-xl font-extrabold font-heading tracking-tight text-navy-950 block leading-tight">
-              PANAKEIA
-            </span>
-            <span className="text-[10px] tracking-widest font-semibold uppercase text-med-teal-600 block leading-none">
-              MEDTECH
-            </span>
+        {/* Brand Logo - Enlarged for crystal clear legibility of all emblem text */}
+        <Link
+          href="/"
+          className="flex items-center group py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-med-teal-500 rounded-lg shrink-0"
+          aria-label="Panakeia Medtech - Home"
+        >
+          <div className="relative h-18 sm:h-22 md:h-24 w-[86px] sm:w-[105px] md:w-[115px] shrink-0">
+            <Image
+              src="/image/logo.jpeg"
+              alt="PANAKEIA MEDTECH PVT. LTD."
+              fill
+              priority
+              sizes="(max-width: 640px) 90px, 120px"
+              className="object-contain object-left group-hover:opacity-95 transition-opacity"
+            />
           </div>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+        <nav className="hidden md:flex items-center gap-1.5 lg:gap-2">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
 
@@ -122,10 +90,10 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     className={cn(
-                      "px-3 py-2 text-sm font-medium rounded-lg transition-colors flex items-center gap-1",
+                      "px-3.5 py-2 text-sm font-semibold rounded-lg transition-colors flex items-center gap-1",
                       isActive
-                        ? "text-navy-950 font-semibold bg-clinical-50"
-                        : "text-clinical-700 hover:text-navy-950 hover:bg-clinical-50"
+                        ? "text-navy-950 bg-clinical-50"
+                        : "text-slate-700 hover:text-navy-950 hover:bg-clinical-50/80"
                     )}
                   >
                     {link.name}
@@ -142,7 +110,7 @@ export function Navbar() {
                         transition={{ duration: 0.18 }}
                         className="absolute left-0 top-full pt-2 w-72 z-50"
                       >
-                        <div className="bg-white rounded-xl shadow-lg border border-clinical-200 p-2 overflow-hidden">
+                        <div className="bg-white rounded-xl shadow-xl border border-clinical-200 p-2 overflow-hidden">
                           <Link
                             href="/products?category=anaesthesia"
                             className="block p-3 rounded-lg hover:bg-clinical-50 transition-colors group"
@@ -186,10 +154,10 @@ export function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "px-3 py-2 text-sm font-medium rounded-lg transition-colors relative",
+                  "px-3.5 py-2 text-sm font-semibold rounded-lg transition-colors relative",
                   isActive
-                    ? "text-navy-950 font-semibold bg-clinical-50"
-                    : "text-clinical-700 hover:text-navy-950 hover:bg-clinical-50"
+                    ? "text-navy-950 bg-clinical-50"
+                    : "text-slate-700 hover:text-navy-950 hover:bg-clinical-50/80"
                 )}
               >
                 {link.name}
@@ -205,23 +173,23 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* CTA & Mobile Toggle */}
+        {/* CTA & Menu Toggle Button */}
         <div className="flex items-center gap-3">
           <Button
             href="/contact"
             variant="primary"
             size="sm"
-            className="hidden sm:inline-flex"
+            className="hidden sm:inline-flex shadow-xs font-semibold"
           >
             Request Quote
           </Button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-clinical-700 hover:bg-clinical-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-med-teal-500"
+            className="w-10 h-10 rounded-full bg-navy-950 hover:bg-navy-900 text-white flex items-center justify-center transition-transform active:scale-95 shadow-xs cursor-pointer"
             aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </Container>
@@ -248,10 +216,10 @@ export function Navbar() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "block px-4 py-3 text-base font-medium rounded-lg transition-colors",
+                        "block px-4 py-3 rounded-lg text-base font-semibold transition-colors",
                         pathname === link.href
-                          ? "bg-med-teal-50 text-med-teal-800 font-bold"
-                          : "text-clinical-800 hover:bg-clinical-50"
+                          ? "bg-med-teal-50 text-med-teal-700"
+                          : "text-slate-800 hover:bg-clinical-50"
                       )}
                     >
                       {link.name}
@@ -260,12 +228,12 @@ export function Navbar() {
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-clinical-100 flex flex-col gap-2">
+              <div className="pt-4 border-t border-clinical-100 flex flex-col gap-3">
                 <Button href="/contact" variant="primary" size="md" className="w-full">
-                  Request a Quote
+                  Request Commercial Quotation
                 </Button>
-                <div className="text-center text-xs text-clinical-500 pt-2 font-mono">
-                  AMTZ Facility, Visakhapatnam • DPIIT Recognized
+                <div className="text-xs text-clinical-500 text-center font-mono">
+                  AMTZ Campus, Pragati Maidan, Visakhapatnam • +91-9811340469
                 </div>
               </div>
             </Container>

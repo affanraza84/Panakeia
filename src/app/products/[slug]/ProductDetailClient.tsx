@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { IProduct } from "@/types";
 import { Badge } from "@/components/ui/Badge";
@@ -12,12 +12,8 @@ import {
   ShieldCheck,
   Building2,
   Phone,
-  Activity,
   ArrowRight,
-  Sparkles,
-  Layers,
 } from "lucide-react";
-import { fadeUpVariant, staggerContainerVariant } from "@/lib/animations";
 
 interface ProductDetailClientProps {
   product: IProduct;
@@ -30,7 +26,9 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const images =
     product.images && product.images.length > 0
       ? product.images
-      : ["/images/products/placeholder.webp"];
+      : [`/images/products/${product.slug}.jpg`];
+
+  const currentImage = images[activeImageIndex] || images[0];
 
   return (
     <div className="space-y-12">
@@ -38,37 +36,37 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
         {/* Left: Interactive Image Gallery */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="bg-gradient-to-b from-clinical-50 to-clinical-100 rounded-2xl border border-clinical-200 p-8 h-96 sm:h-[450px] flex items-center justify-center relative overflow-hidden shadow-inner">
+          <div className="bg-slate-900 rounded-2xl border border-clinical-200 h-96 sm:h-[480px] flex items-center justify-center relative overflow-hidden shadow-lg">
             <div className="absolute top-4 left-4 z-10">
-              <Badge variant={isAnaesthesia ? "primary" : "navy"}>
+              <Badge variant={isAnaesthesia ? "primary" : "navy"} className="bg-white/95 shadow-sm">
                 {isAnaesthesia ? "Anaesthesia Delivery" : "ICU Ventilation"}
               </Badge>
             </div>
             <div className="absolute top-4 right-4 z-10">
-              <span className="text-[11px] font-mono text-clinical-600 bg-white/90 px-2.5 py-1 rounded-md border border-clinical-200 shadow-2xs font-semibold">
-                AMTZ Unit A84
+              <span className="text-[11px] font-mono text-clinical-700 bg-white/95 px-2.5 py-1 rounded-md border border-clinical-200 shadow-2xs font-semibold">
+                AMTZ IHUB C-20
               </span>
             </div>
 
-            {/* Main Visual Display Frame */}
+            {/* Main Visual Display Frame with next/image */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeImageIndex}
-                initial={{ opacity: 0, scale: 0.96 }}
+                initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
+                exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="w-full h-full flex flex-col items-center justify-center text-center p-6"
+                className="relative w-full h-full"
               >
-                <div className="w-28 h-28 rounded-2xl bg-white border border-clinical-200 shadow-md flex items-center justify-center text-med-teal-600 mb-4">
-                  <Activity className="w-14 h-14 stroke-[1.5]" />
-                </div>
-                <div className="text-sm font-mono font-bold text-navy-950 uppercase tracking-widest">
-                  {product.name}
-                </div>
-                <span className="text-xs text-clinical-500 mt-1 font-mono">
-                  View Frame #{activeImageIndex + 1} • High Precision Calibration
-                </span>
+                <Image
+                  src={currentImage}
+                  alt={`${product.name} — Technical Overview`}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               </motion.div>
             </AnimatePresence>
           </div>
@@ -80,15 +78,19 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                 <button
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
-                  className={`h-18 w-24 rounded-lg border-2 p-2 flex items-center justify-center transition-all bg-white cursor-pointer ${
+                  className={`relative h-20 w-24 rounded-lg border-2 overflow-hidden transition-all bg-slate-900 cursor-pointer ${
                     activeImageIndex === idx
-                      ? "border-med-teal-500 shadow-xs ring-2 ring-med-teal-500/20"
-                      : "border-clinical-200 hover:border-clinical-300 opacity-70 hover:opacity-100"
+                      ? "border-med-teal-500 shadow-xs ring-2 ring-med-teal-500/30"
+                      : "border-clinical-200 hover:border-clinical-400 opacity-70 hover:opacity-100"
                   }`}
                 >
-                  <span className="text-[10px] font-mono font-semibold text-clinical-600">
-                    View #{idx + 1}
-                  </span>
+                  <Image
+                    src={img}
+                    alt={`Thumbnail view ${idx + 1}`}
+                    fill
+                    sizes="96px"
+                    className="object-cover"
+                  />
                 </button>
               ))}
             </div>
@@ -132,7 +134,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
 
           {/* Action CTAs */}
           <div className="pt-4 border-t border-clinical-200 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            {/* Pulsing Request Quote CTA (runs subtle pulse once on load) */}
+            {/* Pulsing Request Quote CTA */}
             <motion.div
               initial={{ scale: 1 }}
               animate={{ scale: [1, 1.03, 1] }}
@@ -169,7 +171,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
           <div className="p-3 bg-navy-50 rounded-lg border border-navy-100 flex items-center justify-between text-xs text-navy-900">
             <span className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-med-teal-600" />
-              <span>Direct Hospital Procurement Desk: <strong>+91 (0891) 289-9000</strong></span>
+              <span>Direct Hospital Procurement Desk: <strong>+91-9811340469</strong></span>
             </span>
             <span className="font-mono text-clinical-500 text-[11px]">Mon-Sat 9AM-6PM IST</span>
           </div>

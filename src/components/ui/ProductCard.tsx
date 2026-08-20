@@ -1,12 +1,13 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { IProduct } from "@/types";
 import { Badge } from "./Badge";
 import { Button } from "./Button";
-import { ArrowRight, CheckCircle2, FileText, Activity } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { cardHoverVariant } from "@/lib/animations";
 
 interface ProductCardProps {
@@ -15,36 +16,39 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const isAnaesthesia = product.category === "anaesthesia";
+  const primaryImage = product.images?.[0] || "/images/products/aesthetica-700.jpg";
 
   return (
     <motion.div
       variants={cardHoverVariant}
       initial="rest"
       whileHover="hover"
-      className="flex flex-col bg-white rounded-xl border border-clinical-200 overflow-hidden transition-colors hover:border-med-teal-300"
+      className="flex flex-col bg-white rounded-xl border border-clinical-200 overflow-hidden transition-colors hover:border-med-teal-400 group"
     >
       {/* Product Image Display Frame */}
-      <div className="relative h-64 bg-gradient-to-b from-clinical-50 to-clinical-100 flex items-center justify-center p-6 border-b border-clinical-200 overflow-hidden">
+      <div className="relative h-64 bg-slate-900 flex items-center justify-center overflow-hidden border-b border-clinical-200">
         {/* Category & Badge Indicators */}
-        <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-          <Badge variant={isAnaesthesia ? "primary" : "navy"}>
+        <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
+          <Badge variant={isAnaesthesia ? "primary" : "navy"} className="shadow-xs bg-white/95">
             {isAnaesthesia ? "Anaesthesia Workstation" : "ICU Ventilator"}
           </Badge>
         </div>
-        <div className="absolute top-4 right-4 z-10">
-          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-clinical-600 bg-white/90 px-2 py-0.5 rounded border border-clinical-200 shadow-2xs font-mono">
-            AMTZ Certified
+        <div className="absolute top-3.5 right-3.5 z-10">
+          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-clinical-700 bg-white/95 px-2.5 py-0.5 rounded-full border border-clinical-200 shadow-xs font-mono">
+            AMTZ IHUB C-20
           </span>
         </div>
 
-        {/* Device Aesthetic Placeholder Frame */}
-        <div className="relative w-full h-full flex flex-col items-center justify-center text-center">
-          <div className="w-20 h-20 rounded-2xl bg-white border border-clinical-200 shadow-sm flex items-center justify-center text-med-teal-600 mb-3 group-hover:scale-105 transition-transform duration-300">
-            <Activity className="w-10 h-10 stroke-[1.5]" />
-          </div>
-          <span className="text-xs font-mono font-medium text-clinical-500 uppercase tracking-wider">
-            {product.slug.toUpperCase()}
-          </span>
+        {/* Product Image with smooth hover scale */}
+        <div className="relative w-full h-full">
+          <Image
+            src={primaryImage}
+            alt={`${product.name} — Indigenous ${isAnaesthesia ? "Anaesthesia Delivery Platform" : "Intensive Care Ventilator"}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
         </div>
       </div>
 

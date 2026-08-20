@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../ui/Container";
 import {
@@ -49,13 +50,16 @@ export function Footer() {
         <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Company Bio */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-med-teal-500 flex items-center justify-center text-white">
-                <Activity className="w-5 h-5" />
+            <Link href="/" className="inline-block bg-white p-2 rounded-xl border border-navy-700 shadow-md">
+              <div className="relative h-14 sm:h-16 w-[68px] sm:w-[76px]">
+                <Image
+                  src="/image/logo.jpeg"
+                  alt="PANAKEIA MEDTECH PVT. LTD."
+                  fill
+                  sizes="76px"
+                  className="object-contain object-center"
+                />
               </div>
-              <span className="text-xl font-extrabold font-heading text-white tracking-tight">
-                PANAKEIA <span className="text-med-teal-400 text-sm font-semibold">MEDTECH</span>
-              </span>
             </Link>
             <p className="text-xs sm:text-sm text-clinical-400 leading-relaxed max-w-sm">
               Panakeia Medtech Private Limited manufactures indigenous critical care Anaesthesia Workstations and Intensive Care Ventilators. Pioneered by clinicians with 30+ years of live OT & ICU experience.
@@ -158,22 +162,22 @@ export function Footer() {
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-med-teal-400 shrink-0 mt-0.5" />
                 <span>
-                  Unit A84, Andhra Pradesh Medtech Zone (AMTZ), Nadupuru, Visakhapatnam, AP 530031
+                  C-20, IHUB Building, AMTZ Campus, Pragati Maidan, Visakhapatnam - 530031, Andhra Pradesh, India.
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-med-teal-400 shrink-0" />
                 <a
-                  href="mailto:info@panakeiamedtech.com"
+                  href="mailto:panakeia.india@gmail.com"
                   className="hover:text-white transition-colors"
                 >
-                  info@panakeiamedtech.com
+                  panakeia.india@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-med-teal-400 shrink-0" />
-                <a href="tel:+918912899000" className="hover:text-white transition-colors">
-                  +91 (0891) 289-9000
+                <a href="tel:+919811340469" className="hover:text-white transition-colors font-mono">
+                  +91-9811340469
                 </a>
               </div>
             </div>
