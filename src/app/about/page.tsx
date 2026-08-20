@@ -15,6 +15,10 @@ import {
   Sparkles,
   ArrowRight,
   Activity,
+  Target,
+  Compass,
+  Eye,
+  Flag,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -128,6 +132,119 @@ export default function AboutPage() {
                 <div className="p-4 rounded-xl bg-clinical-50 border border-clinical-200">
                   <div className="text-2xl font-extrabold text-med-teal-600 font-heading">100%</div>
                   <div className="text-xs text-clinical-600 mt-1">Indigenous assembly & rigorous multi-point testing</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Corporate Philosophy: Aim, Objective, Vision & Mission Section */}
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-white via-clinical-50/50 to-white border-t border-clinical-200">
+        <Container>
+          <SectionHeading
+            eyebrow="Our Guiding Principles"
+            title="Aim, Objective, Vision & Mission"
+            description="Driven by clinical excellence, indigenous medical manufacturing, and patient-first engineering to transform high-acuity surgical and ICU care."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            {/* AIM */}
+            <div
+              id="aim"
+              className="scroll-mt-28 bg-white p-8 rounded-2xl border-2 border-med-teal-200/80 shadow-md hover:shadow-xl transition-all duration-300 relative group overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-med-teal-50 rounded-bl-full -z-0 group-hover:scale-110 transition-transform" />
+              <div className="relative z-10 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-med-teal-100/70 text-med-teal-800 text-xs font-bold uppercase tracking-wider">
+                  <Target className="w-4 h-4 text-med-teal-600" />
+                  Our Aim
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold font-heading text-navy-950">
+                  Indigenous Self-Reliance in High-Acuity Medical Systems
+                </h3>
+                <p className="text-sm sm:text-base text-clinical-700 leading-relaxed">
+                  Our core aim is to engineer indigenously developed, world-class Anaesthesia Delivery Systems and ICU Ventilators that eliminate the heavy dependence of Indian healthcare on foreign imports, while ensuring unparalleled reliability, clinical safety, and affordable life-cycle costs.
+                </p>
+                <div className="pt-2 border-t border-clinical-100 flex items-center gap-2 text-xs font-semibold text-med-teal-700">
+                  <Sparkles className="w-3.5 h-3.5" /> Built specifically for Indian hospital operating realities
+                </div>
+              </div>
+            </div>
+
+            {/* OBJECTIVE */}
+            <div
+              id="objective"
+              className="scroll-mt-28 bg-white p-8 rounded-2xl border-2 border-navy-200/80 shadow-md hover:shadow-xl transition-all duration-300 relative group overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-navy-50 rounded-bl-full -z-0 group-hover:scale-110 transition-transform" />
+              <div className="relative z-10 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-navy-100/70 text-navy-800 text-xs font-bold uppercase tracking-wider">
+                  <Compass className="w-4 h-4 text-navy-700" />
+                  Our Objectives
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold font-heading text-navy-950">
+                  Precision Engineering & Rapid Technical Response
+                </h3>
+                <ul className="space-y-2.5 text-sm sm:text-base text-clinical-700 leading-relaxed">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-med-teal-500 mt-2 shrink-0" />
+                    <span><strong>Zero-Downtime Guarantee:</strong> Deploy robust mechanical backups and modular subsystems.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-med-teal-500 mt-2 shrink-0" />
+                    <span><strong>Sub-48h Spares Support:</strong> Direct domestic dispatch from our AMTZ manufacturing hub.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-med-teal-500 mt-2 shrink-0" />
+                    <span><strong>Clinical-First Ergonomics:</strong> Intuitive touch controls designed alongside senior anaesthesiologists.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* VISION */}
+            <div
+              id="vision"
+              className="scroll-mt-28 bg-white p-8 rounded-2xl border-2 border-cyan-200/80 shadow-md hover:shadow-xl transition-all duration-300 relative group overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-50 rounded-bl-full -z-0 group-hover:scale-110 transition-transform" />
+              <div className="relative z-10 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-cyan-100/70 text-cyan-800 text-xs font-bold uppercase tracking-wider">
+                  <Eye className="w-4 h-4 text-cyan-600" />
+                  Our Vision
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold font-heading text-navy-950">
+                  India’s Global Flagship in Critical Care Medtech
+                </h3>
+                <p className="text-sm sm:text-base text-clinical-700 leading-relaxed">
+                  To establish Panakeia Medtech as the premier benchmark for indigenous critical care innovation across Asia and emerging global markets, recognized universally for unyielding engineering precision, bio-compatibility, and human-centric design.
+                </p>
+                <div className="pt-2 border-t border-clinical-100 flex items-center gap-2 text-xs font-semibold text-cyan-700">
+                  <HeartHandshake className="w-3.5 h-3.5" /> Advancing healthcare sovereignty and universal patient safety
+                </div>
+              </div>
+            </div>
+
+            {/* MISSION */}
+            <div
+              id="mission"
+              className="scroll-mt-28 bg-white p-8 rounded-2xl border-2 border-emerald-200/80 shadow-md hover:shadow-xl transition-all duration-300 relative group overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -z-0 group-hover:scale-110 transition-transform" />
+              <div className="relative z-10 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100/70 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+                  <Flag className="w-4 h-4 text-emerald-600" />
+                  Our Mission
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold font-heading text-navy-950">
+                  Empowering Clinicians With Fail-Safe Technology
+                </h3>
+                <p className="text-sm sm:text-base text-clinical-700 leading-relaxed">
+                  To equip hospitals and clinicians with world-class, intuitive, and rigorously certified anaesthesia and ventilation workstations that protect life in high-stress surgical moments, backed by transparent pricing and dependable local lifecycle service.
+                </p>
+                <div className="pt-2 border-t border-clinical-100 flex items-center gap-2 text-xs font-semibold text-emerald-700">
+                  <ShieldCheck className="w-3.5 h-3.5" /> 100% Quality & Medical Safety Certification Standards
                 </div>
               </div>
             </div>

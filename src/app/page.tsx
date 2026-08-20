@@ -9,6 +9,7 @@ import { StatCounter } from "@/components/ui/StatCounter";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { CertificationCard } from "@/components/ui/CertificationCard";
 import { CleanHeroVideo } from "@/components/ui/CleanHeroVideo";
+import { AwardsSection } from "@/components/ui/AwardsSection";
 import { getProducts, getClients, getCertifications } from "@/lib/data";
 import {
   ShieldCheck,
@@ -174,7 +175,10 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* 6. TESTIMONIAL PREVIEW */}
+      {/* 6. AWARDS & RECOGNITIONS SECTION (Matching Reference Design) */}
+      <AwardsSection />
+
+      {/* 7. TESTIMONIAL PREVIEW */}
       <section className="py-16 lg:py-24 bg-white">
         <Container>
           <SectionHeading
