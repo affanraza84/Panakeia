@@ -1,0 +1,214 @@
+import React from "react";
+import Link from "next/link";
+import { Container } from "../ui/Container";
+import {
+  Activity,
+  MapPin,
+  Mail,
+  Phone,
+  ShieldCheck,
+  Building,
+  ArrowUpRight,
+} from "lucide-react";
+
+export function Footer() {
+  const currentYear = 2026;
+
+  return (
+    <footer className="bg-navy-950 text-clinical-300 border-t border-navy-800">
+      {/* Top Banner / Regulatory Assurance */}
+      <div className="border-b border-navy-800/80 bg-navy-900/60 py-6">
+        <Container className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-med-teal-500/20 text-med-teal-400 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="font-semibold text-white block">
+                Indigenous Critical Care Manufacturing Facility
+              </span>
+              <span className="text-clinical-400">
+                Resident manufacturing facility at Andhra Pradesh Medtech Zone (AMTZ), Visakhapatnam.
+              </span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="px-3 py-1 rounded bg-navy-800 border border-navy-700 text-clinical-200 font-mono text-[11px]">
+              DPIIT: DIPP114820
+            </span>
+            <span className="px-3 py-1 rounded bg-navy-800 border border-navy-700 text-clinical-200 font-mono text-[11px]">
+              CDSCO Test Lic: MD-13
+            </span>
+          </div>
+        </Container>
+      </div>
+
+      {/* Main Footer Links */}
+      <div className="py-12 lg:py-16">
+        <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Company Bio */}
+          <div className="lg:col-span-2 space-y-4">
+            <Link href="/" className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-xl bg-med-teal-500 flex items-center justify-center text-white">
+                <Activity className="w-5 h-5" />
+              </div>
+              <span className="text-xl font-extrabold font-heading text-white tracking-tight">
+                PANAKEIA <span className="text-med-teal-400 text-sm font-semibold">MEDTECH</span>
+              </span>
+            </Link>
+            <p className="text-xs sm:text-sm text-clinical-400 leading-relaxed max-w-sm">
+              Panakeia Medtech Private Limited manufactures indigenous critical care Anaesthesia Workstations and Intensive Care Ventilators. Pioneered by clinicians with 30+ years of live OT & ICU experience.
+            </p>
+            <div className="pt-2 text-xs text-clinical-400 space-y-1 font-mono">
+              <div>CIN: U33100AP2023PTC123456</div>
+              <div>MSME Reg: UDYAM-AP-10-0048291</div>
+            </div>
+          </div>
+
+          {/* Product Categories */}
+          <div>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading mb-4">
+              Products
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link
+                  href="/products/panakeia-aesthetica-700"
+                  className="hover:text-white transition-colors"
+                >
+                  Aesthetica 700 Workstation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/panakeia-aesthetica-500"
+                  className="hover:text-white transition-colors"
+                >
+                  Aesthetica 500 Compact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/panakeia-respi-icu-900"
+                  className="hover:text-white transition-colors"
+                >
+                  RespiCare ICU 900
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/panakeia-respi-transport-300"
+                  className="hover:text-white transition-colors"
+                >
+                  RespiCare Transport 300
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products"
+                  className="text-med-teal-400 hover:text-med-teal-300 transition-colors inline-flex items-center gap-1 font-medium pt-1"
+                >
+                  View All Products <ArrowUpRight className="w-3 h-3" />
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading mb-4">
+              Company
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link href="/about" className="hover:text-white transition-colors">
+                  Founder Story & Legacy
+                </Link>
+              </li>
+              <li>
+                <Link href="/quality" className="hover:text-white transition-colors">
+                  Quality & Regulatory Standing
+                </Link>
+              </li>
+              <li>
+                <Link href="/clients" className="hover:text-white transition-colors">
+                  Hospital Installations
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Distributor & OEM Inquiries
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Support & Service Desk
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Manufacturing Location & Contacts */}
+          <div>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading mb-4">
+              AMTZ Facility
+            </h4>
+            <div className="space-y-3 text-xs text-clinical-400">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-med-teal-400 shrink-0 mt-0.5" />
+                <span>
+                  Unit A84, Andhra Pradesh Medtech Zone (AMTZ), Nadupuru, Visakhapatnam, AP 530031
+                </span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-med-teal-400 shrink-0" />
+                <a
+                  href="mailto:info@panakeiamedtech.com"
+                  className="hover:text-white transition-colors"
+                >
+                  info@panakeiamedtech.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-med-teal-400 shrink-0" />
+                <a href="tel:+918912899000" className="hover:text-white transition-colors">
+                  +91 (0891) 289-9000
+                </a>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* Compliance Disclaimer & Copyright */}
+      <div className="border-t border-navy-800/80 py-8 bg-navy-950">
+        <Container className="space-y-4">
+          <div className="p-4 rounded-lg bg-navy-900/80 border border-navy-800 text-xs text-clinical-400 leading-relaxed">
+            <strong className="text-clinical-200 block mb-1">
+              Regulatory Disclosure & Compliance Notice:
+            </strong>
+            Panakeia Medtech Private Limited is a DPIIT-recognized and MSME-registered medical device manufacturer. The company holds a valid CDSCO Medical Device Test License (Form MD-13) for performance validation and clinical evaluation. The commercial manufacturing license application (Form MD-9) is under final statutory audit and validation at our AMTZ Visakhapatnam facility.
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-clinical-500 pt-2">
+            <div>
+              &copy; {currentYear} Panakeia Medtech Private Limited. All rights reserved. Indigenous Critical Care Engineering.
+            </div>
+            <div className="flex items-center gap-6">
+              <Link href="/quality" className="hover:text-clinical-300 transition-colors">
+                Quality Policy
+              </Link>
+              <Link href="/contact" className="hover:text-clinical-300 transition-colors">
+                Procurement
+              </Link>
+              <Link href="/about" className="hover:text-clinical-300 transition-colors">
+                AMTZ Hub
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </footer>
+  );
+}
