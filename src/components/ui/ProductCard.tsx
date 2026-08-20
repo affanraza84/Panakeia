@@ -92,24 +92,21 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-6 pt-4 border-t border-clinical-100 flex items-center justify-between gap-3">
-          <Button
+        <div className="mt-6 pt-4 border-t border-clinical-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+          <Link
             href={`/products/${product.slug}`}
-            variant="outline"
-            size="sm"
-            className="flex-1"
-            rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+            className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-semibold text-navy-950 bg-clinical-50/90 hover:bg-clinical-100 border border-clinical-200/80 hover:border-clinical-300 transition-all duration-200 group/btn shadow-2xs hover:shadow-xs active:scale-[0.98] text-center"
           >
-            Technical Specs
-          </Button>
-          <Button
+            <span>Technical Specs</span>
+            <ArrowRight className="w-3.5 h-3.5 text-clinical-600 transition-transform duration-200 group-hover/btn:translate-x-1 group-hover/btn:text-navy-950" />
+          </Link>
+          <Link
             href={`/contact?product=${product.slug}`}
-            variant="primary"
-            size="sm"
-            className="flex-1"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-med-teal-600 to-med-teal-700 hover:from-med-teal-700 hover:to-med-teal-800 shadow-sm hover:shadow-md hover:shadow-med-teal-600/20 transition-all duration-200 group/btn active:scale-[0.98] text-center"
           >
-            Request Quote
-          </Button>
+            <span>Request Quote</span>
+            <ArrowRight className="w-3.5 h-3.5 text-white/80 transition-transform duration-200 group-hover/btn:translate-x-1 group-hover/btn:text-white" />
+          </Link>
         </div>
       </div>
     </motion.div>
