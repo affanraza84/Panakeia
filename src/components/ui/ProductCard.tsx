@@ -6,7 +6,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { IProduct } from "@/types";
 import { Badge } from "./Badge";
-import { Button } from "./Button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { cardHoverVariant } from "@/lib/animations";
 
@@ -16,40 +15,39 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const isAnaesthesia = product.category === "anaesthesia";
-  const primaryImage = product.images?.[0] || "/images/products/aesthetica-700.jpg";
+  const primaryImage = product.images?.[0] || "/images/products/three-gas-system-advanced-anaesthesia-workstation.jpeg";
 
   return (
     <motion.div
       variants={cardHoverVariant}
       initial="rest"
       whileHover="hover"
-      className="flex flex-col bg-white rounded-xl border border-clinical-200 overflow-hidden transition-colors hover:border-med-teal-400 group"
+      className="flex flex-col bg-white rounded-2xl border border-clinical-200 overflow-hidden transition-all duration-300 hover:border-med-teal-400 hover:shadow-xl group"
     >
-      {/* Product Image Display Frame */}
-      <div className="relative h-64 bg-gradient-to-b from-slate-900 via-slate-900 to-navy-950 flex items-center justify-center overflow-hidden border-b border-clinical-200 p-4 group">
-        {/* Subtle radial spotlight backdrop */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-med-teal-500/15 via-transparent to-transparent pointer-events-none" />
-
+      {/* Product Image Display Frame with Pure White Background */}
+      <div className="relative h-64 bg-white flex items-center justify-center overflow-hidden border-b border-clinical-100 p-4 group">
         {/* Category & Badge Indicators */}
         <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
-          <Badge variant={isAnaesthesia ? "primary" : "navy"} className="shadow-xs bg-slate-900/90 text-med-teal-300 border border-med-teal-500/30 backdrop-blur-md">
+          <Badge variant={isAnaesthesia ? "primary" : "navy"} className="shadow-2xs bg-white/95 text-med-teal-700 border border-slate-200/80 backdrop-blur-md font-semibold">
             {isAnaesthesia ? "Anaesthesia Workstation" : "ICU Ventilator"}
           </Badge>
         </div>
         <div className="absolute top-3.5 right-3.5 z-10">
-          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-300 bg-slate-900/90 px-2.5 py-0.5 rounded-full border border-slate-700 shadow-xs font-mono backdrop-blur-md">
+          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white/95 px-2.5 py-0.5 rounded-full border border-slate-200 shadow-2xs font-mono backdrop-blur-md">
             AMTZ IHUB
           </span>
         </div>
 
-        {/* Product Image with smooth hover scale */}
-        <div className="relative w-full h-full">
+        {/* Product Image with smooth hover scale on Pure White Canvas */}
+        <div className="relative w-full h-full flex items-center justify-center">
           <Image
             src={primaryImage}
             alt={`${product.name} — Indigenous ${isAnaesthesia ? "Anaesthesia Delivery Platform" : "Intensive Care Ventilator"}`}
             fill
+            quality={95}
+            unoptimized
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-contain object-center drop-shadow-[0_12px_20px_rgba(0,0,0,0.6)] group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="object-contain object-center filter drop-shadow-sm group-hover:scale-105 transition-transform duration-500 ease-out"
           />
         </div>
       </div>

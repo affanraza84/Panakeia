@@ -1,215 +1,206 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Container } from "./Container";
-import { ArrowRight, ChevronLeft, ChevronRight, X, ZoomIn, Award } from "lucide-react";
+import { 
+  ChevronLeft, 
+  ChevronRight, 
+  X, 
+  ZoomIn, 
+  ZoomOut, 
+  RotateCcw, 
+  Award, 
+  ShieldCheck, 
+  Maximize2,
+  FileCheck
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface AwardItem {
   id: string;
   image: string;
   title: string;
+  subtitle: string;
   description: string;
+  accreditationBody: string;
   actionText: string;
   category: string;
+  number?: string;
 }
 
 const AWARDS: AwardItem[] = [
   {
-    id: "award-1",
-    image: "/image/WhatsApp Image 2026-08-17 at 19.14.26.jpeg",
-    title: "VCCI Excellence Awards 2024",
-    description: "Star of Industry — Awarded for Innovation in Medical Devices by The Vizagapatam Chamber of Commerce & Industry.",
-    actionText: "View Award",
-    category: "Industry Recognition",
-  },
-  {
-    id: "award-2",
-    image: "/image/WhatsApp Image 2026-08-17 at 19.14.29.jpeg",
-    title: "VCCI Award of Recognition 2024",
-    description: "Presented by Ms Sandhya Devanathan (MD & VP - Meta India) for Pioneer Innovation in Medical Devices.",
-    actionText: "View Award",
-    category: "National Distinction",
-  },
-  {
-    id: "award-3",
-    image: "/image/WhatsApp Image 2026-08-17 at 19.14.18.jpeg",
-    title: "KIHT ISO 13485:2016 Certification",
-    description: "Medical Devices Quality Management System accredited by Kalam Institute of Health Technology & UAF.",
-    actionText: "View Certificate",
-    category: "Quality Standard",
-  },
-  {
-    id: "award-4",
+    id: "award-iso-9001",
     image: "/image/WhatsApp Image 2026-08-17 at 19.14.14.jpeg",
-    title: "EuroPaCert ISO 9001:2015",
-    description: "Certified Quality Management for Critical Care Anaesthesia & Ventilator Manufacturing.",
-    actionText: "View Certificate",
+    title: "EuroPaCert ISO 9001:2015 Quality Management System",
+    subtitle: "Certificate No: EPC2024Q1198 — Medical Device Manufacturing",
+    description: "Certified quality management for the design, development, manufacture, and servicing of Critical Care Anaesthesia Workstations and Intensive Care Ventilators.",
+    accreditationBody: "EuroPaCert International",
+    actionText: "View ISO 9001 Certificate",
     category: "International Standard",
+    number: "ISO 9001:2015",
+  },
+  {
+    id: "award-iso-13485",
+    image: "/image/WhatsApp Image 2026-08-17 at 19.14.18.jpeg",
+    title: "KIHT ISO 13485:2016 Medical Devices Quality System",
+    subtitle: "Accredited by Kalam Institute of Health Technology & UAF (USA)",
+    description: "Medical Devices Quality Management System (MDQMS) validating strict regulatory and clinical safety compliance for high-acuity life-support equipment.",
+    accreditationBody: "KIHT & UAF Accreditation",
+    actionText: "View ISO 13485 Certificate",
+    category: "Medical Device Standard",
+    number: "ISO 13485:2016",
+  },
+  {
+    id: "award-vcci-excellence",
+    image: "/image/WhatsApp Image 2026-08-17 at 19.14.26.jpeg",
+    title: "VCCI Excellence Awards 2024 — Star of Industry",
+    subtitle: "Presented by The Vizagapatam Chamber of Commerce & Industry",
+    description: "Conferred 'Star of Industry' in recognition of pioneering self-reliance and engineering excellence in indigenous medical device manufacturing at the AMTZ bio-cluster.",
+    accreditationBody: "VCCI Industry Conclave",
+    actionText: "View Award Plaque",
+    category: "Industry Recognition",
+    number: "Star of Industry 2024",
+  },
+  {
+    id: "award-vcci-recognition",
+    image: "/image/WhatsApp Image 2026-08-17 at 19.14.29.jpeg",
+    title: "VCCI Award of Recognition 2024 — Medical Devices",
+    subtitle: "Presented by Ms Sandhya Devanathan (MD & VP - Meta India)",
+    description: "Honored for innovation and high-acuity critical care device engineering, presented during the VCCI Conclave by Meta India leadership.",
+    accreditationBody: "VCCI & Meta India",
+    actionText: "View Award Plaque",
+    category: "National Distinction",
+    number: "Innovation Award 2024",
   },
 ];
 
 export function AwardsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAward, setSelectedAward] = useState<AwardItem | null>(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const [zoomScale, setZoomScale] = useState(1);
 
-  // Auto-slide every 5 seconds unless paused or modal is open
-  useEffect(() => {
-    if (isPaused || selectedAward !== null) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % AWARDS.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isPaused, selectedAward]);
-
-  // Auto-scroll the active card into view smoothly
-  useEffect(() => {
-    if (carouselRef.current) {
-      const activeCard = carouselRef.current.children[currentIndex] as HTMLElement | undefined;
-      if (activeCard) {
-        const container = carouselRef.current;
-        const scrollLeft =
-          activeCard.offsetLeft - container.offsetWidth / 2 + activeCard.offsetWidth / 2;
-        container.scrollTo({
-          left: Math.max(0, scrollLeft),
-          behavior: "smooth",
-        });
-      }
-    }
-  }, [currentIndex]);
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % AWARDS.length);
+  const handleOpenLightbox = (award: AwardItem) => {
+    setSelectedAward(award);
+    setZoomScale(1);
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + AWARDS.length) % AWARDS.length);
+  const handleZoomIn = () => {
+    setZoomScale((prev) => Math.min(prev + 0.25, 2.5));
+  };
+
+  const handleZoomOut = () => {
+    setZoomScale((prev) => Math.max(prev - 0.25, 0.75));
+  };
+
+  const handleResetZoom = () => {
+    setZoomScale(1);
   };
 
   return (
     <section className="py-16 lg:py-24 bg-[#f8fafc] overflow-hidden relative border-t border-clinical-200">
-      {/* Background subtle elements */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-med-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Background subtle ambiance */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#0062d2]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-med-teal-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Left Column: Heading & Description */}
-          <div className="lg:col-span-5 space-y-5">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#0062d2]">
-              <Award className="w-4 h-4" />
-              OUR ACHIEVEMENTS
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-navy-950 tracking-tight leading-tight">
-              Awards & Recognitions
-            </h2>
-
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Recognizing excellence in medical equipment innovation and quality
-            </p>
-
-            {/* Slider Navigation Controls */}
-            <div className="flex items-center gap-3 pt-2">
-              <button
-                onClick={handlePrev}
-                aria-label="Previous award"
-                className="w-10 h-10 rounded-full border border-slate-300 bg-white hover:bg-slate-50 hover:border-slate-400 text-slate-700 flex items-center justify-center transition-all shadow-xs active:scale-95 cursor-pointer"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={handleNext}
-                aria-label="Next award"
-                className="w-10 h-10 rounded-full border border-slate-300 bg-white hover:bg-slate-50 hover:border-slate-400 text-slate-700 flex items-center justify-center transition-all shadow-xs active:scale-95 cursor-pointer"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-              <span className="text-xs text-slate-500 font-medium ml-2">
-                {currentIndex + 1} / {AWARDS.length}
-              </span>
-            </div>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#0062d2] text-xs font-bold uppercase tracking-widest shadow-2xs">
+            <Award className="w-4 h-4 text-[#0062d2]" />
+            <span>AUTHENTICATED ACCREDITATIONS & AWARDS</span>
           </div>
 
-          {/* Right Column: 3D-Style Card Carousel */}
-          <div className="lg:col-span-7 relative">
-            <div
-              ref={carouselRef}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-              className="flex items-center gap-4 sm:gap-6 overflow-x-auto no-scrollbar pb-6 pt-4 px-2 snap-x"
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-navy-950 tracking-tight leading-tight">
+            Awards & Regulatory Certifications
+          </h2>
+
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            All certifications and awards are independently verified and manufactured under strict medical quality frameworks at AMTZ Visakhapatnam.
+          </p>
+        </div>
+
+        {/* 4 HIGH-DEFINITION CERTIFICATE & AWARD CARDS GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          {AWARDS.map((award) => (
+            <motion.div
+              key={award.id}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.25 }}
+              className="bg-white rounded-3xl border-2 border-slate-200 shadow-md hover:shadow-xl hover:border-[#0062d2]/60 transition-all duration-300 flex flex-col overflow-hidden group"
             >
-              {AWARDS.map((award, index) => {
-                const isCurrent = index === currentIndex;
+              {/* Category & Badge Header */}
+              <div className="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-bold bg-white text-[#0062d2] border border-blue-200 shadow-2xs">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#0062d2]" />
+                  {award.category}
+                </span>
+                <span className="text-xs font-mono font-semibold text-slate-700 bg-white px-2.5 py-1 rounded-lg border border-slate-200 shadow-2xs">
+                  {award.number}
+                </span>
+              </div>
 
-                return (
-                  <motion.div
-                    key={award.id}
-                    layout
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`shrink-0 w-[260px] sm:w-[290px] md:w-[320px] rounded-2xl bg-white border transition-all duration-300 snap-center cursor-pointer ${
-                      isCurrent
-                        ? "shadow-2xl ring-2 ring-[#0062d2]/20 border-[#0062d2]/30 scale-105 z-20"
-                        : "shadow-md hover:shadow-lg border-slate-200 opacity-80 hover:opacity-100 scale-95 z-10"
-                    }`}
+              {/* PURE WHITE IMAGE CONTAINER (Balanced 380px height) */}
+              <div 
+                style={{ height: "380px", minHeight: "380px" }}
+                className="relative w-full bg-white p-4 sm:p-6 flex items-center justify-center border-b border-slate-100 overflow-hidden cursor-pointer group/img"
+                onClick={() => handleOpenLightbox(award)}
+              >
+                <Image
+                  src={award.image}
+                  alt={award.title}
+                  fill
+                  priority
+                  quality={100}
+                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain object-center p-2 transition-transform duration-300 group-hover/img:scale-[1.02] filter drop-shadow-sm"
+                />
+
+                {/* Hover Quick Zoom Button */}
+                <div className="absolute inset-0 bg-navy-950/15 backdrop-blur-[2px] opacity-0 group-hover/img:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                  <span className="px-4 py-2 rounded-xl bg-navy-950/90 text-white font-bold text-xs shadow-lg flex items-center gap-2 transform translate-y-2 group-hover/img:translate-y-0 transition-transform">
+                    <Maximize2 className="w-4 h-4 text-[#0062d2]" />
+                    Click to View Full Document
+                  </span>
+                </div>
+              </div>
+
+              {/* Card Body & Details */}
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4 bg-white">
+                <div className="space-y-2">
+                  <h3 className="font-bold text-lg sm:text-xl text-navy-950 font-heading leading-snug">
+                    {award.title}
+                  </h3>
+                  <p className="text-xs font-semibold text-slate-500 font-mono">
+                    {award.subtitle}
+                  </p>
+                  <p className="text-sm text-slate-600 leading-relaxed pt-1">
+                    {award.description}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <button
+                    onClick={() => handleOpenLightbox(award)}
+                    className="inline-flex items-center gap-2 text-sm font-bold text-[#0062d2] hover:text-[#004bb5] transition-colors cursor-pointer group/btn"
                   >
-                    {/* Award Image Container */}
-                    <div className="relative h-48 sm:h-56 w-full rounded-t-2xl overflow-hidden bg-slate-100/80 p-3 group">
-                      <Image
-                        src={award.image}
-                        alt={award.title}
-                        fill
-                        sizes="(max-width: 640px) 260px, (max-width: 768px) 290px, 320px"
-                        className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedAward(award);
-                        }}
-                        aria-label={`Enlarge ${award.title}`}
-                        className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-xs text-slate-700 shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white hover:text-[#0062d2]"
-                      >
-                        <ZoomIn className="w-4 h-4" />
-                      </button>
-                    </div>
+                    <span>{award.actionText}</span>
+                    <Maximize2 className="w-4 h-4 transition-transform group-hover/btn:scale-110" />
+                  </button>
 
-                    {/* Award Content */}
-                    <div className="p-5 space-y-2.5">
-                      <h3 className="font-bold text-base text-navy-950 line-clamp-1 font-heading">
-                        {award.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                        {award.description}
-                      </p>
-
-                      <div className="pt-2">
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedAward(award);
-                          }}
-                          className="text-xs sm:text-sm font-bold text-[#0062d2] hover:text-[#004bb5] inline-flex items-center gap-1 transition-colors"
-                        >
-                          {award.actionText}
-                        </button>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+                  <span className="inline-flex items-center gap-1 text-xs font-mono font-semibold text-slate-500">
+                    <FileCheck className="w-3.5 h-3.5 text-emerald-600" />
+                    Verified Original
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </Container>
 
-      {/* High-Resolution Award Lightbox Modal */}
+      {/* NORMAL, PERFECTLY PROPORTIONED LIGHTBOX MODAL */}
       <AnimatePresence>
         {selectedAward && (
           <motion.div
@@ -217,50 +208,93 @@ export function AwardsSection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedAward(null)}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
+              initial={{ scale: 0.97, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
+              exit={{ scale: 0.97, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
+              className="bg-white rounded-2xl max-w-2xl sm:max-w-3xl w-full overflow-hidden shadow-2xl flex flex-col border border-slate-200"
             >
-              {/* Modal Header */}
-              <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-100">
-                <div>
+              {/* Modal Header with Zoom Tools */}
+              <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-100 bg-white gap-3 shrink-0">
+                <div className="min-w-0">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0062d2]">
                     {selectedAward.category}
                   </span>
-                  <h3 className="text-lg sm:text-xl font-bold text-navy-950 font-heading">
+                  <h3 className="text-base sm:text-lg font-bold text-navy-950 font-heading truncate">
                     {selectedAward.title}
                   </h3>
                 </div>
-                <button
-                  onClick={() => setSelectedAward(null)}
-                  className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors"
-                  aria-label="Close modal"
+
+                {/* Zoom & Close Toolbar */}
+                <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center bg-slate-100 rounded-xl p-1 border border-slate-200">
+                    <button
+                      onClick={handleZoomOut}
+                      disabled={zoomScale <= 0.75}
+                      className="p-1.5 rounded-lg hover:bg-white text-slate-700 disabled:opacity-40 disabled:hover:bg-transparent transition-colors cursor-pointer"
+                      title="Zoom Out"
+                    >
+                      <ZoomOut className="w-4 h-4" />
+                    </button>
+                    <span className="text-xs font-bold px-2 text-slate-700 min-w-[3rem] text-center font-mono">
+                      {Math.round(zoomScale * 100)}%
+                    </span>
+                    <button
+                      onClick={handleZoomIn}
+                      disabled={zoomScale >= 2.5}
+                      className="p-1.5 rounded-lg hover:bg-white text-slate-700 disabled:opacity-40 disabled:hover:bg-transparent transition-colors cursor-pointer"
+                      title="Zoom In"
+                    >
+                      <ZoomIn className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={handleResetZoom}
+                      className="p-1.5 rounded-lg hover:bg-white text-slate-700 transition-colors ml-1 cursor-pointer"
+                      title="Reset (100%)"
+                    >
+                      <RotateCcw className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+
+                  <button
+                    onClick={() => setSelectedAward(null)}
+                    className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors ml-1 cursor-pointer"
+                    aria-label="Close modal"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Normal Sized Modal Image Viewport */}
+              <div 
+                style={{ height: "380px", minHeight: "380px", position: "relative" }}
+                className="relative w-full bg-slate-50/60 p-4 sm:p-6 flex items-center justify-center overflow-auto"
+              >
+                <div
+                  style={{ transform: `scale(${zoomScale})`, transformOrigin: "center center" }}
+                  className="transition-transform duration-200 flex items-center justify-center max-w-full max-h-full"
                 >
-                  <X className="w-5 h-5" />
-                </button>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={selectedAward.image}
+                    alt={selectedAward.title}
+                    className="max-h-[340px] max-w-full w-auto h-auto object-contain filter drop-shadow-sm rounded-lg bg-white"
+                  />
+                </div>
               </div>
 
-              {/* Modal Image */}
-              <div className="relative w-full h-[380px] sm:h-[480px] bg-slate-50 p-4">
-                <Image
-                  src={selectedAward.image}
-                  alt={selectedAward.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 700px"
-                  className="object-contain"
-                />
-              </div>
-
-              {/* Modal Footer Description */}
-              <div className="p-4 sm:p-5 bg-slate-50 border-t border-slate-100">
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              {/* Modal Footer */}
+              <div className="p-4 sm:p-5 bg-white border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
                   {selectedAward.description}
                 </p>
+                <div className="text-xs font-semibold text-slate-400 shrink-0 font-mono">
+                  AMTZ Bio-Cluster Verified
+                </div>
               </div>
             </motion.div>
           </motion.div>

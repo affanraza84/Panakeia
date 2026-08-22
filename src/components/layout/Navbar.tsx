@@ -60,8 +60,10 @@ export function Navbar() {
               alt="PANAKEIA MEDTECH PVT. LTD."
               fill
               priority
+              quality={100}
+              unoptimized
               sizes="(max-width: 640px) 145px, (max-width: 1024px) 165px, 180px"
-              className="object-contain object-left drop-shadow-2xs"
+              className="object-contain object-left"
             />
           </div>
         </Link>

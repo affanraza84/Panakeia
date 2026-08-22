@@ -50,14 +50,16 @@ export function Footer() {
         <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Company Bio */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block bg-white p-2 rounded-xl border border-navy-700 shadow-md">
-              <div className="relative h-14 sm:h-16 w-[68px] sm:w-[76px]">
+            <Link href="/" className="inline-block bg-white p-2 rounded-xl border border-slate-200 shadow-md">
+              <div className="relative h-14 sm:h-16 w-[120px] sm:w-[140px]">
                 <Image
                   src="/image/logo.jpeg"
                   alt="PANAKEIA MEDTECH PVT. LTD."
                   fill
-                  sizes="76px"
-                  className="object-contain object-center"
+                  quality={100}
+                  unoptimized
+                  sizes="140px"
+                  className="object-contain object-left"
                 />
               </div>
             </Link>
@@ -78,34 +80,34 @@ export function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link
-                  href="/products/panakeia-aesthetica-700"
+                  href="/products/three-gas-system-advanced-anaesthesia-workstation"
                   className="hover:text-white transition-colors"
                 >
-                  Aesthetica 700 Workstation
+                  Three-Gas Advanced Workstation
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/panakeia-aesthetica-500"
+                  href="/products/two-gas-system-basic-anaesthesia-workstation"
                   className="hover:text-white transition-colors"
                 >
-                  Aesthetica 500 Compact
+                  Two-Gas Basic Workstation
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/panakeia-respi-icu-900"
+                  href="/products/basic-premium-anaesthesia-machine"
                   className="hover:text-white transition-colors"
                 >
-                  RespiCare ICU 900
+                  Basic Premium Anaesthesia Machine
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/panakeia-respi-transport-300"
+                  href="/products/icu-critical-care-ventilator"
                   className="hover:text-white transition-colors"
                 >
-                  RespiCare Transport 300
+                  Advanced ICU Ventilator
                 </Link>
               </li>
               <li>

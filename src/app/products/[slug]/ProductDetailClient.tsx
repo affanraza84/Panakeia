@@ -26,7 +26,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const images =
     product.images && product.images.length > 0
       ? product.images
-      : [`/images/products/${product.slug}.jpg`];
+      : [`/images/products/${product.slug}.jpeg`];
 
   const currentImage = images[activeImageIndex] || images[0];
 
@@ -34,16 +34,16 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
     <div className="space-y-12">
       {/* Top Product Overview Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-        {/* Left: Interactive Image Gallery */}
+        {/* Left: Interactive Image Gallery on Pure White Canvas */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="bg-slate-900 rounded-2xl border border-clinical-200 h-96 sm:h-[480px] flex items-center justify-center relative overflow-hidden shadow-lg">
+          <div className="bg-white rounded-2xl border border-clinical-200 h-96 sm:h-[480px] p-6 flex items-center justify-center relative overflow-hidden shadow-md">
             <div className="absolute top-4 left-4 z-10">
-              <Badge variant={isAnaesthesia ? "primary" : "navy"} className="bg-white/95 shadow-sm">
+              <Badge variant={isAnaesthesia ? "primary" : "navy"} className="bg-white/95 text-med-teal-700 border border-slate-200/80 shadow-2xs font-semibold">
                 {isAnaesthesia ? "Anaesthesia Delivery" : "ICU Ventilation"}
               </Badge>
             </div>
             <div className="absolute top-4 right-4 z-10">
-              <span className="text-[11px] font-mono text-clinical-700 bg-white/95 px-2.5 py-1 rounded-md border border-clinical-200 shadow-2xs font-semibold">
+              <span className="text-[11px] font-mono text-slate-700 bg-white/95 px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs font-semibold">
                 AMTZ IHUB C-20
               </span>
             </div>
@@ -56,40 +56,43 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="relative w-full h-full"
+                className="relative w-full h-full flex items-center justify-center"
               >
                 <Image
                   src={currentImage}
                   alt={`${product.name} — Technical Overview`}
                   fill
                   priority
+                  quality={95}
+                  unoptimized
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center"
+                  className="object-contain object-center filter drop-shadow-sm"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               </motion.div>
             </AnimatePresence>
           </div>
 
-          {/* Thumbnail Strip */}
+          {/* Thumbnail Strip with Pure White Backgrounds */}
           {images.length > 1 && (
             <div className="flex items-center gap-3 overflow-x-auto pb-2">
               {images.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
-                  className={`relative h-20 w-24 rounded-lg border-2 overflow-hidden transition-all bg-slate-900 cursor-pointer ${
+                  className={`relative h-20 w-24 rounded-xl border-2 overflow-hidden transition-all bg-white cursor-pointer ${
                     activeImageIndex === idx
-                      ? "border-med-teal-500 shadow-xs ring-2 ring-med-teal-500/30"
-                      : "border-clinical-200 hover:border-clinical-400 opacity-70 hover:opacity-100"
+                      ? "border-med-teal-500 shadow-sm ring-2 ring-med-teal-500/30"
+                      : "border-clinical-200 hover:border-clinical-400 opacity-75 hover:opacity-100"
                   }`}
                 >
                   <Image
                     src={img}
                     alt={`Thumbnail view ${idx + 1}`}
                     fill
+                    quality={95}
+                    unoptimized
                     sizes="96px"
-                    className="object-cover"
+                    className="object-contain p-1"
                   />
                 </button>
               ))}
