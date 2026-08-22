@@ -26,16 +26,19 @@ export function ProductCard({ product }: ProductCardProps) {
       className="flex flex-col bg-white rounded-xl border border-clinical-200 overflow-hidden transition-colors hover:border-med-teal-400 group"
     >
       {/* Product Image Display Frame */}
-      <div className="relative h-64 bg-slate-900 flex items-center justify-center overflow-hidden border-b border-clinical-200">
+      <div className="relative h-64 bg-gradient-to-b from-slate-900 via-slate-900 to-navy-950 flex items-center justify-center overflow-hidden border-b border-clinical-200 p-4 group">
+        {/* Subtle radial spotlight backdrop */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-med-teal-500/15 via-transparent to-transparent pointer-events-none" />
+
         {/* Category & Badge Indicators */}
         <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
-          <Badge variant={isAnaesthesia ? "primary" : "navy"} className="shadow-xs bg-white/95">
+          <Badge variant={isAnaesthesia ? "primary" : "navy"} className="shadow-xs bg-slate-900/90 text-med-teal-300 border border-med-teal-500/30 backdrop-blur-md">
             {isAnaesthesia ? "Anaesthesia Workstation" : "ICU Ventilator"}
           </Badge>
         </div>
         <div className="absolute top-3.5 right-3.5 z-10">
-          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-clinical-700 bg-white/95 px-2.5 py-0.5 rounded-full border border-clinical-200 shadow-xs font-mono">
-            AMTZ IHUB C-20
+          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-300 bg-slate-900/90 px-2.5 py-0.5 rounded-full border border-slate-700 shadow-xs font-mono backdrop-blur-md">
+            AMTZ IHUB
           </span>
         </div>
 
@@ -46,9 +49,8 @@ export function ProductCard({ product }: ProductCardProps) {
             alt={`${product.name} — Indigenous ${isAnaesthesia ? "Anaesthesia Delivery Platform" : "Intensive Care Ventilator"}`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="object-contain object-center drop-shadow-[0_12px_20px_rgba(0,0,0,0.6)] group-hover:scale-105 transition-transform duration-500 ease-out"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
         </div>
       </div>
 

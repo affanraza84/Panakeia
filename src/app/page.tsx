@@ -4,31 +4,22 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ProductCard } from "@/components/ui/ProductCard";
 import { StatCounter } from "@/components/ui/StatCounter";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { CertificationCard } from "@/components/ui/CertificationCard";
 import { CleanHeroVideo } from "@/components/ui/CleanHeroVideo";
 import { AwardsSection } from "@/components/ui/AwardsSection";
-import { getProducts, getClients, getCertifications } from "@/lib/data";
+import { EquipmentShowcase } from "@/components/ui/EquipmentShowcase";
+import { getClients, getCertifications } from "@/lib/data";
 import {
-  ShieldCheck,
   Zap,
-  Clock,
   Wrench,
-  Building2,
-  ArrowRight,
-  Sparkles,
-  CheckCircle2,
-  Cpu,
-  Layers,
   HeartPulse,
 } from "lucide-react";
 
 export const revalidate = 3600; // ISR 1 hour
 
 export default async function HomePage() {
-  const products = await getProducts();
   const clients = await getClients();
   const certifications = await getCertifications();
 
@@ -74,7 +65,10 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* 3. WHY INDIGENOUS MANUFACTURING SECTION */}
+      {/* 3. INTERACTIVE INDIGENOUS EQUIPMENT SHOWCASE (Featuring 4 Flagship Systems) */}
+      <EquipmentShowcase />
+
+      {/* 4. WHY INDIGENOUS MANUFACTURING SECTION */}
       <section className="py-16 lg:py-24 bg-clinical-50/60">
         <Container>
           <SectionHeading
@@ -119,34 +113,6 @@ export default async function HomePage() {
                 Designed alongside active senior anaesthesiologists and intensivists. Features intuitive color touchscreens, instant mode switching, and fail-safe mechanical gas flow backups for high-stress emergency surgical cases.
               </p>
             </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* 4. PRODUCT HIGHLIGHTS */}
-      <section className="py-16 lg:py-24 bg-white">
-        <Container>
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-med-teal-600 px-3 py-1 rounded-full bg-med-teal-50 border border-med-teal-200 inline-block mb-3">
-                Critical Care Portfolio
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-navy-950">
-                Anaesthesia Workstations & Ventilators
-              </h2>
-            </div>
-            <Link
-              href="/products"
-              className="mt-4 md:mt-0 text-sm font-semibold text-med-teal-600 hover:text-med-teal-700 inline-flex items-center gap-1.5"
-            >
-              Browse Full Catalog & Technical Sheets <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {products.slice(0, 4).map((product) => (
-              <ProductCard key={product.slug} product={product} />
-            ))}
           </div>
         </Container>
       </section>
