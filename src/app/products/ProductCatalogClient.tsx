@@ -8,7 +8,7 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Container } from "@/components/ui/Container";
 import { staggerContainerVariant, fadeUpVariant } from "@/lib/animations";
-import { Stethoscope, Wind, LayoutGrid, Activity, Syringe, BriefcaseMedical } from "lucide-react";
+import { Stethoscope, Wind, LayoutGrid, Activity, Syringe, BriefcaseMedical, Sparkles, Sliders, ArrowRight, CheckCircle2 } from "lucide-react";
 
 interface ProductCatalogClientProps {
   initialProducts: IProduct[];
@@ -66,6 +66,45 @@ export function ProductCatalogClient({
   return (
     <div className="py-12 lg:py-16">
       <Container>
+        {/* Bespoke Customization & Tailored Engineering Highlight Banner */}
+        <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-navy-950 via-slate-900 to-navy-950 border border-med-teal-500/30 text-white shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-med-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="space-y-3 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-med-teal-950/90 border border-med-teal-400/40 text-med-teal-300 text-xs font-bold uppercase tracking-wider">
+                <Sliders className="w-3.5 h-3.5 text-med-teal-400" />
+                100% In-House R&D & Bespoke Design
+              </div>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-heading text-white tracking-tight">
+                All Products Are Fully Customizable to Your Clinical Specifications
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+                Because we engineer and manufacture every device indigenously at our AMTZ facility, we can tailor-design hardware, pneumatic flow circuits, telemetry interfaces, and mechanical ergonomics to match your hospital’s precise clinical workflows and institutional requirements.
+              </p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1 text-xs text-slate-200">
+                <span className="flex items-center gap-1.5 font-medium">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-med-teal-400" /> Custom Gas & Sensor Manifolds
+                </span>
+                <span className="flex items-center gap-1.5 font-medium">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-med-teal-400" /> Hospital EMR / Telemetry Integration
+                </span>
+                <span className="flex items-center gap-1.5 font-medium">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-med-teal-400" /> Institutional & OEM Configurations
+                </span>
+              </div>
+            </div>
+            <div className="shrink-0">
+              <a
+                href="/contact?type=oem"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-med-teal-500 to-med-teal-600 hover:from-med-teal-600 hover:to-med-teal-700 text-white text-xs sm:text-sm font-bold shadow-lg shadow-med-teal-500/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              >
+                <span>Request Tailored Solution</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Filter / Category Tab Switcher with animated underline */}
         <div className="flex justify-center mb-12">
           <div className="flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-clinical-100/80 border border-clinical-200 shadow-2xs max-w-5xl">

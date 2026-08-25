@@ -241,7 +241,7 @@ export function EquipmentShowcase() {
             Precision Critical Care Equipment
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            Explore Panakeia&apos;s indigenous medical device portfolio manufactured at AMTZ Visakhapatnam — delivering surgical reliability, clinical ergonomics, and zero import downtime.
+            Explore Panakeia&apos;s indigenous medical device portfolio manufactured at AMTZ Visakhapatnam. All systems are 100% customizable to your hospital&apos;s clinical infrastructure, pneumatic requirements, and workflow needs.
           </p>
         </div>
 

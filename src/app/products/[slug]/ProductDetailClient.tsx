@@ -13,6 +13,7 @@ import {
   Building2,
   Phone,
   ArrowRight,
+  Sliders,
 } from "lucide-react";
 
 interface ProductDetailClientProps {
@@ -151,8 +152,35 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
             </div>
           </div>
 
+          {/* Bespoke Customization Callout */}
+          <div className="p-4 rounded-2xl bg-gradient-to-r from-med-teal-50/90 via-white to-clinical-50 border border-med-teal-300/80 flex items-start gap-3.5 shadow-2xs">
+            <div className="p-2 rounded-xl bg-med-teal-100/80 text-med-teal-700 shrink-0 mt-0.5">
+              <Sliders className="w-4 h-4" />
+            </div>
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-navy-950 font-heading">
+                  100% Customizable Engineering Available
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-med-teal-100 text-med-teal-800 font-bold uppercase">
+                  Bespoke R&D
+                </span>
+              </div>
+              <p className="text-xs text-clinical-700 leading-relaxed">
+                Need specialized modifications for your hospital? Because this device is designed and manufactured in-house at AMTZ, we can customize gas circuits, display telemetry, software protocols, and mounting ergonomics to match your clinical workflow.
+              </p>
+              <a
+                href={`/contact?type=oem&product=${encodeURIComponent(product.slug)}`}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-med-teal-700 hover:text-med-teal-800 pt-1 transition-colors"
+              >
+                <span>Request Custom Hospital Configurations</span>
+                <ArrowRight className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
+
           {/* Action CTAs */}
-          <div className="pt-4 border-t border-clinical-200 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <div className="pt-2 border-t border-clinical-200 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             {/* Pulsing Request Quote CTA */}
             <motion.div
               initial={{ scale: 1 }}
