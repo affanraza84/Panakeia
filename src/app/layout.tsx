@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SessionEngagementPrompt } from "@/components/auth/SessionEngagementPrompt";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -65,15 +67,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${jakarta.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
+    <ClerkProvider
+      appearance={{
+        variables: {
+          colorPrimary: "#0d9488", // med-teal-600
+          colorBackground: "#ffffff",
+          borderRadius: "0.75rem",
+        },
+      }}
     >
-      <body className="min-h-full flex flex-col bg-white text-clinical-900 font-sans">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
-    </html>
+      <html
+        lang="en"
+        className={`${inter.variable} ${jakarta.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
+      >
+        <body className="min-h-full flex flex-col bg-white text-clinical-900 font-sans">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <SessionEngagementPrompt />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

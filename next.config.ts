@@ -2,12 +2,14 @@ import type { NextConfig } from "next";
 
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval';
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.clerk.accounts.dev https://*.clerk.com https://challenges.cloudflare.com https://cdn.jsdelivr.net;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' https://fonts.gstatic.com data:;
-  img-src 'self' data: blob: https://res.cloudinary.com https://images.unsplash.com;
+  img-src 'self' data: blob: https://img.clerk.com https://images.clerk.dev https://*.clerk.accounts.dev https://res.cloudinary.com https://images.unsplash.com;
   media-src 'self' data: blob:;
-  connect-src 'self' https://api.resend.com;
+  connect-src 'self' https://api.resend.com https://*.clerk.accounts.dev https://*.clerk.com https://api.clerk.com https://challenges.cloudflare.com;
+  worker-src 'self' blob:;
+  frame-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://challenges.cloudflare.com;
   frame-ancestors 'none';
   form-action 'self';
   base-uri 'self';
