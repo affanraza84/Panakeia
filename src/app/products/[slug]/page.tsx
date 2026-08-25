@@ -32,8 +32,18 @@ export async function generateMetadata({
     };
   }
 
+  const categoryLabels: Record<string, string> = {
+    anaesthesia: "Anaesthesia Workstation",
+    ventilator: "ICU Ventilator",
+    monitoring: "Patient Monitor",
+    infusion: "Syringe & Infusion Pump",
+    emergency: "Emergency Resuscitation Kit",
+  };
+
+  const catLabel = categoryLabels[product.category] || "Medical Equipment";
+
   return {
-    title: `${product.name} — Indigenous ${product.category === "anaesthesia" ? "Anaesthesia Workstation" : "ICU Ventilator"}`,
+    title: `${product.name} — Indigenous ${catLabel}`,
     description: product.tagline,
     openGraph: {
       title: `${product.name} | Panakeia Medtech`,
@@ -51,12 +61,20 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     notFound();
   }
 
+  const categoryLabels: Record<string, string> = {
+    anaesthesia: "Anaesthesia Workstation",
+    ventilator: "Medical Ventilator",
+    monitoring: "Patient Monitor",
+    infusion: "Syringe & Infusion Pump",
+    emergency: "Emergency Resuscitation Kit",
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     description: product.description,
-    category: product.category === "anaesthesia" ? "Anaesthesia Workstation" : "Medical Ventilator",
+    category: categoryLabels[product.category] || "Medical Equipment",
     manufacturer: {
       "@type": "Organization",
       name: "Panakeia Medtech Private Limited",

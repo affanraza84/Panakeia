@@ -21,7 +21,23 @@ interface ProductDetailClientProps {
 
 export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const isAnaesthesia = product.category === "anaesthesia";
+
+  const getCategoryLabel = (cat: string) => {
+    switch (cat) {
+      case "anaesthesia":
+        return "Anaesthesia Delivery";
+      case "ventilator":
+        return "ICU Ventilation";
+      case "monitoring":
+        return "Patient Monitoring";
+      case "infusion":
+        return "Infusion & Syringe Systems";
+      case "emergency":
+        return "Emergency & Resuscitation";
+      default:
+        return "Critical Care Device";
+    }
+  };
 
   const images =
     product.images && product.images.length > 0
@@ -38,8 +54,8 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
         <div className="lg:col-span-6 space-y-4">
           <div className="bg-white rounded-2xl border border-clinical-200 h-96 sm:h-[480px] p-6 flex items-center justify-center relative overflow-hidden shadow-md">
             <div className="absolute top-4 left-4 z-10">
-              <Badge variant={isAnaesthesia ? "primary" : "navy"} className="bg-white/95 text-med-teal-700 border border-slate-200/80 shadow-2xs font-semibold">
-                {isAnaesthesia ? "Anaesthesia Delivery" : "ICU Ventilation"}
+              <Badge variant="primary" className="bg-white/95 text-med-teal-700 border border-slate-200/80 shadow-2xs font-semibold">
+                {getCategoryLabel(product.category)}
               </Badge>
             </div>
             <div className="absolute top-4 right-4 z-10">

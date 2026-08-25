@@ -60,7 +60,7 @@ export type EnquiryFormData = z.infer<typeof enquirySchema>;
  * Products Query Parameters Schema
  */
 export const productQuerySchema = z.object({
-  category: z.enum(["anaesthesia", "ventilator"]).optional(),
+  category: z.enum(["anaesthesia", "ventilator", "monitoring", "infusion", "emergency"]).optional(),
 });
 
 /**

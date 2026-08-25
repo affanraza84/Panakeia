@@ -131,6 +131,81 @@ const equipmentData: EquipmentItem[] = [
     ],
     imageSrc: "/images/products/icu-ventilator.jpeg",
   },
+  {
+    id: "patient-monitor",
+    name: "Multi-Parameter Patient Monitor",
+    slug: "multi-para-patient-monitor",
+    categoryLabel: "High-Acuity Vital Signs Monitor",
+    badge: "Clinical Precision",
+    tagline: "12.1-inch Color Touchscreen Vital Signs Monitor with Anti-Motion SpO2 & Arrhythmia Analysis",
+    description: "Indigenously engineered for continuous real-time physiological monitoring across OT and ICU suites. Features 3/5-lead ECG with arrhythmia analysis, anti-motion SpO2, and smart NIBP.",
+    highlights: [
+      "12.1\" Color TFT Touchscreen with multi-waveform high-contrast layout",
+      "3/5-lead ECG analysis with 23 arrhythmia classifications and ST detection",
+      "Anti-motion low-perfusion SpO2 algorithm with perfusion index telemetry",
+      "Overpressure-protected smart NIBP with auto-interval measurement cycles",
+      "4+ Hours hot-swappable internal lithium-ion battery pack"
+    ],
+    specs: [
+      { label: "Display", value: "12.1\" Color TFT Touchscreen" },
+      { label: "Parameters", value: "ECG, SpO2, NIBP, RESP, 2-Temp, PR" },
+      { label: "Arrhythmia", value: "23 Classifications + ST Analysis" },
+      { label: "SpO2 Range", value: "0 - 100% (±2% Accuracy)" },
+      { label: "Trends", value: "160 Hours tabular & graphic data" },
+      { label: "Battery", value: "4+ Hours continuous monitoring" }
+    ],
+    imageSrc: "/images/products/multi-para-patient-monitor.jpeg",
+  },
+  {
+    id: "syringe-infusion-pump",
+    name: "Syringe & Volumetric Infusion Pump",
+    slug: "syringe-infusion-pump",
+    categoryLabel: "Smart Medication Delivery",
+    badge: "Micro-Step Precision",
+    tagline: "Dual-Channel Syringe & Infusion Pump System with Comprehensive Drug Library & Anti-Bolus Guard",
+    description: "Engineered for critical care and anaesthesia drug delivery with ultra-precise stepper motor drive mechanics, automatic syringe recognition, and dynamic occlusion pressure release.",
+    highlights: [
+      "Micro-step motor precision from 0.01 mL/h to 1500 mL/h with ±2% accuracy",
+      "Automatic syringe brand & size detection for 2mL to 60mL syringes",
+      "Comprehensive onboard Drug Library with safe concentration limits",
+      "12-Level dynamic occlusion pressure detection with anti-bolus safety",
+      "Stackable interlocking frame for multi-pump IV pole mounting towers"
+    ],
+    specs: [
+      { label: "Flow Range", value: "0.01 – 1500.00 mL/h" },
+      { label: "Accuracy", value: "±2% (Mechanical ±1%)" },
+      { label: "Syringe Size", value: "2, 5, 10, 20, 30, 50/60 mL" },
+      { label: "Occlusion", value: "12 Adjustable pressure levels" },
+      { label: "Display", value: "3.5\" High-Contrast Color LCD" },
+      { label: "Battery", value: "6+ Hours continuous runtime" }
+    ],
+    imageSrc: "/images/products/syringe-infusion-pump.jpeg",
+  },
+  {
+    id: "emergency-resuscitation-kit",
+    name: "Emergency Resuscitation & Airway Kit",
+    slug: "emergency-resuscitation-kit",
+    categoryLabel: "Emergency Airway & Trauma",
+    badge: "Field & OT Ready",
+    tagline: "Comprehensive Clinical Trauma & Airway Resuscitation Kit in Waterproof Shockproof Hard Case",
+    description: "A complete field-ready airway management and resuscitation station. Includes adult & pediatric silicone manual resuscitators, LED fiber-optic laryngoscope set, airways, and suction tools.",
+    highlights: [
+      "Autoclavable medical silicone manual resuscitators (Adult 1500mL & Paediatric 550mL)",
+      "Stainless steel fiber-optic LED laryngoscope set with 4 interchangeable blades",
+      "Oxygen reservoir bag assembly with non-rebreathing valve manifold",
+      "Complete assortment of cushioned silicone face masks & Guedel airways",
+      "Heavy-duty IP67 waterproof and impact-resistant custom foam hard case"
+    ],
+    specs: [
+      { label: "Resuscitator", value: "1500mL (Adult) / 550mL (Paediatric)" },
+      { label: "Laryngoscope", value: "Fiber-Optic LED (Blades 1-4)" },
+      { label: "Masks", value: "Sizes 0, 1, 2, 3, 4, 5 Silicone" },
+      { label: "Airways", value: "Guedel Airways + Stylet + Forceps" },
+      { label: "Case Rating", value: "IP67 Waterproof & Impact-Resistant" },
+      { label: "Standard", value: "ISO 10651-4 Compliant" }
+    ],
+    imageSrc: "/images/products/emergency-resuscitation-kit.jpeg",
+  },
 ];
 
 export function EquipmentShowcase() {
@@ -171,21 +246,21 @@ export function EquipmentShowcase() {
         </div>
 
         {/* Tab Selector Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 max-w-4xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10 max-w-5xl mx-auto">
           {equipmentData.map((item, idx) => {
             const isActive = idx === activeIdx;
             return (
               <button
                 key={item.id}
                 onClick={() => setActiveIdx(idx)}
-                className={`relative px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
+                className={`relative px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                   isActive
                     ? "bg-med-teal-500 text-white shadow-lg shadow-med-teal-500/25 border border-med-teal-400"
                     : "bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 border border-slate-700/60"
                 }`}
               >
                 <span className="w-2 h-2 rounded-full bg-white/80 shrink-0" />
-                <span className="truncate max-w-[200px] sm:max-w-none">{item.name.replace("Panakeia ", "")}</span>
+                <span className="truncate max-w-[180px] sm:max-w-none">{item.name.replace("Panakeia ", "")}</span>
                 {isActive && (
                   <motion.div
                     layoutId="activeTabGlow"
@@ -257,14 +332,14 @@ export function EquipmentShowcase() {
             </div>
 
             {/* Quick Thumbnail Navigation Bar with Pure White Backgrounds */}
-            <div className="grid grid-cols-4 gap-2.5 sm:gap-3 w-full max-w-[520px] mt-4">
+            <div className="grid grid-cols-4 sm:grid-cols-7 gap-2 sm:gap-2 w-full max-w-[520px] mt-4">
               {equipmentData.map((item, idx) => {
                 const isSelected = idx === activeIdx;
                 return (
                   <button
                     key={`thumb-${item.id}`}
                     onClick={() => setActiveIdx(idx)}
-                    className={`relative h-16 sm:h-20 rounded-xl overflow-hidden bg-white border transition-all duration-200 cursor-pointer ${
+                    className={`relative h-14 sm:h-16 rounded-xl overflow-hidden bg-white border transition-all duration-200 cursor-pointer ${
                       isSelected
                         ? "border-med-teal-500 ring-2 ring-med-teal-500/40 scale-[1.02] shadow-md shadow-med-teal-500/20"
                         : "border-slate-300/80 opacity-75 hover:opacity-100 hover:border-slate-400"
@@ -277,7 +352,7 @@ export function EquipmentShowcase() {
                       quality={95}
                       unoptimized
                       sizes="120px"
-                      className="object-contain p-1.5"
+                      className="object-contain p-1"
                     />
                   </button>
                 );

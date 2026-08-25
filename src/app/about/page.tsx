@@ -24,7 +24,7 @@ import {
 export const metadata: Metadata = {
   title: "About Us — Clinical Heritage & AMTZ Manufacturing",
   description:
-    "Learn about Panakeia Medtech: 30+ years of critical care clinical experience, live OT engineering roots, and our state-of-the-art manufacturing facility at AMTZ Visakhapatnam.",
+    "Panakeia Medtech is led by industry experts with 35+ years of global experience in critical care and medical technology, manufacturing world-class equipment at AMTZ Visakhapatnam.",
 };
 
 export default function AboutPage() {
@@ -35,7 +35,7 @@ export default function AboutPage() {
     url: "https://panakeiamedtech.com",
     logo: "https://panakeiamedtech.com/images/panakeia-logo.png",
     description:
-      "Indigenous Indian manufacturer of critical care Anaesthesia Workstations and Intensive Care Ventilators at AMTZ Visakhapatnam.",
+      "Indigenous Indian manufacturer of critical care Anaesthesia Workstations and Intensive Care Ventilators at AMTZ Visakhapatnam. Led by industry experts with 35+ years of global experience in critical care and medical technology.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "C-20, IHUB Building, AMTZ Campus, Pragati Maidan",
@@ -91,11 +91,11 @@ export default function AboutPage() {
                       Clinical Foundation
                     </span>
                     <h3 className="text-2xl font-bold font-heading text-white">
-                      30+ Years in High-Acuity Surgical Suites
+                      35+ Years in Global Critical Care & MedTech
                     </h3>
                   </div>
                   <p className="text-xs sm:text-sm text-clinical-200 leading-relaxed">
-                    Our engineering is led by clinical veterans who have spent decades administering anaesthesia, managing complex ICU ventilation, and troubleshooting real-time emergency hardware failures.
+                    Led by industry experts with 35+ years of global experience in critical care and medical technology, our engineering is rooted in decades of live OT administration, ventilator design, and high-acuity patient care.
                   </p>
                   <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-clinical-300">
                     <span>AMTZ Manufacturing Hub</span>
@@ -109,11 +109,11 @@ export default function AboutPage() {
             {/* Right Story Copy */}
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-med-teal-600 bg-med-teal-50 px-3 py-1 rounded-full border border-med-teal-200">
-                <Clock className="w-3.5 h-3.5" /> 3 Decades of Domain Insights
+                <Clock className="w-3.5 h-3.5" /> 35+ Years Global Experience
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-bold font-heading text-navy-950 leading-tight">
-                Designed By Clinicians Who Understand Every Second in the OT Matters
+                Led by Industry Experts with 35+ Years of Global Experience in Critical Care & MedTech
               </h2>
 
               <p className="text-sm sm:text-base text-clinical-700 leading-relaxed">
@@ -164,7 +164,10 @@ export default function AboutPage() {
                   Indigenous Self-Reliance in High-Acuity Medical Systems
                 </h3>
                 <p className="text-sm sm:text-base text-clinical-700 leading-relaxed">
-                  Our core aim is to engineer indigenously developed, world-class Anaesthesia Delivery Systems and ICU Ventilators that eliminate the heavy dependence of Indian healthcare on foreign imports, while ensuring unparalleled reliability, clinical safety, and affordable life-cycle costs.
+                  To develop and promote an indigenous medical product brand that delivers high-quality, reliable and affordable solutions, with the vision of making the brand a trusted name among doctors.
+                </p>
+                <p className="text-sm sm:text-base text-clinical-700 leading-relaxed">
+                  To build a strong indigenous healthcare brand by developing quality medical products in India and establishing the brand as a trusted and preferred choice among doctors nationwide.
                 </p>
                 <div className="pt-2 border-t border-clinical-100 flex items-center gap-2 text-xs font-semibold text-med-teal-700">
                   <Sparkles className="w-3.5 h-3.5" /> Built specifically for Indian hospital operating realities

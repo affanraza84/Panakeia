@@ -40,7 +40,7 @@ const ProductSchema = new Schema<IProduct>(
       type: String,
       required: [true, "Category is required"],
       enum: {
-        values: ["anaesthesia", "ventilator"],
+        values: ["anaesthesia", "ventilator", "monitoring", "infusion", "emergency"],
         message: "{VALUE} is not a supported product category",
       },
     },

@@ -64,7 +64,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-xs sm:text-sm text-clinical-400 leading-relaxed max-w-sm">
-              Panakeia Medtech Private Limited manufactures indigenous critical care Anaesthesia Workstations and Intensive Care Ventilators. Pioneered by clinicians with 30+ years of live OT & ICU experience.
+              Panakeia Medtech manufactures indigenous critical care Anaesthesia Workstations and Intensive Care Ventilators. Led by industry experts with 35+ years of global experience in critical care and medical technology.
             </p>
             <div className="pt-2 text-xs text-clinical-400 space-y-1 font-mono">
               <div>CIN: U33100AP2023PTC123456</div>

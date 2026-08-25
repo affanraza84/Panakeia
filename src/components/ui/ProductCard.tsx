@@ -14,7 +14,24 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const isAnaesthesia = product.category === "anaesthesia";
+  const getCategoryLabel = (cat: string) => {
+    switch (cat) {
+      case "anaesthesia":
+        return "Anaesthesia Workstation";
+      case "ventilator":
+        return "ICU Ventilator";
+      case "monitoring":
+        return "Patient Monitor";
+      case "infusion":
+        return "Infusion / Syringe Pump";
+      case "emergency":
+        return "Emergency Resuscitation";
+      default:
+        return "Medical Device";
+    }
+  };
+
+  const categoryLabel = getCategoryLabel(product.category);
   const primaryImage = product.images?.[0] || "/images/products/three-gas-system-advanced-anaesthesia-workstation.jpeg";
 
   return (
@@ -28,8 +45,8 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="relative h-64 bg-white flex items-center justify-center overflow-hidden border-b border-clinical-100 p-4 group">
         {/* Category & Badge Indicators */}
         <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
-          <Badge variant={isAnaesthesia ? "primary" : "navy"} className="shadow-2xs bg-white/95 text-med-teal-700 border border-slate-200/80 backdrop-blur-md font-semibold">
-            {isAnaesthesia ? "Anaesthesia Workstation" : "ICU Ventilator"}
+          <Badge variant="primary" className="shadow-2xs bg-white/95 text-med-teal-700 border border-slate-200/80 backdrop-blur-md font-semibold">
+            {categoryLabel}
           </Badge>
         </div>
         <div className="absolute top-3.5 right-3.5 z-10">
@@ -42,7 +59,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="relative w-full h-full flex items-center justify-center">
           <Image
             src={primaryImage}
-            alt={`${product.name} — Indigenous ${isAnaesthesia ? "Anaesthesia Delivery Platform" : "Intensive Care Ventilator"}`}
+            alt={`${product.name} — Indigenous ${categoryLabel}`}
             fill
             quality={95}
             unoptimized

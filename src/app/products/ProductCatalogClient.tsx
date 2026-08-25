@@ -8,7 +8,7 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Container } from "@/components/ui/Container";
 import { staggerContainerVariant, fadeUpVariant } from "@/lib/animations";
-import { Stethoscope, Wind, LayoutGrid } from "lucide-react";
+import { Stethoscope, Wind, LayoutGrid, Activity, Syringe, BriefcaseMedical } from "lucide-react";
 
 interface ProductCatalogClientProps {
   initialProducts: IProduct[];
@@ -34,9 +34,27 @@ export function ProductCatalogClient({
     },
     {
       id: "ventilator",
-      label: "ICU & Transport Ventilators",
+      label: "ICU Ventilators",
       icon: Wind,
       count: initialProducts.filter((p) => p.category === "ventilator").length,
+    },
+    {
+      id: "monitoring",
+      label: "Patient Monitors",
+      icon: Activity,
+      count: initialProducts.filter((p) => p.category === "monitoring").length,
+    },
+    {
+      id: "infusion",
+      label: "Syringe & Infusion Pumps",
+      icon: Syringe,
+      count: initialProducts.filter((p) => p.category === "infusion").length,
+    },
+    {
+      id: "emergency",
+      label: "Emergency & Resuscitation",
+      icon: BriefcaseMedical,
+      count: initialProducts.filter((p) => p.category === "emergency").length,
     },
   ];
 
@@ -50,7 +68,7 @@ export function ProductCatalogClient({
       <Container>
         {/* Filter / Category Tab Switcher with animated underline */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1.5 rounded-xl bg-clinical-100 border border-clinical-200 shadow-2xs">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-clinical-100/80 border border-clinical-200 shadow-2xs max-w-5xl">
             {categories.map((cat) => {
               const Icon = cat.icon;
               const isSelected = selectedCategory === cat.id;

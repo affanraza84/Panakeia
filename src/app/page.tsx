@@ -38,10 +38,10 @@ export default async function HomePage() {
         <Container className="relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <StatCounter
-              value={30}
+              value={35}
               suffix="+"
-              label="Years Clinical Experience"
-              sublabel="Live OT & ICU domain pedigree"
+              label="Years Industry Experience"
+              sublabel="Critical care & medtech leadership"
             />
             <StatCounter
               value={99}
