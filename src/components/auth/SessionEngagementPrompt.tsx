@@ -126,7 +126,7 @@ export function SessionEngagementPrompt() {
                   </div>
                   <div>
                     <span className="text-[11px] font-bold font-mono uppercase tracking-wider text-med-teal-700 bg-med-teal-100/70 px-2.5 py-0.5 rounded-md">
-                      Healthcare Provider Portal
+                      Client & Healthcare Portal
                     </span>
                     <h3 className="text-xl sm:text-2xl font-bold font-heading text-navy-950 mt-1">
                       Welcome to Panakeia Medtech

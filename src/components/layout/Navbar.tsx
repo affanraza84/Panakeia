@@ -43,17 +43,39 @@ export function Navbar() {
   // Track window hash for precise section targeting (Aim vs About Us)
   useEffect(() => {
     const handleHashChange = () => {
-      setCurrentHash(window.location.hash);
+      setCurrentHash(window.location.hash || "");
     };
     handleHashChange();
     window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    window.addEventListener("popstate", handleHashChange);
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("popstate", handleHashChange);
+    };
   }, [pathname]);
 
   // Close mobile menu on page change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
+
+  const handleNavClick = (href: string) => {
+    if (href === "/about#aim") {
+      setCurrentHash("#aim");
+    } else if (href === "/about") {
+      setCurrentHash("");
+      if (typeof window !== "undefined") {
+        if (pathname === "/about") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        if (window.location.hash) {
+          history.pushState(null, "", "/about");
+        }
+      }
+    } else {
+      setCurrentHash("");
+    }
+  };
 
   const checkIsActive = (href: string) => {
     if (href === "/") {
@@ -114,6 +136,7 @@ export function Navbar() {
                 >
                   <Link
                     href={link.href}
+                    onClick={() => handleNavClick(link.href)}
                     className={cn(
                       "px-3 py-1.5 xl:px-4 xl:py-2 text-[13px] xl:text-sm font-semibold rounded-xl transition-all flex items-center gap-1 whitespace-nowrap",
                       isActive
@@ -138,6 +161,7 @@ export function Navbar() {
                         <div className="bg-white rounded-xl shadow-xl border border-clinical-200 p-2 overflow-hidden">
                           <Link
                             href="/products?category=anaesthesia"
+                            onClick={() => handleNavClick("/products")}
                             className="block p-3 rounded-lg hover:bg-clinical-50 transition-colors group"
                           >
                             <div className="text-sm font-bold text-navy-950 group-hover:text-med-teal-600">
@@ -149,6 +173,7 @@ export function Navbar() {
                           </Link>
                           <Link
                             href="/products?category=ventilator"
+                            onClick={() => handleNavClick("/products")}
                             className="block p-3 rounded-lg hover:bg-clinical-50 transition-colors group border-t border-clinical-100"
                           >
                             <div className="text-sm font-bold text-navy-950 group-hover:text-med-teal-600">
@@ -161,6 +186,7 @@ export function Navbar() {
                           <div className="bg-clinical-50 p-2.5 rounded-b-lg border-t border-clinical-100 text-center">
                             <Link
                               href="/products"
+                              onClick={() => handleNavClick("/products")}
                               className="text-xs font-semibold text-med-teal-600 hover:text-med-teal-700 flex items-center justify-center gap-1"
                             >
                               Browse All Devices <ArrowRight className="w-3 h-3" />
@@ -178,6 +204,7 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={() => handleNavClick(link.href)}
                 className={cn(
                   "px-3 py-1.5 xl:px-4 xl:py-2 text-[13px] xl:text-sm font-semibold rounded-xl transition-all relative shrink-0 whitespace-nowrap",
                   isActive
@@ -211,7 +238,7 @@ export function Navbar() {
               className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-med-teal-600 to-med-teal-700 hover:from-med-teal-700 hover:to-med-teal-800 shadow-md shadow-med-teal-600/20 transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
             >
               <Lock className="w-3.5 h-3.5" />
-              <span>Doctor Portal</span>
+              <span>Client Portal</span>
             </Link>
           )}
 
@@ -245,7 +272,10 @@ export function Navbar() {
                     <Link
                       key={link.name}
                       href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => {
+                        handleNavClick(link.href);
+                        setMobileMenuOpen(false);
+                      }}
                       className={cn(
                         "p-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all text-center block",
                         isActive
