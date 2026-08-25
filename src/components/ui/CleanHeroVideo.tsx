@@ -58,6 +58,11 @@ export function CleanHeroVideo({
             <p className="text-lg sm:text-2xl font-bold text-white/95 tracking-wide drop-shadow-sm font-heading">
               Workstations & Ventilators
             </p>
+
+            {/* Professional Intro Statement */}
+            <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-200 font-medium max-w-xl leading-relaxed drop-shadow-md">
+              Led by industry experts with 35+ years of global experience in critical care and medical technology.
+            </p>
           </div>
         </Container>
       </div>

@@ -69,7 +69,7 @@ export default function AboutPage() {
             Born in the Operating Theatre. Built for Indian Healthcare.
           </h1>
           <p className="mt-4 text-base sm:text-lg text-clinical-200 leading-relaxed">
-            Panakeia Medtech was founded to bridge a critical gap in Indian hospitals: the reliance on imported, exorbitantly priced OT equipment with slow overseas service channels.
+            Led by industry experts with 35+ years of global experience in critical care and medical technology, Panakeia Medtech manufactures dependable indigenous OT & ICU solutions engineered for Indian healthcare realities.
           </p>
         </Container>
       </section>

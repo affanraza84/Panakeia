@@ -206,6 +206,31 @@ const equipmentData: EquipmentItem[] = [
     ],
     imageSrc: "/images/products/emergency-resuscitation-kit.jpeg",
   },
+  {
+    id: "anaevent-ventilator",
+    name: "ANAEVENT Anaesthesia Ventilator",
+    slug: "anaevent-anaesthesia-ventilator",
+    categoryLabel: "High-Precision OT Ventilator",
+    badge: "Graduated Bellows",
+    tagline: "Touchscreen Anaesthesia Ventilator with Calibrated Ascending Bellows & Real-Time Waveforms",
+    description: "Indigenously engineered for surgical anaesthesia delivery suites with clear calibrated ascending bellows (300-1200 mL), color touchscreen telemetry, and fail-safe clinical alarms.",
+    highlights: [
+      "Graduated transparent ascending silicone bellows cylinder (300 to 1200 mL)",
+      "7-inch Color multi-parameter touchscreen with live pressure, flow & volume loops",
+      "VCV, PCV, SIMV-V, SIMV-P, PSV, Manual, and Spontaneous ventilation modes",
+      "Dual-circuit pneumatic drive with electronic pressure monitoring",
+      "Hot-swappable internal rechargeable battery with 180+ min autonomy"
+    ],
+    specs: [
+      { label: "Drive System", value: "Pneumatic drive, electronic control" },
+      { label: "Tidal Volume", value: "20 – 1,400 mL (Bellows: 300-1200mL)" },
+      { label: "Modes", value: "VCV, PCV, SIMV, PSV, Manual" },
+      { label: "Display", value: "7\" Color LCD with real-time loops" },
+      { label: "Pressure Range", value: "High: 10-80, Low: 0-20 cmH2O" },
+      { label: "Standard", value: "ISO 80601-2-13 / CDSCO MD-13" }
+    ],
+    imageSrc: "/images/products/anaevent-anaesthesia-ventilator.jpeg",
+  },
 ];
 
 export function EquipmentShowcase() {

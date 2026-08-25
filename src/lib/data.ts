@@ -240,6 +240,42 @@ export const fallbackProducts: IProduct[] = [
     order: 7,
     published: true,
   },
+  {
+    _id: "prod-8",
+    slug: "anaevent-anaesthesia-ventilator",
+    name: "ANAEVENT Anaesthesia Ventilator",
+    category: "anaesthesia",
+    tagline: "High-Precision Touchscreen Anaesthesia Ventilator with Calibrated Ascending Bellows & Electronic Telemetry",
+    description:
+      "Indigenously developed at the AMTZ medical zone, the Panakeia ANAEVENT is a compact, high-precision anaesthesia ventilator designed for seamless integration with surgical anaesthesia delivery platforms. Featuring a clear vertical ascending bellows system calibrated up to 1200 mL, a crisp color multi-parameter touchscreen with real-time waveform loops, pneumatic flow micro-control, and fail-safe clinical alarms for surgical safety.",
+    features: [
+      "Ascending graduated silicone bellows cylinder (300 mL to 1200 mL calibrated tidal volume)",
+      "High-resolution color touchscreen interface displaying real-time pressure, flow, and volume curves",
+      "Comprehensive ventilation modes: VCV, PCV, SIMV-V, SIMV-P, PSV, Manual, and Spontaneous",
+      "Dual-circuit pneumatic drive with integrated electronic pressure monitoring & low-flow support",
+      "Comprehensive clinical safety alarms: Apnea, High/Low Peak Pressure, Low Tidal Volume, and Power Failure",
+      "Compact ergonomic white chassis designed for top-shelf workstation mounting or mobile trolley integration",
+      "Hot-swappable internal rechargeable battery delivering continuous surgical ventilation backup",
+    ],
+    specs: [
+      { label: "Drive Mechanism", value: "Pneumatically driven, electronically controlled" },
+      { label: "Tidal Volume Range", value: "20 mL to 1,400 mL (Calibrated Bellows 300-1200 mL)" },
+      { label: "Ventilation Modes", value: "VCV, PCV, SIMV-V, SIMV-P, PSV, Manual, Spontaneous" },
+      { label: "Display", value: "7\" Color LCD Touchscreen with real-time waveforms" },
+      { label: "Pressure Limits", value: "High P: 10-80 cmH2O, Low P: 0-20 cmH2O" },
+      { label: "Battery Autonomy", value: "180+ Minutes rechargeable internal pack" },
+      { label: "Origin & Standards", value: "Indigenous AMTZ Manufacturing, ISO 80601-2-13" },
+    ],
+    images: [
+      "/images/products/anaevent-anaesthesia-ventilator.jpeg",
+      "/images/products/anaevent-anaesthesia-ventilator-2.jpeg",
+      "/image/anaesthesia-ventilator.jpeg",
+      "/image/anaesthesia-ventilator-2.jpeg",
+    ],
+    brochurePdfUrl: "/brochures/panakeia-anaevent-specsheet.pdf",
+    order: 8,
+    published: true,
+  },
 ];
 
 export const fallbackClients: IClient[] = [

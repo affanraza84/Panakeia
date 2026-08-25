@@ -41,8 +41,8 @@ export function ProductCard({ product }: ProductCardProps) {
       whileHover="hover"
       className="flex flex-col bg-white rounded-2xl border border-clinical-200 overflow-hidden transition-all duration-300 hover:border-med-teal-400 hover:shadow-xl group"
     >
-      {/* Product Image Display Frame with Pure White Background */}
-      <div className="relative h-64 bg-white flex items-center justify-center overflow-hidden border-b border-clinical-100 p-4 group">
+      {/* Product Image Display Frame with Clinical Grey Studio Backdrop */}
+      <div className="relative h-64 bg-slate-100/90 flex items-center justify-center overflow-hidden border-b border-clinical-100 p-4 group">
         {/* Category & Badge Indicators */}
         <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
           <Badge variant="primary" className="shadow-2xs bg-white/95 text-med-teal-700 border border-slate-200/80 backdrop-blur-md font-semibold">
