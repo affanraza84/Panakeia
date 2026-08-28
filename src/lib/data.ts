@@ -309,7 +309,7 @@ export const fallbackClients: IClient[] = [
     logoUrl: "/images/clients/yashoda-logo.webp",
     testimonial:
       "Indigenous manufacturing in critical care has reached maturity with Panakeia. Their devices offer unmatched pneumatic precision and low total cost of ownership for high-volume surgical departments.",
-    doctorName: "Dr. P. V. Ramanathan, Chief Anesthetist & OT Director",
+    doctorName: "Dr. P. V. Ramanathan, Chief Anaesthetist & OT Director",
     featured: true,
   },
   {
