@@ -50,16 +50,16 @@ export function Footer() {
         <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Company Bio */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block bg-white p-2 rounded-xl border border-slate-200 shadow-md">
-              <div className="relative h-14 sm:h-16 w-[120px] sm:w-[140px]">
+            <Link href="/" className="inline-block group focus:outline-none" aria-label="Panakeia Medtech Home">
+              <div className="relative h-14 sm:h-16 w-[130px] sm:w-[155px] transition-transform group-hover:scale-[1.02]">
                 <Image
                   src="/image/logo.jpeg"
                   alt="PANAKEIA MEDTECH PVT. LTD."
                   fill
                   quality={100}
                   unoptimized
-                  sizes="140px"
-                  className="object-contain object-left"
+                  sizes="155px"
+                  className="object-contain object-left invert mix-blend-screen brightness-110"
                 />
               </div>
             </Link>
