@@ -60,9 +60,9 @@ export default async function HomePage() {
       <section className="py-16 lg:py-24 bg-clinical-50/60">
         <Container>
           <SectionHeading
-            eyebrow="The Indigenous Advantage"
-            title="Engineered in India, For Indian Operating Theatres"
-            description="Hospital procurement teams and critical care directors choose Panakeia to eliminate long import lead times, inflated spare parts markups, and delayed servicing."
+            eyebrow="Indigenous Technology • Global Standards"
+            title="World-Class Engineering, Patient-Centric Critical Care"
+            description="Manufactured at the state-of-the-art AMTZ MedTech Zone, Panakeia combines advanced R&D, rigorous international quality validation, and dedicated worldwide technical support."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -71,10 +71,10 @@ export default async function HomePage() {
                 <Wrench className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-navy-950 font-heading">
-                Rapid Spares & Local AMTZ Support
+                Precision Manufacturing & Dedicated Support
               </h3>
               <p className="mt-3 text-sm text-clinical-600 leading-relaxed">
-                Unlike imported devices that leave your OT non-operational while waiting weeks for European or North American spare parts, all Panakeia components and sensor modules are stocked and dispatched directly from our AMTZ facility.
+                Our state-of-the-art facility at AMTZ is equipped with advanced infrastructure and testing laboratories, ensuring dependable parts availability, responsive technical assistance, and continuous lifecycle support for healthcare institutions.
               </p>
             </div>
 
@@ -86,7 +86,7 @@ export default async function HomePage() {
                 Optimized Total Cost of Ownership
               </h3>
               <p className="mt-3 text-sm text-clinical-600 leading-relaxed">
-                Deliver world-class ventilation and volatile anaesthesia accuracy at a fraction of imported capital expenditure and annual maintenance contract (AMC) costs, maximizing hospital revenue and throughput.
+                Deliver world-class ventilation and volatile anaesthesia accuracy with optimized capital expenditure, streamlined maintenance protocols, and high operational reliability that maximize hospital throughput.
               </p>
             </div>
 
@@ -95,10 +95,10 @@ export default async function HomePage() {
                 <HeartPulse className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-navy-950 font-heading">
-                Clinical Workflow Centric Ergonomics
+                Clinically-Focused Ergonomics & Safety
               </h3>
               <p className="mt-3 text-sm text-clinical-600 leading-relaxed">
-                Designed alongside active senior anaesthesiologists and intensivists. Features intuitive color touchscreens, instant mode switching, and fail-safe mechanical gas flow backups for high-stress emergency surgical cases.
+                Designed alongside active senior anaesthesiologists and intensivists. Features intuitive touchscreen telemetry, multi-waveform monitoring, and fail-safe mechanical backups for critical surgical and intensive care suites.
               </p>
             </div>
           </div>

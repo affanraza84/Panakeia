@@ -296,8 +296,8 @@ export default function AboutPage() {
               <h3 className="text-base font-bold text-navy-950 font-heading">
                 National Logistics & Rapid Spares
               </h3>
-              <p className="mt-2 text-xs sm:text-sm text-clinical-600 leading-relaxed">
-                Located near international port and airport hubs in Visakhapatnam, enabling sub-48-hour express dispatch of critical sensor kits and replacement modules across India.
+              <p className="text-xs text-clinical-600 leading-relaxed">
+                Located near international port and airport hubs in Visakhapatnam, enabling express dispatch of critical sensor kits and replacement modules for healthcare centers worldwide.
               </p>
             </div>
           </div>
@@ -311,7 +311,7 @@ export default function AboutPage() {
             Partner With India&apos;s Indigenous Critical Care Innovator
           </h2>
           <p className="text-xs sm:text-sm text-clinical-300">
-            Whether you are a hospital procurement officer evaluating alternatives to European imports or a regional distributor seeking partnership, our leadership team is ready to connect.
+            Whether you are a hospital procurement officer seeking advanced medical devices or a healthcare distributor exploring global partnerships, our leadership team is ready to connect.
           </p>
           <div className="pt-4">
             <Button href="/contact" variant="primary" size="lg">
