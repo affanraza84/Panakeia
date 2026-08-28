@@ -282,7 +282,7 @@ export function AwardsSection() {
                   <img
                     src={selectedAward.image}
                     alt={selectedAward.title}
-                    className="max-h-[340px] max-w-full w-auto h-auto object-contain filter drop-shadow-sm rounded-lg bg-white"
+                    className="max-h-[340px] max-w-full w-auto h-auto object-contain filter drop-shadow-sm rounded-lg"
                   />
                 </div>
               </div>
