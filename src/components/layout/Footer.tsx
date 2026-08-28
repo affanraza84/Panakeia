@@ -53,13 +53,13 @@ export function Footer() {
             <Link href="/" className="inline-block group focus:outline-none" aria-label="Panakeia Medtech Home">
               <div className="relative h-14 sm:h-16 w-[130px] sm:w-[155px] transition-transform group-hover:scale-[1.02]">
                 <Image
-                  src="/image/logo.jpeg"
+                  src="/image/logo-transparent.png"
                   alt="PANAKEIA MEDTECH PVT. LTD."
                   fill
                   quality={100}
                   unoptimized
                   sizes="155px"
-                  className="object-contain object-left invert mix-blend-screen brightness-110"
+                  className="object-contain object-left [filter:drop-shadow(0_0_1.2px_rgba(255,255,255,0.95))_drop-shadow(0_0_8px_rgba(255,255,255,0.2))]"
                 />
               </div>
             </Link>
