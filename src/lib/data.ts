@@ -269,8 +269,8 @@ export const fallbackProducts: IProduct[] = [
     images: [
       "/images/products/anaevent-anaesthesia-ventilator.jpeg",
       "/images/products/anaevent-anaesthesia-ventilator-2.jpeg",
-      "/image/anaesthesia-ventilator.jpeg",
-      "/image/anaesthesia-ventilator-2.jpeg",
+      "/image/anaevent-anaesthesia-ventilator.jpeg",
+      "/image/anaevent-anaesthesia-ventilator-2.jpeg",
     ],
     brochurePdfUrl: "/brochures/panakeia-anaevent-specsheet.pdf",
     order: 8,

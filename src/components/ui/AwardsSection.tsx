@@ -32,7 +32,7 @@ interface AwardItem {
 const AWARDS: AwardItem[] = [
   {
     id: "award-iso-9001",
-    image: "/image/WhatsApp Image 2026-08-17 at 19.14.14.jpeg",
+    image: "/image/certificate-iso-9001.jpeg",
     title: "EuroPaCert ISO 9001:2015 Quality Management System",
     subtitle: "Certificate No: EPC2024Q1198 — Medical Device Manufacturing",
     description: "Certified quality management for the design, development, manufacture, and servicing of Critical Care Anaesthesia Workstations and Intensive Care Ventilators.",
@@ -43,7 +43,7 @@ const AWARDS: AwardItem[] = [
   },
   {
     id: "award-iso-13485",
-    image: "/image/WhatsApp Image 2026-08-17 at 19.14.18.jpeg",
+    image: "/image/certificate-iso-13485.jpeg",
     title: "KIHT ISO 13485:2016 Medical Devices Quality System",
     subtitle: "Accredited by Kalam Institute of Health Technology & UAF (USA)",
     description: "Medical Devices Quality Management System (MDQMS) validating strict regulatory and clinical safety compliance for high-acuity life-support equipment.",
@@ -54,7 +54,7 @@ const AWARDS: AwardItem[] = [
   },
   {
     id: "award-vcci-excellence",
-    image: "/image/WhatsApp Image 2026-08-17 at 19.14.26.jpeg",
+    image: "/image/award-vcci-trophy.jpeg",
     title: "VCCI Excellence Awards 2024 — Star of Industry",
     subtitle: "Presented by The Vizagapatam Chamber of Commerce & Industry",
     description: "Conferred 'Star of Industry' in recognition of pioneering self-reliance and engineering excellence in indigenous medical device manufacturing at the AMTZ bio-cluster.",
@@ -65,7 +65,7 @@ const AWARDS: AwardItem[] = [
   },
   {
     id: "award-vcci-recognition",
-    image: "/image/WhatsApp Image 2026-08-17 at 19.14.29.jpeg",
+    image: "/image/award-vcci-plaque.jpeg",
     title: "VCCI Award of Recognition 2024 — Medical Devices",
     subtitle: "Presented by Ms Sandhya Devanathan (MD & VP - Meta India)",
     description: "Honored for innovation and high-acuity critical care device engineering, presented during the VCCI Conclave by Meta India leadership.",
