@@ -50,17 +50,32 @@ export function Footer() {
         <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Company Bio */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block group focus:outline-none" aria-label="Panakeia Medtech Home">
-              <div className="relative h-14 sm:h-16 w-[130px] sm:w-[155px] transition-transform group-hover:scale-[1.02]">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-3.5 group focus:outline-none py-1"
+              aria-label="Panakeia Medtech - Home"
+            >
+              <div className="relative h-14 w-14 shrink-0 transition-transform duration-200 group-hover:scale-105">
                 <Image
-                  src="/image/logo-transparent.png"
-                  alt="PANAKEIA MEDTECH PVT. LTD."
+                  src="/image/logo-emblem.png"
+                  alt="Panakeia Medtech Logo"
                   fill
                   quality={100}
                   unoptimized
-                  sizes="155px"
-                  className="object-contain object-left [filter:drop-shadow(0_0_1.2px_rgba(255,255,255,0.95))_drop-shadow(0_0_8px_rgba(255,255,255,0.2))]"
+                  sizes="56px"
+                  className="object-contain"
                 />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl sm:text-2xl font-black font-heading tracking-wider text-white group-hover:text-med-teal-400 transition-colors leading-tight">
+                  PANAKEIA
+                </span>
+                <span className="text-[10px] sm:text-[11px] font-bold font-mono tracking-widest text-med-teal-400 uppercase">
+                  MEDTECH PVT. LTD.
+                </span>
+                <span className="text-[8px] sm:text-[8.5px] font-semibold tracking-widest text-clinical-400 uppercase mt-0.5">
+                  INNOVATE • ENGINEER • EMPOWER
+                </span>
               </div>
             </Link>
             <p className="text-xs sm:text-sm text-clinical-400 leading-relaxed max-w-sm">
