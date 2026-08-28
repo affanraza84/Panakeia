@@ -36,24 +36,12 @@ export default async function HomePage() {
         <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1e40af_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
 
         <Container className="relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto divide-y sm:divide-y-0 sm:divide-x divide-clinical-100">
             <StatCounter
               value={35}
               suffix="+"
               label="Years Industry Experience"
               sublabel="Critical care & medtech leadership"
-            />
-            <StatCounter
-              value={99}
-              suffix=".4%"
-              label="Operational OT Uptime"
-              sublabel="Precision life-support engineering"
-            />
-            <StatCounter
-              value={48}
-              suffix="h"
-              label="Rapid Spares Dispatch"
-              sublabel="Direct from AMTZ manufacturing hub"
             />
             <StatCounter
               value={100}
