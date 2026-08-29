@@ -4,10 +4,10 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { StatCounter } from "@/components/ui/StatCounter";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { CertificationCard } from "@/components/ui/CertificationCard";
 import { CleanHeroVideo } from "@/components/ui/CleanHeroVideo";
+import { IndigenousExcellenceStrip } from "@/components/ui/IndigenousExcellenceStrip";
 import { AwardsSection } from "@/components/ui/AwardsSection";
 import { EquipmentShowcase } from "@/components/ui/EquipmentShowcase";
 import { getClients, getCertifications } from "@/lib/data";
@@ -15,11 +15,6 @@ import {
   Zap,
   Wrench,
   HeartPulse,
-  Sparkles,
-  ShieldCheck,
-  Stethoscope,
-  Building2,
-  Award,
 } from "lucide-react";
 
 export const revalidate = 3600; // ISR 1 hour
@@ -35,94 +30,8 @@ export default async function HomePage() {
       {/* 1. CLEAN FULL SCREEN INTRO VIDEO (No text overlay written on the video) */}
       <CleanHeroVideo videoSrc="/video/introVideo.mp4" />
 
-      {/* 2. STAT COUNTER & CLINICAL VALUE STRIP */}
-      <section id="home-content" className="bg-white border-b border-clinical-200 py-10 lg:py-14 shadow-xs relative z-20 overflow-hidden">
-        {/* Subtle medical watermark backdrop */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#1e40af_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-
-        <Container className="relative z-10 space-y-8 lg:space-y-10">
-          {/* 4 Core Stat Counters */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 divide-y sm:divide-y-0 lg:divide-x divide-clinical-100">
-            <StatCounter
-              value={35}
-              suffix="+"
-              label="Years Industry Experience"
-              sublabel="Critical care & medtech leadership"
-            />
-            <StatCounter
-              value={100}
-              suffix="%"
-              label="Indigenous Innovation"
-              sublabel="Make in India / DPIIT Recognized"
-            />
-            <StatCounter
-              value={8}
-              suffix="+"
-              label="Critical Care Modalities"
-              sublabel="Workstations, Ventilators & Pumps"
-            />
-            <StatCounter
-              value={2}
-              suffix="+"
-              label="Global ISO Accreditations"
-              sublabel="ISO 13485:2016 & ISO 9001:2015"
-            />
-          </div>
-
-          {/* 5 Core Pillars from Official PDF Brochure */}
-          <div className="pt-6 border-t border-clinical-100 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-            <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-2xs">
-              <div className="w-8 h-8 rounded-xl bg-med-teal-50 text-med-teal-600 flex items-center justify-center shrink-0 border border-med-teal-200/60">
-                <Sparkles className="w-4 h-4" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs font-bold text-navy-950 truncate">Indigenous Innovation</div>
-                <div className="text-[10px] text-clinical-500 font-mono">Advanced R&D</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-2xs">
-              <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 border border-blue-200/60">
-                <ShieldCheck className="w-4 h-4" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs font-bold text-navy-950 truncate">Reliable & Safe</div>
-                <div className="text-[10px] text-clinical-500 font-mono">Precision Engineering</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-2xs">
-              <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-200/60">
-                <Stethoscope className="w-4 h-4" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs font-bold text-navy-950 truncate">Clinically Focused</div>
-                <div className="text-[10px] text-clinical-500 font-mono">Patient-Centric Solutions</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-2xs">
-              <div className="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 border border-indigo-200/60">
-                <Building2 className="w-4 h-4" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs font-bold text-navy-950 truncate">Precision Manufacturing</div>
-                <div className="text-[10px] text-clinical-500 font-mono">AMTZ Bio-Cluster</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-2xs col-span-2 sm:col-span-1">
-              <div className="w-8 h-8 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-200/60">
-                <Award className="w-4 h-4" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs font-bold text-navy-950 truncate">Quality You Can Trust</div>
-                <div className="text-[10px] text-clinical-500 font-mono">ISO & CDSCO Audited</div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      {/* 2. INDIGENOUS EXCELLENCE & CLINICAL PILLARS STRIP (Brochure Data, Zero Numbers) */}
+      <IndigenousExcellenceStrip />
 
       {/* 3. INTERACTIVE INDIGENOUS EQUIPMENT SHOWCASE (Featuring 4 Flagship Systems) */}
       <EquipmentShowcase />
