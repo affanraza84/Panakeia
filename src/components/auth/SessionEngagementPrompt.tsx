@@ -144,7 +144,7 @@ export function SessionEngagementPrompt() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Stethoscope className="w-4 h-4 text-med-teal-600 shrink-0 mt-0.5" />
-                  <span>Direct scheduling with AMTZ biomedical engineering specialists</span>
+                  <span>Direct scheduling with Panakeia in-house biomedical engineering specialists</span>
                 </div>
               </div>
 

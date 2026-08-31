@@ -79,7 +79,7 @@ export function ProductCatalogClient({
                 All Products Are Fully Customizable to Your Clinical Specifications
               </h2>
               <p className="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
-                Because we engineer and manufacture every device indigenously at our AMTZ facility, we can tailor-design hardware, pneumatic flow circuits, telemetry interfaces, and mechanical ergonomics to match your hospital’s precise clinical workflows and institutional requirements.
+                Because we engineer and manufacture every device and part indigenously in-house at Panakeia itself, we can tailor-design hardware, pneumatic flow circuits, telemetry interfaces, and mechanical ergonomics to match your hospital’s precise clinical workflows and institutional requirements.
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1 text-xs text-slate-200">
                 <span className="flex items-center gap-1.5 font-medium">

@@ -9,7 +9,7 @@ import { ShieldCheck, Sparkles, Building2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Products & Critical Care Solutions",
   description:
-    "Explore Panakeia Medtech's indigenous critical care product catalog: High-acuity Anaesthesia Workstations and Intensive Care Ventilators manufactured at AMTZ Visakhapatnam.",
+    "Explore Panakeia Medtech's indigenous critical care product catalog: High-acuity Anaesthesia Workstations and Intensive Care Ventilators with all parts manufactured in-house by Panakeia itself in Visakhapatnam.",
 };
 
 export const revalidate = 3600;
@@ -30,7 +30,7 @@ export default async function ProductsPage() {
             Anaesthesia Workstations & Ventilators
           </h1>
           <p className="mt-4 text-base sm:text-lg text-clinical-200 leading-relaxed">
-            Clinical-grade life-support platforms engineered at our AMTZ Visakhapatnam facility. Built to replace expensive imported equipment with zero compromise on precision.
+            Clinical-grade life-support platforms engineered at our Visakhapatnam facility with 100% of all parts manufactured by Panakeia itself. Built to replace expensive imported equipment with zero compromise on precision.
           </p>
         </Container>
       </section>
@@ -52,7 +52,7 @@ export default async function ProductsPage() {
           <div className="bg-navy-900 rounded-2xl p-8 lg:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <span className="text-xs font-mono text-med-teal-400 uppercase tracking-wider block mb-1">
-                AMTZ Contract Manufacturing & OEM
+                In-House Contract Manufacturing & OEM
               </span>
               <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">
                 Looking for OEM Sub-Assembly or Custom Modifications?

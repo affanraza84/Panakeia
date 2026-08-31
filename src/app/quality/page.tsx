@@ -60,7 +60,7 @@ export default async function QualityPage() {
                   Panakeia Medtech Private Limited holds an active <strong>CDSCO Medical Device Test License (Form MD-13)</strong> granted for the examination, design evaluation, and performance testing of critical care devices (Anaesthesia Workstations & Ventilators).
                 </p>
                 <p className="leading-relaxed">
-                  The commercial manufacturing license application (Form MD-9) is under active facility validation and joint regulatory audit with the State Drugs Control Administration at our AMTZ Visakhapatnam manufacturing unit. We maintain strict factual transparency regarding our regulatory journey.
+                  The commercial manufacturing license application (Form MD-9) is under active facility validation and joint regulatory audit with the State Drugs Control Administration at our dedicated in-house Visakhapatnam manufacturing unit, where all device parts and assemblies are produced by Panakeia itself. We maintain strict factual transparency regarding our regulatory journey.
                 </p>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default async function QualityPage() {
           <SectionHeading
             eyebrow="Testing Standards"
             title="Multi-Stage Clinical Safety & Calibration Protocol"
-            description="Every unit manufactured at AMTZ undergoes thorough multi-point pneumatic and electrical verification before dispatch."
+            description="Every unit and component manufactured in-house by Panakeia itself undergoes thorough multi-point pneumatic and electrical verification before dispatch."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

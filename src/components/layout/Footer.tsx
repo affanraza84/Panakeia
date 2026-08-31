@@ -29,7 +29,7 @@ export function Footer() {
                 Indigenous Critical Care Manufacturing Facility
               </span>
               <span className="text-clinical-400">
-                Resident manufacturing facility at Andhra Pradesh Medtech Zone (AMTZ), Visakhapatnam.
+                All components and parts are manufactured 100% in-house by Panakeia itself at Visakhapatnam.
               </span>
             </div>
           </div>
@@ -207,13 +207,13 @@ export function Footer() {
           {/* Manufacturing Location & Contacts */}
           <div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading mb-4">
-              AMTZ Facility
+              Manufacturing Facility
             </h4>
             <div className="space-y-3 text-xs text-clinical-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-med-teal-400 shrink-0 mt-0.5" />
                 <span>
-                  C-20, IHUB Building, AMTZ Campus, Pragati Maidan, Visakhapatnam - 530031, Andhra Pradesh, India.
+                  Panakeia Manufacturing Facility, Visakhapatnam - 530031, Andhra Pradesh, India.
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
@@ -243,7 +243,7 @@ export function Footer() {
             <strong className="text-clinical-200 block mb-1">
               Regulatory Disclosure & Compliance Notice:
             </strong>
-            Panakeia Medtech Private Limited is a DPIIT-recognized and MSME-registered medical device manufacturer. The company holds a valid CDSCO Medical Device Test License (Form MD-13) for performance validation and clinical evaluation. The commercial manufacturing license application (Form MD-9) is under final statutory audit and validation at our AMTZ Visakhapatnam facility.
+            Panakeia Medtech Private Limited is a DPIIT-recognized and MSME-registered medical device manufacturer. The company holds a valid CDSCO Medical Device Test License (Form MD-13) for performance validation and clinical evaluation. The commercial manufacturing license application (Form MD-9) is under final statutory audit and validation at our dedicated in-house manufacturing facility in Visakhapatnam, where all parts and components are manufactured directly by Panakeia itself.
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-clinical-500 pt-2">
@@ -261,7 +261,7 @@ export function Footer() {
                 Procurement
               </Link>
               <Link href="/about" className="hover:text-clinical-300 transition-colors">
-                AMTZ Hub
+                In-House Facility
               </Link>
             </div>
           </div>

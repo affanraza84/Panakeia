@@ -7,7 +7,7 @@ import { ContactFormClient } from "./ContactFormClient";
 export const metadata: Metadata = {
   title: "Contact Us & Procurement Inquiries",
   description:
-    "Contact Panakeia Medtech at AMTZ Visakhapatnam for Anaesthesia Workstation and Ventilator technical quotations, clinical trials, or dealership inquiries.",
+    "Contact Panakeia Medtech in Visakhapatnam for Anaesthesia Workstation and Ventilator technical quotations, clinical trials, or dealership inquiries with 100% in-house manufactured parts.",
 };
 
 export default function ContactPage() {

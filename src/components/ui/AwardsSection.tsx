@@ -57,7 +57,7 @@ const AWARDS: AwardItem[] = [
     image: "/image/award-vcci-trophy.jpeg",
     title: "VCCI Excellence Awards 2024 — Star of Industry",
     subtitle: "Presented by The Vizagapatam Chamber of Commerce & Industry",
-    description: "Conferred 'Star of Industry' in recognition of pioneering self-reliance and engineering excellence in indigenous medical device manufacturing at the AMTZ bio-cluster.",
+    description: "Conferred 'Star of Industry' in recognition of pioneering self-reliance and engineering excellence in indigenous medical device manufacturing with 100% parts produced in-house.",
     accreditationBody: "VCCI Industry Conclave",
     actionText: "View Award Plaque",
     category: "Industry Recognition",
@@ -116,7 +116,7 @@ export function AwardsSection() {
           </h2>
 
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            All certifications and awards are independently verified and manufactured under strict medical quality frameworks at AMTZ Visakhapatnam.
+            All certifications and awards are independently verified, with all device components and parts manufactured in-house by Panakeia itself in Visakhapatnam.
           </p>
         </div>
 
@@ -293,7 +293,7 @@ export function AwardsSection() {
                   {selectedAward.description}
                 </p>
                 <div className="text-xs font-semibold text-slate-400 shrink-0 font-mono">
-                  AMTZ Bio-Cluster Verified
+                  100% In-House Manufactured
                 </div>
               </div>
             </motion.div>

@@ -33,12 +33,12 @@ export const metadata: Metadata = {
     template: "%s | Panakeia Medtech",
   },
   description:
-    "Panakeia Medtech is an indigenous Indian critical care equipment manufacturer based at AMTZ, Visakhapatnam. Specializing in high-precision Anaesthesia Workstations and ICU Ventilators.",
+    "Panakeia Medtech is an indigenous Indian critical care equipment manufacturer in Visakhapatnam, where all parts and components are manufactured in-house by Panakeia itself. Specializing in high-precision Anaesthesia Workstations and ICU Ventilators.",
   keywords: [
     "Anaesthesia Workstation India",
     "ICU Ventilator Manufacturer India",
     "Indigenous Medical Devices",
-    "AMTZ Visakhapatnam MedTech",
+    "In-House Medical Device Manufacturer",
     "DPIIT Recognized Medical Device",
     "Operation Theatre Equipment India",
     "Panakeia Medtech",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "Panakeia Medtech",
     title: "Panakeia Medtech | Indigenous Anaesthesia & Critical Care Solutions",
     description:
-      "Precision-engineered Indian Anaesthesia Workstations & Ventilators manufactured at AMTZ Visakhapatnam.",
+      "Precision-engineered Indian Anaesthesia Workstations & Ventilators with 100% parts manufactured by Panakeia itself.",
   },
 };
 

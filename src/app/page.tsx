@@ -40,7 +40,7 @@ export default async function HomePage() {
           <SectionHeading
             eyebrow="Indigenous Technology • Global Standards"
             title="World-Class Engineering, Patient-Centric Critical Care"
-            description="Manufactured at the state-of-the-art AMTZ MedTech Zone, Panakeia combines advanced R&D, rigorous international quality validation, and dedicated worldwide technical support."
+            description="All critical care parts and components are manufactured directly by Panakeia itself in-house, combining advanced R&D, rigorous international quality validation, and dedicated worldwide technical support."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -52,7 +52,7 @@ export default async function HomePage() {
                 Precision Manufacturing & Dedicated Support
               </h3>
               <p className="mt-3 text-sm text-clinical-600 leading-relaxed">
-                Our state-of-the-art facility at AMTZ is equipped with advanced infrastructure and testing laboratories, ensuring dependable parts availability, responsive technical assistance, and continuous lifecycle support for healthcare institutions.
+                Our state-of-the-art facility is equipped with advanced infrastructure and testing laboratories, with all parts and components manufactured 100% in-house by Panakeia itself to ensure dependable parts availability, responsive technical assistance, and continuous lifecycle support for healthcare institutions.
               </p>
             </div>
 
@@ -113,7 +113,7 @@ export default async function HomePage() {
           </h2>
 
           <p className="mt-4 text-sm sm:text-base text-clinical-200 leading-relaxed">
-            Speak directly with our clinical biomedical engineering team at AMTZ Visakhapatnam to discuss device specifications, tender participation, or dealership opportunities.
+            Speak directly with our clinical biomedical engineering team at Panakeia's dedicated in-house manufacturing facility in Visakhapatnam to discuss device specifications, tender participation, or dealership opportunities.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

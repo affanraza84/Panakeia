@@ -9,7 +9,7 @@ import { ShieldCheck, Stethoscope, Building2, Lock, ArrowLeft } from "lucide-rea
 export const metadata: Metadata = {
   title: "Clinical Portal Sign In — Panakeia Medtech",
   description:
-    "Sign in to your Panakeia Medtech Healthcare Provider portal to access engineering schematics, institutional quotations, and direct AMTZ support.",
+    "Sign in to your Panakeia Medtech Healthcare Provider portal to access engineering schematics, institutional quotations, and direct in-house technical support where all parts are manufactured by Panakeia itself.",
 };
 
 export default function SignInPage() {
@@ -42,7 +42,7 @@ export default function SignInPage() {
             </h1>
 
             <p className="text-sm sm:text-base text-clinical-700 leading-relaxed">
-              Sign in to manage your medical device specifications, track live hospital OT quotations, download tender compliance documentation, and access direct AMTZ technical engineering lines.
+              Sign in to manage your medical device specifications, track live hospital OT quotations, download tender compliance documentation, and access direct in-house technical engineering lines from Panakeia.
             </p>
 
             <div className="space-y-3 pt-2">
@@ -64,7 +64,7 @@ export default function SignInPage() {
             </div>
 
             <div className="pt-2 text-xs font-mono text-clinical-500 flex items-center gap-4">
-              <span>AMTZ Hub C-20</span>
+              <span>100% In-House Manufacturing</span>
               <span>•</span>
               <span>ISO 13485 Certified</span>
               <span>•</span>

@@ -51,7 +51,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
         <div className="absolute top-3.5 right-3.5 z-10">
           <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white/95 px-2.5 py-0.5 rounded-full border border-slate-200 shadow-2xs font-mono backdrop-blur-md">
-            AMTZ IHUB
+            100% In-House Parts
           </span>
         </div>
 

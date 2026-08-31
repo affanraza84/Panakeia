@@ -62,12 +62,12 @@ const PILLARS: Pillar[] = [
     pdfRef: "Panakeia R&D Lab Specs",
   },
   {
-    id: "amtz-manufacturing",
-    tag: "AMTZ Bio-Cluster",
+    id: "inhouse-manufacturing",
+    tag: "100% In-House Parts",
     title: "Precision Manufacturing",
     subtitle: "State-of-the-Art Production Facility",
     description:
-      "Fabricated at India's dedicated medical technology zone (AMTZ Visakhapatnam) with robotic precision, calibrated ascending bellows tooling, cleanroom electronics assembly, and 100% component traceability.",
+      "All components and parts are manufactured directly by Panakeia itself with robotic precision, calibrated ascending bellows tooling, cleanroom electronics assembly, and 100% component traceability.",
     icon: Building2,
     color: {
       bg: "bg-blue-50",
@@ -77,11 +77,11 @@ const PILLARS: Pillar[] = [
       badge: "bg-blue-100/70 text-blue-800",
     },
     keyFeatures: [
-      "AMTZ Medical Bio-Cluster Facility",
+      "100% In-House Parts Manufacturing",
       "Calibrated Ascending Bellows Machining",
       "Immediate Spares & Component Traceability",
     ],
-    pdfRef: "AMTZ Factory Showcase",
+    pdfRef: "Manufacturing Facility Showcase",
   },
   {
     id: "clinical-safety",
@@ -200,7 +200,7 @@ export function IndigenousExcellenceStrip() {
               Make in India
             </span>
             <span className="text-clinical-300">•</span>
-            <span className="text-clinical-700">AMTZ Visakhapatnam</span>
+            <span className="text-clinical-700">100% In-House Manufactured Parts</span>
             <span className="text-clinical-300">•</span>
             <span className="text-med-teal-700 font-medium">DPIIT Recognized</span>
           </div>
@@ -391,7 +391,7 @@ export function IndigenousExcellenceStrip() {
               href="/about"
               className="inline-flex items-center gap-1.5 font-semibold text-navy-900 hover:text-med-teal-600 transition-colors group"
             >
-              <span>AMTZ Bio-Cluster Facility</span>
+              <span>In-House Manufacturing Facility</span>
               <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>

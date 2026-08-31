@@ -61,7 +61,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
             </div>
             <div className="absolute top-4 right-4 z-10">
               <span className="text-[11px] font-mono text-slate-700 bg-white/95 px-2.5 py-1 rounded-md border border-slate-200 shadow-2xs font-semibold">
-                AMTZ IHUB C-20
+                100% In-House Manufactured
               </span>
             </div>
 
@@ -167,7 +167,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                 </span>
               </div>
               <p className="text-xs text-clinical-700 leading-relaxed">
-                Need specialized modifications for your hospital? Because this device is designed and manufactured in-house at AMTZ, we can customize gas circuits, display telemetry, software protocols, and mounting ergonomics to match your clinical workflow.
+                Need specialized modifications for your hospital? Because every part and system of this device is designed and manufactured directly by Panakeia itself, we can customize gas circuits, display telemetry, software protocols, and mounting ergonomics to match your clinical workflow.
               </p>
               <a
                 href={`/contact?type=oem&product=${encodeURIComponent(product.slug)}`}

@@ -66,7 +66,7 @@ export function CertificationCard({ certification }: CertificationCardProps) {
       <div className="mt-5 pt-4 border-t border-clinical-100 flex items-center justify-between text-xs">
         <span className="inline-flex items-center gap-1 text-clinical-500">
           <FileCheck className="w-3.5 h-3.5 text-med-teal-500" />
-          AMTZ Regulatory Cell
+          Panakeia Quality Cell
         </span>
 
         {isActive ? (

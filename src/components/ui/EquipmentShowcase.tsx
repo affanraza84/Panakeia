@@ -52,7 +52,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Absorber", value: "1.8L Dual-Chamber Quick-Release" },
       { label: "Standard", value: "ISO 80601-2-13 / CDSCO MD-13" },
       { label: "Vaporizers", value: "Dual Selectatec-compatible Interlock Bar" },
-      { label: "Manufacture", value: "AMTZ MedTech Zone, Visakhapatnam" }
+      { label: "Manufacture", value: "100% In-House by Panakeia" }
     ],
     imageSrc: "/images/products/three-gas-system-advanced-anaesthesia-workstation.jpeg",
   },
@@ -77,7 +77,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Vent Modes", value: "VCV, PCV, SIMV, Manual, Spontaneous" },
       { label: "Safety", value: "Mechanical Hypoxic Guard (min 25% O2)" },
       { label: "Absorber", value: "1.5L Autoclavable Quick-Release" },
-      { label: "Origin", value: "100% Indigenous AMTZ IHUB C-20" }
+      { label: "Origin", value: "100% In-House Panakeia Manufacturing" }
     ],
     imageSrc: "/images/products/two-gas-system-basic-anaesthesia-workstation.jpeg",
   },
@@ -266,7 +266,7 @@ export function EquipmentShowcase() {
             Precision Critical Care Equipment
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            Explore Panakeia&apos;s indigenous medical device portfolio manufactured at AMTZ Visakhapatnam. All systems are 100% customizable to your hospital&apos;s clinical infrastructure, pneumatic requirements, and workflow needs.
+            Explore Panakeia&apos;s indigenous medical device portfolio where all parts and systems are manufactured in-house by Panakeia itself. All systems are 100% customizable to your hospital&apos;s clinical infrastructure, pneumatic requirements, and workflow needs.
           </p>
         </div>
 
@@ -310,7 +310,7 @@ export function EquipmentShowcase() {
                   {current.badge}
                 </span>
                 <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold text-slate-700 bg-white/95 backdrop-blur-md border border-slate-200 shadow-2xs">
-                  AMTZ VIZAG IHUB
+                  100% IN-HOUSE PARTS
                 </span>
               </div>
 
@@ -494,7 +494,7 @@ export function EquipmentShowcase() {
               <div className="w-full flex items-center justify-between pb-3 border-b border-slate-100">
                 <div>
                   <h4 className="text-base sm:text-lg font-bold text-navy-950 font-heading">{current.name}</h4>
-                  <p className="text-xs text-med-teal-700 font-medium">{current.categoryLabel} — Indigenous Manufacturing (AMTZ)</p>
+                  <p className="text-xs text-med-teal-700 font-medium">{current.categoryLabel} — 100% In-House Panakeia Manufacturing</p>
                 </div>
                 <button
                   onClick={() => setLightboxOpen(false)}

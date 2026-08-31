@@ -12,7 +12,7 @@ export const fallbackProducts: IProduct[] = [
     category: "anaesthesia",
     tagline: "High-Acuity Digital O2/N2O/Air Workstation with Integrated Touchscreen Ventilator for Multi-Speciality OT",
     description:
-      "Indigenously manufactured at the AMTZ medical technology zone, this advanced three-gas anaesthesia workstation integrates digital pneumatic gas blending with an intuitive color touchscreen monitor. Features dual vaporizer Selectatec manifold, active gas scavenging (AGSS), and fail-safe mechanical backups for complex cardiac and neuro surgical suites.",
+      "Indigenously engineered with all parts manufactured directly by Panakeia itself, this advanced three-gas anaesthesia workstation integrates digital pneumatic gas blending with an intuitive color touchscreen monitor. Features dual vaporizer Selectatec manifold, active gas scavenging (AGSS), and fail-safe mechanical backups for complex cardiac and neuro surgical suites.",
     features: [
       "12.1-inch Color High-Resolution Touchscreen with simultaneous P-T, F-T, V-T loops and spirometry",
       "Three-Gas Delivery System (O2, N2O, Air) with cascade electronic flowmeters and mechanical backup",
@@ -247,7 +247,7 @@ export const fallbackProducts: IProduct[] = [
     category: "anaesthesia",
     tagline: "High-Precision Touchscreen Anaesthesia Ventilator with Calibrated Ascending Bellows & Electronic Telemetry",
     description:
-      "Indigenously developed at the AMTZ medical zone, the Panakeia ANAEVENT is a compact, high-precision anaesthesia ventilator designed for seamless integration with surgical anaesthesia delivery platforms. Featuring a clear vertical ascending bellows system calibrated up to 1200 mL, a crisp color multi-parameter touchscreen with real-time waveform loops, pneumatic flow micro-control, and fail-safe clinical alarms for surgical safety.",
+      "Indigenously developed with all parts manufactured directly by Panakeia itself, the Panakeia ANAEVENT is a compact, high-precision anaesthesia ventilator designed for seamless integration with surgical anaesthesia delivery platforms. Featuring a clear vertical ascending bellows system calibrated up to 1200 mL, a crisp color multi-parameter touchscreen with real-time waveform loops, pneumatic flow micro-control, and fail-safe clinical alarms for surgical safety.",
     features: [
       "Ascending graduated silicone bellows cylinder (300 mL to 1200 mL calibrated tidal volume)",
       "High-resolution color touchscreen interface displaying real-time pressure, flow, and volume curves",
@@ -264,7 +264,7 @@ export const fallbackProducts: IProduct[] = [
       { label: "Display", value: "7\" Color LCD Touchscreen with real-time waveforms" },
       { label: "Pressure Limits", value: "High P: 10-80 cmH2O, Low P: 0-20 cmH2O" },
       { label: "Battery Autonomy", value: "180+ Minutes rechargeable internal pack" },
-      { label: "Origin & Standards", value: "Indigenous AMTZ Manufacturing, ISO 80601-2-13" },
+      { label: "Origin & Standards", value: "100% In-House Panakeia Manufacturing, ISO 80601-2-13" },
     ],
     images: [
       "/images/products/anaevent-anaesthesia-ventilator.jpeg",
@@ -286,7 +286,7 @@ export const fallbackClients: IClient[] = [
     state: "Andhra Pradesh",
     logoUrl: "/images/clients/apollo-logo.webp",
     testimonial:
-      "Panakeia's Aesthetica anaesthesia workstation demonstrated remarkable stability during high-risk cardiac and neuro cases. Having an indigenous manufacturing facility right in AMTZ ensures parts availability within hours rather than weeks.",
+      "Panakeia's Aesthetica anaesthesia workstation demonstrated remarkable stability during high-risk cardiac and neuro cases. Having 100% in-house parts manufacturing by Panakeia itself ensures parts availability within hours rather than weeks.",
     doctorName: "Dr. K. Srinivas Rao, MD (Anaesthesiology), Senior Consultant",
     featured: true,
   },
@@ -367,18 +367,18 @@ export const fallbackCertifications: ICertification[] = [
     documentUrl: "/docs/cdsco-test-license.pdf",
     status: "active",
     description:
-      "Granted CDSCO Medical Device Test License for examination, testing, and performance validation of Anaesthesia Workstations and Ventilators. Commercial manufacturing license application is in active audit progress at the AMTZ facility.",
+      "Granted CDSCO Medical Device Test License for examination, testing, and performance validation of Anaesthesia Workstations and Ventilators. Commercial manufacturing license application is in active audit progress at our dedicated in-house manufacturing facility.",
     order: 2,
   },
   {
     _id: "cert-3",
     title: "Commercial Medical Device Manufacturing License (Form MD-9)",
-    number: "Application Ref: AMTZ/MFG/2024/MD9-412",
+    number: "Application Ref: PNK/MFG/2024/MD9-412",
     issuedBy: "State Drugs Control Administration & CDSCO Joint Inspection Cell",
     documentUrl: "/docs/mfg-license-application.pdf",
     status: "pending",
     description:
-      "Commercial Manufacturing License application currently under final facility validation and statutory audit at the Andhra Pradesh Medtech Zone (AMTZ) manufacturing unit.",
+      "Commercial Manufacturing License application currently under final facility validation and statutory audit at the Panakeia in-house manufacturing unit.",
     order: 3,
   },
   {
@@ -405,13 +405,13 @@ export const fallbackCertifications: ICertification[] = [
   },
   {
     _id: "cert-6",
-    title: "AMTZ Resident Manufacturing Anchor Facility",
-    number: "AMTZ-UNIT-A84",
-    issuedBy: "Andhra Pradesh Medtech Zone (AMTZ), Visakhapatnam",
-    documentUrl: "/docs/amtz-resident-cert.pdf",
+    title: "Panakeia In-House Manufacturing Facility",
+    number: "PNK-MFG-A84",
+    issuedBy: "Panakeia Medtech Manufacturing Division, Visakhapatnam",
+    documentUrl: "/docs/panakeia-facility-cert.pdf",
     status: "active",
     description:
-      "Resident manufacturing unit at Asia's premier medical device cluster with in-house access to 3D rapid prototyping, EMI/EMC compliance testing, and biomaterial laboratories.",
+      "Dedicated state-of-the-art facility with all components and parts manufactured in-house by Panakeia itself, featuring rapid prototyping, EMI/EMC compliance testing, and biomaterial testing laboratories.",
     order: 6,
   },
 ];

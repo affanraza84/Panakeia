@@ -84,7 +84,7 @@ export function HeroVideoPlayer({
       <div className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
         <div className="flex items-center gap-2 bg-navy-950/80 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-full text-[11px] font-mono text-med-teal-300 shadow-sm">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>Panakeia • AMTZ Facility Tour</span>
+          <span>Panakeia • In-House Facility Tour</span>
         </div>
         <div className="hidden sm:flex items-center gap-1.5 bg-navy-950/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded text-[10px] font-mono text-clinical-300">
           <Activity className="w-3 h-3 text-med-teal-400" />
@@ -144,7 +144,7 @@ export function HeroVideoPlayer({
 
         <div className="flex items-center gap-2">
           <span className="text-[10px] font-mono text-med-teal-400/90 bg-med-teal-950/60 px-2 py-0.5 rounded border border-med-teal-500/20">
-            AMTZ Unit A84
+            In-House Manufacturing
           </span>
           <button
             onClick={handleFullScreen}

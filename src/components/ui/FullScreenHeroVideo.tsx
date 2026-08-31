@@ -95,7 +95,7 @@ export function FullScreenHeroVideo({
           {/* National / Indigenous Badge */}
           <div className="inline-flex items-center gap-2 bg-navy-900/80 border border-med-teal-400/40 px-4 py-1.5 rounded-full text-xs text-med-teal-300 font-medium mb-6 backdrop-blur-md shadow-lg">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Indigenous Critical Care Engineering • AMTZ Visakhapatnam</span>
+            <span>Indigenous Critical Care Engineering • 100% In-House Parts</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight text-white leading-[1.1] drop-shadow-md">
@@ -106,7 +106,7 @@ export function FullScreenHeroVideo({
           </h1>
 
           <p className="mt-6 text-base sm:text-xl text-clinical-100 leading-relaxed max-w-2xl font-normal drop-shadow-sm">
-            Panakeia Medtech manufactures indigenous, clinical-grade Anaesthesia Workstations and Intensive Care Ventilators out of the Andhra Pradesh Medtech Zone (AMTZ).
+            Panakeia Medtech manufactures indigenous, clinical-grade Anaesthesia Workstations and Intensive Care Ventilators, with all parts manufactured directly by Panakeia itself.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -137,7 +137,7 @@ export function FullScreenHeroVideo({
             </div>
             <div className="flex items-center gap-2 backdrop-blur-xs">
               <Building2 className="w-4 h-4 text-med-teal-300 shrink-0" />
-              <span>AMTZ Bio-Cluster</span>
+              <span>100% In-House Manufactured</span>
             </div>
             <div className="flex items-center gap-2 col-span-2 sm:col-span-1 backdrop-blur-xs">
               <Clock className="w-4 h-4 text-med-teal-300 shrink-0" />

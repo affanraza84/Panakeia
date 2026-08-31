@@ -7,7 +7,7 @@
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)](#license)
 [![Made in India](https://img.shields.io/badge/Made%20in-India%20🇮🇳-orange?style=flat-square)](#manufacturing--infrastructure)
 
-> **Official web portal and digital clinical showcase for Panakeia Medtech Private Limited** — an indigenous medical device manufacturer resident at Andhra Pradesh Medtech Zone (AMTZ), Visakhapatnam.
+> **Official web portal and digital clinical showcase for Panakeia Medtech Private Limited** — an indigenous medical device manufacturer with all parts and systems manufactured in-house by Panakeia itself in Visakhapatnam.
 
 ---
 
@@ -22,7 +22,7 @@ Engineered by clinical veterans with **30+ years of high-acuity surgical experie
 ## 🎯 Corporate Philosophy
 
 - **Aim**: Engineer indigenously developed, world-class Anaesthesia Delivery Systems and ICU Ventilators that eliminate foreign import reliance, ensuring clinical safety and affordable life-cycle costs.
-- **Objective**: Maintain zero-downtime mechanical backups, guarantee sub-48h spares dispatch from AMTZ, and continuously innovate with active inputs from senior clinicians.
+- **Objective**: Maintain zero-downtime mechanical backups, guarantee sub-48h spares dispatch with all replacement parts manufactured in-house by Panakeia itself, and continuously innovate with active inputs from senior clinicians.
 - **Vision**: Establish Panakeia Medtech as the premier benchmark for critical care innovation across India, Asia, and emerging global healthcare markets.
 - **Mission**: Equip clinicians with dependable, certified, and fail-safe anaesthesia and respiratory workstations that protect human life in high-stress surgical moments.
 
@@ -131,7 +131,7 @@ Panakeia/
 │   └── video/               # Hero background video assets
 ├── src/
 │   ├── app/
-│   │   ├── about/           # About Us, Founder Story, AMTZ Hub & Philosophy
+│   │   ├── about/           # About Us, Founder Story, In-House Manufacturing & Philosophy
 │   │   ├── api/             # API routes (products, clients, enquiries, certifications)
 │   │   ├── clients/         # Hospital installations and clinical testimonials
 │   │   ├── contact/         # Commercial quote requests and RFQ forms
@@ -156,7 +156,7 @@ Panakeia/
 ## 🏭 Manufacturing & Contact Information
 
 **Panakeia Medtech Private Limited**  
-- **Facility Address**: C-20, IHUB Building, AMTZ Campus, Pragati Maidan, VM Steel Project S.O., Visakhapatnam, Andhra Pradesh – 530031, India  
+- **Facility Address**: Panakeia Manufacturing Facility, Pragati Maidan, VM Steel Project S.O., Visakhapatnam, Andhra Pradesh – 530031, India  
 - **Phone**: [+91-9811340469](tel:+919811340469)  
 - **Clinical & Procurement Email**: [contact@panakeiamedtech.com](mailto:contact@panakeiamedtech.com)  
 - **Website**: [https://panakeiamedtech.com](https://panakeiamedtech.com)

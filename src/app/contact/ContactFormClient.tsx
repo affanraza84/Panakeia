@@ -128,7 +128,7 @@ export function ContactFormClient() {
             Submit a Procurement or Partnership Enquiry
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-clinical-600">
-            Fill out the technical inquiry form below. Our clinical biomedical engineering team at AMTZ will respond within 24 business hours.
+            Fill out the technical inquiry form below. Our clinical biomedical engineering team will respond within 24 business hours.
           </p>
         </div>
 
@@ -367,7 +367,7 @@ export function ContactFormClient() {
               isLoading={isSubmitting}
               rightIcon={<Send className="w-4 h-4" />}
             >
-              {isSubmitting ? "Transmitting Lead to AMTZ Desk..." : "Submit Commercial Enquiry"}
+              {isSubmitting ? "Transmitting Commercial Lead..." : "Submit Commercial Enquiry"}
             </Button>
           </motion.div>
 
@@ -384,7 +384,7 @@ export function ContactFormClient() {
         </form>
       </div>
 
-      {/* Right Column: Contact Information & AMTZ Coordinates */}
+      {/* Right Column: Contact Information & Manufacturing Coordinates */}
       <div className="lg:col-span-5 space-y-6">
         {/* Direct Contacts Box */}
         <div className="bg-navy-950 text-white rounded-2xl p-8 shadow-sm space-y-6">
@@ -405,7 +405,7 @@ export function ContactFormClient() {
                   Manufacturing Facility & Registered Office:
                 </strong>
                 <span>
-                  C-20, IHUB Building, AMTZ Campus, Pragati Maidan, Visakhapatnam - 530031, Andhra Pradesh, India.
+                  Panakeia Manufacturing Facility, Pragati Maidan, Visakhapatnam - 530031, Andhra Pradesh, India.
                 </span>
               </div>
             </div>

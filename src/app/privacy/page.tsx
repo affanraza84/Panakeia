@@ -7,7 +7,7 @@ import { ShieldCheck, Lock, CheckCircle2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Privacy Policy | Panakeia Medtech Private Limited",
   description:
-    "Data protection policy and privacy commitments for Panakeia Medtech Private Limited, resident manufacturer at AMTZ Visakhapatnam.",
+    "Data protection policy and privacy commitments for Panakeia Medtech Private Limited, indigenous medical device manufacturer in Visakhapatnam.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm text-clinical-600">
-            Panakeia Medtech Private Limited &bull; AMTZ Campus, Visakhapatnam
+            Panakeia Medtech Private Limited &bull; In-House Manufacturing Facility, Visakhapatnam
           </p>
           <p className="text-xs text-clinical-400 font-mono">
             Last Updated: {lastUpdated}
@@ -75,7 +75,7 @@ export default function PrivacyPolicyPage() {
               1. Introduction & Corporate Scope
             </h3>
             <p>
-              Panakeia Medtech Private Limited (&ldquo;Panakeia&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) operates an indigenous medical device manufacturing facility situated at C-20, IHUB Building, Andhra Pradesh Medtech Zone (AMTZ), Visakhapatnam - 530031, India.
+              Panakeia Medtech Private Limited (&ldquo;Panakeia&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) operates an indigenous medical device manufacturing facility situated in Visakhapatnam - 530031, India, where all parts and components are manufactured directly in-house by Panakeia itself.
             </p>
             <p>
               This Privacy Policy explains how we collect, handle, store, and safeguard the information you provide when interacting with our official web portal (
@@ -174,7 +174,7 @@ export default function PrivacyPolicyPage() {
             <div className="p-4 rounded-xl bg-clinical-50 border border-clinical-200 text-xs space-y-1.5 font-mono text-navy-950">
               <div><strong>Panakeia Medtech Private Limited</strong></div>
               <div>Attn: Privacy & Data Protection Desk</div>
-              <div>C-20, IHUB Building, AMTZ Campus, Visakhapatnam - 530031, AP, India</div>
+              <div>Panakeia Manufacturing Facility, Visakhapatnam - 530031, AP, India</div>
               <div>Email: <a href="mailto:panakeia.india@gmail.com" className="text-med-teal-700 hover:underline">panakeia.india@gmail.com</a></div>
               <div>Phone: <a href="tel:+919811340469" className="text-med-teal-700 hover:underline">+91-9811340469</a></div>
             </div>

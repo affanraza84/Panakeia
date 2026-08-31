@@ -22,9 +22,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us — Clinical Heritage & AMTZ Manufacturing",
+  title: "About Us — Clinical Heritage & In-House Manufacturing",
   description:
-    "Panakeia Medtech is led by industry experts with 35+ years of global experience in critical care and medical technology, manufacturing world-class equipment at AMTZ Visakhapatnam.",
+    "Panakeia Medtech is led by industry experts with 35+ years of global experience in critical care and medical technology, with 100% of all parts manufactured in-house by Panakeia itself in Visakhapatnam.",
 };
 
 export default function AboutPage() {
@@ -35,10 +35,10 @@ export default function AboutPage() {
     url: "https://panakeiamedtech.com",
     logo: "https://panakeiamedtech.com/images/panakeia-logo.png",
     description:
-      "Indigenous Indian manufacturer of critical care Anaesthesia Workstations and Intensive Care Ventilators at AMTZ Visakhapatnam. Led by industry experts with 35+ years of global experience in critical care and medical technology.",
+      "Indigenous Indian manufacturer of critical care Anaesthesia Workstations and Intensive Care Ventilators with all parts manufactured in-house by Panakeia itself in Visakhapatnam. Led by industry experts with 35+ years of global experience in critical care and medical technology.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "C-20, IHUB Building, AMTZ Campus, Pragati Maidan",
+      streetAddress: "Panakeia Manufacturing Facility, Pragati Maidan",
       addressLocality: "Visakhapatnam",
       addressRegion: "Andhra Pradesh",
       postalCode: "530031",
@@ -98,7 +98,7 @@ export default function AboutPage() {
                     Led by industry experts with 35+ years of global experience in critical care and medical technology, our engineering is rooted in decades of live OT administration, ventilator design, and high-acuity patient care.
                   </p>
                   <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-clinical-300">
-                    <span>AMTZ Manufacturing Hub</span>
+                    <span>In-House Manufacturing Hub</span>
                     <span>•</span>
                     <span>Visakhapatnam, AP</span>
                   </div>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-med-teal-500 mt-2 shrink-0" />
-                    <span><strong>Sub-48h Spares Support:</strong> Direct domestic dispatch from our AMTZ manufacturing hub.</span>
+                    <span><strong>Sub-48h Spares Support:</strong> Direct domestic dispatch from our in-house manufacturing facility, where all replacement parts are produced by Panakeia itself.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-med-teal-500 mt-2 shrink-0" />
@@ -255,13 +255,13 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* AMTZ Manufacturing Infrastructure */}
+      {/* In-House Manufacturing Infrastructure */}
       <section className="py-16 lg:py-20 bg-clinical-50 border-t border-b border-clinical-200">
         <Container>
           <SectionHeading
-            eyebrow="World-Class Manufacturing Cluster"
-            title="Resident at Andhra Pradesh Medtech Zone (AMTZ)"
-            description="Our manufacturing, testing, and cleanroom assembly operations are stationed in AMTZ, Asia's premier dedicated medical device ecosystem."
+            eyebrow="100% In-House Parts & Systems Manufacturing"
+            title="Dedicated In-House Manufacturing & Engineering Facility"
+            description="All components, pneumatic circuits, and systems are manufactured directly by Panakeia itself in our state-of-the-art facility in Visakhapatnam."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -270,10 +270,10 @@ export default function AboutPage() {
                 <Building2 className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-navy-950 font-heading">
-                State-of-the-Art Bio-Cluster
+                State-of-the-Art In-House Bio-Engineering
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-clinical-600 leading-relaxed">
-                Direct access to shared high-end testing labs at AMTZ, including 3D rapid prototyping, PCB surface mount assembly, and high-precision CNC machining centers.
+                Complete in-house manufacturing infrastructure with all components manufactured by Panakeia itself, including 3D rapid prototyping, PCB surface mount assembly, and high-precision CNC machining centers.
               </p>
             </div>
 
@@ -285,7 +285,7 @@ export default function AboutPage() {
                 In-House EMI/EMC & Safety Testing
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-clinical-600 leading-relaxed">
-                Full compliance validation against IEC 60601-1-2 electromagnetic compatibility and medical safety regulations conducted on-site at AMTZ certified test chambers.
+                Full compliance validation against IEC 60601-1-2 electromagnetic compatibility and medical safety regulations conducted on-site at certified test chambers.
               </p>
             </div>
 
