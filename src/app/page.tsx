@@ -5,12 +5,11 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
-import { CertificationCard } from "@/components/ui/CertificationCard";
 import { CleanHeroVideo } from "@/components/ui/CleanHeroVideo";
 import { IndigenousExcellenceStrip } from "@/components/ui/IndigenousExcellenceStrip";
 import { AwardsSection } from "@/components/ui/AwardsSection";
 import { EquipmentShowcase } from "@/components/ui/EquipmentShowcase";
-import { getClients, getCertifications } from "@/lib/data";
+import { getClients } from "@/lib/data";
 import {
   Zap,
   Wrench,
@@ -21,7 +20,6 @@ export const revalidate = 3600; // ISR 1 hour
 
 export default async function HomePage() {
   const clients = await getClients();
-  const certifications = await getCertifications();
 
   const featuredClients = clients.filter((c) => c.featured);
 
@@ -85,30 +83,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* 5. REGULATORY & COMPLIANCE SECTION */}
-      <section className="py-16 lg:py-20 bg-clinical-50 border-t border-b border-clinical-200">
-        <Container>
-          <SectionHeading
-            eyebrow="Compliance & Quality Assurance"
-            title="Factual Regulatory Standing & Certifications"
-            description="Panakeia operates with strict adherence to Indian medical device rules and international quality frameworks. Transparent compliance documentation for hospital procurement vetting."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.slice(0, 3).map((cert) => (
-              <CertificationCard key={cert.title} certification={cert} />
-            ))}
-          </div>
-
-          <div className="mt-8 text-center">
-            <Button href="/quality" variant="outline" size="md">
-              View Detailed Regulatory Credentials & Audit Documentation
-            </Button>
-          </div>
-        </Container>
-      </section>
-
-      {/* 6. AWARDS & RECOGNITIONS SECTION (Matching Reference Design) */}
+      {/* 5. AWARDS & RECOGNITIONS SECTION (Matching Reference Design) */}
       <AwardsSection />
 
       {/* 7. TESTIMONIAL PREVIEW */}
