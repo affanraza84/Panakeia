@@ -11,14 +11,11 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
-  ArrowRight,
   FileText,
   Building2,
   CheckCircle2,
   ExternalLink,
   ShieldCheck,
-  Sparkles,
-  Zap,
 } from "lucide-react";
 
 interface ProductMovingShowcaseProps {
@@ -47,7 +44,7 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
   const [isPaused, setIsPaused] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
 
-  // Duplicate items for continuous infinite marquee loop with all products
+  // Duplicate items for continuous infinite marquee loop
   const marqueeItems =
     products.length > 0
       ? products.length < 5
@@ -107,17 +104,17 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
   };
 
   return (
-    <section className="bg-slate-50/70 border-b border-clinical-200 py-10 lg:py-14 relative overflow-hidden">
+    <section className="bg-slate-50/70 border-b border-clinical-200 py-4 sm:py-6 relative overflow-hidden">
       {/* Background aesthetics */}
       <div className="absolute inset-0 subtle-grid-pattern opacity-30 pointer-events-none" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-med-teal-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      <Container className="relative z-10 mb-6 sm:mb-8">
-        {/* SECTION HEADER */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs text-navy-900 text-xs font-semibold tracking-wide">
+      <Container className="relative z-10 mb-3 sm:mb-4">
+        {/* SECTION HEADER - COMPACT & CLEAN */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-2xs text-navy-900 text-xs font-semibold tracking-wide">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-med-teal-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-med-teal-600"></span>
@@ -127,22 +124,20 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
               </span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-navy-950 tracking-tight">
+            <h2 className="text-lg sm:text-xl font-bold font-heading text-navy-950 tracking-tight">
               Indigenous Critical Care Equipment Portfolio
             </h2>
-            <p className="text-xs sm:text-sm text-clinical-600 max-w-2xl leading-relaxed">
-              Continuous showcase of Panakeia indigenously engineered medical systems.{" "}
-              <span className="font-semibold text-navy-900">
-                Hover to pause • Click any card for high-resolution enlarged view & clinical specifications.
-              </span>
-            </p>
           </div>
+
+          <p className="text-xs text-clinical-600">
+            Hover to pause • Click image for enlarged view & specifications
+          </p>
         </div>
       </Container>
 
-      {/* CONTINUOUS MOVING MARQUEE TRACK (LEFT TO RIGHT) */}
+      {/* CONTINUOUS MOVING MARQUEE TRACK (IMAGE-FOCUSED CARDS) */}
       <div
-        className="relative w-full overflow-hidden py-2 select-none"
+        className="relative w-full overflow-hidden py-1.5 select-none"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -150,10 +145,10 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-20" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-20" />
 
-        {/* The Track with Guaranteed Non-Shrinking Elements */}
+        {/* The Track with Pure Image Cards */}
         <div
           ref={trackRef}
-          className="flex flex-row flex-nowrap items-stretch gap-6 w-max animate-marquee-ltr"
+          className="flex flex-row flex-nowrap items-center gap-4 sm:gap-5 w-max animate-marquee-ltr"
           style={{
             animationPlayState: isPaused ? "paused" : "running",
           }}
@@ -171,12 +166,13 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                 key={`${product._id || product.slug}-${idx}`}
                 onClick={() => handleOpenProduct(product)}
                 style={{
-                  width: "330px",
-                  minWidth: "330px",
-                  maxWidth: "330px",
+                  width: "250px",
+                  minWidth: "250px",
+                  maxWidth: "250px",
+                  height: "190px",
                   flexShrink: 0,
                 }}
-                className="w-[330px] min-w-[330px] shrink-0 bg-white rounded-2xl border border-slate-200/90 shadow-2xs hover:shadow-xl hover:border-med-teal-500/60 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col justify-between group/card"
+                className="w-[250px] min-w-[250px] h-[190px] shrink-0 bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-lg hover:border-med-teal-500/70 transition-all duration-300 cursor-pointer overflow-hidden relative group/card flex items-center justify-center p-3"
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
@@ -186,77 +182,41 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                   }
                 }}
               >
-                {/* TOP IMAGE VIEWPORT WITH EXPLICIT DIMENSIONS */}
-                <div className="relative w-full h-[220px] min-h-[220px] bg-gradient-to-b from-slate-50 via-slate-100/60 to-slate-100/90 p-4 rounded-t-2xl flex items-center justify-center overflow-hidden border-b border-slate-100">
-                  {/* Subtle decorative glow */}
-                  <div className="absolute w-40 h-40 rounded-full bg-med-teal-500/10 blur-xl group-hover/card:bg-med-teal-500/20 transition-all duration-500 pointer-events-none" />
+                {/* Background Subtle Gradient */}
+                <div className="absolute inset-0 bg-radial from-slate-50 via-slate-100/40 to-slate-100/80 pointer-events-none" />
+                <div className="absolute w-32 h-32 rounded-full bg-med-teal-500/5 blur-lg group-hover/card:bg-med-teal-500/15 transition-all duration-300 pointer-events-none" />
 
-                  {/* Next.js Image with fill inside an explicitly-sized relative container */}
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={primaryImage}
-                      alt={product.name}
-                      fill
-                      sizes="330px"
-                      className="object-contain p-2 group-hover/card:scale-108 transition-transform duration-500 ease-out drop-shadow-sm"
-                    />
-                  </div>
-
-                  {/* Top Left: Category Badge */}
-                  <div className="absolute top-3 left-3 z-10">
-                    <span
-                      className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border shadow-2xs font-mono ${categoryBadge}`}
-                    >
-                      {categoryLabel}
-                    </span>
-                  </div>
-
-                  {/* Top Right: Enlarge Quick View Button */}
-                  <div className="absolute top-3 right-3 z-10 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/95 backdrop-blur-xs border border-slate-200 shadow-2xs text-navy-950 text-[11px] font-semibold opacity-90 group-hover/card:opacity-100 group-hover/card:bg-med-teal-600 group-hover/card:text-white group-hover/card:border-med-teal-600 transition-all duration-300">
-                    <Maximize2 className="w-3.5 h-3.5" />
-                    <span>Enlarge</span>
-                  </div>
+                {/* Pure Image Viewport */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src={primaryImage}
+                    alt={product.name}
+                    fill
+                    sizes="250px"
+                    className="object-contain p-2 group-hover/card:scale-108 transition-transform duration-500 ease-out drop-shadow-sm"
+                  />
                 </div>
 
-                {/* BOTTOM CONTENT BODY */}
-                <div className="p-5 flex flex-col justify-between flex-1 bg-white space-y-3">
-                  <div className="space-y-1.5">
-                    <h3 className="text-base font-bold text-navy-950 font-heading line-clamp-1 group-hover/card:text-med-teal-700 transition-colors">
+                {/* Top Left: Category Badge */}
+                <div className="absolute top-2.5 left-2.5 z-10">
+                  <span
+                    className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border shadow-2xs font-mono ${categoryBadge}`}
+                  >
+                    {categoryLabel}
+                  </span>
+                </div>
+
+                {/* Top Right: Enlarge Icon Indicator */}
+                <div className="absolute top-2.5 right-2.5 z-10 w-6 h-6 rounded-lg bg-white/90 backdrop-blur-xs border border-slate-200 shadow-2xs text-navy-900 flex items-center justify-center opacity-0 group-hover/card:opacity-100 group-hover/card:bg-med-teal-600 group-hover/card:text-white group-hover/card:border-med-teal-600 transition-all duration-300">
+                  <Maximize2 className="w-3 h-3" />
+                </div>
+
+                {/* Bottom Overlay Pill: Product Name on Hover */}
+                <div className="absolute inset-x-2.5 bottom-2 z-10 opacity-90 group-hover/card:opacity-100 transition-opacity">
+                  <div className="bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-lg px-2.5 py-1.5 shadow-xs">
+                    <p className="text-[11px] font-bold text-navy-950 truncate text-center group-hover/card:text-med-teal-700 transition-colors">
                       {product.name}
-                    </h3>
-                    <p className="text-xs text-clinical-600 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                      {product.tagline}
                     </p>
-                  </div>
-
-                  {/* Specs Highlights Row */}
-                  {product.specs && product.specs.length > 0 && (
-                    <div className="grid grid-cols-2 gap-1.5 pt-2 border-t border-slate-100">
-                      {product.specs.slice(0, 2).map((spec, sIdx) => (
-                        <div
-                          key={sIdx}
-                          className="bg-slate-50 px-2 py-1 rounded-md border border-slate-100 text-[10px]"
-                        >
-                          <span className="text-clinical-400 block font-mono uppercase truncate">
-                            {spec.label}
-                          </span>
-                          <span className="font-semibold text-navy-900 block truncate">
-                            {spec.value}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Interactive Action Prompt */}
-                  <div className="pt-2 flex items-center justify-between text-xs text-med-teal-600 font-semibold group-hover/card:text-med-teal-700">
-                    <span className="flex items-center gap-1.5 text-[11px]">
-                      <Sparkles className="w-3.5 h-3.5 text-med-teal-600" />
-                      Click to inspect clinical specs
-                    </span>
-                    <div className="w-6 h-6 rounded-full bg-med-teal-50 group-hover/card:bg-med-teal-600 group-hover/card:text-white text-med-teal-700 flex items-center justify-center transition-all duration-300">
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/card:translate-x-0.5 transition-transform" />
-                    </div>
                   </div>
                 </div>
               </div>
