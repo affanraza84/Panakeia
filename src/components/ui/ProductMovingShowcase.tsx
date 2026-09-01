@@ -166,13 +166,13 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                 key={`${product._id || product.slug}-${idx}`}
                 onClick={() => handleOpenProduct(product)}
                 style={{
-                  width: "250px",
-                  minWidth: "250px",
-                  maxWidth: "250px",
-                  height: "190px",
+                  width: "340px",
+                  minWidth: "340px",
+                  maxWidth: "340px",
+                  height: "260px",
                   flexShrink: 0,
                 }}
-                className="w-[250px] min-w-[250px] h-[190px] shrink-0 bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-lg hover:border-med-teal-500/70 transition-all duration-300 cursor-pointer overflow-hidden relative group/card flex items-center justify-center p-3"
+                className="w-[300px] sm:w-[340px] min-w-[300px] sm:min-w-[340px] h-[230px] sm:h-[260px] shrink-0 bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-xl hover:border-med-teal-500/70 transition-all duration-300 cursor-pointer overflow-hidden relative group/card flex items-center justify-center p-4 sm:p-5"
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
@@ -184,37 +184,37 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
               >
                 {/* Background Subtle Gradient */}
                 <div className="absolute inset-0 bg-radial from-slate-50 via-slate-100/40 to-slate-100/80 pointer-events-none" />
-                <div className="absolute w-32 h-32 rounded-full bg-med-teal-500/5 blur-lg group-hover/card:bg-med-teal-500/15 transition-all duration-300 pointer-events-none" />
+                <div className="absolute w-44 h-44 rounded-full bg-med-teal-500/5 blur-xl group-hover/card:bg-med-teal-500/20 transition-all duration-300 pointer-events-none" />
 
-                {/* Pure Image Viewport */}
-                <div className="relative w-full h-full">
+                {/* Pure Image Viewport with Larger Dimensions */}
+                <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={primaryImage}
                     alt={product.name}
                     fill
-                    sizes="250px"
-                    className="object-contain p-2 group-hover/card:scale-108 transition-transform duration-500 ease-out drop-shadow-sm"
+                    sizes="(max-width: 640px) 300px, 340px"
+                    className="object-contain p-2 sm:p-3 group-hover/card:scale-110 transition-transform duration-500 ease-out drop-shadow-md"
                   />
                 </div>
 
                 {/* Top Left: Category Badge */}
-                <div className="absolute top-2.5 left-2.5 z-10">
+                <div className="absolute top-3 left-3 z-10">
                   <span
-                    className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border shadow-2xs font-mono ${categoryBadge}`}
+                    className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border shadow-2xs font-mono ${categoryBadge}`}
                   >
                     {categoryLabel}
                   </span>
                 </div>
 
                 {/* Top Right: Enlarge Icon Indicator */}
-                <div className="absolute top-2.5 right-2.5 z-10 w-6 h-6 rounded-lg bg-white/90 backdrop-blur-xs border border-slate-200 shadow-2xs text-navy-900 flex items-center justify-center opacity-0 group-hover/card:opacity-100 group-hover/card:bg-med-teal-600 group-hover/card:text-white group-hover/card:border-med-teal-600 transition-all duration-300">
-                  <Maximize2 className="w-3 h-3" />
+                <div className="absolute top-3 right-3 z-10 w-7 h-7 rounded-lg bg-white/95 backdrop-blur-xs border border-slate-200 shadow-2xs text-navy-900 flex items-center justify-center opacity-85 group-hover/card:opacity-100 group-hover/card:bg-med-teal-600 group-hover/card:text-white group-hover/card:border-med-teal-600 transition-all duration-300">
+                  <Maximize2 className="w-3.5 h-3.5" />
                 </div>
 
                 {/* Bottom Overlay Pill: Product Name on Hover */}
-                <div className="absolute inset-x-2.5 bottom-2 z-10 opacity-90 group-hover/card:opacity-100 transition-opacity">
-                  <div className="bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-lg px-2.5 py-1.5 shadow-xs">
-                    <p className="text-[11px] font-bold text-navy-950 truncate text-center group-hover/card:text-med-teal-700 transition-colors">
+                <div className="absolute inset-x-3 bottom-2.5 z-10 opacity-95 group-hover/card:opacity-100 transition-opacity">
+                  <div className="bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl px-3 py-2 shadow-xs">
+                    <p className="text-xs sm:text-sm font-bold text-navy-950 truncate text-center group-hover/card:text-med-teal-700 transition-colors">
                       {product.name}
                     </p>
                   </div>
