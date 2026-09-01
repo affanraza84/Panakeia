@@ -34,7 +34,7 @@ Engineered by clinical veterans with **30+ years of high-acuity surgical experie
 | :--- | :--- | :--- | :--- |
 | **Panakeia Aesthetica 700** | Anaesthesia Workstation | High-Acuity Multi-Speciality OT | 12.1" Touchscreen, Digital Gas Flow + Mechanical Backup, Dual Selectatec Vaporizer Rail, Heated Absorber, AGSS |
 | **Panakeia Aesthetica 500** | Anaesthesia Workstation | Daycare & Secondary Surgical Centers | 8.4" Color LCD, Pneumatic Reliability, Anti-Hypoxic Mechanical Guard, 1.5L Quick-Release Absorber |
-| **Panakeia RespiCare ICU 900** | Intensive Care Ventilator | Adult, Paediatric & Neonatal ICU | 15.6" FHD Touchscreen, 40,000h Ultra-Quiet Turbine (Zero Central Air Needed), HFNC & Lung Dynamics |
+| **Panakeia RespiCare ICU 900** | Intensive Care Ventilator | Adult & Paediatric ICU | 15.6" FHD Touchscreen, 40,000h Ultra-Quiet Turbine (Zero Central Air Needed), HFNC & Lung Dynamics |
 | **Panakeia RespiCare Transport 300** | Mobile & Emergency Ventilator | Ambulance, Trauma & Intra-Hospital | 7" High-Brightness Display, Internal Blower, 8-Hour Battery Life, Ruggedized Anti-Shock Housing |
 
 ---

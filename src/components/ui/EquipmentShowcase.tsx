@@ -48,7 +48,7 @@ const equipmentData: EquipmentItem[] = [
     ],
     specs: [
       { label: "Gas Inlets", value: "O2, N2O, Medical Air (280-600 kPa)" },
-      { label: "Tidal Volume", value: "10 mL – 1,600 mL (Adult/Paediatric/Infant)" },
+      { label: "Tidal Volume", value: "10 mL – 1,600 mL (Adult/Paediatric)" },
       { label: "Absorber", value: "1.8L Dual-Chamber Quick-Release" },
       { label: "Standard", value: "ISO 80601-2-13 / CDSCO Compliant" },
       { label: "Vaporizers", value: "Dual Selectatec-compatible Interlock Bar" },
@@ -112,7 +112,7 @@ const equipmentData: EquipmentItem[] = [
     slug: "icu-critical-care-ventilator",
     categoryLabel: "Intensive Care Turbine Ventilator",
     badge: "High-Acuity Life Support",
-    tagline: "Turbine-Driven Multi-Functional Intensive Care Ventilator for Adult, Paediatric & Neonatal Life Support",
+    tagline: "Turbine-Driven Multi-Functional Intensive Care Ventilator for Adult & Paediatric Life Support",
     description: "An advanced indigenous critical care ventilator powered by an ultra-quiet blower turbine. Delivers invasive and non-invasive ventilation (NIV & HFNC) with zero external compressor dependency.",
     highlights: [
       "15.6\" High-Resolution Tiltable Capacitive Touchscreen with 360° alarm light bar",
@@ -122,7 +122,7 @@ const equipmentData: EquipmentItem[] = [
       "Hot-swappable dual battery system delivering 4+ hours continuous operation"
     ],
     specs: [
-      { label: "Patient Range", value: "Adult, Paediatric, and Neonatal (2mL-2000mL)" },
+      { label: "Patient Range", value: "Adult and Paediatric (10mL-2000mL)" },
       { label: "Peak Flow", value: "Up to 240 L/min rapid turbine response" },
       { label: "Modes", value: "VCV, PCV, SIMV, CPAP/PSV, APRV, PRVC, HFNC" },
       { label: "PEEP / CPAP", value: "0 to 50 cmH2O precision electronic valve" },

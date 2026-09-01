@@ -24,7 +24,7 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
     specs: [
       { label: "Gas Inputs", value: "3 Gases: O2, N2O, Medical Air (280 - 600 kPa)" },
       { label: "Ventilation Modes", value: "VCV, PCV, SIMV-V, SIMV-P, PSV, PRVC, Manual" },
-      { label: "Tidal Volume Range", value: "10 mL to 1,600 mL (Adult, Paediatric & Infant)" },
+      { label: "Tidal Volume Range", value: "10 mL to 1,600 mL (Adult & Paediatric)" },
       { label: "Absorber Capacity", value: "1.8 Liters dual-chamber with quick-release bypass" },
       { label: "Display", value: "12.1\" Color TFT anti-glare capacitive touchscreen" },
       { label: "Battery Autonomy", value: "180 minutes under full mechanical ventilation" },
@@ -106,7 +106,7 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
     slug: "icu-critical-care-ventilator",
     name: "Advanced ICU Critical Care Ventilator",
     category: "ventilator",
-    tagline: "Turbine-Driven Multi-Functional Intensive Care Ventilator for Adult, Paediatric & Neonatal Life Support",
+    tagline: "Turbine-Driven Multi-Functional Intensive Care Ventilator for Adult & Paediatric Life Support",
     description:
       "An advanced indigenously engineered intensive care ventilator designed for high-acuity ICUs and emergency trauma wards. Powered by an ultra-quiet blower turbine that eliminates compressed air cylinder dependencies, it delivers high-performance invasive and non-invasive ventilation (NIV & HFNC).",
     features: [
@@ -118,8 +118,8 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
       "Hot-swappable dual battery system delivering over 4 hours of uninterrupted intensive care operation",
     ],
     specs: [
-      { label: "Patient Group", value: "Adult, Paediatric, and Neonatal" },
-      { label: "Tidal Volume", value: "2 mL to 2,000 mL" },
+      { label: "Patient Group", value: "Adult & Paediatric" },
+      { label: "Tidal Volume", value: "10 mL to 2,000 mL" },
       { label: "Peak Flow", value: "Up to 240 L/min (high-speed turbine response)" },
       { label: "PEEP / CPAP", value: "0 to 50 cmH2O electronic precision valve" },
       { label: "FiO2 Range", value: "21% to 100% titration" },
@@ -173,7 +173,7 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
     category: "infusion",
     tagline: "High-Precision Micro-Infusion & Syringe Delivery System with Comprehensive Drug Library and Anti-Bolus Safety",
     description:
-      "An indigenously developed smart dual-channel infusion and syringe pump platform engineered for critical care, neonatal intensive care, oncology, and anaesthesia delivery. Featuring ultra-precise stepper motor drive mechanics, automatic syringe size detection (2ml to 60ml), real-time dynamic pressure monitoring, and programmable dose-rate calculators for fail-safe intravenous medication administration.",
+      "An indigenously developed smart dual-channel infusion and syringe pump platform engineered for critical care, postoperative care, oncology, and anaesthesia delivery. Featuring ultra-precise stepper motor drive mechanics, automatic syringe size detection (2ml to 60ml), real-time dynamic pressure monitoring, and programmable dose-rate calculators for fail-safe intravenous medication administration.",
     features: [
       "High-precision micro-step motor driving technology delivering accurate infusion rates from 0.01 mL/h to 1500 mL/h",
       "Automatic syringe brand and size recognition (compatible with standard 2mL, 5mL, 10mL, 20mL, 30mL, 50/60mL syringes)",
