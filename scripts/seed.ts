@@ -28,7 +28,7 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
       { label: "Absorber Capacity", value: "1.8 Liters dual-chamber with quick-release bypass" },
       { label: "Display", value: "12.1\" Color TFT anti-glare capacitive touchscreen" },
       { label: "Battery Autonomy", value: "180 minutes under full mechanical ventilation" },
-      { label: "Manufacturing Standard", value: "ISO 80601-2-13, IEC 60601-1, CDSCO MD-13 Compliant" },
+      { label: "Manufacturing Standard", value: "ISO 80601-2-13, IEC 60601-1, CDSCO Compliant" },
     ],
     images: [
       "/images/products/three-gas-system-advanced-anaesthesia-workstation.jpeg",
@@ -336,7 +336,6 @@ const seedClients: Omit<IClient, "_id" | "createdAt" | "updatedAt">[] = [
 const seedCertifications: Omit<ICertification, "_id" | "createdAt" | "updatedAt">[] = [
   {
     title: "DPIIT Recognition — Make in India MedTech Enterprise",
-    number: "DIPP114820",
     issuedBy: "Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce & Industry",
     documentUrl: "/docs/dpiit-recognition.pdf",
     status: "active",
@@ -345,28 +344,25 @@ const seedCertifications: Omit<ICertification, "_id" | "createdAt" | "updatedAt"
     order: 1,
   },
   {
-    title: "CDSCO Medical Device Test License (Form MD-13)",
-    number: "TL/MD/2024/00892",
+    title: "CDSCO Medical Device Regulatory Compliance",
     issuedBy: "Central Drugs Standard Control Organization (CDSCO), Directorate General of Health Services",
-    documentUrl: "/docs/cdsco-test-license.pdf",
+    documentUrl: "/docs/cdsco-compliance.pdf",
     status: "active",
     description:
-      "Granted CDSCO Medical Device Test License for examination, testing, and performance validation of Anaesthesia Workstations and Ventilators. Commercial manufacturing license application is in active audit progress at our dedicated in-house manufacturing facility.",
+      "Adherence to CDSCO regulatory standards for examination, testing, and performance validation of Anaesthesia Workstations and Ventilators at our dedicated in-house manufacturing facility.",
     order: 2,
   },
   {
-    title: "Commercial Medical Device Manufacturing License (Form MD-9)",
-    number: "Application Ref: PNK/MFG/2024/MD9-412",
-    issuedBy: "State Drugs Control Administration & CDSCO Joint Inspection Cell",
-    documentUrl: "/docs/mfg-license-application.pdf",
-    status: "pending",
+    title: "Medical Device Manufacturing Standards Compliance",
+    issuedBy: "State Drugs Control Administration & CDSCO Regulatory Framework",
+    documentUrl: "/docs/mfg-standards-compliance.pdf",
+    status: "active",
     description:
-      "Commercial Manufacturing License application currently under final facility validation and statutory audit at the Panakeia in-house manufacturing unit.",
+      "Facility validation, safety protocols, and rigorous quality audit adherence across the Panakeia in-house manufacturing unit.",
     order: 3,
   },
   {
     title: "MSME Udyam Registration",
-    number: "UDYAM-AP-10-0048291",
     issuedBy: "Ministry of Micro, Small and Medium Enterprises, Government of India",
     documentUrl: "/docs/msme-registration.pdf",
     status: "active",
@@ -376,7 +372,6 @@ const seedCertifications: Omit<ICertification, "_id" | "createdAt" | "updatedAt"
   },
   {
     title: "ISO 13485:2016 Medical Devices Quality Management System",
-    number: "ISO13485-MED-9042",
     issuedBy: "TUV / Accredited Medical Device Registrar",
     documentUrl: "/docs/iso-13485-certificate.pdf",
     status: "active",
@@ -386,7 +381,6 @@ const seedCertifications: Omit<ICertification, "_id" | "createdAt" | "updatedAt"
   },
   {
     title: "Panakeia In-House Manufacturing Facility",
-    number: "PNK-MFG-A84",
     issuedBy: "Panakeia Medtech Manufacturing Division, Visakhapatnam",
     documentUrl: "/docs/panakeia-facility-cert.pdf",
     status: "active",

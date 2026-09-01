@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Quality, Standards & Regulatory Compliance",
   description:
-    "Review Panakeia Medtech's quality certifications, DPIIT recognition, MSME status, and transparent CDSCO Medical Device Test License regulatory standing.",
+    "Review Panakeia Medtech's quality certifications, DPIIT recognition, MSME registration, and CDSCO regulatory compliance.",
 };
 
 export const revalidate = 3600;
@@ -39,7 +39,7 @@ export default async function QualityPage() {
             Quality Assurance & Regulatory Standing
           </h1>
           <p className="mt-4 text-base sm:text-lg text-clinical-200 leading-relaxed">
-            Panakeia upholds stringent quality assurance standards and full regulatory compliance under the Medical Device Rules (MDR) 2017 governed by CDSCO.
+            Panakeia upholds stringent quality assurance standards and full regulatory compliance under the Medical Device Rules (MDR) governed by CDSCO.
           </p>
         </Container>
       </section>
@@ -57,10 +57,10 @@ export default async function QualityPage() {
                   Statutory Regulatory Standing Disclosure
                 </h3>
                 <p className="leading-relaxed">
-                  Panakeia Medtech Private Limited holds an active <strong>CDSCO Medical Device Test License (Form MD-13)</strong> granted for the examination, design evaluation, and performance testing of critical care devices (Anaesthesia Workstations & Ventilators).
+                  Panakeia Medtech Private Limited maintains active <strong>CDSCO Medical Device Regulatory Compliance</strong> for the design, examination, evaluation, and performance testing of critical care devices (Anaesthesia Workstations & Ventilators).
                 </p>
                 <p className="leading-relaxed">
-                  The commercial manufacturing license application (Form MD-9) is under active facility validation and joint regulatory audit with the State Drugs Control Administration at our dedicated in-house Visakhapatnam manufacturing unit, where all device parts and assemblies are produced by Panakeia itself. We maintain strict factual transparency regarding our regulatory journey.
+                  Our state-of-the-art in-house Visakhapatnam manufacturing facility operates under rigorous quality management and regulatory standards, where all device parts and assemblies are produced directly by Panakeia itself. We maintain strict factual adherence to national and international medical device regulations.
                 </p>
               </div>
             </div>

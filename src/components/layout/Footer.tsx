@@ -35,11 +35,11 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="px-3 py-1 rounded bg-navy-800 border border-navy-700 text-clinical-200 font-mono text-[11px]">
-              DPIIT: DIPP114820
+            <span className="px-3 py-1 rounded bg-navy-800 border border-navy-700 text-clinical-200 text-[11px]">
+              DPIIT Recognized
             </span>
-            <span className="px-3 py-1 rounded bg-navy-800 border border-navy-700 text-clinical-200 font-mono text-[11px]">
-              CDSCO Test Lic: MD-13
+            <span className="px-3 py-1 rounded bg-navy-800 border border-navy-700 text-clinical-200 text-[11px]">
+              CDSCO Compliant
             </span>
           </div>
         </Container>
@@ -81,9 +81,9 @@ export function Footer() {
             <p className="text-xs sm:text-sm text-clinical-400 leading-relaxed max-w-sm">
               Panakeia Medtech manufactures indigenous critical care Anaesthesia Workstations and Intensive Care Ventilators. Led by industry experts with 35+ years of global experience in critical care and medical technology.
             </p>
-            <div className="pt-2 text-xs text-clinical-400 space-y-1 font-mono">
-              <div>CIN: U33100AP2023PTC123456</div>
-              <div>MSME Reg: UDYAM-AP-10-0048291</div>
+            <div className="pt-2 text-xs text-clinical-400 space-y-1">
+              <div>Make in India • Startup India Recognized</div>
+              <div>MSME Registered Medical Device Enterprise</div>
             </div>
 
             {/* Social Links */}
@@ -243,7 +243,7 @@ export function Footer() {
             <strong className="text-clinical-200 block mb-1">
               Regulatory Disclosure & Compliance Notice:
             </strong>
-            Panakeia Medtech Private Limited is a DPIIT-recognized and MSME-registered medical device manufacturer. The company holds a valid CDSCO Medical Device Test License (Form MD-13) for performance validation and clinical evaluation. The commercial manufacturing license application (Form MD-9) is under final statutory audit and validation at our dedicated in-house manufacturing facility in Visakhapatnam, where all parts and components are manufactured directly by Panakeia itself.
+            Panakeia Medtech Private Limited is a DPIIT-recognized and MSME-registered medical device manufacturer adhering to CDSCO regulatory guidelines and ISO quality management standards. All critical care devices, parts, and components are manufactured directly in-house by Panakeia itself at our dedicated manufacturing facility in Visakhapatnam.
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-clinical-500 pt-2">

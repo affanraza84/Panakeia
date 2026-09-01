@@ -50,7 +50,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Gas Inlets", value: "O2, N2O, Medical Air (280-600 kPa)" },
       { label: "Tidal Volume", value: "10 mL – 1,600 mL (Adult/Paediatric/Infant)" },
       { label: "Absorber", value: "1.8L Dual-Chamber Quick-Release" },
-      { label: "Standard", value: "ISO 80601-2-13 / CDSCO MD-13" },
+      { label: "Standard", value: "ISO 80601-2-13 / CDSCO Compliant" },
       { label: "Vaporizers", value: "Dual Selectatec-compatible Interlock Bar" },
       { label: "Manufacture", value: "100% In-House by Panakeia" }
     ],
@@ -227,7 +227,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Modes", value: "VCV, PCV, SIMV, PSV, Manual" },
       { label: "Display", value: "7\" Color LCD with real-time loops" },
       { label: "Pressure Range", value: "High: 10-80, Low: 0-20 cmH2O" },
-      { label: "Standard", value: "ISO 80601-2-13 / CDSCO MD-13" }
+      { label: "Standard", value: "ISO 80601-2-13 / CDSCO Compliant" }
     ],
     imageSrc: "/images/products/anaevent-anaesthesia-ventilator.jpeg",
   },

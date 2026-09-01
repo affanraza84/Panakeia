@@ -133,7 +133,7 @@ export function FullScreenHeroVideo({
           <div className="mt-10 pt-6 border-t border-white/15 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-clinical-200">
             <div className="flex items-center gap-2 backdrop-blur-xs">
               <ShieldCheck className="w-4 h-4 text-med-teal-300 shrink-0" />
-              <span>CDSCO Test License</span>
+              <span>CDSCO Compliant</span>
             </div>
             <div className="flex items-center gap-2 backdrop-blur-xs">
               <Building2 className="w-4 h-4 text-med-teal-300 shrink-0" />

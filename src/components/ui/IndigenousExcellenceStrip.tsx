@@ -111,7 +111,7 @@ const PILLARS: Pillar[] = [
     title: "Certified International Quality",
     subtitle: "Audited Regulatory & Medical Approvals",
     description:
-      "Built with strict adherence to ISO 13485:2016 (Medical Devices Quality Management) and ISO 9001:2015 standards, complying with CDSCO MD-13 rules through comprehensive factory stress tests.",
+      "Built with strict adherence to ISO 13485:2016 (Medical Devices Quality Management) and ISO 9001:2015 standards, complying with CDSCO regulatory guidelines through comprehensive factory stress tests.",
     icon: Award,
     color: {
       bg: "bg-amber-50",
@@ -123,7 +123,7 @@ const PILLARS: Pillar[] = [
     keyFeatures: [
       "ISO 13485:2016 Certified Facility",
       "ISO 9001:2015 Quality Management",
-      "CDSCO MD-13 & CE Compliant Systems",
+      "CDSCO & International Standards Compliant",
     ],
     pdfRef: "Official ISO & CDSCO Audit",
   },
