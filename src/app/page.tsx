@@ -7,9 +7,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { CleanHeroVideo } from "@/components/ui/CleanHeroVideo";
 import { IndigenousExcellenceStrip } from "@/components/ui/IndigenousExcellenceStrip";
+import { ProductMovingShowcase } from "@/components/ui/ProductMovingShowcase";
 import { AwardsSection } from "@/components/ui/AwardsSection";
 import { EquipmentShowcase } from "@/components/ui/EquipmentShowcase";
-import { getClients } from "@/lib/data";
+import { getClients, getProducts } from "@/lib/data";
 import {
   Zap,
   Wrench,
@@ -19,7 +20,10 @@ import {
 export const revalidate = 3600; // ISR 1 hour
 
 export default async function HomePage() {
-  const clients = await getClients();
+  const [clients, products] = await Promise.all([
+    getClients(),
+    getProducts(),
+  ]);
 
   const featuredClients = clients.filter((c) => c.featured);
 
@@ -28,7 +32,10 @@ export default async function HomePage() {
       {/* 1. CLEAN FULL SCREEN INTRO VIDEO (No text overlay written on the video) */}
       <CleanHeroVideo videoSrc="/video/introVideo.mp4" />
 
-      {/* 2. INDIGENOUS EXCELLENCE & CLINICAL PILLARS STRIP (Brochure Data, Zero Numbers) */}
+      {/* 2. PRODUCT MOVING SHOWCASE (Moving Left to Right infinite stream with enlarged quick view) */}
+      <ProductMovingShowcase products={products} />
+
+      {/* 3. INDIGENOUS EXCELLENCE & CLINICAL PILLARS STRIP (Brochure Data, Zero Numbers) */}
       <IndigenousExcellenceStrip />
 
       {/* 3. INTERACTIVE INDIGENOUS EQUIPMENT SHOWCASE (Featuring 4 Flagship Systems) */}
