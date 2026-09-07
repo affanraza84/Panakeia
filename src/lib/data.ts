@@ -350,12 +350,12 @@ export const fallbackClients: IClient[] = [
 export const fallbackCertifications: ICertification[] = [
   {
     _id: "cert-1",
-    title: "DPIIT Recognition — Make in India MedTech Enterprise",
-    issuedBy: "Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce & Industry",
-    documentUrl: "/docs/dpiit-recognition.pdf",
+    title: "Make in India MedTech Enterprise Recognition",
+    issuedBy: "Government of India MedTech & Make in India Initiative",
+    documentUrl: "/docs/make-in-india-recognition.pdf",
     status: "active",
     description:
-      "Recognized indigenous medical technology manufacturing entity under Startup India / Make in India initiative for advancing indigenous critical care OT & ICU equipment design.",
+      "Recognized indigenous medical technology manufacturing entity under Make in India initiative for advancing indigenous critical care OT & ICU equipment design.",
     order: 1,
   },
   {

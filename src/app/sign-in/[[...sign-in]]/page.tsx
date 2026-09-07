@@ -58,7 +58,7 @@ export default function SignInPage() {
                 <Building2 className="w-5 h-5 text-navy-700 shrink-0 mt-0.5" />
                 <div>
                   <span className="text-xs font-bold text-navy-950 block">Hospital Procurement Directors</span>
-                  <span className="text-xs text-clinical-600">Generate instant BOM quotes, verify CDSCO/DPIIT test certifications</span>
+                  <span className="text-xs text-clinical-600">Generate instant BOM quotes, verify CDSCO and quality certifications</span>
                 </div>
               </div>
             </div>

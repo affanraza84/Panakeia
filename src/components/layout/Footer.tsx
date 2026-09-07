@@ -33,7 +33,7 @@ export function Footer() {
 
           <div className="flex items-center gap-3">
             <span className="px-3 py-1 rounded bg-navy-800 border border-navy-700 text-clinical-200 text-[11px]">
-              DPIIT Recognized
+              MSME Registered
             </span>
             <span className="px-3 py-1 rounded bg-navy-800 border border-navy-700 text-clinical-200 text-[11px]">
               CDSCO Compliant
@@ -226,7 +226,7 @@ export function Footer() {
             <strong className="text-clinical-200 block mb-1">
               Regulatory Disclosure & Compliance Notice:
             </strong>
-            Panakeia Medtech Private Limited is a DPIIT-recognized and MSME-registered medical device manufacturer adhering to CDSCO regulatory guidelines and ISO quality management standards. All critical care devices, parts, and components are manufactured directly in-house by Panakeia itself at our dedicated manufacturing facility in Visakhapatnam.
+            Panakeia Medtech Private Limited is an MSME-registered medical device manufacturer adhering to CDSCO regulatory guidelines and ISO quality management standards. All critical care devices, parts, and components are manufactured directly in-house by Panakeia itself at our dedicated manufacturing facility in Visakhapatnam.
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-clinical-500 pt-2">

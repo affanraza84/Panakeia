@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "ICU Ventilator Manufacturer India",
     "Indigenous Medical Devices",
     "In-House Medical Device Manufacturer",
-    "DPIIT Recognized Medical Device",
+    "MSME Registered Medical Device",
     "Operation Theatre Equipment India",
     "Panakeia Medtech",
   ],

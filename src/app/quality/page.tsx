@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Quality, Standards & Regulatory Compliance",
   description:
-    "Review Panakeia Medtech's quality certifications, DPIIT recognition, MSME registration, and CDSCO regulatory compliance.",
+    "Review Panakeia Medtech's quality certifications, MSME registration, and CDSCO regulatory compliance.",
 };
 
 export const revalidate = 3600;

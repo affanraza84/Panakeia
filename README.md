@@ -45,7 +45,7 @@ Engineered by clinical veterans with **30+ years of high-acuity surgical experie
 - **VCCI Award of Recognition 2024** — Presented by Ms. Sandhya Devanathan (MD & VP, Meta India) for pioneering indigenous medtech manufacturing.
 - **ISO 13485:2016 Certification** — Medical Devices Quality Management System accredited by Kalam Institute of Health Technology (KIHT) & UAF.
 - **ISO 9001:2015 Certification** — Quality Management System certified by EuroPaCert.
-- **DPIIT Recognized Medical Device Enterprise** — Government of India Make in India & Startup India initiative.
+- **MSME Registered Medical Device Enterprise** — Government of India Make in India & Startup India initiative.
 
 ---
 

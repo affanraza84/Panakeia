@@ -202,7 +202,7 @@ export function IndigenousExcellenceStrip() {
             <span className="text-clinical-300">•</span>
             <span className="text-clinical-700">100% In-House Manufactured Parts</span>
             <span className="text-clinical-300">•</span>
-            <span className="text-med-teal-700 font-medium">DPIIT Recognized</span>
+            <span className="text-med-teal-700 font-medium">CDSCO Compliant</span>
           </div>
 
           <div className="space-y-2">

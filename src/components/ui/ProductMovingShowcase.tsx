@@ -375,7 +375,7 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                           Make in India
                         </span>
                         <span className="text-[11px] font-mono text-med-teal-700 bg-med-teal-50 px-2.5 py-1 rounded-full border border-med-teal-200">
-                          DPIIT Recognized
+                          CDSCO Compliant
                         </span>
                       </div>
 
