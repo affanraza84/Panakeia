@@ -28,12 +28,9 @@ export function CompanyContactDetails({ variant }: CompanyContactDetailsProps) {
           </div>
           <div className="flex items-center gap-2.5">
             <Phone className="w-4 h-4 text-med-teal-400 shrink-0" />
-            <a
-              href="tel:+919811340469"
-              className="font-mono text-clinical-300 hover:text-white transition-colors"
-            >
+            <span className="font-mono text-clinical-300 select-text">
               +91-9811340469
-            </a>
+            </span>
           </div>
         </div>
       );
@@ -83,12 +80,9 @@ export function CompanyContactDetails({ variant }: CompanyContactDetailsProps) {
               <strong className="block text-white font-semibold mb-0.5">
                 Procurement & Clinical Support Desk:
               </strong>
-              <a
-                href="tel:+919811340469"
-                className="text-med-teal-300 hover:underline font-mono"
-              >
+              <span className="text-med-teal-300 font-mono select-text">
                 +91-9811340469
-              </a>
+              </span>
             </div>
           </div>
         </>
@@ -120,7 +114,7 @@ export function CompanyContactDetails({ variant }: CompanyContactDetailsProps) {
         <div className="p-3 bg-navy-50 rounded-lg border border-navy-100 flex items-center justify-between text-xs text-navy-900">
           <span className="flex items-center gap-2">
             <Phone className="w-4 h-4 text-med-teal-600" />
-            <span>Direct Hospital Procurement Desk: <strong>+91-9811340469</strong></span>
+            <span>Direct Hospital Procurement Desk: <strong className="select-text">+91-9811340469</strong></span>
           </span>
           <span className="font-mono text-clinical-500 text-[11px]">Mon-Sat 9AM-6PM IST</span>
         </div>
@@ -143,7 +137,7 @@ export function CompanyContactDetails({ variant }: CompanyContactDetailsProps) {
       return (
         <>
           <div>Email: <a href="mailto:panakeia.india@gmail.com" className="text-med-teal-700 hover:underline">panakeia.india@gmail.com</a></div>
-          <div>Phone: <a href="tel:+919811340469" className="text-med-teal-700 hover:underline">+91-9811340469</a></div>
+          <div>Phone: <span className="text-med-teal-700 select-text">+91-9811340469</span></div>
         </>
       );
     }
