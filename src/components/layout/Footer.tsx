@@ -2,13 +2,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../ui/Container";
+import { CompanyContactDetails } from "../auth/CompanyContactDetails";
 import {
-  Activity,
   MapPin,
-  Mail,
-  Phone,
   ShieldCheck,
-  Building,
   ArrowUpRight,
 } from "lucide-react";
 
@@ -216,21 +213,7 @@ export function Footer() {
                   Panakeia Manufacturing Facility, Visakhapatnam - 530031, Andhra Pradesh, India.
                 </span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-med-teal-400 shrink-0" />
-                <a
-                  href="mailto:panakeia.india@gmail.com"
-                  className="hover:text-white transition-colors"
-                >
-                  panakeia.india@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-med-teal-400 shrink-0" />
-                <span className="font-mono text-clinical-300 select-text">
-                  +91-9811340469
-                </span>
-              </div>
+              <CompanyContactDetails variant="footer" />
             </div>
           </div>
         </Container>

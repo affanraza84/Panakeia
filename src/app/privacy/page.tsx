@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { CompanyContactDetails } from "@/components/auth/CompanyContactDetails";
 import { ShieldCheck, Lock, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -175,8 +176,7 @@ export default function PrivacyPolicyPage() {
               <div><strong>Panakeia Medtech Private Limited</strong></div>
               <div>Attn: Privacy & Data Protection Desk</div>
               <div>Panakeia Manufacturing Facility, Visakhapatnam - 530031, AP, India</div>
-              <div>Email: <a href="mailto:panakeia.india@gmail.com" className="text-med-teal-700 hover:underline">panakeia.india@gmail.com</a></div>
-              <div>Phone: <a href="tel:+919811340469" className="text-med-teal-700 hover:underline">+91-9811340469</a></div>
+              <CompanyContactDetails variant="privacy-desk" />
             </div>
           </section>
         </div>

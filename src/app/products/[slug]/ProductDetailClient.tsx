@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { CompanyContactDetails } from "@/components/auth/CompanyContactDetails";
 import { IProduct } from "@/types";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -215,13 +216,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
           </div>
 
           {/* Direct Procurement Help Line */}
-          <div className="p-3 bg-navy-50 rounded-lg border border-navy-100 flex items-center justify-between text-xs text-navy-900">
-            <span className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-med-teal-600" />
-              <span>Direct Hospital Procurement Desk: <strong>+91-9811340469</strong></span>
-            </span>
-            <span className="font-mono text-clinical-500 text-[11px]">Mon-Sat 9AM-6PM IST</span>
-          </div>
+          <CompanyContactDetails variant="product-detail" />
         </div>
       </div>
 

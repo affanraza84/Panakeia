@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { enquirySchema, EnquiryFormData } from "@/lib/validations";
+import { CompanyContactDetails } from "@/components/auth/CompanyContactDetails";
 import { Button } from "@/components/ui/Button";
 import {
   CheckCircle2,
@@ -410,35 +411,7 @@ export function ContactFormClient() {
               </div>
             </div>
 
-            <div className="flex items-start gap-3">
-              <Mail className="w-5 h-5 text-med-teal-400 shrink-0 mt-0.5" />
-              <div>
-                <strong className="block text-white font-semibold mb-0.5">
-                  General & Procurement Inquiries:
-                </strong>
-                <a
-                  href="mailto:panakeia.india@gmail.com"
-                  className="text-med-teal-300 hover:underline font-mono text-xs"
-                >
-                  panakeia.india@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <Phone className="w-5 h-5 text-med-teal-400 shrink-0 mt-0.5" />
-              <div>
-                <strong className="block text-white font-semibold mb-0.5">
-                  Procurement & Clinical Support Desk:
-                </strong>
-                <a
-                  href="tel:+919811340469"
-                  className="text-med-teal-300 hover:underline font-mono"
-                >
-                  +91-9811340469
-                </a>
-              </div>
-            </div>
+            <CompanyContactDetails variant="contact-sidebar" />
 
             <div className="flex items-start gap-3">
               <Clock className="w-5 h-5 text-med-teal-400 shrink-0 mt-0.5" />

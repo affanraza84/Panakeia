@@ -44,11 +44,6 @@ export default function AboutPage() {
       postalCode: "530031",
       addressCountry: "IN",
     },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+91-9811340469",
-      contactType: "customer support",
-    },
   };
 
   return (
@@ -126,7 +121,7 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-2 gap-4 pt-4">
                 <div className="p-4 rounded-xl bg-clinical-50 border border-clinical-200">
-                  <div className="text-2xl font-extrabold text-navy-950 font-heading">10,000+</div>
+                  <div className="text-2xl font-extrabold text-navy-950 font-heading">100+</div>
                   <div className="text-xs text-clinical-600 mt-1">Live surgical cases guided by core engineering team</div>
                 </div>
                 <div className="p-4 rounded-xl bg-clinical-50 border border-clinical-200">
