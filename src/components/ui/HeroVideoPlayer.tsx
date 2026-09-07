@@ -19,7 +19,7 @@ interface HeroVideoPlayerProps {
 }
 
 export function HeroVideoPlayer({
-  src = "/video/introVideo.mp4",
+  src = "/video/panakeia-intro-video.mp4",
   className = "",
 }: HeroVideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);

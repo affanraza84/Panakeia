@@ -8,7 +8,7 @@ interface CleanHeroVideoProps {
 }
 
 export function CleanHeroVideo({
-  videoSrc = "/video/introVideo.mp4",
+  videoSrc = "/video/panakeia-intro-video.mp4",
 }: CleanHeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 

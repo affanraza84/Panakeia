@@ -15,7 +15,7 @@ interface PureVideoHomeProps {
 }
 
 export function PureVideoHome({
-  videoSrc = "/video/introVideo.mp4",
+  videoSrc = "/video/panakeia-intro-video.mp4",
 }: PureVideoHomeProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);

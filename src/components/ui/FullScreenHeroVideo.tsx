@@ -21,7 +21,7 @@ interface FullScreenHeroVideoProps {
 }
 
 export function FullScreenHeroVideo({
-  videoSrc = "/video/introVideo.mp4",
+  videoSrc = "/video/panakeia-intro-video.mp4",
 }: FullScreenHeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);

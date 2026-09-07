@@ -30,7 +30,7 @@ export default async function HomePage() {
   return (
     <div className="flex flex-col gap-0 overflow-hidden">
       {/* 1. CLEAN FULL SCREEN INTRO VIDEO (No text overlay written on the video) */}
-      <CleanHeroVideo videoSrc="/video/introVideo.mp4" />
+      <CleanHeroVideo videoSrc="/video/panakeia-intro-video.mp4" />
 
       {/* 2. PRODUCT MOVING SHOWCASE (Moving Left to Right infinite stream with enlarged quick view) */}
       <ProductMovingShowcase products={products} />
