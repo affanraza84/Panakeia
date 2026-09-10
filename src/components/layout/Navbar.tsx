@@ -105,23 +105,41 @@ export function Navbar() {
       )}
     >
       <Container className="flex items-center justify-between gap-3 lg:gap-6 max-w-[1440px] px-3 sm:px-6">
-        {/* Brand Logo */}
+        {/* Brand Logo Lockup */}
         <Link
           href="/"
-          className="flex items-center gap-2 group py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-med-teal-500 rounded-xl shrink-0"
+          className="flex items-center gap-2.5 sm:gap-3 group py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-med-teal-500 rounded-xl shrink-0 select-none"
           aria-label="Panakeia Medtech - Home"
         >
-          <div className="relative h-12 sm:h-14 md:h-16 w-[120px] sm:w-[145px] md:w-[165px] shrink-0 transition-transform duration-200 group-hover:scale-[1.02]">
+          {/* Emblem Icon with Subtle Depth & Hover Pulse */}
+          <div className="relative h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 shrink-0 transition-transform duration-300 ease-out group-hover:scale-105 group-hover:drop-shadow-[0_4px_12px_rgba(0,163,173,0.25)]">
             <Image
-              src="/image/logo.jpeg"
-              alt="PANAKEIA MEDTECH PVT. LTD."
+              src="/image/logo-emblem-clean.png"
+              alt="Panakeia Medtech Emblem"
               fill
               priority
               quality={100}
               unoptimized
-              sizes="(max-width: 640px) 145px, 165px"
-              className="object-contain object-left"
+              sizes="48px"
+              className="object-contain"
             />
+          </div>
+
+          {/* Typography Lockup */}
+          <div className="flex flex-col justify-center">
+            <div className="flex items-center gap-1.5 leading-none">
+              <span className="text-[17px] sm:text-[19px] md:text-[21px] font-black font-heading tracking-[0.06em] text-navy-950 group-hover:text-med-teal-700 transition-colors">
+                PANAKEIA
+              </span>
+            </div>
+            <div className="flex items-center gap-1 mt-0.5 sm:mt-1 leading-none">
+              <span className="text-[8.5px] sm:text-[9.5px] md:text-[10px] font-bold font-mono tracking-[0.16em] text-med-teal-600 uppercase">
+                MEDTECH PVT. LTD.
+              </span>
+            </div>
+            <span className="text-[7px] sm:text-[7.5px] font-semibold tracking-[0.18em] text-clinical-400 uppercase leading-none mt-0.5 hidden sm:block">
+              INNOVATE • ENGINEER • EMPOWER
+            </span>
           </div>
         </Link>
 

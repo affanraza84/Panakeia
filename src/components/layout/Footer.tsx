@@ -49,28 +49,29 @@ export function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <Link
               href="/"
-              className="inline-flex items-center gap-3.5 group focus:outline-none py-1"
+              className="inline-flex items-center gap-3.5 group focus:outline-none py-1 select-none"
               aria-label="Panakeia Medtech - Home"
             >
-              <div className="relative h-14 w-14 shrink-0 transition-transform duration-200 group-hover:scale-105">
+              {/* Emblem directly on dark theme with refined ambient glow */}
+              <div className="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 transition-transform duration-300 ease-out group-hover:scale-105">
                 <Image
-                  src="/image/logo-emblem.png"
+                  src="/image/logo-emblem-clean.png"
                   alt="Panakeia Medtech Logo"
                   fill
                   quality={100}
                   unoptimized
-                  sizes="56px"
-                  className="object-contain"
+                  sizes="(max-width: 640px) 48px, 56px"
+                  className="object-contain drop-shadow-[0_2px_10px_rgba(0,194,203,0.35)]"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl sm:text-2xl font-black font-heading tracking-wider text-white group-hover:text-med-teal-400 transition-colors leading-tight">
+                <span className="text-2xl sm:text-[26px] font-black font-heading tracking-[0.08em] text-white group-hover:text-med-teal-300 transition-colors leading-none">
                   PANAKEIA
                 </span>
-                <span className="text-[10px] sm:text-[11px] font-bold font-mono tracking-widest text-med-teal-400 uppercase">
+                <span className="text-[10.5px] sm:text-[11.5px] font-bold font-mono tracking-[0.2em] text-med-teal-400 uppercase mt-1 leading-none">
                   MEDTECH PVT. LTD.
                 </span>
-                <span className="text-[8px] sm:text-[8.5px] font-semibold tracking-widest text-clinical-400 uppercase mt-0.5">
+                <span className="text-[8px] sm:text-[8.5px] font-semibold tracking-[0.22em] text-clinical-400 uppercase mt-1 leading-none">
                   INNOVATE • ENGINEER • EMPOWER
                 </span>
               </div>
