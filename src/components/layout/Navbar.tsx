@@ -112,7 +112,7 @@ export function Navbar() {
           aria-label="Panakeia Medtech - Home"
         >
           {/* Emblem Icon with Subtle Depth & Hover Pulse */}
-          <div className="relative h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 shrink-0 transition-transform duration-300 ease-out group-hover:scale-105 group-hover:drop-shadow-[0_4px_12px_rgba(0,163,173,0.25)]">
+          <div className="relative h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 shrink-0 transition-all duration-300 ease-out group-hover:scale-105 drop-shadow-[0_2px_8px_rgba(0,163,173,0.18)] group-hover:drop-shadow-[0_4px_16px_rgba(0,163,173,0.35)]">
             <Image
               src="/image/logo-emblem-clean.png"
               alt="Panakeia Medtech Emblem"
@@ -127,17 +127,18 @@ export function Navbar() {
 
           {/* Typography Lockup */}
           <div className="flex flex-col justify-center">
-            <div className="flex items-center gap-1.5 leading-none">
-              <span className="text-[17px] sm:text-[19px] md:text-[21px] font-black font-heading tracking-[0.06em] text-navy-950 group-hover:text-med-teal-700 transition-colors">
+            <div className="flex items-center leading-none">
+              <span className="text-[18px] sm:text-[20px] md:text-[22px] font-black font-heading tracking-[0.08em] bg-gradient-to-r from-navy-950 via-[#0c2f59] to-med-teal-700 bg-clip-text text-transparent group-hover:from-med-teal-700 group-hover:to-navy-900 transition-all duration-300">
                 PANAKEIA
               </span>
             </div>
-            <div className="flex items-center gap-1 mt-0.5 sm:mt-1 leading-none">
-              <span className="text-[8.5px] sm:text-[9.5px] md:text-[10px] font-bold font-mono tracking-[0.16em] text-med-teal-600 uppercase">
+            <div className="flex items-center gap-1.5 mt-0.5 sm:mt-1 leading-none">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-med-teal-500 shadow-[0_0_6px_#00c2cb] animate-pulse" />
+              <span className="text-[8.5px] sm:text-[9.5px] md:text-[10px] font-extrabold font-mono tracking-[0.2em] text-med-teal-600 uppercase">
                 MEDTECH PVT. LTD.
               </span>
             </div>
-            <span className="text-[7px] sm:text-[7.5px] font-semibold tracking-[0.18em] text-clinical-400 uppercase leading-none mt-0.5 hidden sm:block">
+            <span className="text-[6.5px] sm:text-[7.5px] font-semibold tracking-[0.22em] text-clinical-400 uppercase leading-none mt-0.5 hidden sm:block">
               INNOVATE • ENGINEER • EMPOWER
             </span>
           </div>
