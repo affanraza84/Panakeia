@@ -189,6 +189,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/careers" className="hover:text-white transition-colors text-med-teal-400 font-medium">
+                  Careers & Training Academy
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-white transition-colors">
                   Distributor & OEM Inquiries
                 </Link>

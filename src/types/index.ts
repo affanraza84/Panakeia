@@ -50,7 +50,14 @@ export interface ICertification {
   updatedAt?: string | Date;
 }
 
-export type EnquiryType = "general" | "distributor" | "oem" | "product-enquiry";
+export type EnquiryType =
+  | "general"
+  | "distributor"
+  | "oem"
+  | "product-enquiry"
+  | "career-employment"
+  | "career-internship"
+  | "career-training";
 export type EnquiryStatus = "new" | "contacted" | "closed";
 
 export interface IEnquiry {

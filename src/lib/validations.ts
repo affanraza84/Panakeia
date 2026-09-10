@@ -38,9 +38,20 @@ export const enquirySchema = z.object({
     .min(10, "Message must be at least 10 characters")
     .max(3000, "Message cannot exceed 3000 characters")
     .trim(),
-  type: z.enum(["general", "distributor", "oem", "product-enquiry"], {
-    error: "Please select a valid enquiry type",
-  }),
+  type: z.enum(
+    [
+      "general",
+      "distributor",
+      "oem",
+      "product-enquiry",
+      "career-employment",
+      "career-internship",
+      "career-training",
+    ],
+    {
+      error: "Please select a valid enquiry type",
+    }
+  ),
   productSlug: z
     .string()
     .max(100, "Product slug cannot exceed 100 characters")

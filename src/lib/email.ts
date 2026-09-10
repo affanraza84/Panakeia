@@ -24,6 +24,9 @@ export async function sendEnquiryNotification(
       distributor: "Distributor & Channel Partner Application",
       oem: "OEM Manufacturing & Sub-Assembly Partnership",
       "product-enquiry": `Product Specific Quote Request (${enquiry.productSlug || "Device"})`,
+      "career-employment": "Full-Time Career / Employment Application",
+      "career-internship": "Biomedical & Engineering Internship Application",
+      "career-training": "Product & Sales Training Academy Application",
     };
 
     const subject = `[Panakeia MedTech Lead] ${typeLabels[enquiry.type] || "New Enquiry"} - ${enquiry.hospitalOrOrg || "Institutional Inquiry"}`;

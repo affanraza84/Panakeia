@@ -45,7 +45,15 @@ const EnquirySchema = new Schema<IEnquiry>(
       type: String,
       required: [true, "Enquiry type is required"],
       enum: {
-        values: ["general", "distributor", "oem", "product-enquiry"],
+        values: [
+          "general",
+          "distributor",
+          "oem",
+          "product-enquiry",
+          "career-employment",
+          "career-internship",
+          "career-training",
+        ],
         message: "{VALUE} is not a valid enquiry type",
       },
       default: "general",

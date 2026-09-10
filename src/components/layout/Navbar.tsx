@@ -21,6 +21,7 @@ const NAV_LINKS = [
   { name: "About Us", href: "/about" },
   { name: "Quality & Compliance", href: "/quality" },
   { name: "Installations", href: "/clients" },
+  { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -89,6 +90,9 @@ export function Navbar() {
     }
     if (href.startsWith("/products")) {
       return pathname.startsWith("/products");
+    }
+    if (href === "/careers") {
+      return pathname.startsWith("/careers");
     }
     return pathname === href;
   };
