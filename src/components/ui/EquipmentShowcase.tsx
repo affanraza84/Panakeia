@@ -54,7 +54,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Vaporizers", value: "Dual Selectatec-compatible Interlock Bar" },
       { label: "Manufacture", value: "100% In-House by Panakeia" }
     ],
-    imageSrc: "/images/products/three-gas-system-advanced-anaesthesia-workstation.jpeg",
+    imageSrc: "/image/three-gas-system-advanced-anaesthesia-workstation.jpeg",
   },
   {
     id: "two-gas-basic",
@@ -79,7 +79,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Absorber", value: "1.5L Autoclavable Quick-Release" },
       { label: "Origin", value: "100% In-House Panakeia Manufacturing" }
     ],
-    imageSrc: "/images/products/two-gas-system-basic-anaesthesia-workstation.jpeg",
+    imageSrc: "/image/two-gas-system-basic-anaesthesia-workstation.jpeg",
   },
   {
     id: "basic-premium",
@@ -104,7 +104,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Storage", value: "3 Large full-extension locking drawers" },
       { label: "Mobility", value: "4 Antistatic castors with foot brakes" }
     ],
-    imageSrc: "/images/products/basic-premium-anaesthesia-machine.jpeg",
+    imageSrc: "/image/basic-premium-anaesthesia-machine.jpeg",
   },
   {
     id: "icu-ventilator",
@@ -129,7 +129,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "FiO2 Range", value: "21% to 100% calibrated titration" },
       { label: "Display", value: "15.6\" Full HD multi-touch anti-glare" }
     ],
-    imageSrc: "/images/products/icu-ventilator.jpeg",
+    imageSrc: "/image/icu-ventilator.jpeg",
   },
   {
     id: "patient-monitor",
@@ -154,7 +154,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Trends", value: "160 Hours tabular & graphic data" },
       { label: "Battery", value: "4+ Hours continuous monitoring" }
     ],
-    imageSrc: "/images/products/multi-para-patient-monitor.jpeg",
+    imageSrc: "/image/multi-para-patient-monitor.jpeg",
   },
   {
     id: "syringe-infusion-pump",
@@ -179,7 +179,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Display", value: "3.5\" High-Contrast Color LCD" },
       { label: "Battery", value: "6+ Hours continuous runtime" }
     ],
-    imageSrc: "/images/products/syringe-infusion-pump.jpeg",
+    imageSrc: "/image/syringe-infusion-pump.jpeg",
   },
   {
     id: "emergency-resuscitation-kit",
@@ -204,7 +204,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Case Rating", value: "IP67 Waterproof & Impact-Resistant" },
       { label: "Standard", value: "ISO 10651-4 Compliant" }
     ],
-    imageSrc: "/images/products/emergency-resuscitation-kit.jpeg",
+    imageSrc: "/image/emergency-resuscitation-kit.jpeg",
   },
   {
     id: "anaevent-ventilator",
@@ -229,7 +229,32 @@ const equipmentData: EquipmentItem[] = [
       { label: "Pressure Range", value: "High: 10-80, Low: 0-20 cmH2O" },
       { label: "Standard", value: "ISO 80601-2-13 / CDSCO Compliant" }
     ],
-    imageSrc: "/images/products/anaevent-anaesthesia-ventilator.jpeg",
+    imageSrc: "/image/anaevent-anaesthesia-ventilator.jpeg",
+  },
+  {
+    id: "ecg-machine",
+    name: "12-Channel Diagnostic ECG Machine",
+    slug: "12-channel-diagnostic-ecg-machine",
+    categoryLabel: "Diagnostic Cardiology & Monitoring",
+    badge: "Diagnostic Accuracy",
+    tagline: "12-Lead Clinical Diagnostic ECG Workstation with Live Waveform Telemetry & Automatic Analysis",
+    description: "Indigenously engineered for high-acuity emergency departments and cardiology suites. Delivers simultaneous 12-lead acquisition, advanced noise filtering, and high-fidelity thermal recording.",
+    highlights: [
+      "Simultaneous 12-lead high-frequency signal acquisition with defibrillator protection",
+      "High-resolution color display with real-time multi-channel waveform telemetry",
+      "Built-in automated clinical interpretation algorithm and arrhythmia detection",
+      "High-precision thermal array printing with versatile lead formatting",
+      "Internal rechargeable battery supporting 4+ hours continuous operation"
+    ],
+    specs: [
+      { label: "Leads", value: "Simultaneous 12 Standard Leads" },
+      { label: "Display", value: "7\" High-Resolution Color Screen" },
+      { label: "Sampling", value: "1,000 Hz Precision Acquisition" },
+      { label: "Printer", value: "Integrated Thermal Array Recorder" },
+      { label: "Battery", value: "4+ Hours Continuous Backup" },
+      { label: "Standard", value: "ISO 80601-2-25 / CDSCO Compliant" }
+    ],
+    imageSrc: "/image/ecg-machine.jpeg",
   },
 ];
 

@@ -44,7 +44,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const images =
     product.images && product.images.length > 0
       ? product.images
-      : [`/images/products/${product.slug}.jpeg`];
+      : [`/image/${product.slug}.jpeg`];
 
   const currentImage = images[activeImageIndex] || images[0];
 

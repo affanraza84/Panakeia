@@ -32,7 +32,7 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   const categoryLabel = getCategoryLabel(product.category);
-  const primaryImage = product.images?.[0] || "/images/products/three-gas-system-advanced-anaesthesia-workstation.jpeg";
+  const primaryImage = product.images?.[0] || "/image/three-gas-system-advanced-anaesthesia-workstation.jpeg";
 
   return (
     <motion.div

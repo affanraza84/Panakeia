@@ -32,7 +32,6 @@ export const fallbackProducts: IProduct[] = [
       { label: "Manufacturing Standard", value: "ISO 80601-2-13, IEC 60601-1, CDSCO Compliant" },
     ],
     images: [
-      "/images/products/three-gas-system-advanced-anaesthesia-workstation.jpeg",
       "/image/three-gas-system-advanced-anaesthesia-workstation.jpeg",
     ],
     brochurePdfUrl: "/brochures/panakeia-three-gas-specsheet.pdf",
@@ -66,7 +65,6 @@ export const fallbackProducts: IProduct[] = [
       { label: "Dimensions & Weight", value: "1350mm (H) x 700mm (W) x 650mm (D), 85 kg" },
     ],
     images: [
-      "/images/products/two-gas-system-basic-anaesthesia-workstation.jpeg",
       "/image/two-gas-system-basic-anaesthesia-workstation.jpeg",
     ],
     brochurePdfUrl: "/brochures/panakeia-two-gas-specsheet.pdf",
@@ -98,7 +96,6 @@ export const fallbackProducts: IProduct[] = [
       { label: "Mobility", value: "4 Heavy-duty antistatic castors with foot brakes" },
     ],
     images: [
-      "/images/products/basic-premium-anaesthesia-machine.jpeg",
       "/image/basic-premium-anaesthesia-machine.jpeg",
     ],
     brochurePdfUrl: "/brochures/panakeia-premium-anaesthesia-specsheet.pdf",
@@ -131,7 +128,6 @@ export const fallbackProducts: IProduct[] = [
       { label: "Battery Run Time", value: "4+ Hours hot-swappable dual lithium battery pack" },
     ],
     images: [
-      "/images/products/icu-ventilator.jpeg",
       "/image/icu-ventilator.jpeg",
     ],
     brochurePdfUrl: "/brochures/panakeia-icu-ventilator-specsheet.pdf",
@@ -165,8 +161,8 @@ export const fallbackProducts: IProduct[] = [
       { label: "Battery Autonomy", value: "4+ Hours Lithium-Ion Internal Pack" },
     ],
     images: [
-      "/images/products/multi-para-patient-monitor.jpeg",
       "/image/multi-para-patient-monitor.jpeg",
+      "/image/patient-multi-paramonitor.jpeg",
     ],
     brochurePdfUrl: "/brochures/panakeia-patient-monitor-specsheet.pdf",
     order: 5,
@@ -199,8 +195,10 @@ export const fallbackProducts: IProduct[] = [
       { label: "Battery Life", value: "6+ Hours continuous runtime @ 25 mL/h" },
     ],
     images: [
-      "/images/products/syringe-infusion-pump.jpeg",
       "/image/syringe-infusion-pump.jpeg",
+      "/image/pan-flow-syringe-pump.jpeg",
+      "/image/syringe-pump.jpeg",
+      "/image/volumetric-infusion-pump.jpeg",
     ],
     brochurePdfUrl: "/brochures/panakeia-infusion-pump-specsheet.pdf",
     order: 6,
@@ -233,7 +231,6 @@ export const fallbackProducts: IProduct[] = [
       { label: "Standards & Compliance", value: "ISO 10651-4, CE / CDSCO Compliant" },
     ],
     images: [
-      "/images/products/emergency-resuscitation-kit.jpeg",
       "/image/emergency-resuscitation-kit.jpeg",
     ],
     brochurePdfUrl: "/brochures/panakeia-resuscitation-kit-specsheet.pdf",
@@ -267,13 +264,43 @@ export const fallbackProducts: IProduct[] = [
       { label: "Origin & Standards", value: "100% In-House Panakeia Manufacturing, ISO 80601-2-13" },
     ],
     images: [
-      "/images/products/anaevent-anaesthesia-ventilator.jpeg",
-      "/images/products/anaevent-anaesthesia-ventilator-2.jpeg",
       "/image/anaevent-anaesthesia-ventilator.jpeg",
       "/image/anaevent-anaesthesia-ventilator-2.jpeg",
     ],
     brochurePdfUrl: "/brochures/panakeia-anaevent-specsheet.pdf",
     order: 8,
+    published: true,
+  },
+  {
+    _id: "prod-9",
+    slug: "12-channel-diagnostic-ecg-machine",
+    name: "12-Channel Diagnostic ECG Machine",
+    category: "monitoring",
+    tagline: "Indigenously Engineered 12-Lead Diagnostic ECG Workstation with High-Resolution Color Display & Automated Waveform Analysis",
+    description:
+      "Indigenously engineered for diagnostic accuracy in high-acuity cardiology units, emergency departments, and intensive care clinics. Featuring simultaneous 12-lead acquisition, high-fidelity digital filtering, real-time waveform preview, built-in thermal array printing, and comprehensive arrhythmia detection.",
+    features: [
+      "Simultaneous 12-lead acquisition with advanced anti-baseline drift and digital noise filtration",
+      "High-resolution color TFT display with live 12-channel waveform preview",
+      "Automated ECG interpretation algorithm with real-time arrhythmia detection and interval measurements (PR, QRS, QT/QTc)",
+      "Built-in high-resolution thermal array recorder with multiple printout formats",
+      "Comprehensive internal patient record storage with USB data export",
+      "High-capacity internal rechargeable lithium-ion battery supporting up to 4+ hours of continuous operation",
+    ],
+    specs: [
+      { label: "Lead Acquisition", value: "Simultaneous 12-Lead Standard Acquisition" },
+      { label: "Input Circuit", value: "Defibrillation-proof floating input protection" },
+      { label: "Display", value: "7\" High-Resolution Color TFT Display" },
+      { label: "Sampling Rate", value: "High-Frequency 1000 Hz Digital Sampling" },
+      { label: "Filter System", value: "AC, EMG, DFT Baseline Wander & Low-Pass Filters" },
+      { label: "Recorder", value: "High-Resolution Built-in Thermal Array Printer" },
+      { label: "Battery Autonomy", value: "4+ Hours Continuous Recording Backup" },
+    ],
+    images: [
+      "/image/ecg-machine.jpeg",
+    ],
+    brochurePdfUrl: "/brochures/panakeia-ecg-specsheet.pdf",
+    order: 9,
     published: true,
   },
 ];
