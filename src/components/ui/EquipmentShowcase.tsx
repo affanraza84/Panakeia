@@ -325,9 +325,9 @@ export function EquipmentShowcase() {
 
         {/* Main Interactive Stage */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-900/90 rounded-3xl border border-slate-800/80 p-6 sm:p-8 lg:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-          {/* Left Column: Premium Pure White Hardware Display Canvas */}
+          {/* Left Column: Premium Grey Hardware Display Canvas */}
           <div className="lg:col-span-6 flex flex-col items-center">
-            <div className="relative w-full aspect-[4/3] sm:aspect-[4/3] max-w-[520px] rounded-2xl bg-white border border-slate-200/90 flex items-center justify-center p-4 sm:p-6 overflow-hidden group shadow-md">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[4/3] max-w-[520px] rounded-2xl bg-slate-100 border border-slate-200/90 flex items-center justify-center p-4 sm:p-6 overflow-hidden group shadow-md">
               {/* Status Badges on Image */}
               <div className="absolute top-3.5 left-3.5 z-20 flex flex-col gap-1.5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-white/95 border border-med-teal-500/30 text-med-teal-700 backdrop-blur-md shadow-xs">
@@ -349,7 +349,7 @@ export function EquipmentShowcase() {
                 <Maximize2 className="w-4 h-4 transition-transform group-hover/btn:scale-110" />
               </button>
 
-              {/* Product Image with Animated Fade/Slide on Pure White Canvas */}
+              {/* Product Image with Animated Fade/Slide on Grey Canvas */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current.id}
@@ -381,7 +381,7 @@ export function EquipmentShowcase() {
               </div>
             </div>
 
-            {/* Quick Thumbnail Navigation Bar with Pure White Backgrounds */}
+            {/* Quick Thumbnail Navigation Bar with Grey Backgrounds */}
             <div className="grid grid-cols-4 sm:grid-cols-7 gap-2 sm:gap-2 w-full max-w-[520px] mt-4">
               {equipmentData.map((item, idx) => {
                 const isSelected = idx === activeIdx;
@@ -389,7 +389,7 @@ export function EquipmentShowcase() {
                   <button
                     key={`thumb-${item.id}`}
                     onClick={() => setActiveIdx(idx)}
-                    className={`relative h-14 sm:h-16 rounded-xl overflow-hidden bg-white border transition-all duration-200 cursor-pointer ${
+                    className={`relative h-14 sm:h-16 rounded-xl overflow-hidden bg-slate-100 border transition-all duration-200 cursor-pointer ${
                       isSelected
                         ? "border-med-teal-500 ring-2 ring-med-teal-500/40 scale-[1.02] shadow-md shadow-med-teal-500/20"
                         : "border-slate-300/80 opacity-75 hover:opacity-100 hover:border-slate-400"
@@ -530,16 +530,16 @@ export function EquipmentShowcase() {
                 </button>
               </div>
 
-              {/* Main Image in Modal with Pure White Background */}
+              {/* Main Image in Modal with Grey Background */}
               <div 
                 style={{ height: "360px", minHeight: "360px", position: "relative" }}
-                className="relative w-full my-3 flex items-center justify-center bg-slate-50/50 rounded-xl p-4"
+                className="relative w-full my-3 flex items-center justify-center bg-slate-100 rounded-xl p-4"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={current.imageSrc}
                   alt={current.name}
-                  className="max-h-[320px] max-w-full w-auto h-auto object-contain filter drop-shadow-sm rounded-lg bg-white"
+                  className="max-h-[320px] max-w-full w-auto h-auto object-contain filter drop-shadow-sm rounded-lg"
                 />
               </div>
 

@@ -140,10 +140,10 @@ export function AwardsSection() {
                 </span>
               </div>
 
-              {/* PURE WHITE IMAGE CONTAINER (Balanced 380px height) */}
+              {/* GREY IMAGE CONTAINER (Balanced 380px height) */}
               <div 
                 style={{ height: "380px", minHeight: "380px" }}
-                className="relative w-full bg-white p-4 sm:p-6 flex items-center justify-center border-b border-slate-100 overflow-hidden cursor-pointer group/img"
+                className="relative w-full bg-slate-100 p-4 sm:p-6 flex items-center justify-center border-b border-slate-200/80 overflow-hidden cursor-pointer group/img"
                 onClick={() => handleOpenLightbox(award)}
               >
                 <Image
@@ -272,7 +272,7 @@ export function AwardsSection() {
               {/* Normal Sized Modal Image Viewport */}
               <div 
                 style={{ height: "380px", minHeight: "380px", position: "relative" }}
-                className="relative w-full bg-slate-50/60 p-4 sm:p-6 flex items-center justify-center overflow-auto"
+                className="relative w-full bg-slate-100 p-4 sm:p-6 flex items-center justify-center overflow-auto"
               >
                 <div
                   style={{ transform: `scale(${zoomScale})`, transformOrigin: "center center" }}

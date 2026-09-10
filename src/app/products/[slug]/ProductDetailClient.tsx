@@ -54,7 +54,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
         {/* Left: Interactive Image Gallery on Neutral Grey Canvas */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="bg-slate-100/90 rounded-2xl border border-clinical-200 h-96 sm:h-[480px] p-6 flex items-center justify-center relative overflow-hidden shadow-md">
+          <div className="bg-slate-100 rounded-2xl border border-clinical-200 h-96 sm:h-[480px] p-6 flex items-center justify-center relative overflow-hidden shadow-md">
             <div className="absolute top-4 left-4 z-10">
               <Badge variant="primary" className="bg-white/95 text-med-teal-700 border border-slate-200/80 shadow-2xs font-semibold">
                 {getCategoryLabel(product.category)}
@@ -97,7 +97,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                 <button
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
-                  className={`relative h-20 w-24 rounded-xl border-2 overflow-hidden transition-all bg-slate-100/90 cursor-pointer ${
+                  className={`relative h-20 w-24 rounded-xl border-2 overflow-hidden transition-all bg-slate-100 cursor-pointer ${
                     activeImageIndex === idx
                       ? "border-med-teal-500 shadow-sm ring-2 ring-med-teal-500/30"
                       : "border-clinical-200 hover:border-clinical-400 opacity-75 hover:opacity-100"

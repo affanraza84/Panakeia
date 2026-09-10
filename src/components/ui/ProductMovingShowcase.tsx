@@ -172,7 +172,7 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                   height: "260px",
                   flexShrink: 0,
                 }}
-                className="w-[300px] sm:w-[340px] min-w-[300px] sm:min-w-[340px] h-[230px] sm:h-[260px] shrink-0 bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-xl hover:border-med-teal-500/70 transition-all duration-300 cursor-pointer overflow-hidden relative group/card flex items-center justify-center p-4 sm:p-5"
+                className="w-[300px] sm:w-[340px] min-w-[300px] sm:min-w-[340px] h-[230px] sm:h-[260px] shrink-0 bg-slate-100 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-xl hover:border-med-teal-500/70 transition-all duration-300 cursor-pointer overflow-hidden relative group/card flex items-center justify-center p-4 sm:p-5"
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
@@ -182,8 +182,8 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                   }
                 }}
               >
-                {/* Background Subtle Gradient */}
-                <div className="absolute inset-0 bg-radial from-slate-50 via-slate-100/40 to-slate-100/80 pointer-events-none" />
+                {/* Background Subtle Grey Canvas */}
+                <div className="absolute inset-0 bg-slate-100 pointer-events-none" />
                 <div className="absolute w-44 h-44 rounded-full bg-med-teal-500/5 blur-xl group-hover/card:bg-med-teal-500/20 transition-all duration-300 pointer-events-none" />
 
                 {/* Pure Image Viewport with Larger Dimensions */}
@@ -297,7 +297,7 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
                   {/* LEFT: ENLARGED IMAGE VIEWPORT */}
                   <div className="lg:col-span-5 flex flex-col gap-4">
-                    <div className="relative aspect-square w-full rounded-2xl bg-gradient-to-b from-slate-50 via-slate-100/70 to-slate-100 border border-slate-200 p-6 flex items-center justify-center overflow-hidden shadow-inner">
+                    <div className="relative aspect-square w-full rounded-2xl bg-slate-100 border border-slate-200 p-6 flex items-center justify-center overflow-hidden shadow-inner">
                       <div className="absolute inset-0 subtle-grid-pattern opacity-30 pointer-events-none" />
                       <div className="absolute w-48 h-48 rounded-full bg-med-teal-500/10 blur-2xl pointer-events-none" />
 
@@ -329,7 +329,7 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                             key={i}
                             type="button"
                             onClick={() => setActiveImageIndex(i)}
-                            className={`relative w-16 h-16 rounded-xl border-2 overflow-hidden bg-slate-50 transition-all shrink-0 ${
+                            className={`relative w-16 h-16 rounded-xl border-2 overflow-hidden bg-slate-100 transition-all shrink-0 ${
                               activeImageIndex === i
                                 ? "border-med-teal-600 ring-2 ring-med-teal-500/30"
                                 : "border-slate-200 opacity-70 hover:opacity-100"
