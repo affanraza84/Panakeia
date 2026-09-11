@@ -233,7 +233,7 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
   {
     slug: "anaevent-anaesthesia-ventilator",
     name: "ANAEVENT Anaesthesia Ventilator",
-    category: "anaesthesia",
+    category: "ventilator",
     tagline: "High-Precision Touchscreen Anaesthesia Ventilator with Calibrated Ascending Bellows & Electronic Telemetry",
     description:
       "Indigenously developed with all parts manufactured directly by Panakeia itself, the Panakeia ANAEVENT is a compact, high-precision anaesthesia ventilator designed for seamless integration with surgical anaesthesia delivery platforms. Featuring a clear vertical ascending bellows system calibrated up to 1200 mL, a crisp color multi-parameter touchscreen with real-time waveform loops, pneumatic flow micro-control, and fail-safe clinical alarms for surgical safety.",

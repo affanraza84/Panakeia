@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -24,7 +24,7 @@ interface ProductMovingShowcaseProps {
 
 const CATEGORY_LABELS: Record<string, string> = {
   anaesthesia: "Anaesthesia Workstation",
-  ventilator: "ICU Ventilator",
+  ventilator: "Ventilator",
   monitoring: "Patient Monitor",
   infusion: "Syringe & Infusion Pump",
   emergency: "Emergency Resuscitation",
@@ -45,20 +45,25 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
   const trackRef = useRef<HTMLDivElement>(null);
 
   // Duplicate items for continuous infinite marquee loop
-  const marqueeItems =
-    products.length > 0
-      ? products.length < 5
-        ? [...products, ...products, ...products, ...products]
-        : [...products, ...products]
-      : [];
+  const marqueeItems = useMemo(() => {
+    if (!products || products.length === 0) return [];
+    if (products.length < 5) {
+      return [...products, ...products, ...products, ...products];
+    }
+    return [...products, ...products];
+  }, [products]);
+
+  const isMarqueePaused = isPaused || selectedProduct !== null;
 
   const handleOpenProduct = (product: IProduct) => {
+    setIsPaused(true);
     setSelectedProduct(product);
     setActiveImageIndex(0);
   };
 
   const handleCloseProduct = () => {
     setSelectedProduct(null);
+    setIsPaused(false);
   };
 
   // Keyboard navigation & body scroll locking
@@ -139,7 +144,11 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
       <div
         className="relative w-full overflow-hidden py-1.5 select-none"
         onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+        onMouseLeave={() => {
+          if (!selectedProduct) {
+            setIsPaused(false);
+          }
+        }}
       >
         {/* Soft edge gradient masks */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-20" />
@@ -150,7 +159,7 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
           ref={trackRef}
           className="flex flex-row flex-nowrap items-center gap-4 sm:gap-5 w-max animate-marquee-ltr"
           style={{
-            animationPlayState: isPaused ? "paused" : "running",
+            animationPlayState: isMarqueePaused ? "paused" : "running",
           }}
         >
           {marqueeItems.map((product, idx) => {

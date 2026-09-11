@@ -241,7 +241,7 @@ export const fallbackProducts: IProduct[] = [
     _id: "prod-8",
     slug: "anaevent-anaesthesia-ventilator",
     name: "ANAEVENT Anaesthesia Ventilator",
-    category: "anaesthesia",
+    category: "ventilator",
     tagline: "High-Precision Touchscreen Anaesthesia Ventilator with Calibrated Ascending Bellows & Electronic Telemetry",
     description:
       "Indigenously developed with all parts manufactured directly by Panakeia itself, the Panakeia ANAEVENT is a compact, high-precision anaesthesia ventilator designed for seamless integration with surgical anaesthesia delivery platforms. Featuring a clear vertical ascending bellows system calibrated up to 1200 mL, a crisp color multi-parameter touchscreen with real-time waveform loops, pneumatic flow micro-control, and fail-safe clinical alarms for surgical safety.",
@@ -301,6 +301,38 @@ export const fallbackProducts: IProduct[] = [
     ],
     brochurePdfUrl: "/brochures/panakeia-ecg-specsheet.pdf",
     order: 9,
+    published: true,
+  },
+  {
+    _id: "prod-10",
+    slug: "hd-video-laryngoscope-system",
+    name: "HD Digital Video Laryngoscope System",
+    category: "emergency",
+    tagline: "High-Definition Portable Airway Visualization Platform with Anti-Fog Camera and Ergonomic Interchangeable Blades",
+    description:
+      "Indigenously engineered for difficult airway management and rapid tracheal intubation across Emergency Departments, ICUs, and Operation Theatres. Features a high-definition anti-glare color display, ultra-bright medical LED illumination, real-time image and video capture telemetry, anti-fog optical lens technology, and reusable clinical titanium/stainless steel blades.",
+    features: [
+      "High-Definition anti-glare medical-grade color monitor with 180° rotation and tilt adjustability",
+      "Instant anti-fog optical CMOS sensor delivering high-contrast visualization of the vocal cords and glottis",
+      "One-touch real-time photo recording and HD video telemetry for clinical documentation and teaching",
+      "Ergonomic rechargeable handle with 4+ hours continuous operation and fast USB charging",
+      "Interchangeable blade series: Macintosh, Miller, and hyper-curved difficult airway blades (Adult, Paediatric, Infant)",
+      "High-grade waterproof IPX8 immersible blade construction for standard autoclaving and chemical sterilization",
+    ],
+    specs: [
+      { label: "Display Resolution", value: "HD Color TFT Monitor (1024 x 768 px) with Anti-Glare Coating" },
+      { label: "Camera Sensor", value: "2.0 Megapixel CMOS Anti-Fog Optical Lens" },
+      { label: "Illumination", value: "High-Luminance Medical Cold LED (≥800 Lux)" },
+      { label: "Angle of View", value: "66° Wide-Angle Clinical Field of View" },
+      { label: "Blade Compatibility", value: "Macintosh 1, 2, 3, 4 & Difficult Airway Hyper-Curved D-Blade" },
+      { label: "Battery Autonomy", value: "4+ Hours Continuous Runtime with Rechargeable Lithium Battery" },
+      { label: "Sterilization", value: "IPX8 Autoclavable Blades & Gas Sterilization Safe" },
+    ],
+    images: [
+      "/image/video-laryngoscope.jpg",
+    ],
+    brochurePdfUrl: "/brochures/panakeia-laryngoscope-specsheet.pdf",
+    order: 10,
     published: true,
   },
 ];

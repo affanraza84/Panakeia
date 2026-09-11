@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,6 +9,7 @@ import { Container } from "../ui/Container";
 import { ChevronDown, ArrowRight, Lock, Menu, X } from "lucide-react";
 import { useUser, UserButton } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
+import { ProductMegaMenu, MEGA_MENU_DEPARTMENTS } from "./ProductMegaMenu";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
@@ -30,8 +31,23 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [productDropdownOpen, setProductDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileDepartmentTab, setMobileDepartmentTab] = useState("ot");
   const [currentHash, setCurrentHash] = useState("");
   const pathname = usePathname();
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleOpenDropdown = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    setProductDropdownOpen(true);
+  };
+
+  const handleCloseDropdown = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setProductDropdownOpen(false);
+    }, 180);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -154,68 +170,49 @@ export function Navbar() {
                 <div
                   key={link.name}
                   className="relative shrink-0"
-                  onMouseEnter={() => setProductDropdownOpen(true)}
-                  onMouseLeave={() => setProductDropdownOpen(false)}
+                  onMouseEnter={handleOpenDropdown}
+                  onMouseLeave={handleCloseDropdown}
                 >
                   <Link
                     href={link.href}
-                    onClick={() => handleNavClick(link.href)}
+                    onClick={() => {
+                      handleNavClick(link.href);
+                      setProductDropdownOpen(false);
+                    }}
                     className={cn(
                       "px-3 py-1.5 xl:px-4 xl:py-2 text-[13px] xl:text-sm font-semibold rounded-xl transition-all flex items-center gap-1 whitespace-nowrap",
-                      isActive
+                      isActive || productDropdownOpen
                         ? "text-med-teal-700 bg-med-teal-50/90 shadow-2xs font-bold"
                         : "text-slate-700 hover:text-navy-950 hover:bg-clinical-50/90"
                     )}
                   >
                     {link.name}
-                    <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                    <ChevronDown
+                      className={cn(
+                        "w-3.5 h-3.5 transition-transform duration-200 opacity-60",
+                        productDropdownOpen && "rotate-180 text-med-teal-600 opacity-100"
+                      )}
+                    />
                   </Link>
 
-                  {/* Product Categories Dropdown */}
+                  {/* Mega Menu Dropdown */}
                   <AnimatePresence>
                     {productDropdownOpen && (
                       <motion.div
-                        initial={{ opacity: 0, y: 6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 4 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute left-0 top-full pt-2 w-72 z-50"
+                        initial={{ opacity: 0, y: 6, scale: 0.99 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 4, scale: 0.99 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
+                        className="absolute left-0 sm:-left-8 lg:-left-16 xl:-left-24 top-full pt-2 z-[100] before:absolute before:-top-3 before:left-0 before:right-0 before:h-4 before:content-['']"
+                        onMouseEnter={handleOpenDropdown}
+                        onMouseLeave={handleCloseDropdown}
                       >
-                        <div className="bg-white rounded-xl shadow-xl border border-clinical-200 p-2 overflow-hidden">
-                          <Link
-                            href="/products?category=anaesthesia"
-                            onClick={() => handleNavClick("/products")}
-                            className="block p-3 rounded-lg hover:bg-clinical-50 transition-colors group"
-                          >
-                            <div className="text-sm font-bold text-navy-950 group-hover:text-med-teal-600">
-                              Anaesthesia Workstations
-                            </div>
-                            <div className="text-xs text-clinical-500 mt-0.5">
-                              Integrated OT anaesthesia delivery platforms
-                            </div>
-                          </Link>
-                          <Link
-                            href="/products?category=ventilator"
-                            onClick={() => handleNavClick("/products")}
-                            className="block p-3 rounded-lg hover:bg-clinical-50 transition-colors group border-t border-clinical-100"
-                          >
-                            <div className="text-sm font-bold text-navy-950 group-hover:text-med-teal-600">
-                              ICU & Transport Ventilators
-                            </div>
-                            <div className="text-xs text-clinical-500 mt-0.5">
-                              Turbine-driven critical care respiratory units
-                            </div>
-                          </Link>
-                          <div className="bg-clinical-50 p-2.5 rounded-b-lg border-t border-clinical-100 text-center">
-                            <Link
-                              href="/products"
-                              onClick={() => handleNavClick("/products")}
-                              className="text-xs font-semibold text-med-teal-600 hover:text-med-teal-700 flex items-center justify-center gap-1"
-                            >
-                              Browse All Devices <ArrowRight className="w-3 h-3" />
-                            </Link>
-                          </div>
-                        </div>
+                        <ProductMegaMenu
+                          onItemClick={() => {
+                            handleNavClick("/products");
+                            setProductDropdownOpen(false);
+                          }}
+                        />
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -284,10 +281,11 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden border-t border-clinical-200 bg-white shadow-xl overflow-hidden"
+            className="lg:hidden border-t border-clinical-200 bg-white shadow-xl overflow-hidden max-h-[85vh] overflow-y-auto"
           >
-            <Container className="py-4 space-y-2">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <Container className="py-4 space-y-4">
+              {/* Primary Nav Links */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {NAV_LINKS.map((link) => {
                   const isActive = checkIsActive(link.href);
 
@@ -312,22 +310,74 @@ export function Navbar() {
                 })}
               </div>
 
-              {/* Quick Products Links on Mobile */}
-              <div className="pt-2 border-t border-clinical-100 flex items-center justify-between text-xs text-clinical-600 px-1">
-                <Link
-                  href="/products?category=anaesthesia"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-med-teal-600 font-medium"
-                >
-                  Anaesthesia Workstations →
-                </Link>
-                <Link
-                  href="/products?category=ventilator"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-med-teal-600 font-medium"
-                >
-                  ICU Ventilators →
-                </Link>
+              {/* Department Product Showcase on Mobile */}
+              <div className="pt-3 border-t border-clinical-100 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-navy-950 uppercase tracking-wider">
+                    Equipment By Department
+                  </span>
+                  <Link
+                    href="/products"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs font-bold text-[#2563eb] hover:underline"
+                  >
+                    View All →
+                  </Link>
+                </div>
+
+                {/* Mobile Department Tabs */}
+                <div className="flex items-center gap-1.5 p-1 bg-clinical-100/70 rounded-xl overflow-x-auto">
+                  {MEGA_MENU_DEPARTMENTS.map((dept) => {
+                    const isSelected = mobileDepartmentTab === dept.id;
+                    return (
+                      <button
+                        key={dept.id}
+                        type="button"
+                        onClick={() => setMobileDepartmentTab(dept.id)}
+                        className={cn(
+                          "flex-1 py-1.5 px-2 rounded-lg text-xs font-bold text-center transition-all cursor-pointer whitespace-nowrap",
+                          isSelected
+                            ? "bg-white text-[#2563eb] shadow-xs"
+                            : "text-slate-600 hover:text-navy-900"
+                        )}
+                      >
+                        {dept.name}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Mobile Products Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                  {MEGA_MENU_DEPARTMENTS.find(
+                    (d) => d.id === mobileDepartmentTab
+                  )?.products.map((prod) => (
+                    <Link
+                      key={prod.id}
+                      href={prod.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-100/70 transition-colors"
+                    >
+                      <div className="relative w-12 h-12 bg-white rounded-lg border border-slate-200/60 shrink-0 p-1">
+                        <Image
+                          src={prod.image}
+                          alt={prod.title}
+                          fill
+                          sizes="48px"
+                          className="object-contain"
+                        />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="text-xs font-bold text-navy-950 truncate">
+                          {prod.title}
+                        </div>
+                        <div className="text-[11px] text-slate-500 line-clamp-1">
+                          {prod.description}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </Container>
           </motion.div>
