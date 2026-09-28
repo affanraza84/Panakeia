@@ -204,7 +204,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Case Rating", value: "IP67 Waterproof & Impact-Resistant" },
       { label: "Standard", value: "ISO 10651-4 Compliant" }
     ],
-    imageSrc: "/image/emergency-resuscitation-kit.jpeg",
+    imageSrc: "/image/Emergency-Resuscitation-&-Airway-Kit2.jpeg",
   },
   {
     id: "anaevent-ventilator",

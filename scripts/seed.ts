@@ -224,7 +224,8 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
       { label: "Standards & Compliance", value: "ISO 10651-4, CE / CDSCO Compliant" },
     ],
     images: [
-      "/image/emergency-resuscitation-kit.jpeg",
+      "/image/Emergency-Resuscitation-&-Airway-Kit2.jpeg",
+      "/image/Emergency-Resuscitation-&-Airway-Kit.jpeg",
     ],
     brochurePdfUrl: "/brochures/panakeia-resuscitation-kit-specsheet.pdf",
     order: 7,

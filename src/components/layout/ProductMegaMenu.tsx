@@ -29,7 +29,7 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
         id: "emerg-resus-kit",
         title: "Emergency Resuscitation Kit",
         description: "Clinical-grade trauma & airway resuscitation kit in ruggedized waterproof hard-shell case...",
-        image: "/image/emergency-resuscitation-kit.jpeg",
+        image: "/image/Emergency-Resuscitation-&-Airway-Kit2.jpeg",
         href: "/products/emergency-resuscitation-kit",
       },
       {
@@ -152,7 +152,7 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
         id: "nicu-resus-kit",
         title: "Paediatric Resuscitator",
         description: "Specialized silicone manual resuscitators and precision pediatric airway blade sets...",
-        image: "/image/emergency-resuscitation-kit.jpeg",
+        image: "/image/Emergency-Resuscitation-&-Airway-Kit2.jpeg",
         href: "/products/emergency-resuscitation-kit",
       },
     ],
