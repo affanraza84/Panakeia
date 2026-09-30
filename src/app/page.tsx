@@ -24,6 +24,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  keywords: [
+    "panakeia",
+    "Panakeia",
+    "Panakeia Medtech",
+    "Panakeia Medtech Pvt Ltd",
+    "Panakeia Medtech Private Limited",
+    "Medtech",
+    "Amtz",
+    "AMTZ",
+    "AMTZ Visakhapatnam",
+    "Anaesthesia Workstation India",
+    "ICU Ventilator Manufacturer India",
+    "Indigenous Medical Devices",
+    "In-House Medical Device Manufacturer",
+  ],
   openGraph: {
     title: "Panakeia Medtech | Anaesthesia & ICU Equipment Manufacturer in India",
     description:
