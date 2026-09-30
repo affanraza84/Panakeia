@@ -23,9 +23,8 @@ const isPublicRoute = createRouteMatcher([
 
 export default clerkMiddleware(async (auth, req) => {
   const host = req.headers.get("host") || "";
-  // 301 Canonical redirect: enforce non-www and primary domain (panakeiacare.com)
+  // 301 Redirect legacy domain traffic to canonical panakeiacare.com
   if (
-    host.startsWith("www.panakeiacare.com") ||
     host === "panakeiamedtech.com" ||
     host.startsWith("www.panakeiamedtech.com")
   ) {
