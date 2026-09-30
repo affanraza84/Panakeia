@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="navyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c2e52"/>
+      <stop offset="60%" stop-color="#071b30"/>
+      <stop offset="100%" stop-color="#04101d"/>
+    </linearGradient>
+    <linearGradient id="tealG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#00c2cb"/>
+      <stop offset="100%" stop-color="#008b94"/>
+    </linearGradient>
+    <linearGradient id="pGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="35%" stop-color="#0088ff"/>
+      <stop offset="100%" stop-color="#004cd4"/>
+    </linearGradient>
+    <filter id="subtleGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#00c2cb" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- High-contrast Squircle Base (visible on light, dark, and chrome tabs) -->
+  <rect x="20" y="20" width="472" height="472" rx="116" fill="url(#navyBg)"/>
+  <rect x="20" y="20" width="472" height="472" rx="116" fill="none" stroke="#00c2cb" stroke-opacity="0.45" stroke-width="8"/>
+
+  <g filter="url(#subtleGlow)">
+    <!-- Left Cross Arm -->
+    <rect x="64" y="196" width="112" height="120" rx="30" fill="url(#tealG)"/>
+
+    <!-- Vertical Medical Stem (Forms the spine of the cross and P) -->
+    <rect x="144" y="96" width="120" height="320" rx="32" fill="url(#tealG)"/>
+
+    <!-- Panakeia 'P' Bowl -->
+    <path d="M 218 114 
+             L 306 114 
+             C 388 114, 424 154, 424 216 
+             C 424 278, 388 318, 306 318 
+             L 228 318" 
+          fill="none" 
+          stroke="url(#pGrad)" 
+          stroke-width="58" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Vital Pulse Dot -->
+    <circle cx="316" cy="216" r="32" fill="#ef4444"/>
+
+    <!-- ECG Wave Line (Crisp White with rounded caps) -->
+    <path d="M 44 256 
+             L 120 256 
+             L 150 324 
+             L 186 154 
+             L 220 340 
+             L 246 216 
+             L 268 256 
+             L 342 256" 
+          fill="none" 
+          stroke="#ffffff" 
+          stroke-width="30" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+  </g>
+</svg>
