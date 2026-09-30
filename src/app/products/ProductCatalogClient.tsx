@@ -1,28 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { IProduct, ProductCategory } from "@/types";
+import { IProduct } from "@/types";
 import { ProductCard } from "@/components/ui/ProductCard";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Container } from "@/components/ui/Container";
 import { staggerContainerVariant, fadeUpVariant } from "@/lib/animations";
-import { Stethoscope, Wind, LayoutGrid, Activity, Syringe, BriefcaseMedical, Sparkles, Sliders, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Stethoscope, Wind, LayoutGrid, Activity, Syringe, BriefcaseMedical, ArrowRight, CheckCircle2, Sliders } from "lucide-react";
 
 interface ProductCatalogClientProps {
   initialProducts: IProduct[];
+  initialCategory?: string;
 }
 
 export function ProductCatalogClient({
   initialProducts,
+  initialCategory = "all",
 }: ProductCatalogClientProps) {
-  const searchParams = useSearchParams();
-  const defaultCategory = searchParams.get("category") as ProductCategory | null;
-
-  const [selectedCategory, setSelectedCategory] = useState<string>(
-    defaultCategory || "all"
-  );
+  const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
 
   const categories = [
     { id: "all", label: "All Equipment", icon: LayoutGrid, count: initialProducts.length },

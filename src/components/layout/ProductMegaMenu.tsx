@@ -250,6 +250,54 @@ export function ProductMegaMenu({ onItemClick }: ProductMegaMenuProps) {
           </motion.div>
         </AnimatePresence>
       </div>
+
+      {/* Category Landing Page Shortcuts Footer */}
+      <div className="px-6 py-3 bg-slate-50 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <span className="font-bold text-slate-700 uppercase tracking-wider text-[11px]">
+          Product Categories:
+        </span>
+        <div className="flex flex-wrap items-center gap-3">
+          <Link
+            href="/products/category/anaesthesia-machines"
+            onClick={onItemClick}
+            className="text-slate-600 hover:text-med-teal-700 font-semibold transition-colors"
+          >
+            Anaesthesia Workstations
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link
+            href="/products/category/ventilators"
+            onClick={onItemClick}
+            className="text-slate-600 hover:text-med-teal-700 font-semibold transition-colors"
+          >
+            ICU Ventilators
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link
+            href="/products/category/patient-monitors"
+            onClick={onItemClick}
+            className="text-slate-600 hover:text-med-teal-700 font-semibold transition-colors"
+          >
+            Patient Monitors
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link
+            href="/products/category/syringe-infusion-pumps"
+            onClick={onItemClick}
+            className="text-slate-600 hover:text-med-teal-700 font-semibold transition-colors"
+          >
+            Infusion Pumps
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link
+            href="/products/category/emergency-resuscitation-kits"
+            onClick={onItemClick}
+            className="text-slate-600 hover:text-med-teal-700 font-semibold transition-colors"
+          >
+            Emergency Kits
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

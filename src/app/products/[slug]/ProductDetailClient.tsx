@@ -2,26 +2,31 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { CompanyContactDetails } from "@/components/auth/CompanyContactDetails";
 import { IProduct } from "@/types";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { CATEGORY_SEO } from "@/lib/seo";
 import {
   CheckCircle2,
   FileDown,
   ShieldCheck,
   Building2,
-  Phone,
   ArrowRight,
   Sliders,
 } from "lucide-react";
 
 interface ProductDetailClientProps {
   product: IProduct;
+  relatedProducts?: IProduct[];
 }
 
-export function ProductDetailClient({ product }: ProductDetailClientProps) {
+export function ProductDetailClient({
+  product,
+  relatedProducts = [],
+}: ProductDetailClientProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const getCategoryLabel = (cat: string) => {
@@ -262,6 +267,151 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
           </div>
         </div>
       </div>
+
+      {/* Clinical Applications & Regulatory Quality Standards */}
+      <div className="pt-12 border-t border-clinical-200">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Applications */}
+          <div className="bg-white p-6 rounded-2xl border border-clinical-200 shadow-2xs">
+            <span className="text-xs font-mono font-bold text-med-teal-600 uppercase tracking-wider block mb-2">
+              Clinical Environments
+            </span>
+            <h3 className="text-lg font-bold font-heading text-navy-950 mb-4">
+              Recommended Clinical Applications
+            </h3>
+            <div className="space-y-2.5">
+              {[
+                product.category === "anaesthesia"
+                  ? [
+                      "Multi-Speciality Operation Theatres & General Surgical Suites",
+                      "Cardiac, Neuro & Thoracic Surgery Procedures",
+                      "Daycare Surgeries & Ambulatory Surgical Centers",
+                      "Emergency Trauma Resuscitation & OT Rapid Response",
+                    ]
+                  : product.category === "ventilator"
+                  ? [
+                      "High-Acuity Medical & Surgical Intensive Care Units (ICU)",
+                      "High Flow Nasal Cannula (HFNC) Oxygen Therapy Suites",
+                      "Post-Operative Recovery & Long-Term Mechanical Ventilation",
+                      "Critical Patient Transport & Emergency Department Stabilization",
+                    ]
+                  : product.category === "monitoring"
+                  ? [
+                      "Continuous OT Intraoperative Physiological Monitoring",
+                      "Critical Care & Intensive Care Unit (ICU) Telemetry",
+                      "Post-Anesthesia Care Units (PACU) & Surgical Recovery Beds",
+                      "Diagnostic Cardiology & Inpatient Vital Sign Tracking",
+                    ]
+                  : product.category === "infusion"
+                  ? [
+                      "High-Precision Critical Care Intravenous Drug Administration",
+                      "Anaesthesia Induction & Continuous Sedation Delivery",
+                      "Oncology Chemotherapy & Parenteral Nutrition Support",
+                      "Neonatal & Paediatric Micro-Dosing Regimens",
+                    ]
+                  : [
+                      "Hospital Emergency Departments & Crash Carts",
+                      "Paramedic Emergency Medical Services (EMS) & Ambulances",
+                      "Difficult Airway Management & Rapid Sequence Intubation",
+                      "Disaster Relief & Remote Clinical Field Trauma Support",
+                    ]
+              ][0].map((app, idx) => (
+                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-clinical-700">
+                  <CheckCircle2 className="w-4 h-4 text-med-teal-500 shrink-0 mt-0.5" />
+                  <span>{app}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Quality & Manufacturing Standing */}
+          <div className="bg-navy-950 text-white p-6 rounded-2xl border border-navy-800 shadow-2xs flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-mono font-bold text-med-teal-400 uppercase tracking-wider block mb-2">
+                Manufacturing Integrity
+              </span>
+              <h3 className="text-lg font-bold font-heading text-white mb-3">
+                100% In-House Parts Manufacturing
+              </h3>
+              <p className="text-xs sm:text-sm text-clinical-300 leading-relaxed">
+                All structural, pneumatic, electronic, and software assemblies for this device are manufactured directly by Panakeia Medtech itself at our dedicated medical facility in Visakhapatnam.
+              </p>
+            </div>
+
+            <div className="pt-4 mt-4 border-t border-navy-800/80 grid grid-cols-2 gap-2 text-[11px] text-clinical-300 font-mono">
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-med-teal-400" /> ISO 13485:2016
+              </span>
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-med-teal-400" /> CDSCO Compliant
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Building2 className="w-3.5 h-3.5 text-med-teal-400" /> MSME Registered
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-med-teal-400" /> Make in India
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Category Equipment */}
+      {relatedProducts.length > 0 && (
+        <div className="pt-12 border-t border-clinical-200">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6">
+            <div>
+              <span className="text-xs font-mono text-med-teal-700 uppercase tracking-wider font-bold block mb-1">
+                Category Portfolio
+              </span>
+              <h3 className="text-xl sm:text-2xl font-bold font-heading text-navy-950">
+                Related {getCategoryLabel(product.category)} Systems
+              </h3>
+            </div>
+            {CATEGORY_SEO[product.category] && (
+              <Link
+                href={`/products/category/${CATEGORY_SEO[product.category].slug}`}
+                className="text-xs sm:text-sm font-semibold text-med-teal-700 hover:text-med-teal-800 inline-flex items-center gap-1"
+              >
+                <span>View Full Category</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {relatedProducts.map((rel) => (
+              <Link
+                key={rel.slug}
+                href={`/products/${rel.slug}`}
+                className="p-5 rounded-2xl bg-white border border-clinical-200 hover:border-med-teal-400 hover:shadow-md transition-all group flex items-center gap-4"
+              >
+                <div className="w-20 h-20 bg-slate-100 rounded-xl p-2 shrink-0 relative overflow-hidden">
+                  <Image
+                    src={rel.images?.[0] || "/image/three-gas-system-advanced-anaesthesia-workstation.jpeg"}
+                    alt={rel.name}
+                    fill
+                    sizes="80px"
+                    className="object-contain group-hover:scale-105 transition-transform"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-sm font-bold text-navy-950 font-heading group-hover:text-med-teal-600 transition-colors truncate">
+                    {rel.name}
+                  </h4>
+                  <p className="text-xs text-clinical-600 line-clamp-2 mt-1">
+                    {rel.tagline}
+                  </p>
+                  <span className="text-xs font-semibold text-med-teal-700 inline-flex items-center gap-1 mt-2">
+                    <span>View Specifications</span>
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

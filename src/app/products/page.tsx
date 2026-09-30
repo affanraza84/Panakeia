@@ -1,10 +1,8 @@
-import React, { Suspense } from "react";
+import React from "react";
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { getProducts } from "@/lib/data";
 import { ProductCatalogClient } from "./ProductCatalogClient";
-import { ShieldCheck, Sparkles, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Products & Critical Care Solutions",
@@ -39,15 +37,7 @@ export default async function ProductsPage() {
       </section>
 
       {/* Interactive Catalog */}
-      <Suspense
-        fallback={
-          <div className="py-20 text-center text-clinical-500">
-            Loading products catalog...
-          </div>
-        }
-      >
-        <ProductCatalogClient initialProducts={products} />
-      </Suspense>
+      <ProductCatalogClient initialProducts={products} />
 
       {/* Manufacturing & Custom OEM Strip */}
       <section className="py-12 bg-white border-t border-clinical-200">

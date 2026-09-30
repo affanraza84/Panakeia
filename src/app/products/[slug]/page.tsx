@@ -7,7 +7,7 @@ import { getProducts, getProductBySlug } from "@/lib/data";
 import { ProductDetailClient } from "./ProductDetailClient";
 import { ChevronRight, Home } from "lucide-react";
 
-import { SITE_URL, absUrl, safeJsonLd } from "@/lib/seo";
+import { SITE_URL, absUrl, safeJsonLd, CATEGORY_SEO } from "@/lib/seo";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
@@ -55,11 +55,18 @@ export async function generateMetadata({
 
 export default async function ProductDetailPage({ params }: ProductPageProps) {
   const { slug } = await params;
-  const product = await getProductBySlug(slug);
+  const [product, allProducts] = await Promise.all([
+    getProductBySlug(slug),
+    getProducts(),
+  ]);
 
   if (!product) {
     notFound();
   }
+
+  const relatedProducts = allProducts
+    .filter((p) => p.category === product.category && p.slug !== product.slug)
+    .slice(0, 2);
 
   const categoryLabels: Record<string, string> = {
     anaesthesia: "Anaesthesia Workstation",
@@ -105,6 +112,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       : {}),
   };
 
+  const categoryConfig = CATEGORY_SEO[product.category];
+  const categoryUrl = absUrl(`/products/category/${categoryConfig.slug}`);
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -124,6 +134,12 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       {
         "@type": "ListItem",
         position: 3,
+        name: categoryConfig.h1,
+        item: categoryUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
         name: product.name,
         item: absUrl(`/products/${product.slug}`),
       },
@@ -146,7 +162,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         {/* Breadcrumb Navigation */}
         <nav
           aria-label="Breadcrumb"
-          className="flex items-center gap-2 text-xs text-clinical-500 mb-8 font-medium"
+          className="flex items-center gap-2 text-xs text-clinical-500 mb-8 font-medium flex-wrap"
         >
           <Link href="/" className="hover:text-navy-950 flex items-center gap-1">
             <Home className="w-3.5 h-3.5" />
@@ -157,13 +173,23 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             Products
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-clinical-300" />
+          <Link
+            href={`/products/category/${categoryConfig.slug}`}
+            className="hover:text-navy-950"
+          >
+            {categoryConfig.h1}
+          </Link>
+          <ChevronRight className="w-3.5 h-3.5 text-clinical-300" />
           <span className="text-navy-950 font-semibold truncate max-w-xs sm:max-w-none">
             {product.name}
           </span>
         </nav>
 
         {/* Interactive Client Component */}
-        <ProductDetailClient product={product} />
+        <ProductDetailClient
+          product={product}
+          relatedProducts={relatedProducts}
+        />
       </Container>
     </div>
   );

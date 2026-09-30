@@ -125,39 +125,47 @@ export function Footer() {
           {/* Product Categories */}
           <div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading mb-4">
-              Products
+              Equipment Categories
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link
-                  href="/products/three-gas-system-advanced-anaesthesia-workstation"
+                  href="/products/category/anaesthesia-machines"
                   className="hover:text-white transition-colors"
                 >
-                  Three-Gas Advanced Workstation
+                  Anaesthesia Machines & Workstations
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/two-gas-system-basic-anaesthesia-workstation"
+                  href="/products/category/ventilators"
                   className="hover:text-white transition-colors"
                 >
-                  Two-Gas Basic Workstation
+                  ICU & Anaesthesia Ventilators
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/basic-premium-anaesthesia-machine"
+                  href="/products/category/patient-monitors"
                   className="hover:text-white transition-colors"
                 >
-                  Basic Premium Anaesthesia Machine
+                  Patient Monitors & Diagnostic ECG
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/icu-critical-care-ventilator"
+                  href="/products/category/syringe-infusion-pumps"
                   className="hover:text-white transition-colors"
                 >
-                  Advanced ICU Ventilator
+                  Syringe & Infusion Pumps
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/category/emergency-resuscitation-kits"
+                  className="hover:text-white transition-colors"
+                >
+                  Emergency & Resuscitation Kits
                 </Link>
               </li>
               <li>
@@ -165,7 +173,7 @@ export function Footer() {
                   href="/products"
                   className="text-med-teal-400 hover:text-med-teal-300 transition-colors inline-flex items-center gap-1 font-medium pt-1"
                 >
-                  View All Products <ArrowUpRight className="w-3 h-3" />
+                  Complete Product Catalog <ArrowUpRight className="w-3 h-3" />
                 </Link>
               </li>
             </ul>

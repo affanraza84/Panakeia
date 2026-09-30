@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "../ui/Container";
-import { ChevronDown, ArrowRight, Lock, Menu, X } from "lucide-react";
+import { ChevronDown, Lock, Menu, X } from "lucide-react";
 import { useUser, UserButton } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 import { ProductMegaMenu, MEGA_MENU_DEPARTMENTS } from "./ProductMegaMenu";
@@ -71,10 +71,11 @@ export function Navbar() {
     };
   }, [pathname]);
 
-  // Close mobile menu on page change
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setMobileMenuOpen(false);
-  }, [pathname]);
+  }
 
   const handleNavClick = (href: string) => {
     if (href === "/about#aim") {
@@ -308,6 +309,50 @@ export function Navbar() {
                     </Link>
                   );
                 })}
+              </div>
+
+              {/* Equipment Categories on Mobile */}
+              <div className="pt-3 border-t border-clinical-100 space-y-2">
+                <span className="text-[11px] font-bold text-navy-950 uppercase tracking-wider block">
+                  Equipment Categories
+                </span>
+                <div className="flex flex-wrap gap-1.5">
+                  <Link
+                    href="/products/category/anaesthesia-machines"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs px-2.5 py-1 rounded-lg bg-clinical-50 hover:bg-med-teal-50 hover:text-med-teal-700 border border-clinical-200 text-clinical-700 font-medium transition-colors"
+                  >
+                    Anaesthesia
+                  </Link>
+                  <Link
+                    href="/products/category/ventilators"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs px-2.5 py-1 rounded-lg bg-clinical-50 hover:bg-med-teal-50 hover:text-med-teal-700 border border-clinical-200 text-clinical-700 font-medium transition-colors"
+                  >
+                    Ventilators
+                  </Link>
+                  <Link
+                    href="/products/category/patient-monitors"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs px-2.5 py-1 rounded-lg bg-clinical-50 hover:bg-med-teal-50 hover:text-med-teal-700 border border-clinical-200 text-clinical-700 font-medium transition-colors"
+                  >
+                    Patient Monitors
+                  </Link>
+                  <Link
+                    href="/products/category/syringe-infusion-pumps"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs px-2.5 py-1 rounded-lg bg-clinical-50 hover:bg-med-teal-50 hover:text-med-teal-700 border border-clinical-200 text-clinical-700 font-medium transition-colors"
+                  >
+                    Infusion Pumps
+                  </Link>
+                  <Link
+                    href="/products/category/emergency-resuscitation-kits"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs px-2.5 py-1 rounded-lg bg-clinical-50 hover:bg-med-teal-50 hover:text-med-teal-700 border border-clinical-200 text-clinical-700 font-medium transition-colors"
+                  >
+                    Emergency Kits
+                  </Link>
+                </div>
               </div>
 
               {/* Department Product Showcase on Mobile */}
