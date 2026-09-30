@@ -30,14 +30,17 @@ export function CleanHeroVideo({
       {/* 1. Continuous Smooth Video Playing */}
       <video
         ref={videoRef}
-        src={videoSrc}
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
+        poster="/image/hero-poster.jpg"
         className="w-full h-full object-cover object-center pointer-events-none"
-      />
+      >
+        <source src="/video/panakeia-intro-video.webm" type="video/webm" />
+        <source src={videoSrc} type="video/mp4" />
+      </video>
 
       {/* Subtle vignette gradient overlay for crisp text readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />

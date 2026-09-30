@@ -51,7 +51,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   images: {
-    qualities: [75, 95, 100],
+    formats: ["image/avif", "image/webp"],
+    qualities: [75, 85, 95, 100],
   },
   async headers() {
     return [

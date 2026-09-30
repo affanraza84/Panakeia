@@ -73,14 +73,17 @@ export function FullScreenHeroVideo({
       {/* 1. FULL SCREEN BACKGROUND VIDEO */}
       <video
         ref={videoRef}
-        src={videoSrc}
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
+        poster="/image/hero-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
-      />
+      >
+        <source src="/video/panakeia-intro-video.webm" type="video/webm" />
+        <source src={videoSrc} type="video/mp4" />
+      </video>
 
       {/* 2. CINEMATIC GRADIENT & CONTRAST OVERLAYS */}
       {/* Dark tint so clinical typography is high contrast */}

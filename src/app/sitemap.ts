@@ -1,67 +1,62 @@
 import { MetadataRoute } from "next";
 import { getProducts } from "@/lib/data";
-import { SITE_URL } from "@/lib/seo";
+import { CATEGORY_SEO, SITE_URL } from "@/lib/seo";
+import { getResourceArticles } from "@/lib/resources";
+import { ProductCategory } from "@/types";
+
+export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_URL;
   const products = await getProducts();
+  const articles = getResourceArticles();
 
-  const productUrls = products.map((p) => ({
-    url: `${baseUrl}/products/${p.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
+  // 1. Static Core Landing Pages
+  const staticRoutes: MetadataRoute.Sitemap = [
+    { url: baseUrl },
+    { url: `${baseUrl}/products` },
+    { url: `${baseUrl}/resources` },
+    { url: `${baseUrl}/about` },
+    { url: `${baseUrl}/quality` },
+    { url: `${baseUrl}/clients` },
+    { url: `${baseUrl}/careers` },
+    { url: `${baseUrl}/contact` },
+    { url: `${baseUrl}/privacy` },
+  ];
+
+  // 2. Equipment Category Landing Pages
+  const categoryKeys = Object.keys(CATEGORY_SEO) as ProductCategory[];
+  const categoryRoutes: MetadataRoute.Sitemap = categoryKeys.map((catKey) => {
+    const config = CATEGORY_SEO[catKey];
+    return {
+      url: `${baseUrl}/products/category/${config.slug}`,
+    };
+  });
+
+  // 3. Product Detail Pages with truthful, stable lastModified
+  const productRoutes: MetadataRoute.Sitemap = products.map((p) => {
+    const rawDate = p.updatedAt || p.createdAt;
+    const lastModified = rawDate ? new Date(rawDate) : undefined;
+    return {
+      url: `${baseUrl}/products/${p.slug}`,
+      ...(lastModified && !isNaN(lastModified.getTime()) ? { lastModified } : {}),
+    };
+  });
+
+  // 4. Clinical Resources & Guides
+  const resourceRoutes: MetadataRoute.Sitemap = articles.map((article) => {
+    const rawDate = article.updatedAt || article.publishedAt;
+    const lastModified = rawDate ? new Date(rawDate) : undefined;
+    return {
+      url: `${baseUrl}/resources/${article.slug}`,
+      ...(lastModified && !isNaN(lastModified.getTime()) ? { lastModified } : {}),
+    };
+  });
 
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/products`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/quality`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/clients`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/careers`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    ...productUrls,
+    ...staticRoutes,
+    ...categoryRoutes,
+    ...productRoutes,
+    ...resourceRoutes,
   ];
 }

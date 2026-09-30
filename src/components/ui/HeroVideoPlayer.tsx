@@ -96,15 +96,18 @@ export function HeroVideoPlayer({
       <div className="relative w-full aspect-video bg-navy-950 flex items-center justify-center">
         <video
           ref={videoRef}
-          src={src}
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
+          poster="/image/hero-poster.jpg"
           onLoadedData={() => setIsLoaded(true)}
           className="w-full h-full object-cover object-center rounded-2xl transition-opacity duration-500"
-        />
+        >
+          <source src="/video/panakeia-intro-video.webm" type="video/webm" />
+          <source src={src} type="video/mp4" />
+        </video>
 
         {/* Gradient Overlay for Edge Contrast */}
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-navy-950/30 pointer-events-none" />

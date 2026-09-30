@@ -18,8 +18,20 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "Panakeia Medtech | Anaesthesia & ICU Equipment Manufacturer in India",
+  description:
+    "Panakeia Medtech is an indigenous medical equipment manufacturer in Visakhapatnam, Andhra Pradesh, India. We engineer clinical-grade Anaesthesia (Anesthesia) Workstations, ICU Ventilators, Patient Monitors, and OT equipment with 100% in-house manufactured parts.",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "Panakeia Medtech | Anaesthesia & ICU Equipment Manufacturer in India",
+    description:
+      "Indigenous critical care and OT medical equipment manufacturer in Visakhapatnam, Andhra Pradesh. 100% in-house manufactured parts.",
+    url: "/",
+    siteName: "Panakeia Medtech",
+    locale: "en_IN",
+    type: "website",
   },
 };
 

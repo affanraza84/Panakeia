@@ -83,11 +83,9 @@ export function ProductDetailClient({
               >
                 <Image
                   src={currentImage}
-                  alt={`${product.name} — Technical Overview`}
+                  alt={`Panakeia ${product.name} — Technical Overview`}
                   fill
                   priority
-                  quality={95}
-                  unoptimized
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-contain object-center filter drop-shadow-sm"
                 />
@@ -110,10 +108,8 @@ export function ProductDetailClient({
                 >
                   <Image
                     src={img}
-                    alt={`Thumbnail view ${idx + 1}`}
+                    alt={`Panakeia ${product.name} — Detail view ${idx + 1}`}
                     fill
-                    quality={95}
-                    unoptimized
                     sizes="96px"
                     className="object-contain p-1"
                   />
@@ -389,7 +385,7 @@ export function ProductDetailClient({
                 <div className="w-20 h-20 bg-slate-100 rounded-xl p-2 shrink-0 relative overflow-hidden">
                   <Image
                     src={rel.images?.[0] || "/image/three-gas-system-advanced-anaesthesia-workstation.jpeg"}
-                    alt={rel.name}
+                    alt={`Panakeia ${rel.name}`}
                     fill
                     sizes="80px"
                     className="object-contain group-hover:scale-105 transition-transform"

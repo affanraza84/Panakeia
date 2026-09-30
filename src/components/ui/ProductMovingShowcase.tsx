@@ -66,6 +66,22 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
     setIsPaused(false);
   };
 
+  const handleNextProduct = () => {
+    if (!selectedProduct || products.length === 0) return;
+    const currentIndex = products.findIndex((p) => p.slug === selectedProduct.slug);
+    const nextIndex = (currentIndex + 1) % products.length;
+    setSelectedProduct(products[nextIndex]);
+    setActiveImageIndex(0);
+  };
+
+  const handlePrevProduct = () => {
+    if (!selectedProduct || products.length === 0) return;
+    const currentIndex = products.findIndex((p) => p.slug === selectedProduct.slug);
+    const prevIndex = (currentIndex - 1 + products.length) % products.length;
+    setSelectedProduct(products[prevIndex]);
+    setActiveImageIndex(0);
+  };
+
   // Keyboard navigation & body scroll locking
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -91,22 +107,6 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [selectedProduct, products]);
-
-  const handleNextProduct = () => {
-    if (!selectedProduct || products.length === 0) return;
-    const currentIndex = products.findIndex((p) => p.slug === selectedProduct.slug);
-    const nextIndex = (currentIndex + 1) % products.length;
-    setSelectedProduct(products[nextIndex]);
-    setActiveImageIndex(0);
-  };
-
-  const handlePrevProduct = () => {
-    if (!selectedProduct || products.length === 0) return;
-    const currentIndex = products.findIndex((p) => p.slug === selectedProduct.slug);
-    const prevIndex = (currentIndex - 1 + products.length) % products.length;
-    setSelectedProduct(products[prevIndex]);
-    setActiveImageIndex(0);
-  };
 
   return (
     <section className="bg-slate-50/70 border-b border-clinical-200 py-4 sm:py-6 relative overflow-hidden">
@@ -199,7 +199,7 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={primaryImage}
-                    alt={product.name}
+                    alt={`Panakeia ${product.name}`}
                     fill
                     sizes="(max-width: 640px) 300px, 340px"
                     className="object-contain p-2 sm:p-3 group-hover/card:scale-110 transition-transform duration-500 ease-out drop-shadow-md"
@@ -317,7 +317,7 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                             selectedProduct.images[0] ||
                             "/placeholder-product.jpg"
                           }
-                          alt={selectedProduct.name}
+                          alt={`Panakeia ${selectedProduct.name} — High-Res View`}
                           fill
                           priority
                           sizes="(max-width: 1024px) 100vw, 420px"
@@ -346,7 +346,7 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                           >
                             <Image
                               src={img}
-                              alt={`${selectedProduct.name} view ${i + 1}`}
+                              alt={`Panakeia ${selectedProduct.name} view ${i + 1}`}
                               fill
                               sizes="64px"
                               className="object-contain p-1"

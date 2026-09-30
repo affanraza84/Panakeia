@@ -191,6 +191,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/resources" className="hover:text-white transition-colors text-med-teal-400 font-medium">
+                  Clinical Guides & Resources
+                </Link>
+              </li>
+              <li>
                 <Link href="/quality" className="hover:text-white transition-colors">
                   Quality & Regulatory Standing
                 </Link>

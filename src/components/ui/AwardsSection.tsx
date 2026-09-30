@@ -148,11 +148,8 @@ export function AwardsSection() {
               >
                 <Image
                   src={award.image}
-                  alt={award.title}
+                  alt={`${award.title} — Panakeia Medtech`}
                   fill
-                  priority
-                  quality={100}
-                  unoptimized
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain object-center p-2 transition-transform duration-300 group-hover/img:scale-[1.02] filter drop-shadow-sm"
                 />
@@ -278,10 +275,11 @@ export function AwardsSection() {
                   style={{ transform: `scale(${zoomScale})`, transformOrigin: "center center" }}
                   className="transition-transform duration-200 flex items-center justify-center max-w-full max-h-full"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={selectedAward.image}
-                    alt={selectedAward.title}
+                    alt={`${selectedAward.title} full certificate — Panakeia Medtech`}
+                    width={500}
+                    height={340}
                     className="max-h-[340px] max-w-full w-auto h-auto object-contain filter drop-shadow-sm rounded-lg"
                   />
                 </div>

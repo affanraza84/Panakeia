@@ -59,11 +59,9 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="relative w-full h-full flex items-center justify-center">
           <Image
             src={primaryImage}
-            alt={`${product.name} — Indigenous ${categoryLabel}`}
+            alt={`Panakeia ${product.name} — ${categoryLabel}`}
             fill
-            quality={95}
-            unoptimized
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-contain object-center filter drop-shadow-sm group-hover:scale-105 transition-transform duration-500 ease-out"
           />
         </div>

@@ -1,7 +1,10 @@
 import { ProductCategory } from "@/types";
 
+const envUrl = process.env.NEXT_PUBLIC_SITE_URL;
 export const SITE_URL: string = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://panakeiamedtech.com"
+  process.env.NODE_ENV === "production" && (!envUrl || envUrl.includes("localhost"))
+    ? "https://panakeiamedtech.com"
+    : envUrl || "https://panakeiamedtech.com"
 ).replace(/\/+$/, "");
 
 export const SITE_NAME = "Panakeia Medtech";

@@ -75,15 +75,18 @@ export function PureVideoHome({
       {/* 1. MAIN VIDEO */}
       <video
         ref={videoRef}
-        src={videoSrc}
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
+        poster="/image/hero-poster.jpg"
         onClick={togglePlay}
         className="w-full h-full object-cover object-center cursor-pointer"
-      />
+      >
+        <source src="/video/panakeia-intro-video.webm" type="video/webm" />
+        <source src={videoSrc} type="video/mp4" />
+      </video>
 
       {/* 2. FLOATING MINIMAL CONTROLS OVERLAY */}
       <div

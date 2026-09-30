@@ -362,12 +362,9 @@ export function EquipmentShowcase() {
                 >
                   <Image
                     src={current.imageSrc}
-                    alt={current.name}
+                    alt={`Panakeia ${current.name} medical equipment`}
                     fill
-                    quality={95}
-                    unoptimized
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority
                     className="object-contain object-center filter drop-shadow-sm group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                 </motion.div>
@@ -397,10 +394,8 @@ export function EquipmentShowcase() {
                   >
                     <Image
                       src={item.imageSrc}
-                      alt={item.name}
+                      alt={`Thumbnail of Panakeia ${item.name}`}
                       fill
-                      quality={95}
-                      unoptimized
                       sizes="120px"
                       className="object-contain p-1"
                     />
@@ -535,11 +530,12 @@ export function EquipmentShowcase() {
                 style={{ height: "360px", minHeight: "360px", position: "relative" }}
                 className="relative w-full my-3 flex items-center justify-center bg-slate-100 rounded-xl p-4"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={current.imageSrc}
-                  alt={current.name}
-                  className="max-h-[320px] max-w-full w-auto h-auto object-contain filter drop-shadow-sm rounded-lg"
+                  alt={`Enlarged view of Panakeia ${current.name}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 600px"
+                  className="object-contain p-4 filter drop-shadow-sm rounded-lg"
                 />
               </div>
 
