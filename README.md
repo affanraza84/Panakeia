@@ -95,7 +95,7 @@ Engineered by clinical veterans with **30+ years of high-acuity surgical experie
    SMTP_SECURE=false
    SMTP_USER=your-email@example.com
    SMTP_PASS=your-app-specific-password
-   ENQUIRY_RECIPIENT_EMAIL=procurement@panakeiamedtech.com
+   ENQUIRY_RECIPIENT_EMAIL=procurement@panakeiacare.com
 
    # Next.js Revalidation Secret
    REVALIDATION_SECRET=your-secure-secret-token
@@ -158,8 +158,8 @@ Panakeia/
 **Panakeia Medtech Private Limited**  
 - **Facility Address**: Panakeia Manufacturing Facility, Pragati Maidan, VM Steel Project S.O., Visakhapatnam, Andhra Pradesh – 530031, India  
 - **Phone**: [+91-9811340469](tel:+919811340469)  
-- **Clinical & Procurement Email**: [contact@panakeiamedtech.com](mailto:contact@panakeiamedtech.com)  
-- **Website**: [https://panakeiamedtech.com](https://panakeiamedtech.com)
+- **Clinical & Procurement Email**: [contact@panakeiacare.com](mailto:contact@panakeiacare.com)  
+- **Website**: [https://panakeiacare.com](https://panakeiacare.com)
 
 ---
 

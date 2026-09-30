@@ -3,8 +3,8 @@ import { ProductCategory } from "@/types";
 const envUrl = process.env.NEXT_PUBLIC_SITE_URL;
 export const SITE_URL: string = (
   process.env.NODE_ENV === "production" && (!envUrl || envUrl.includes("localhost"))
-    ? "https://panakeiamedtech.com"
-    : envUrl || "https://panakeiamedtech.com"
+    ? "https://panakeiacare.com"
+    : envUrl || "https://panakeiacare.com"
 ).replace(/\/+$/, "");
 
 export const SITE_NAME = "Panakeia Medtech";

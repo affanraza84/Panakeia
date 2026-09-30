@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
             <p>
               This Privacy Policy explains how we collect, handle, store, and safeguard the information you provide when interacting with our official web portal (
               <code className="bg-clinical-100 px-1 py-0.5 rounded text-navy-950 font-mono text-xs">
-                https://panakeiamedtech.com
+                https://panakeiacare.com
               </code>
               ), our clinical quotation tools, and communication channels.
             </p>

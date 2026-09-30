@@ -442,7 +442,7 @@ export function CareersContentClient() {
       if (!response.ok || !result.success) {
         setServerError(
           result.error ||
-            "Failed to submit your application. Please try again or email careers@panakeiamedtech.com"
+            "Failed to submit your application. Please try again or email careers@panakeiacare.com"
         );
         return;
       }

@@ -23,10 +23,14 @@ const isPublicRoute = createRouteMatcher([
 
 export default clerkMiddleware(async (auth, req) => {
   const host = req.headers.get("host") || "";
-  // 301 Canonical redirect: enforce non-www (panakeiamedtech.com)
-  if (host.startsWith("www.panakeiamedtech.com")) {
+  // 301 Canonical redirect: enforce non-www and primary domain (panakeiacare.com)
+  if (
+    host.startsWith("www.panakeiacare.com") ||
+    host === "panakeiamedtech.com" ||
+    host.startsWith("www.panakeiamedtech.com")
+  ) {
     const url = req.nextUrl.clone();
-    url.host = "panakeiamedtech.com";
+    url.host = "panakeiacare.com";
     url.port = "";
     url.protocol = "https";
     return NextResponse.redirect(url, 301);

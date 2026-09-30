@@ -8,7 +8,7 @@ export async function sendEnquiryNotification(
   enquiry: IEnquiry
 ): Promise<{ success: boolean; id?: string }> {
   const recipient = process.env.ENQUIRY_NOTIFICATION_EMAIL || "panakeia.india@gmail.com";
-  const fromEmail = process.env.RESEND_FROM_EMAIL || "Panakeia Web <enquiries@panakeiamedtech.com>";
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "Panakeia Web <enquiries@panakeiacare.com>";
 
   if (!resend) {
     // Note: Do not log PII (names, emails, phone numbers) in plaintext to console/logs
