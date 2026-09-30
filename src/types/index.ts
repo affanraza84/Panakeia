@@ -16,6 +16,8 @@ export interface IProduct {
   specs: IProductSpec[];
   images: string[];
   brochurePdfUrl?: string;
+  seoTitle?: string;
+  seoDescription?: string;
   order: number;
   published: boolean;
   createdAt?: string | Date;

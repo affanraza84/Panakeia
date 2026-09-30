@@ -7,6 +7,8 @@ import { getProducts, getProductBySlug } from "@/lib/data";
 import { ProductDetailClient } from "./ProductDetailClient";
 import { ChevronRight, Home } from "lucide-react";
 
+import { SITE_URL, absUrl, safeJsonLd } from "@/lib/seo";
+
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -32,20 +34,18 @@ export async function generateMetadata({
     };
   }
 
-  const categoryLabels: Record<string, string> = {
-    anaesthesia: "Anaesthesia Workstation",
-    ventilator: "ICU Ventilator",
-    monitoring: "Patient Monitor",
-    infusion: "Syringe & Infusion Pump",
-    emergency: "Emergency Resuscitation Kit",
-  };
-
-  const catLabel = categoryLabels[product.category] || "Medical Equipment";
+  const title = product.seoTitle ?? `${product.name} – Manufacturer in India`;
+  const description = product.seoDescription ?? product.tagline.slice(0, 155);
 
   return {
-    title: `${product.name} — Indigenous ${catLabel}`,
-    description: product.tagline,
+    title,
+    description,
+    alternates: {
+      canonical: `/products/${product.slug}`,
+    },
     openGraph: {
+      type: "website",
+      url: `/products/${product.slug}`,
       title: `${product.name} | Panakeia Medtech`,
       description: product.tagline,
       images: product.images,
@@ -69,27 +69,65 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     emergency: "Emergency Resuscitation Kit",
   };
 
-  const jsonLd = {
+  const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     description: product.description,
+    image: product.images?.map((img) => absUrl(img)) || [],
     category: categoryLabels[product.category] || "Medical Equipment",
+    url: absUrl(`/products/${product.slug}`),
+    brand: {
+      "@type": "Brand",
+      name: "Panakeia",
+    },
     manufacturer: {
       "@type": "Organization",
       name: "Panakeia Medtech Private Limited",
+      url: SITE_URL,
       address: {
         "@type": "PostalAddress",
+        streetAddress: "Panakeia Manufacturing Facility, Pragati Maidan",
         addressLocality: "Visakhapatnam",
         addressRegion: "Andhra Pradesh",
+        postalCode: "530031",
         addressCountry: "IN",
       },
     },
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "INR",
-      availability: "https://schema.org/InStock",
-    },
+    ...(product.specs && product.specs.length > 0
+      ? {
+          additionalProperty: product.specs.slice(0, 10).map((spec) => ({
+            "@type": "PropertyValue",
+            name: spec.label,
+            value: spec.value,
+          })),
+        }
+      : {}),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: absUrl("/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: absUrl("/products"),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+        item: absUrl(`/products/${product.slug}`),
+      },
+    ],
   };
 
   return (
@@ -97,7 +135,11 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
       />
 
       <Container>

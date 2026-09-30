@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -16,6 +15,13 @@ import {
   Wrench,
   HeartPulse,
 } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export const revalidate = 3600; // ISR 1 hour
 
@@ -120,7 +126,7 @@ export default async function HomePage() {
           </h2>
 
           <p className="mt-4 text-sm sm:text-base text-clinical-200 leading-relaxed">
-            Speak directly with our clinical biomedical engineering team at Panakeia's dedicated in-house manufacturing facility in Visakhapatnam to discuss device specifications, tender participation, or dealership opportunities.
+            Speak directly with our clinical biomedical engineering team at Panakeia&apos;s dedicated in-house manufacturing facility in Visakhapatnam to discuss device specifications, tender participation, or dealership opportunities.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Products & Critical Care Solutions",
   description:
     "Explore Panakeia Medtech's indigenous critical care product catalog: High-acuity Anaesthesia Workstations and Intensive Care Ventilators with all parts manufactured in-house by Panakeia itself in Visakhapatnam.",
+  alternates: {
+    canonical: "/products",
+  },
 };
 
 export const revalidate = 3600;

@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Clinical Installations & Hospital References",
   description:
     "Review hospital installation references and clinical feedback from senior anaesthesiologists and critical care specialists across India.",
+  alternates: {
+    canonical: "/clients",
+  },
 };
 
 export const revalidate = 3600;

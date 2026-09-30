@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SessionEngagementPrompt } from "@/components/auth/SessionEngagementPrompt";
+import { SITE_URL, SITE_NAME, safeJsonLd } from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,9 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://panakeiamedtech.com"
-  ),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Panakeia Medtech | Indigenous Anaesthesia & Critical Care Solutions",
     template: "%s | Panakeia Medtech",
@@ -53,12 +52,47 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://panakeiamedtech.com",
-    siteName: "Panakeia Medtech",
+    siteName: SITE_NAME,
     title: "Panakeia Medtech | Indigenous Anaesthesia & Critical Care Solutions",
     description:
       "Precision-engineered Indian Anaesthesia Workstations & Ventilators with 100% parts manufactured by Panakeia itself.",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Panakeia Medtech Private Limited",
+  url: SITE_URL,
+  logo: `${SITE_URL}/image/logo-transparent.png`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Panakeia Manufacturing Facility, Pragati Maidan",
+    addressLocality: "Visakhapatnam",
+    addressRegion: "Andhra Pradesh",
+    postalCode: "530031",
+    addressCountry: "IN",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-9811340469",
+    contactType: "sales",
+    email: "panakeia.india@gmail.com",
+  },
+  sameAs: [
+    "https://www.instagram.com/panakeiamedtechpvt.ltd",
+    "https://x.com/PanakeiaMedtech",
+  ],
+};
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
 };
 
 export default function RootLayout({
@@ -80,6 +114,20 @@ export default function RootLayout({
         lang="en"
         className={`${inter.variable} ${jakarta.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
       >
+        <head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: safeJsonLd(organizationJsonLd),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: safeJsonLd(webSiteJsonLd),
+            }}
+          />
+        </head>
         <body className="min-h-full flex flex-col bg-white text-clinical-900 font-sans">
           <Navbar />
           <main className="flex-1">{children}</main>

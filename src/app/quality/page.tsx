@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Quality, Standards & Regulatory Compliance",
   description:
     "Review Panakeia Medtech's quality certifications, MSME registration, and CDSCO regulatory compliance.",
+  alternates: {
+    canonical: "/quality",
+  },
 };
 
 export const revalidate = 3600;

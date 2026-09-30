@@ -14,6 +14,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 
+import { SITE_URL, safeJsonLd } from "@/lib/seo";
+
 export const metadata: Metadata = {
   title: "Careers, Internships & Medical Sales Training Academy",
   description:
@@ -28,11 +30,14 @@ export const metadata: Metadata = {
     "Clinical Application Specialist Jobs",
     "Panakeia Careers",
   ],
+  alternates: {
+    canonical: "/careers",
+  },
   openGraph: {
     title: "Careers, Internships & Medical Sales Training | Panakeia Medtech",
     description:
       "Build lifesaving critical care medical hardware in Visakhapatnam. Full-time employment, internships with PPO, and comprehensive product & sales training academy.",
-    url: "https://panakeiamedtech.com/careers",
+    url: "/careers",
     siteName: "Panakeia Medtech",
   },
 };
@@ -42,7 +47,7 @@ export default function CareersPage() {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
     name: "Panakeia Medtech Private Limited",
-    url: "https://panakeiamedtech.com/careers",
+    url: `${SITE_URL}/careers`,
     description:
       "Careers, biomedical internships, and critical care product & sales training academy at Panakeia Medtech manufacturing facility in Visakhapatnam.",
     address: {
@@ -59,7 +64,7 @@ export default function CareersPage() {
     <div className="bg-white min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
       />
 
       {/* Hero Section */}

@@ -21,10 +21,15 @@ import {
   Flag,
 } from "lucide-react";
 
+import { SITE_URL, safeJsonLd } from "@/lib/seo";
+
 export const metadata: Metadata = {
   title: "About Us — Clinical Heritage & In-House Manufacturing",
   description:
     "Panakeia Medtech is led by industry experts with 35+ years of global experience in critical care and medical technology, with 100% of all parts manufactured in-house by Panakeia itself in Visakhapatnam.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {
@@ -32,8 +37,8 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
     name: "Panakeia Medtech Private Limited",
-    url: "https://panakeiamedtech.com",
-    logo: "https://panakeiamedtech.com/images/panakeia-logo.png",
+    url: SITE_URL,
+    logo: `${SITE_URL}/image/logo-transparent.png`,
     description:
       "Indigenous Indian manufacturer of critical care Anaesthesia Workstations and Intensive Care Ventilators with all parts manufactured in-house by Panakeia itself in Visakhapatnam. Led by industry experts with 35+ years of global experience in critical care and medical technology.",
     address: {
@@ -50,7 +55,7 @@ export default function AboutPage() {
     <div className="bg-white min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
       />
 
       {/* Hero Header */}

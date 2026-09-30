@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { getProducts } from "@/lib/data";
+import { SITE_URL } from "@/lib/seo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://panakeiamedtech.com";
+  const baseUrl = SITE_URL;
   const products = await getProducts();
 
   const productUrls = products.map((p) => ({
@@ -54,6 +55,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
     ...productUrls,
   ];

@@ -80,6 +80,16 @@ const ProductSchema = new Schema<IProduct>(
       type: String,
       trim: true,
     },
+    seoTitle: {
+      type: String,
+      trim: true,
+      maxlength: [150, "SEO Title cannot exceed 150 characters"],
+    },
+    seoDescription: {
+      type: String,
+      trim: true,
+      maxlength: [300, "SEO Description cannot exceed 300 characters"],
+    },
     order: {
       type: Number,
       default: 0,

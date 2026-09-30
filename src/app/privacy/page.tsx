@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Panakeia Medtech Private Limited",
   description:
     "Data protection policy and privacy commitments for Panakeia Medtech Private Limited, indigenous medical device manufacturer in Visakhapatnam.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
