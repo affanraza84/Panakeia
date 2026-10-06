@@ -20,7 +20,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Panakeia Medtech | Anaesthesia & ICU Equipment Manufacturer in India",
   description:
-    "Panakeia Medtech is an indigenous medical equipment manufacturer in Visakhapatnam, Andhra Pradesh, India. We engineer clinical-grade Anaesthesia (Anesthesia) Workstations, ICU Ventilators, Patient Monitors, and OT equipment with 100% in-house manufactured parts.",
+    "Panakeia Medtech is an indigenous medical equipment manufacturer in Visakhapatnam, Andhra Pradesh, India. We engineer clinical-grade Anaesthesia Workstations, ICU Ventilators, Patient Monitors, and OT equipment with 100% in-house manufactured parts.",
   alternates: {
     canonical: "/",
   },

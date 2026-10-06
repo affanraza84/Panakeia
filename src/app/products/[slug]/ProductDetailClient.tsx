@@ -295,7 +295,7 @@ export function ProductDetailClient({
                   ? [
                       "Continuous OT Intraoperative Physiological Monitoring",
                       "Critical Care & Intensive Care Unit (ICU) Telemetry",
-                      "Post-Anesthesia Care Units (PACU) & Surgical Recovery Beds",
+                      "Post-Anaesthesia Care Units (PACU) & Surgical Recovery Beds",
                       "Diagnostic Cardiology & Inpatient Vital Sign Tracking",
                     ]
                   : product.category === "infusion"

@@ -41,12 +41,12 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
   anaesthesia: {
     category: "anaesthesia",
     slug: "anaesthesia-machines",
-    h1: "Anaesthesia (Anesthesia) Machines & Workstations",
-    title: "Anesthesia Machine & Workstation Manufacturer in India",
+    h1: "Anaesthesia Machines & Workstations",
+    title: "Anaesthesia Machine & Workstation Manufacturer in India",
     description:
-      "Explore indigenous Anaesthesia Workstations and anesthesia machines engineered in Visakhapatnam by Panakeia Medtech with 100% in-house manufactured parts, integrated digital ventilators, and fail-safe safety systems.",
+      "Explore indigenous Anaesthesia Workstations and anaesthesia machines engineered in Visakhapatnam by Panakeia Medtech with 100% in-house manufactured parts, integrated digital ventilators, and fail-safe safety systems.",
     intro:
-      "Panakeia Medtech manufactures clinical-grade anaesthesia machines and advanced anesthesia workstations indigenously at its dedicated medical device facility in Visakhapatnam, Andhra Pradesh. Built to eliminate dependence on costly imported hardware, every structural, mechanical, and pneumatic assembly is manufactured 100% in-house by Panakeia itself. Our anaesthesia delivery portfolio spans agile two-gas anaesthesia systems engineered with anti-hypoxic mechanical guards for secondary hospitals, heavy-duty mobile anaesthesia trolleys with precision flowmeters, and high-acuity three-gas anesthesia workstations featuring digital pneumatic gas blending and integrated color touchscreen ventilators. Designed in collaboration with senior anaesthesiologists, each anesthesia machine incorporates tool-free Selectatec-compatible dual vaporizer manifolds, active gas scavenging (AGSS) interfaces, heated breathing circuits, and multi-waveform spirometry to safeguard patient outcomes during general, thoracic, and cardiac surgical procedures.",
+      "Panakeia Medtech manufactures clinical-grade anaesthesia machines and advanced anaesthesia workstations indigenously at its dedicated medical device facility in Visakhapatnam, Andhra Pradesh. Built to eliminate dependence on costly imported hardware, every structural, mechanical, and pneumatic assembly is manufactured 100% in-house by Panakeia itself. Our anaesthesia delivery portfolio spans agile two-gas anaesthesia systems engineered with anti-hypoxic mechanical guards for secondary hospitals, heavy-duty mobile anaesthesia trolleys with precision flowmeters, and high-acuity three-gas anaesthesia workstations featuring digital pneumatic gas blending and integrated color touchscreen ventilators. Designed in collaboration with senior anaesthesiologists, each anaesthesia machine incorporates tool-free Selectatec-compatible dual vaporizer manifolds, active gas scavenging (AGSS) interfaces, heated breathing circuits, and multi-waveform spirometry to safeguard patient outcomes during general, thoracic, and cardiac surgical procedures.",
     faqs: [
       {
         question: "What is the difference between a two-gas and three-gas anaesthesia system?",
@@ -56,7 +56,7 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
       {
         question: "Where are Panakeia anaesthesia workstations manufactured?",
         answer:
-          "All Panakeia anaesthesia workstations, anesthesia delivery frames, and pneumatic components are manufactured 100% in-house at Panakeia's dedicated biomedical engineering facility in Visakhapatnam, Andhra Pradesh, India.",
+          "All Panakeia anaesthesia workstations, anaesthesia delivery frames, and pneumatic components are manufactured 100% in-house at Panakeia's dedicated biomedical engineering facility in Visakhapatnam, Andhra Pradesh, India.",
       },
       {
         question: "What safety features are integrated into Panakeia anaesthesia machines?",

@@ -62,7 +62,7 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
       {
         id: "ot-anaesthesia",
         title: "Anaesthesia",
-        description: "Advanced systems for precise anesthetic delivery...",
+        description: "Advanced systems for precise anaesthetic delivery...",
         image: "/image/three-gas-system-advanced-anaesthesia-workstation.jpeg",
         href: "/products/three-gas-system-advanced-anaesthesia-workstation",
       },
