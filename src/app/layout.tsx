@@ -106,6 +106,8 @@ const organizationJsonLd = {
     email: "panakeia.india@gmail.com",
   },
   sameAs: [
+    "https://www.linkedin.com/company/panakeia-medtech-pvt-ltd/",
+    "https://www.facebook.com/share/1FtuRP3h1R/",
     "https://www.instagram.com/panakeiamedtechpvt.ltd",
     "https://x.com/PanakeiaMedtech",
   ],

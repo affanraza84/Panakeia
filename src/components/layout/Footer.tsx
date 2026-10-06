@@ -90,6 +90,42 @@ export function Footer() {
             {/* Social Links */}
             <div className="pt-2 flex items-center gap-3">
               <a
+                href="https://www.linkedin.com/company/panakeia-medtech-pvt-ltd/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-9 h-9 rounded-lg bg-navy-900 border border-navy-800 flex items-center justify-center text-clinical-400 hover:text-white hover:border-med-teal-500/50 hover:bg-navy-800 transition-all group"
+              >
+                <svg
+                  className="w-4 h-4 fill-none stroke-current stroke-2 group-hover:scale-110 transition-transform"
+                  viewBox="0 0 24 24"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/share/1FtuRP3h1R/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-9 h-9 rounded-lg bg-navy-900 border border-navy-800 flex items-center justify-center text-clinical-400 hover:text-white hover:border-med-teal-500/50 hover:bg-navy-800 transition-all group"
+              >
+                <svg
+                  className="w-4 h-4 fill-none stroke-current stroke-2 group-hover:scale-110 transition-transform"
+                  viewBox="0 0 24 24"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+              <a
                 href="https://www.instagram.com/panakeiamedtechpvt.ltd"
                 target="_blank"
                 rel="noopener noreferrer"

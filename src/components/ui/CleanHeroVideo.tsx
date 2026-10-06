@@ -51,7 +51,7 @@ export function CleanHeroVideo({
           <div className="max-w-2xl">
             {/* Main Bold Title */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight drop-shadow-md">
-              Anaesthesia & ICU
+              Critical Care Solutions
             </h1>
 
             {/* Solid Accent Line directly below title */}

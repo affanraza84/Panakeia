@@ -57,7 +57,7 @@ const PILLARS: Pillar[] = [
     keyFeatures: [
       "Color Touchscreen Waveform Telemetry",
       "Dynamic Pressure & Flow Closed Loops",
-      "Adult & Paediatric Modes",
+      "Adult, Neonatal & Paediatric Modes",
     ],
     pdfRef: "Panakeia R&D Lab Specs",
   },
