@@ -67,7 +67,7 @@ export function TestimonialCarousel({
             </div>
 
             <blockquote className="text-lg sm:text-xl text-navy-950 font-normal leading-relaxed italic">
-              &ldquo;{current.testimonial || "Panakeia critical care workstations delivered exceptional reliability in our surgical suites."}&rdquo;
+              &ldquo;{current.testimonial || "Panakeia critical care machines delivered exceptional reliability in our surgical suites."}&rdquo;
             </blockquote>
 
             <div className="mt-8 pt-6 border-t border-clinical-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">

@@ -35,7 +35,7 @@ const AWARDS: AwardItem[] = [
     image: "/image/certificate-iso-9001.jpeg",
     title: "EuroPaCert ISO 9001:2015 Quality Management System",
     subtitle: "Certificate No: EPC2024Q1198 — Medical Device Manufacturing",
-    description: "Certified quality management for the design, development, manufacture, and servicing of Critical Care Anaesthesia Workstations and Intensive Care Ventilators.",
+    description: "Certified quality management for the design, development, manufacture, and servicing of Critical Care Anaesthesia Machines and Intensive Care Ventilators.",
     accreditationBody: "EuroPaCert International",
     actionText: "View ISO 9001 Certificate",
     category: "International Standard",

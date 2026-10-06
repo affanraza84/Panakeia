@@ -216,7 +216,7 @@ export function IndigenousExcellenceStrip() {
               </span>
             </h2>
             <p className="text-sm sm:text-base text-clinical-600 max-w-2xl mx-auto leading-relaxed">
-              Advanced anaesthesia workstations and life-support ventilators indigenously designed
+              Advanced anaesthesia machines and life-support ventilators indigenously designed
               and manufactured to international clinical standards — safeguarding patients across
               high-acuity hospital suites.
             </p>
@@ -354,7 +354,7 @@ export function IndigenousExcellenceStrip() {
                 href="/products#anaesthesia"
                 className="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-navy-900 font-medium transition-colors"
               >
-                Anaesthesia Workstations
+                Anaesthesia Machines
               </Link>
               <Link
                 href="/products#ventilator"

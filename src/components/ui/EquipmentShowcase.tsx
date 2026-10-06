@@ -33,9 +33,9 @@ interface EquipmentItem {
 const equipmentData: EquipmentItem[] = [
   {
     id: "three-gas-advanced",
-    name: "Three-Gas Advanced Anaesthesia Workstation",
+    name: "Three-Gas Advanced Anaesthesia Machine",
     slug: "three-gas-system-advanced-anaesthesia-workstation",
-    categoryLabel: "High-Acuity Surgical Workstation",
+    categoryLabel: "High-Acuity Surgical Anaesthesia Machine",
     badge: "Flagship OT System",
     tagline: "Indigenous Multi-Gas Pneumatic Blending with 12.1-inch Capacitive Touchscreen Ventilator",
     description: "Engineered for complex cardiothoracic, neuro, and pediatric surgical operations. Integrates electronic gas mixing (O2, N2O, Medical Air) with dual-vaporizer manifold and advanced spirometry loops.",
@@ -58,12 +58,12 @@ const equipmentData: EquipmentItem[] = [
   },
   {
     id: "two-gas-basic",
-    name: "Two-Gas System Basic Anaesthesia Workstation",
+    name: "Two-Gas System Basic Anaesthesia Machine",
     slug: "two-gas-system-basic-anaesthesia-workstation",
     categoryLabel: "Compact OT Delivery Station",
     badge: "Workhorse Reliability",
     tagline: "Agile Dual-Gas Precision Anaesthesia Delivery for Daycare & Secondary Surgical Suites",
-    description: "A compact, highly mobile workstation engineered for maximum surgical uptime in high-throughput operating rooms. Features anti-hypoxic safety guard and autoclavable patient circuit.",
+    description: "A compact, highly mobile anaesthesia machine engineered for maximum surgical uptime in high-throughput operating rooms. Features anti-hypoxic safety guard and autoclavable patient circuit.",
     highlights: [
       "Dual-tube flowmeter cascade with mechanical anti-hypoxic linkage (≥25% O2)",
       "Pneumatically driven ventilator with electronic pressure/volume telemetry",

@@ -17,7 +17,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const getCategoryLabel = (cat: string) => {
     switch (cat) {
       case "anaesthesia":
-        return "Anaesthesia Workstation";
+        return "Anaesthesia Machine";
       case "ventilator":
         return "ICU Ventilator";
       case "monitoring":

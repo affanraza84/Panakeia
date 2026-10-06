@@ -8,11 +8,11 @@ export const fallbackProducts: IProduct[] = [
   {
     _id: "prod-1",
     slug: "three-gas-system-advanced-anaesthesia-workstation",
-    name: "Three-Gas System Advanced Anaesthesia Workstation",
+    name: "Three-Gas System Advanced Anaesthesia Machine",
     category: "anaesthesia",
-    tagline: "High-Acuity Digital O2/N2O/Air Workstation with Integrated Touchscreen Ventilator for Multi-Speciality OT",
+    tagline: "High-Acuity Digital O2/N2O/Air Anaesthesia Machine with Integrated Touchscreen Ventilator for Multi-Speciality OT",
     description:
-      "Indigenously engineered with all parts manufactured directly by Panakeia itself, this advanced three-gas anaesthesia workstation integrates digital pneumatic gas blending with an intuitive color touchscreen monitor. Features dual vaporizer Selectatec manifold, active gas scavenging (AGSS), and fail-safe mechanical backups for complex cardiac and neuro surgical suites.",
+      "Indigenously engineered with all parts manufactured directly by Panakeia itself, this advanced three-gas anaesthesia machine integrates digital pneumatic gas blending with an intuitive color touchscreen monitor. Features dual vaporizer Selectatec manifold, active gas scavenging (AGSS), and fail-safe mechanical backups for complex cardiac and neuro surgical suites.",
     features: [
       "12.1-inch Color High-Resolution Touchscreen with simultaneous P-T, F-T, V-T loops and spirometry",
       "Three-Gas Delivery System (O2, N2O, Air) with cascade electronic flowmeters and mechanical backup",
@@ -41,11 +41,11 @@ export const fallbackProducts: IProduct[] = [
   {
     _id: "prod-2",
     slug: "two-gas-system-basic-anaesthesia-workstation",
-    name: "Two-Gas System Basic Anaesthesia Workstation",
+    name: "Two-Gas System Basic Anaesthesia Machine",
     category: "anaesthesia",
     tagline: "Compact Precision O2/N2O Anaesthesia System with Hypoxic Guard for Daycare & Secondary Surgical Centers",
     description:
-      "The Two-Gas System Anaesthesia Workstation delivers dependable critical care volatile delivery in an agile, space-efficient frame. Engineered for high OT throughput in daycare centers and district hospitals, featuring anti-hypoxic mechanical linking and quick-release autoclavable absorber systems.",
+      "The Two-Gas System Anaesthesia Machine delivers dependable critical care volatile delivery in an agile, space-efficient frame. Engineered for high OT throughput in daycare centers and district hospitals, featuring anti-hypoxic mechanical linking and quick-release autoclavable absorber systems.",
     features: [
       "Dual-tube flowmeter cascade for Oxygen and Nitrous Oxide with anti-hypoxic safety guard (min 25% O2)",
       "Pneumatically driven, electronically monitored ventilator with real-time pressure & volume telemetry",
@@ -341,7 +341,7 @@ export const fallbackClients: IClient[] = [
     state: "Andhra Pradesh",
     logoUrl: "/images/clients/apollo-logo.webp",
     testimonial:
-      "Panakeia's Aesthetica anaesthesia workstation demonstrated remarkable stability during high-risk cardiac and neuro cases. Having 100% in-house parts manufacturing by Panakeia itself ensures parts availability within hours rather than weeks.",
+      "Panakeia's Aesthetica anaesthesia machine demonstrated remarkable stability during high-risk cardiac and neuro cases. Having 100% in-house parts manufacturing by Panakeia itself ensures parts availability within hours rather than weeks.",
     doctorName: "Dr. K. Srinivas Rao, MD (Anaesthesiology), Senior Consultant",
     featured: true,
   },
@@ -374,7 +374,7 @@ export const fallbackClients: IClient[] = [
     state: "Andhra Pradesh",
     logoUrl: "/images/clients/care-logo.webp",
     testimonial:
-      "We evaluated the Aesthetica workstation in our trauma OT suites. The gas scavenging system, responsive vaporizer manifold, and crisp UI earned unanimous appreciation from our anaesthesia team.",
+      "We evaluated the Aesthetica anaesthesia machine in our trauma OT suites. The gas scavenging system, responsive vaporizer manifold, and crisp UI earned unanimous appreciation from our anaesthesia team.",
     doctorName: "Dr. S. Meenakshi, Senior Consultant Anaesthetist",
     featured: true,
   },

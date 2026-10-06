@@ -23,7 +23,7 @@ interface ProductMovingShowcaseProps {
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
-  anaesthesia: "Anaesthesia Workstation",
+  anaesthesia: "Anaesthesia Machine",
   ventilator: "Ventilator",
   monitoring: "Patient Monitor",
   infusion: "Syringe & Infusion Pump",
