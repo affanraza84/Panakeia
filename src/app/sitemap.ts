@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next";
 import { getProducts } from "@/lib/data";
 import { CATEGORY_SEO, SITE_URL } from "@/lib/seo";
-import { getResourceArticles } from "@/lib/resources";
 import { ProductCategory } from "@/types";
 
 export const revalidate = 3600;
@@ -9,13 +8,11 @@ export const revalidate = 3600;
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_URL;
   const products = await getProducts();
-  const articles = getResourceArticles();
 
   // 1. Static Core Landing Pages
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: baseUrl },
     { url: `${baseUrl}/products` },
-    { url: `${baseUrl}/resources` },
     { url: `${baseUrl}/about` },
     { url: `${baseUrl}/quality` },
     { url: `${baseUrl}/clients` },
@@ -43,20 +40,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  // 4. Clinical Resources & Guides
-  const resourceRoutes: MetadataRoute.Sitemap = articles.map((article) => {
-    const rawDate = article.updatedAt || article.publishedAt;
-    const lastModified = rawDate ? new Date(rawDate) : undefined;
-    return {
-      url: `${baseUrl}/resources/${article.slug}`,
-      ...(lastModified && !isNaN(lastModified.getTime()) ? { lastModified } : {}),
-    };
-  });
-
   return [
     ...staticRoutes,
     ...categoryRoutes,
     ...productRoutes,
-    ...resourceRoutes,
   ];
 }

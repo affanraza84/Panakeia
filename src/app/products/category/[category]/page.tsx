@@ -6,7 +6,6 @@ import { Container } from "@/components/ui/Container";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { Button } from "@/components/ui/Button";
 import { getProducts } from "@/lib/data";
-import { getResourceArticles } from "@/lib/resources";
 import {
   CATEGORY_SEO,
   categoryFromSlug,
@@ -21,7 +20,6 @@ import {
   HelpCircle,
   ArrowRight,
   Building2,
-  BookOpen,
 } from "lucide-react";
 
 interface CategoryPageProps {
@@ -135,11 +133,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       },
     ],
   };
-
-  const articles = getResourceArticles();
-  const relevantArticle =
-    articles.find((a) => a.relatedCategorySlug === catConfig.slug) ||
-    articles.find((a) => a.slug === "operation-theatre-setup-checklist");
 
   return (
     <div className="bg-clinical-50/40 min-h-screen">
@@ -284,39 +277,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   </p>
                 </div>
               ))}
-            </div>
-          </Container>
-        </section>
-      )}
-
-      {/* Relevant Clinical Resource Guide */}
-      {relevantArticle && (
-        <section className="py-10 bg-slate-100 border-t border-clinical-200">
-          <Container>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-clinical-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xs">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-med-teal-50 text-med-teal-700 flex items-center justify-center shrink-0 border border-med-teal-200/60 mt-1">
-                  <BookOpen className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-xs font-mono font-semibold text-med-teal-700 uppercase tracking-wider block">
-                    Clinical Engineering Guide
-                  </span>
-                  <h4 className="text-base sm:text-lg font-bold text-navy-950 font-heading mt-1">
-                    {relevantArticle.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-clinical-600 mt-1 max-w-2xl line-clamp-2">
-                    {relevantArticle.summary}
-                  </p>
-                </div>
-              </div>
-              <Link
-                href={`/resources/${relevantArticle.slug}`}
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-navy-950 hover:bg-navy-900 text-white font-semibold text-xs transition-colors shrink-0 shadow-xs"
-              >
-                <span>Read Clinical Guide</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
             </div>
           </Container>
         </section>

@@ -462,7 +462,7 @@ export function EquipmentShowcase() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
                   <Link
                     href={`/contact?product=${current.slug}`}
                     className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-med-teal-500 to-med-teal-600 hover:from-med-teal-600 hover:to-med-teal-700 shadow-md shadow-med-teal-500/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
@@ -477,6 +477,14 @@ export function EquipmentShowcase() {
                   >
                     <FileText className="w-4 h-4 text-med-teal-400" />
                     <span>Full Technical Datasheet</span>
+                  </Link>
+
+                  <Link
+                    href="/products"
+                    className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl text-sm font-semibold text-med-teal-300 bg-slate-800/80 hover:bg-med-teal-600 hover:text-white border border-med-teal-500/40 hover:border-med-teal-500 transition-all duration-200"
+                  >
+                    <span>View All Products</span>
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </motion.div>

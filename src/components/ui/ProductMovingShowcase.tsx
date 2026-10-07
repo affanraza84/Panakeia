@@ -16,6 +16,7 @@ import {
   CheckCircle2,
   ExternalLink,
   ShieldCheck,
+  ArrowRight,
 } from "lucide-react";
 
 interface ProductMovingShowcaseProps {
@@ -220,12 +221,23 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                   <Maximize2 className="w-3.5 h-3.5" />
                 </div>
 
-                {/* Bottom Overlay Pill: Product Name on Hover */}
-                <div className="absolute inset-x-3 bottom-2.5 z-10 opacity-95 group-hover/card:opacity-100 transition-opacity">
-                  <div className="bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl px-3 py-2 shadow-xs">
-                    <p className="text-xs sm:text-sm font-bold text-navy-950 truncate text-center group-hover/card:text-med-teal-700 transition-colors">
+                {/* Bottom Overlay Pill: Product Name + View All Button */}
+                <div className="absolute inset-x-2.5 sm:inset-x-3 bottom-2.5 z-10 opacity-95 group-hover/card:opacity-100 transition-opacity">
+                  <div className="bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 shadow-xs flex items-center justify-between gap-2">
+                    <p className="text-xs sm:text-sm font-bold text-navy-950 truncate group-hover/card:text-med-teal-700 transition-colors min-w-0 flex-1">
                       {product.name}
                     </p>
+                    <Link
+                      href="/products"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                      }}
+                      className="shrink-0 inline-flex items-center gap-1 text-[10.5px] sm:text-[11px] font-bold text-med-teal-700 hover:text-white bg-med-teal-50 hover:bg-med-teal-600 px-2 sm:px-2.5 py-1 rounded-lg border border-med-teal-200/80 hover:border-med-teal-600 transition-all duration-200 shadow-2xs cursor-pointer"
+                      title="View all products"
+                    >
+                      <span>View All</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -490,6 +502,15 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                     >
                       <span>Full Product Page</span>
                       <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+
+                    <Link
+                      href="/products"
+                      onClick={handleCloseProduct}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-med-teal-800 bg-med-teal-50 hover:bg-med-teal-100 border border-med-teal-200 shadow-xs transition-colors"
+                    >
+                      <span>View All Products</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>

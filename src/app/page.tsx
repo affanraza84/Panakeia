@@ -8,7 +8,6 @@ import { CleanHeroVideo } from "@/components/ui/CleanHeroVideo";
 import { IndigenousExcellenceStrip } from "@/components/ui/IndigenousExcellenceStrip";
 import { ProductMovingShowcase } from "@/components/ui/ProductMovingShowcase";
 import { AwardsSection } from "@/components/ui/AwardsSection";
-import { EquipmentShowcase } from "@/components/ui/EquipmentShowcase";
 import { getClients, getProducts } from "@/lib/data";
 import {
   Zap,
@@ -70,9 +69,6 @@ export default async function HomePage() {
 
       {/* 3. INDIGENOUS EXCELLENCE & CLINICAL PILLARS STRIP (Brochure Data, Zero Numbers) */}
       <IndigenousExcellenceStrip />
-
-      {/* 3. INTERACTIVE INDIGENOUS EQUIPMENT SHOWCASE (Featuring 4 Flagship Systems) */}
-      <EquipmentShowcase />
 
       {/* 4. WHY INDIGENOUS MANUFACTURING SECTION */}
       <section className="py-16 lg:py-24 bg-clinical-50/60">

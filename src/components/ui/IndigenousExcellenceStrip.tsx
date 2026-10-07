@@ -18,7 +18,12 @@ import {
   Cpu,
   Layers,
   FileCheck,
+  ChevronDown,
+  ChevronUp,
+  X,
+  ExternalLink,
 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Pillar {
   id: string;
@@ -129,16 +134,74 @@ const PILLARS: Pillar[] = [
   },
 ];
 
-const CLINICAL_ENVIRONMENTS = [
+interface ClinicalEnvironment {
+  id: string;
+  name: string;
+  icon: React.ComponentType<{ className?: string }>;
+  badge: string;
+  categoryHref: string;
+  categoryLabel: string;
+  summary: string;
+  points: string[];
+  specs: {
+    label: string;
+    value: string;
+  }[];
+  compatibleProducts: {
+    name: string;
+    category: string;
+    href: string;
+    tag: string;
+  }[];
+  safeguards: string[];
+}
+
+const CLINICAL_ENVIRONMENTS: ClinicalEnvironment[] = [
   {
     id: "ot",
     name: "Operation Theatres",
     icon: Stethoscope,
     badge: "Surgical Suites",
+    categoryHref: "/products#anaesthesia",
+    categoryLabel: "Anaesthesia & OT Systems",
+    summary:
+      "Engineered for high-acuity general, cardiac, neuro, and thoracic surgical theatres requiring precise volatile delivery, multi-gas blending, and active waste scavenging.",
     points: [
-      "Multi-Gas (O2, N2O, Air) precision delivery",
-      "Dual Selectatec tool-free vaporizer mounts",
-      "Integrated active scavenging (AGSS) system",
+      "Multi-Gas (O2, N2O, Medical Air) precision delivery with mechanical anti-hypoxic linkage",
+      "Dual Selectatec-compatible tool-free vaporizer manifolds with interlock mechanism",
+      "Integrated active anaesthetic gas scavenging system (AGSS) for pollution-free OR air",
+      "Continuous pulmonary mechanics telemetry with Pressure-Volume and Flow-Volume clinical loops",
+    ],
+    specs: [
+      { label: "Medical Gas Supply", value: "Triple Gas: O2, N2O & Medical Air (280–600 kPa)" },
+      { label: "Ventilation Acuity", value: "VCV, PCV, SIMV-V, SIMV-P, PSV/CPAP, PRVC & Manual" },
+      { label: "Breathing System", value: "Heated dual-chamber quick-release CO2 absorber (1.8L)" },
+      { label: "Battery Autonomy", value: "180-minute hot-swappable dual lithium battery backup" },
+    ],
+    compatibleProducts: [
+      {
+        name: "Three-Gas System Advanced Anaesthesia Machine",
+        category: "Anaesthesia",
+        href: "/products/three-gas-system-advanced-anaesthesia-workstation",
+        tag: "Flagship OT System",
+      },
+      {
+        name: "Two-Gas System Basic Anaesthesia Machine",
+        category: "Anaesthesia",
+        href: "/products/two-gas-system-basic-anaesthesia-workstation",
+        tag: "High-Throughput OT",
+      },
+      {
+        name: "Multi-Parameter Patient Monitor",
+        category: "Monitoring",
+        href: "/products/multi-para-patient-monitor",
+        tag: "12.1\" Touchscreen",
+      },
+    ],
+    safeguards: [
+      "Mechanical anti-hypoxic safety guard automatically maintains a minimum 25% oxygen concentration across all gas deliveries.",
+      "Selectatec manifold interlock bar strictly prevents concurrent activation of multiple volatile agent vaporizers.",
+      "Direct active gas scavenging (AGSS) interface eliminates occupational anaesthetic exposure in surgical operating rooms.",
     ],
   },
   {
@@ -146,10 +209,46 @@ const CLINICAL_ENVIRONMENTS = [
     name: "Intensive Care Units",
     icon: Activity,
     badge: "High-Acuity ICU / CCU",
+    categoryHref: "/products#ventilator",
+    categoryLabel: "Critical Care Ventilation",
+    summary:
+      "Tertiary intensive care units, coronary care units, and post-surgical recovery suites demanding continuous invasive and non-invasive life-support with zero external compressor dependency.",
     points: [
-      "Invasive & Non-Invasive (NIV / HFNC) therapy",
-      "Pulmonary mechanics (P0.1, NIF, Auto-PEEP)",
-      "Ultra-quiet 40,000-hr blower turbine drive",
+      "Invasive and Non-Invasive (NIV) positive pressure mechanical life-support",
+      "High Flow Nasal Cannula (HFNC: 2–80 L/min) oxygen therapy with calibrated FiO2 titration",
+      "Advanced pulmonary mechanics diagnostics: P0.1, NIF, Auto-PEEP, RSBI, Static Compliance & Resistance",
+      "Ultra-quiet 40,000+ hour operational lifespan blower turbine drive requiring zero central compressed air",
+    ],
+    specs: [
+      { label: "Drive Mechanism", value: "Ultra-quiet blower turbine (40,000+ hour rating, compressor-free)" },
+      { label: "Display & Controls", value: "15.6\" Full HD tiltable multi-touch display with 360° alert light bar" },
+      { label: "Patient Spectrum", value: "Adult, Paediatric, and Neonatal life-support modes" },
+      { label: "Battery Autonomy", value: "4+ hours continuous operation with dual hot-swap battery bays" },
+    ],
+    compatibleProducts: [
+      {
+        name: "Advanced ICU Critical Care Ventilator",
+        category: "Ventilator",
+        href: "/products/icu-critical-care-ventilator",
+        tag: "Turbine-Driven",
+      },
+      {
+        name: "Multi-Parameter Patient Monitor",
+        category: "Monitoring",
+        href: "/products/multi-para-patient-monitor",
+        tag: "Arrhythmia Analysis",
+      },
+      {
+        name: "Syringe & Infusion Pump Series",
+        category: "Infusion",
+        href: "/products/category/syringe-infusion-pumps",
+        tag: "Precision Delivery",
+      },
+    ],
+    safeguards: [
+      "Internal turbine drive provides autonomous compressed air, safeguarding against central hospital pipeline pressure drops.",
+      "Comprehensive weaning diagnostics calculate real-time RSBI, P0.1 respiratory drive, and negative inspiratory force.",
+      "Independent dual overpressure valves and automatic apnea ventilation prevent barotrauma and patient hypoxia.",
     ],
   },
   {
@@ -157,10 +256,46 @@ const CLINICAL_ENVIRONMENTS = [
     name: "Emergency & Transport",
     icon: Ambulance,
     badge: "Mobile Life Support",
+    categoryHref: "/products#emergency",
+    categoryLabel: "Emergency Resuscitation",
+    summary:
+      "Hospital emergency trauma departments, patient transit ambulances, crash carts, and disaster relief units requiring rugged, instant-on life support.",
     points: [
-      "Lightweight SAVEL portable ventilators",
-      "Hot-swappable extended battery autonomy",
-      "Ruggedized drop-tested military-grade casing",
+      "Lightweight, compact portable ventilators engineered for rapid emergency mobilization",
+      "Hot-swappable extended internal battery autonomy for uninterrupted multi-hour transit",
+      "Ruggedized, drop-tested military-grade casing with anti-vibration shock absorption",
+      "One-touch emergency resuscitation protocols and automatic apnea backup ventilation",
+    ],
+    specs: [
+      { label: "Chassis & Enclosure", value: "Drop-tested impact-resistant casing with shock-mounted electronics" },
+      { label: "Power Adaptability", value: "12V DC vehicle ambulance power, 100–240V AC & internal battery" },
+      { label: "Gas Adaptation", value: "Standard medical oxygen cylinders with quick-connect pin-index" },
+      { label: "Emergency Modes", value: "Rapid-start emergency mandatory ventilation with apnea backup" },
+    ],
+    compatibleProducts: [
+      {
+        name: "Emergency & Resuscitation Equipment Kits",
+        category: "Emergency",
+        href: "/products/category/emergency-resuscitation-kits",
+        tag: "Rapid Deployment",
+      },
+      {
+        name: "Multi-Parameter Patient Monitor",
+        category: "Monitoring",
+        href: "/products/multi-para-patient-monitor",
+        tag: "Portable Vital Signs",
+      },
+      {
+        name: "Advanced ICU Critical Care Ventilator",
+        category: "Ventilator",
+        href: "/products/icu-critical-care-ventilator",
+        tag: "Mobile Cart Ready",
+      },
+    ],
+    safeguards: [
+      "Reinforced chassis withstands accidental drops and severe transit vibrations in emergency transport.",
+      "360° high-contrast visual alert beacons and piercing audible alarms alert clinicians in noisy ambulances.",
+      "Seamless instant switchover between battery, vehicle DC power, and mains AC power with zero cycle interruption.",
     ],
   },
   {
@@ -168,16 +303,52 @@ const CLINICAL_ENVIRONMENTS = [
     name: "Day Care & Secondary Centers",
     icon: HeartPulse,
     badge: "High-Throughput OT",
+    categoryHref: "/products#anaesthesia",
+    categoryLabel: "High-Turnover Solutions",
+    summary:
+      "Daycare surgical clinics, endoscopy centers, ophthalmic surgical suites, and secondary district hospitals prioritizing high case turnover, agility, and low lifecycle cost.",
     points: [
-      "Agile dual-gas footprint with hypoxic guard",
-      "Quick-release autoclavable CO2 absorbers",
-      "Streamlined ergonomics & low total cost",
+      "Agile dual-gas footprint with mechanical hypoxic safety guard maintaining at least 25% O2",
+      "Quick-release autoclavable CO2 absorbers for rapid between-case sterilization turnaround",
+      "Streamlined ergonomics, low lifecycle maintenance overhead, and high operational reliability",
+      "Precision fine-adjustment cascade micro-flowmeters for low-flow anaesthesia economy",
+    ],
+    specs: [
+      { label: "Footprint & Chassis", value: "Space-efficient powder-coated medical steel with central brake castors" },
+      { label: "Gas Manifold", value: "Dual pipeline inputs (O2, N2O) plus auxiliary emergency cylinder yokes" },
+      { label: "Flowmeter Precision", value: "Cascade dual-tube flowmeters calibrated for low-flow economy" },
+      { label: "Infection Control", value: "134°C fully autoclavable patient circuit and absorber components" },
+    ],
+    compatibleProducts: [
+      {
+        name: "Two-Gas System Basic Anaesthesia Machine",
+        category: "Anaesthesia",
+        href: "/products/two-gas-system-basic-anaesthesia-workstation",
+        tag: "Low Cost of Ownership",
+      },
+      {
+        name: "Basic Premium Anaesthesia Machine",
+        category: "Anaesthesia",
+        href: "/products/basic-premium-anaesthesia-machine",
+        tag: "Stainless Steel Trolley",
+      },
+      {
+        name: "Syringe & Infusion Pump Series",
+        category: "Infusion",
+        href: "/products/category/syringe-infusion-pumps",
+        tag: "Micro-Dosing",
+      },
+    ],
+    safeguards: [
+      "100% in-house manufacturing by Panakeia guarantees immediate spare parts availability within hours.",
+      "Single-action quick-release CO2 absorber canister allows fast, sterile changeovers between surgical cases.",
+      "Recessed emergency oxygen flush button prevents accidental trigger while remaining instantly accessible.",
     ],
   },
 ];
 
 export function IndigenousExcellenceStrip() {
-  const [activeEnv, setActiveEnv] = useState(0);
+  const [activeEnv, setActiveEnv] = useState<number | null>(null);
 
   return (
     <section
@@ -277,72 +448,307 @@ export function IndigenousExcellenceStrip() {
           })}
         </div>
 
-        {/* CLINICAL DEPLOYMENT ENVIRONMENTS STRIP (From Official PDF Booklet) */}
-        <div className="rounded-2xl bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white p-6 sm:p-8 relative overflow-hidden border border-navy-800 shadow-md">
+        {/* CLINICAL DEPLOYMENT ENVIRONMENTS STRIP */}
+        <div className="rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white p-6 sm:p-8 lg:p-10 relative overflow-hidden border border-navy-800 shadow-xl">
           {/* Subtle Ambient Graphic Overlay */}
           <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-med-teal-500/10 blur-3xl pointer-events-none" />
           <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-8">
-            <div className="space-y-1.5 max-w-md">
+          {/* Section Header */}
+          <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-6 border-b border-navy-800/80">
+            <div className="space-y-2 max-w-2xl">
               <div className="inline-flex items-center gap-2 text-med-teal-400 text-xs font-bold uppercase tracking-wider font-mono">
                 <Layers className="w-3.5 h-3.5" />
-                Comprehensive Clinical Deployment
+                <span>Comprehensive Clinical Deployment</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold font-heading text-white">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-heading text-white tracking-tight">
                 Versatile Life-Support Across Every Critical Care Tier
               </h3>
-              <p className="text-xs text-clinical-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-clinical-300 leading-relaxed">
                 Engineered for immediate readiness across surgical operating suites, high-acuity ICUs,
                 mobile emergency transport, and rural clinical centers.
               </p>
             </div>
 
-            {/* 4 Environment Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 w-full lg:w-auto flex-1">
-              {CLINICAL_ENVIRONMENTS.map((env, idx) => {
-                const EnvIcon = env.icon;
-                const isSelected = activeEnv === idx;
-                return (
-                  <div
-                    key={env.id}
-                    onClick={() => setActiveEnv(idx)}
-                    className={`cursor-pointer rounded-xl p-3.5 border transition-all duration-200 flex flex-col justify-between ${
-                      isSelected
-                        ? "bg-navy-800/90 border-med-teal-400 shadow-sm ring-1 ring-med-teal-400/50"
-                        : "bg-navy-900/60 border-navy-700/60 hover:bg-navy-800/60 hover:border-navy-600"
-                    }`}
-                  >
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div
-                        className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
-                          isSelected
-                            ? "bg-med-teal-500 text-navy-950 font-bold"
-                            : "bg-navy-800 text-med-teal-400 border border-navy-700"
-                        }`}
-                      >
-                        <EnvIcon className="w-3.5 h-3.5" />
-                      </div>
-                      <div className="min-w-0">
-                        <div className="text-xs font-bold text-white truncate">{env.name}</div>
-                        <div className="text-[10px] text-med-teal-300 font-mono truncate">
-                          {env.badge}
+            <div className="shrink-0">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-900/90 border border-navy-700/80 text-[11px] text-clinical-300 font-mono shadow-inner">
+                <span className="w-2 h-2 rounded-full bg-med-teal-400 animate-pulse" />
+                <span>Click any service tier below to expand dropdown</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 4 Environment Option Cards - ZERO TRUNCATION */}
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {CLINICAL_ENVIRONMENTS.map((env, idx) => {
+              const EnvIcon = env.icon;
+              const isSelected = activeEnv === idx;
+              return (
+                <div
+                  key={env.id}
+                  onClick={() => setActiveEnv(activeEnv === idx ? null : idx)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActiveEnv(activeEnv === idx ? null : idx);
+                    }
+                  }}
+                  className={`group/card cursor-pointer rounded-2xl p-5 border transition-all duration-300 flex flex-col justify-between relative overflow-hidden select-none ${
+                    isSelected
+                      ? "bg-navy-900 border-med-teal-400/90 shadow-lg shadow-med-teal-500/15 ring-2 ring-med-teal-400/40 -translate-y-1"
+                      : "bg-navy-900/70 border-navy-800 hover:bg-navy-850 hover:border-navy-700 hover:-translate-y-0.5"
+                  }`}
+                >
+                  {/* Subtle top indicator bar when selected */}
+                  {isSelected && (
+                    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-med-teal-400 via-med-teal-300 to-med-teal-500" />
+                  )}
+
+                  <div>
+                    {/* Top Header: Icon + Name + Badge + Dropdown Trigger */}
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/card:scale-105 ${
+                            isSelected
+                              ? "bg-med-teal-500 text-navy-950 font-bold shadow-md shadow-med-teal-500/30"
+                              : "bg-navy-800 text-med-teal-400 border border-navy-700"
+                          }`}
+                        >
+                          <EnvIcon className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-white group-hover/card:text-med-teal-300 transition-colors leading-snug">
+                            {env.name}
+                          </h4>
+                          <span className="inline-block text-[10.5px] text-med-teal-300 font-mono font-semibold uppercase tracking-wider mt-0.5">
+                            {env.badge}
+                          </span>
                         </div>
                       </div>
+
+                      <div
+                        className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
+                          isSelected
+                            ? "bg-med-teal-400/20 text-med-teal-300"
+                            : "bg-navy-800/80 text-clinical-400 group-hover/card:text-white group-hover/card:bg-navy-800"
+                        }`}
+                      >
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-300 ${
+                            isSelected ? "rotate-180" : "rotate-0"
+                          }`}
+                        />
+                      </div>
                     </div>
-                    <ul className="space-y-1 text-[11px] text-clinical-300">
-                      {env.points.slice(0, 2).map((pt, pIdx) => (
-                        <li key={pIdx} className="flex items-start gap-1.5 leading-snug">
-                          <span className="text-med-teal-400 font-bold">•</span>
-                          <span className="truncate">{pt}</span>
+
+                    {/* All Points - FULL TEXT, ZERO TRUNCATION */}
+                    <ul className="space-y-2 text-xs text-clinical-300 mt-3 pt-3 border-t border-navy-800/80">
+                      {env.points.map((pt, pIdx) => (
+                        <li key={pIdx} className="flex items-start gap-2 leading-relaxed">
+                          <span className="text-med-teal-400 font-bold shrink-0 mt-0.5">•</span>
+                          <span className="text-slate-200">{pt}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                );
-              })}
-            </div>
+
+                  {/* Bottom Interactive Status Bar */}
+                  <div className="mt-4 pt-3 border-t border-navy-800/60 flex items-center justify-between text-[11px] font-semibold">
+                    <span
+                      className={`transition-colors ${
+                        isSelected
+                          ? "text-med-teal-300 font-bold"
+                          : "text-clinical-400 group-hover/card:text-clinical-200"
+                      }`}
+                    >
+                      {isSelected ? "Dropdown Open" : "Click for Dropdown"}
+                    </span>
+                    <span
+                      className={`inline-flex items-center gap-1 text-[11px] font-mono transition-transform duration-300 ${
+                        isSelected
+                          ? "text-med-teal-400 translate-y-0.5"
+                          : "text-clinical-500 group-hover/card:text-med-teal-400"
+                      }`}
+                    >
+                      {isSelected ? "Collapse" : "Expand"}
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                          isSelected ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
+
+          {/* BEAUTIFULLY ANIMATED DROPDOWN ACCORDION DRAWER */}
+          <AnimatePresence mode="wait">
+            {activeEnv !== null && CLINICAL_ENVIRONMENTS[activeEnv] && (() => {
+              const selectedEnv = CLINICAL_ENVIRONMENTS[activeEnv];
+              const SelectedIcon = selectedEnv.icon;
+
+              return (
+                <motion.div
+                  key={`env-dropdown-${selectedEnv.id}`}
+                  initial={{ opacity: 0, height: 0, y: -12 }}
+                  animate={{ opacity: 1, height: "auto", y: 0 }}
+                  exit={{ opacity: 0, height: 0, y: -12 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="overflow-hidden mt-6 pt-6 border-t border-navy-800 relative z-10"
+                >
+                  <div className="bg-gradient-to-b from-navy-900/95 via-navy-950 to-navy-900/90 rounded-2xl border border-med-teal-500/40 p-5 sm:p-7 lg:p-8 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+                    {/* Ambient interior glows */}
+                    <div className="absolute top-0 right-0 w-80 h-80 bg-med-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+
+                    <div className="relative z-10 space-y-6">
+                      {/* Dropdown Header: Service Title & Overview */}
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-5 border-b border-navy-800">
+                        <div className="flex items-start gap-3.5">
+                          <div className="w-12 h-12 rounded-xl bg-med-teal-500 text-navy-950 flex items-center justify-center shrink-0 shadow-lg shadow-med-teal-500/25">
+                            <SelectedIcon className="w-6 h-6" />
+                          </div>
+                          <div className="space-y-1">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <h4 className="text-lg sm:text-xl font-bold font-heading text-white">
+                                {selectedEnv.name}
+                              </h4>
+                              <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-med-teal-950 border border-med-teal-500/40 text-med-teal-300">
+                                {selectedEnv.badge}
+                              </span>
+                              <span className="text-[11px] font-mono text-clinical-400 bg-navy-800 px-2 py-0.5 rounded-md border border-navy-700">
+                                {selectedEnv.categoryLabel}
+                              </span>
+                            </div>
+                            <p className="text-xs sm:text-sm text-clinical-300 leading-relaxed max-w-3xl">
+                              {selectedEnv.summary}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Close Dropdown Button */}
+                        <button
+                          type="button"
+                          onClick={() => setActiveEnv(null)}
+                          className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-navy-800 hover:bg-navy-700 text-clinical-300 hover:text-white border border-navy-700 text-xs font-semibold transition-colors cursor-pointer self-start"
+                          aria-label="Close Dropdown"
+                        >
+                          <X className="w-3.5 h-3.5" />
+                          <span>Close Dropdown</span>
+                        </button>
+                      </div>
+
+                      {/* Dropdown 3-Column Content Matrix */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        {/* 1. Deployment Technical Specifications (4 cols) */}
+                        <div className="lg:col-span-4 space-y-3">
+                          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-med-teal-400">
+                            <Cpu className="w-4 h-4" />
+                            <span>Technical Deployment Specs</span>
+                          </div>
+                          <div className="grid grid-cols-1 gap-2.5">
+                            {selectedEnv.specs.map((spec, sIdx) => (
+                              <div
+                                key={sIdx}
+                                className="p-3 rounded-xl bg-navy-950/80 border border-navy-800 shadow-inner"
+                              >
+                                <span className="block text-[10px] uppercase tracking-wider font-mono text-clinical-400">
+                                  {spec.label}
+                                </span>
+                                <span className="block text-xs font-semibold text-white mt-1 leading-snug">
+                                  {spec.value}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* 2. Clinical Engineering Safeguards (4 cols) */}
+                        <div className="lg:col-span-4 space-y-3">
+                          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-med-teal-400">
+                            <ShieldCheck className="w-4 h-4" />
+                            <span>Clinical Safety & Engineering</span>
+                          </div>
+                          <div className="space-y-2.5">
+                            {selectedEnv.safeguards.map((safe, gIdx) => (
+                              <div
+                                key={gIdx}
+                                className="p-3 rounded-xl bg-navy-950/80 border border-navy-800 flex items-start gap-2.5 text-xs text-clinical-200 leading-relaxed shadow-inner"
+                              >
+                                <CheckCircle2 className="w-4 h-4 text-med-teal-400 shrink-0 mt-0.5" />
+                                <span>{safe}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* 3. Recommended Indigenous Equipment (4 cols) */}
+                        <div className="lg:col-span-4 space-y-3">
+                          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-med-teal-400">
+                            <Building2 className="w-4 h-4" />
+                            <span>Dedicated Panakeia Equipment</span>
+                          </div>
+                          <div className="space-y-2.5">
+                            {selectedEnv.compatibleProducts.map((prod, pIdx) => (
+                              <Link
+                                key={pIdx}
+                                href={prod.href}
+                                className="group/prod block p-3 rounded-xl bg-navy-950/80 hover:bg-navy-900 border border-navy-800 hover:border-med-teal-500/60 transition-all duration-200 shadow-inner"
+                              >
+                                <div className="flex items-center justify-between gap-2 mb-1">
+                                  <span className="text-[10px] font-mono uppercase tracking-wider text-med-teal-300 bg-med-teal-950 px-2 py-0.5 rounded border border-med-teal-500/30">
+                                    {prod.tag}
+                                  </span>
+                                  <ExternalLink className="w-3.5 h-3.5 text-clinical-500 group-hover/prod:text-med-teal-400 transition-colors" />
+                                </div>
+                                <h5 className="text-xs font-bold text-white group-hover/prod:text-med-teal-300 transition-colors leading-snug">
+                                  {prod.name}
+                                </h5>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Dropdown Action Bar */}
+                      <div className="pt-4 border-t border-navy-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
+                        <div className="flex flex-wrap items-center gap-2.5">
+                          <Link
+                            href={selectedEnv.categoryHref}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-med-teal-600 hover:bg-med-teal-500 shadow-md shadow-med-teal-600/25 transition-all duration-200 cursor-pointer"
+                          >
+                            <span>Explore All {selectedEnv.name} Equipment</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+
+                          <Link
+                            href="/contact"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-clinical-200 bg-navy-800 hover:bg-navy-700 hover:text-white border border-navy-700 transition-colors"
+                          >
+                            <span>Schedule Clinical Trial / OT Demo</span>
+                          </Link>
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() => setActiveEnv(null)}
+                          className="text-clinical-400 hover:text-white inline-flex items-center gap-1 font-mono transition-colors cursor-pointer"
+                        >
+                          <ChevronUp className="w-3.5 h-3.5" />
+                          <span>Minimize Details</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })()}
+          </AnimatePresence>
         </div>
 
         {/* BOTTOM QUICK ACTIONS & BROCHURE ACCESS BAR */}
@@ -373,6 +779,13 @@ export function IndigenousExcellenceStrip() {
                 className="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-navy-900 font-medium transition-colors"
               >
                 Infusion & Syringe Pumps
+              </Link>
+              <Link
+                href="/products"
+                className="px-2.5 py-1 rounded-md bg-med-teal-50 hover:bg-med-teal-600 text-med-teal-700 hover:text-white font-bold border border-med-teal-200 transition-colors inline-flex items-center gap-1 shadow-2xs"
+              >
+                <span>View All Products</span>
+                <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
           </div>
