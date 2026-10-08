@@ -29,6 +29,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   monitoring: "Patient Monitor",
   infusion: "Syringe & Infusion Pump",
   emergency: "Emergency Resuscitation",
+  accessories: "Medical Accessories",
 };
 
 const CATEGORY_BADGE_STYLES: Record<string, string> = {
@@ -37,6 +38,7 @@ const CATEGORY_BADGE_STYLES: Record<string, string> = {
   monitoring: "bg-indigo-50 text-indigo-700 border-indigo-200",
   infusion: "bg-purple-50 text-purple-700 border-purple-200",
   emergency: "bg-rose-50 text-rose-700 border-rose-200",
+  accessories: "bg-emerald-50 text-emerald-700 border-emerald-200",
 };
 
 export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) {

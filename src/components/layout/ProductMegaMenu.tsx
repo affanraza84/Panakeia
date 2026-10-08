@@ -124,36 +124,36 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
     ],
   },
   {
-    id: "nicu",
-    name: "NICU",
+    id: "accessories",
+    name: "All Accessories",
     products: [
       {
-        id: "nicu-neonatal-ventilator",
-        title: "Neonatal Ventilator",
-        description: "Delicate low-tidal-volume high-frequency respiratory support engineered for neonates...",
-        image: "/image/icu-ventilator.jpeg",
-        href: "/products/icu-critical-care-ventilator",
+        id: "breathing-circuits-acc",
+        title: "Breathing Circuits & Filters",
+        description: "Autoclavable silicone patient circuits with dual electrostatic HME filters and swivel mounts...",
+        image: "/image/breathing-circuits-and-filters.jpeg",
+        href: "/products/anaesthesia-breathing-circuits-and-filters",
       },
       {
-        id: "nicu-vital-monitor",
-        title: "Neonatal Vital Monitor",
-        description: "High-sensitivity physiological telemetry tailored for newborn and premature infant vitals...",
-        image: "/image/patient-multi-paramonitor.jpeg",
-        href: "/products/multi-para-patient-monitor",
+        id: "monitoring-sensors-acc",
+        title: "Monitoring Sensors & Cables",
+        description: "Defibrillation-proof 5-lead ECG trunk cables, anti-motion SpO2 sensors, and NIBP cuffs...",
+        image: "/image/patient-monitoring-sensors-cables.jpeg",
+        href: "/products/multi-parameter-patient-monitoring-sensors-cables",
       },
       {
-        id: "nicu-syringe-pump",
-        title: "Micro-Infusion Syringe Pump",
-        description: "Ultra-precise micro-rate medication and continuous intravenous pediatric nutrition delivery...",
-        image: "/image/pan-flow-syringe-pump.jpeg",
-        href: "/products/syringe-infusion-pump",
+        id: "laryngoscope-blades-acc",
+        title: "Video Laryngoscope Blades",
+        description: "Surgical titanium & stainless steel reusable Macintosh, Miller, and difficult-airway blades...",
+        image: "/image/video-laryngoscope-blades-set.jpeg",
+        href: "/products/video-laryngoscope-reusable-blades-set",
       },
       {
-        id: "nicu-resus-kit",
-        title: "Paediatric Resuscitator",
-        description: "Specialized silicone manual resuscitators and precision pediatric airway blade sets...",
-        image: "/image/Emergency-Resuscitation-&-Airway-Kit2.jpeg",
-        href: "/products/emergency-resuscitation-kit",
+        id: "pump-docking-acc",
+        title: "Modular Pump Docking Station",
+        description: "Heavy-duty IV pole workstation rail with integrated unified AC power management bus...",
+        image: "/image/modular-pump-docking-station.jpeg",
+        href: "/products/modular-multi-pump-docking-and-extension-station",
       },
     ],
   },
@@ -295,6 +295,14 @@ export function ProductMegaMenu({ onItemClick }: ProductMegaMenuProps) {
             className="text-slate-600 hover:text-med-teal-700 font-semibold transition-colors"
           >
             Emergency Kits
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link
+            href="/products/category/medical-accessories"
+            onClick={onItemClick}
+            className="text-slate-600 hover:text-med-teal-700 font-semibold transition-colors"
+          >
+            All Accessories
           </Link>
         </div>
       </div>

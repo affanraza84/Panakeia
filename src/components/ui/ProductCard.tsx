@@ -26,6 +26,8 @@ export function ProductCard({ product }: ProductCardProps) {
         return "Infusion / Syringe Pump";
       case "emergency":
         return "Emergency Resuscitation";
+      case "accessories":
+        return "Medical Accessories";
       default:
         return "Medical Device";
     }

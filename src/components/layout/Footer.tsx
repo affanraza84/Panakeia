@@ -206,6 +206,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/products/category/medical-accessories"
+                  className="hover:text-white transition-colors"
+                >
+                  Medical & Critical Care Accessories
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/products"
                   className="text-med-teal-400 hover:text-med-teal-300 transition-colors inline-flex items-center gap-1 font-medium pt-1"
                 >

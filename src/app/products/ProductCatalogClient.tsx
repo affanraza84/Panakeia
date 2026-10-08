@@ -6,7 +6,7 @@ import { IProduct } from "@/types";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { Container } from "@/components/ui/Container";
 import { staggerContainerVariant, fadeUpVariant } from "@/lib/animations";
-import { Stethoscope, Wind, LayoutGrid, Activity, Syringe, BriefcaseMedical, ArrowRight, CheckCircle2, Sliders } from "lucide-react";
+import { Stethoscope, Wind, LayoutGrid, Activity, Syringe, BriefcaseMedical, ArrowRight, CheckCircle2, Sliders, Boxes } from "lucide-react";
 
 interface ProductCatalogClientProps {
   initialProducts: IProduct[];
@@ -50,6 +50,12 @@ export function ProductCatalogClient({
       label: "Emergency & Resuscitation",
       icon: BriefcaseMedical,
       count: initialProducts.filter((p) => p.category === "emergency").length,
+    },
+    {
+      id: "accessories",
+      label: "All Accessories",
+      icon: Boxes,
+      count: initialProducts.filter((p) => p.category === "accessories").length,
     },
   ];
 

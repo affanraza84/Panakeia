@@ -41,6 +41,8 @@ export function ProductDetailClient({
         return "Infusion & Syringe Systems";
       case "emergency":
         return "Emergency & Resuscitation";
+      case "accessories":
+        return "Medical Accessories";
       default:
         return "Critical Care Device";
     }
@@ -304,6 +306,13 @@ export function ProductDetailClient({
                       "Anaesthesia Induction & Continuous Sedation Delivery",
                       "Oncology Chemotherapy & Parenteral Nutrition Support",
                       "Neonatal & Paediatric Micro-Dosing Regimens",
+                    ]
+                  : product.category === "accessories"
+                  ? [
+                      "Operating Theatres & Surgical Anaesthesia Workstation Setups",
+                      "Medical & Surgical Intensive Care Units (ICU / HDU)",
+                      "Emergency Trauma Departments & Mobile Crash Cart Readiness",
+                      "Multi-Bed Telemetry Wards & Bedside Infusion Monitoring Stations",
                     ]
                   : [
                       "Hospital Emergency Departments & Crash Carts",

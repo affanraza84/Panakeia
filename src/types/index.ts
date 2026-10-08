@@ -1,4 +1,4 @@
-export type ProductCategory = "anaesthesia" | "ventilator" | "monitoring" | "infusion" | "emergency";
+export type ProductCategory = "anaesthesia" | "ventilator" | "monitoring" | "infusion" | "emergency" | "accessories";
 
 export interface IProductSpec {
   label: string;

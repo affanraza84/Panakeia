@@ -183,6 +183,38 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
       },
     ],
   },
+  accessories: {
+    category: "accessories",
+    slug: "medical-accessories",
+    h1: "Medical & Critical Care Accessories",
+    title: "Medical Equipment Accessories & Consumables Supplier in India",
+    description:
+      "Clinical-grade patient monitoring sensors, anaesthesia breathing circuits, video laryngoscope blades, and infusion docking stations manufactured and supplied by Panakeia Medtech.",
+    intro:
+      "Panakeia Medtech manufactures and supplies clinical-grade biomedical accessories, telemetry cables, and specialized patient interface hardware indigenously at our Visakhapatnam medical device facility. Designed to seamlessly pair with operating theater workstations, intensive care platforms, and emergency transport units, our accessories portfolio spans autoclavable medical-grade silicone breathing circuits with dual bacterial-viral HME filtration, shielded low-noise 5-lead ECG trunk cables with anti-motion SpO2 sensors, IPX8 immersible surgical video laryngoscope blades, and modular multi-channel IV pole docking stations. Every accessory is manufactured to rigorous biomedical standards ensuring flawless signal fidelity, gas-tight mechanical coupling, and long clinical service life.",
+    faqs: [
+      {
+        question: "Are Panakeia breathing circuits compatible with third-party ventilators?",
+        answer:
+          "Yes. Our corrugated silicone breathing circuits and HME filter manifolds feature standard 22mm / 15mm ISO 5356-1 conical connectors, making them fully compatible with Panakeia workstations as well as international ICU ventilators and anaesthesia platforms.",
+      },
+      {
+        question: "What sensor types are included in the Panakeia monitoring sensor pack?",
+        answer:
+          "The sensor pack includes adult and paediatric digital SpO2 finger probes with anti-motion shielding, defib-proof 5-lead ECG cables with snap/clip leadwires, dual-tube quick-release NIBP cuffs across multiple arm circumference sizes, and precision skin surface temperature probes.",
+      },
+      {
+        question: "How are Panakeia video laryngoscope blades sterilized?",
+        answer:
+          "Our surgical stainless steel and titanium video laryngoscope blades are built with IPX8 hermetic sealing, supporting standard hospital autoclaving (134°C), ethylene oxide (EtO) sterilization, and high-level liquid disinfectant immersion.",
+      },
+      {
+        question: "Can the modular pump docking station power multiple infusion devices simultaneously?",
+        answer:
+          "Yes. The modular docking station features an integrated power management bus that consolidates power cords into a single hospital-grade mains inlet, allowing up to 4 syringe and infusion pumps to operate and recharge concurrently on a single IV drip stand.",
+      },
+    ],
+  },
 };
 
 /**

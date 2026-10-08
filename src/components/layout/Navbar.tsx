@@ -352,6 +352,13 @@ export function Navbar() {
                   >
                     Emergency Kits
                   </Link>
+                  <Link
+                    href="/products/category/medical-accessories"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs px-2.5 py-1 rounded-lg bg-clinical-50 hover:bg-med-teal-50 hover:text-med-teal-700 border border-clinical-200 text-clinical-700 font-medium transition-colors"
+                  >
+                    All Accessories
+                  </Link>
                 </div>
               </div>
 

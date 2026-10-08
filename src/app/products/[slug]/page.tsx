@@ -74,6 +74,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     monitoring: "Patient Monitor",
     infusion: "Syringe & Infusion Pump",
     emergency: "Emergency Resuscitation Kit",
+    accessories: "Medical Accessories",
   };
 
   const productJsonLd = {
