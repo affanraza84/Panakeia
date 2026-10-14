@@ -176,7 +176,7 @@ const CLINICAL_ENVIRONMENTS: ClinicalEnvironment[] = [
       { label: "Medical Gas Supply", value: "Triple Gas: O2, N2O & Medical Air (280–600 kPa)" },
       { label: "Ventilation Acuity", value: "VCV, PCV, SIMV-V, SIMV-P, PSV/CPAP, PRVC & Manual" },
       { label: "Breathing System", value: "Heated dual-chamber quick-release CO2 absorber (1.8L)" },
-      { label: "Battery Autonomy", value: "180-minute hot-swappable dual lithium battery backup" },
+      { label: "Battery Autonomy", value: "Battery as per standard 3.5 hrs" },
     ],
     compatibleProducts: [
       {

@@ -245,6 +245,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/conference" className="hover:text-white transition-colors">
+                  Conferences & Events
+                </Link>
+              </li>
+              <li>
                 <Link href="/careers" className="hover:text-white transition-colors text-med-teal-400 font-medium">
                   Careers & Training Academy
                 </Link>

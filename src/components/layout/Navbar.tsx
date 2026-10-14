@@ -22,6 +22,7 @@ const NAV_LINKS = [
   { name: "About Us", href: "/about" },
   { name: "Quality & Compliance", href: "/quality" },
   { name: "Installations", href: "/clients" },
+  { name: "Conference", href: "/conference" },
   { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
 ];
@@ -162,7 +163,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation Links - Generous & Balanced Sizing */}
-        <nav className="hidden lg:flex items-center justify-center gap-1.5 xl:gap-2.5 py-1">
+        <nav className="hidden lg:flex items-center justify-center gap-1 xl:gap-2 py-1">
           {NAV_LINKS.map((link) => {
             const isActive = checkIsActive(link.href);
 
@@ -181,7 +182,7 @@ export function Navbar() {
                       setProductDropdownOpen(false);
                     }}
                     className={cn(
-                      "px-3 py-1.5 xl:px-4 xl:py-2 text-[13px] xl:text-sm font-semibold rounded-xl transition-all flex items-center gap-1 whitespace-nowrap",
+                      "px-2.5 py-1.5 xl:px-3.5 xl:py-2 text-[12.5px] xl:text-sm font-semibold rounded-xl transition-all flex items-center gap-1 whitespace-nowrap",
                       isActive || productDropdownOpen
                         ? "text-med-teal-700 bg-med-teal-50/90 shadow-2xs font-bold"
                         : "text-slate-700 hover:text-navy-950 hover:bg-clinical-50/90"
@@ -227,7 +228,7 @@ export function Navbar() {
                 href={link.href}
                 onClick={() => handleNavClick(link.href)}
                 className={cn(
-                  "px-3 py-1.5 xl:px-4 xl:py-2 text-[13px] xl:text-sm font-semibold rounded-xl transition-all relative shrink-0 whitespace-nowrap",
+                  "px-2.5 py-1.5 xl:px-3.5 xl:py-2 text-[12.5px] xl:text-sm font-semibold rounded-xl transition-all relative shrink-0 whitespace-nowrap",
                   isActive
                     ? "text-med-teal-700 bg-med-teal-50/90 shadow-2xs font-bold"
                     : "text-slate-700 hover:text-navy-950 hover:bg-clinical-50/90"

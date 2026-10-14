@@ -61,7 +61,7 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
       {
         question: "What safety features are integrated into Panakeia anaesthesia machines?",
         answer:
-          "Panakeia workstations incorporate mechanical anti-hypoxic linking (maintaining ≥25% O2), active anaesthetic gas scavenging system (AGSS) interfaces to eliminate OR pollution, recessed emergency oxygen flush controls, fail-safe audio-visual alarms, and internal battery autonomy for uninterrupted surgical ventilation.",
+          "Panakeia workstations incorporate mechanical anti-hypoxic linking (maintaining ≥25% O2), active anaesthetic gas scavenging system (AGSS) interfaces to eliminate OR pollution, recessed emergency oxygen flush controls, fail-safe audio-visual alarms, and internal battery backup as per standard 3.5 hrs for uninterrupted surgical ventilation.",
       },
       {
         question: "Which ventilation modes are supported on Panakeia integrated anaesthesia ventilators?",

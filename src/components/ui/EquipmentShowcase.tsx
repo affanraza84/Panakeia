@@ -44,11 +44,12 @@ const equipmentData: EquipmentItem[] = [
       "Cascade 3-Gas flowmeters with mechanical hypoxic guard and auxiliary O2 flush",
       "Advanced modes: VCV, PCV, SIMV-V, SIMV-P, PSV/CPAP, and PRVC",
       "Active Anaesthetic Gas Scavenging System (AGSS) interface built-in",
-      "180-minute hot-swappable dual lithium battery backup system"
+      "Battery as per standard 3.5 hrs (hot-swappable dual lithium battery backup system)"
     ],
     specs: [
       { label: "Gas Inlets", value: "O2, N2O, Medical Air (280-600 kPa)" },
       { label: "Tidal Volume", value: "10 mL – 1,600 mL (Adult/Paediatric)" },
+      { label: "Battery", value: "Battery as per standard 3.5 hrs" },
       { label: "Absorber", value: "1.8L Dual-Chamber Quick-Release" },
       { label: "Standard", value: "ISO 80601-2-13 / CDSCO Compliant" },
       { label: "Vaporizers", value: "Dual Selectatec-compatible Interlock Bar" },
@@ -69,12 +70,13 @@ const equipmentData: EquipmentItem[] = [
       "Pneumatically driven ventilator with electronic pressure/volume telemetry",
       "Single-action quick-release 1.5L autoclavable CO2 absorber",
       "Heavy-duty mobile chassis with central brake antistatic castors",
-      "120-minute uninterrupted battery autonomy"
+      "Battery as per standard 3.5 hrs uninterrupted autonomy"
     ],
     specs: [
       { label: "Gas Supply", value: "2 Gases: O2 & N2O with Pin-Index Yokes" },
       { label: "Tidal Volume", value: "20 mL – 1,500 mL" },
       { label: "Vent Modes", value: "VCV, PCV, SIMV, Manual, Spontaneous" },
+      { label: "Battery", value: "Battery as per standard 3.5 hrs" },
       { label: "Safety", value: "Mechanical Hypoxic Guard (min 25% O2)" },
       { label: "Absorber", value: "1.5L Autoclavable Quick-Release" },
       { label: "Origin", value: "100% In-House Panakeia Manufacturing" }
@@ -130,6 +132,31 @@ const equipmentData: EquipmentItem[] = [
       { label: "Display", value: "15.6\" Full HD multi-touch anti-glare" }
     ],
     imageSrc: "/image/icu-ventilator.jpeg",
+  },
+  {
+    id: "savel-ventilator",
+    name: "SAVEL ELECTRO Portable Transport Ventilator",
+    slug: "savel-electro-portable-ventilator",
+    categoryLabel: "Emergency Transport Life Support",
+    badge: "Field & Transport Ready",
+    tagline: "Microprocessor-Controlled Portable Emergency Ventilator with 7\" Touchscreen & 6-Hour Battery",
+    description: "Indigenously developed for emergency ambulances, trauma rescue, military field hospitals, and inter-hospital transport. Features volume & pressure modes, electronic FiO2 mixing (21%-100%), and rugged mobile housing.",
+    highlights: [
+      "7-inch High-Resolution Color Touchscreen with live pressure, flow & volume curves",
+      "CMV/AV (VC), CMV/AV (PC), SIMV (VC), SIMV (PC), CPAP, PSV, and optional NIV",
+      "Electronic FiO2 controller providing precise 21% to 100% oxygen titration",
+      "Programmable apnea backup ventilation and automatic panel lock safety",
+      "Rechargeable Li-Ion battery delivering up to 6 hours continuous field autonomy"
+    ],
+    specs: [
+      { label: "Operating Pressure", value: "40 to 60 PSI (O2 at 3-4 bar + air)" },
+      { label: "Tidal Volume", value: "50 mL – 1,500 mL (Adult & Paediatric)" },
+      { label: "Rate & Flow", value: "5 – 40 BPM | Flow: up to 120 L/min" },
+      { label: "PEEP / CPAP", value: "0 to 20 cmH2O (Trigger: 0 to -10 cmH2O)" },
+      { label: "Battery", value: "Li-Ion up to 6 Hours continuous backup" },
+      { label: "Weight", value: "Approx. 5.5 kg Rugged Field Chassis" }
+    ],
+    imageSrc: "/image/savel-electro-portable-ventilator.jpeg",
   },
   {
     id: "patient-monitor",
@@ -219,12 +246,13 @@ const equipmentData: EquipmentItem[] = [
       "7-inch Color multi-parameter touchscreen with live pressure, flow & volume loops",
       "VCV, PCV, SIMV-V, SIMV-P, PSV, Manual, and Spontaneous ventilation modes",
       "Dual-circuit pneumatic drive with electronic pressure monitoring",
-      "Hot-swappable internal rechargeable battery with 180+ min autonomy"
+      "Battery as per standard 3.5 hrs (hot-swappable internal battery pack)"
     ],
     specs: [
       { label: "Drive System", value: "Pneumatic drive, electronic control" },
       { label: "Tidal Volume", value: "20 – 1,400 mL (Bellows: 300-1200mL)" },
       { label: "Modes", value: "VCV, PCV, SIMV, PSV, Manual" },
+      { label: "Battery", value: "Battery as per standard 3.5 hrs" },
       { label: "Display", value: "7\" Color LCD with real-time loops" },
       { label: "Pressure Range", value: "High: 10-80, Low: 0-20 cmH2O" },
       { label: "Standard", value: "ISO 80601-2-13 / CDSCO Compliant" }
