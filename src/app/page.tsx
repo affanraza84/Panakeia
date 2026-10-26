@@ -57,6 +57,23 @@ export default async function HomePage() {
     getProducts(),
   ]);
 
+  // Exclude specific accessories/products requested from the home screen showcase
+  const excludedHomeProductSlugs = new Set([
+    "modular-multi-pump-docking-and-extension-station",
+    "multi-parameter-patient-monitoring-sensors-cables",
+    "anaesthesia-breathing-circuits-and-filters",
+    "hd-video-laryngoscope-system",
+  ]);
+
+  const showcaseProducts = products.filter(
+    (product) =>
+      !excludedHomeProductSlugs.has(product.slug) &&
+      product.name !== "Modular Multi-Pump Docking & Extension Station" &&
+      product.name !== "Multi-Parameter Monitoring Sensor & Cable Pack" &&
+      product.name !== "Anaesthesia & Ventilator Breathing Circuits & Filter System" &&
+      product.name !== "HD Digital Video Laryngoscope System"
+  );
+
   const featuredClients = clients.filter((c) => c.featured);
 
   return (
@@ -65,7 +82,7 @@ export default async function HomePage() {
       <CleanHeroVideo videoSrc="/video/panakeia-intro-video.mp4" />
 
       {/* 2. PRODUCT MOVING SHOWCASE (Moving Left to Right infinite stream with enlarged quick view) */}
-      <ProductMovingShowcase products={products} />
+      <ProductMovingShowcase products={showcaseProducts} />
 
       {/* 3. INDIGENOUS EXCELLENCE & CLINICAL PILLARS STRIP (Brochure Data, Zero Numbers) */}
       <IndigenousExcellenceStrip />
