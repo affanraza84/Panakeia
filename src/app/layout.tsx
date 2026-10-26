@@ -101,7 +101,7 @@ const organizationJsonLd = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+91-9811340469",
+    telephone: "+91 98113 40469",
     contactType: "sales",
     email: "panakeia.india@gmail.com",
   },

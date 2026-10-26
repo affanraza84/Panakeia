@@ -6,7 +6,7 @@ import { useUser } from "@clerk/nextjs";
 import { Mail, Phone, Lock } from "lucide-react";
 
 interface CompanyContactDetailsProps {
-  variant: "footer" | "contact-sidebar" | "product-detail" | "privacy-desk";
+  variant: "footer" | "contact-sidebar" | "product-detail" | "privacy-desk" | "careers";
 }
 
 export function CompanyContactDetails({ variant }: CompanyContactDetailsProps) {
@@ -28,9 +28,12 @@ export function CompanyContactDetails({ variant }: CompanyContactDetailsProps) {
           </div>
           <div className="flex items-center gap-2.5">
             <Phone className="w-4 h-4 text-med-teal-400 shrink-0" />
-            <span className="font-mono text-clinical-300 select-text">
-              +91-9811340469
-            </span>
+            <a
+              href="tel:+919811340469"
+              className="font-mono text-clinical-300 hover:text-white transition-colors select-text"
+            >
+              +91 98113 40469
+            </a>
           </div>
         </div>
       );
@@ -80,9 +83,12 @@ export function CompanyContactDetails({ variant }: CompanyContactDetailsProps) {
               <strong className="block text-white font-semibold mb-0.5">
                 Procurement & Clinical Support Desk:
               </strong>
-              <span className="text-med-teal-300 font-mono select-text">
-                +91-9811340469
-              </span>
+              <a
+                href="tel:+919811340469"
+                className="text-med-teal-300 hover:underline font-mono text-xs select-text"
+              >
+                +91 98113 40469
+              </a>
             </div>
           </div>
         </>
@@ -114,7 +120,15 @@ export function CompanyContactDetails({ variant }: CompanyContactDetailsProps) {
         <div className="p-3 bg-navy-50 rounded-lg border border-navy-100 flex items-center justify-between text-xs text-navy-900">
           <span className="flex items-center gap-2">
             <Phone className="w-4 h-4 text-med-teal-600" />
-            <span>Direct Hospital Procurement Desk: <strong className="select-text">+91-9811340469</strong></span>
+            <span>
+              Direct Hospital Procurement Desk:{" "}
+              <a
+                href="tel:+919811340469"
+                className="font-mono font-bold text-navy-950 hover:text-med-teal-700 hover:underline select-text"
+              >
+                +91 98113 40469
+              </a>
+            </span>
           </span>
           <span className="font-mono text-clinical-500 text-[11px]">Mon-Sat 9AM-6PM IST</span>
         </div>
@@ -125,7 +139,12 @@ export function CompanyContactDetails({ variant }: CompanyContactDetailsProps) {
       <div className="p-3 bg-navy-50 rounded-lg border border-navy-100 flex items-center justify-between text-xs text-navy-900">
         <span className="flex items-center gap-2">
           <Lock className="w-4 h-4 text-med-teal-600" />
-          <span>Direct Hospital Procurement Desk: <Link href="/sign-in" className="text-med-teal-700 font-bold hover:underline">Sign in to view direct phone</Link></span>
+          <span>
+            Direct Hospital Procurement Desk:{" "}
+            <Link href="/sign-in" className="text-med-teal-700 font-bold hover:underline">
+              Sign in to view direct phone
+            </Link>
+          </span>
         </span>
         <span className="font-mono text-clinical-500 text-[11px]">Mon-Sat 9AM-6PM IST</span>
       </div>
@@ -136,16 +155,56 @@ export function CompanyContactDetails({ variant }: CompanyContactDetailsProps) {
     if (authenticated) {
       return (
         <>
-          <div>Email: <a href="mailto:panakeia.india@gmail.com" className="text-med-teal-700 hover:underline">panakeia.india@gmail.com</a></div>
-          <div>Phone: <span className="text-med-teal-700 select-text">+91-9811340469</span></div>
+          <div>
+            Email:{" "}
+            <a href="mailto:panakeia.india@gmail.com" className="text-med-teal-700 hover:underline">
+              panakeia.india@gmail.com
+            </a>
+          </div>
+          <div>
+            Phone:{" "}
+            <a
+              href="tel:+919811340469"
+              className="text-med-teal-700 font-mono hover:underline select-text"
+            >
+              +91 98113 40469
+            </a>
+          </div>
         </>
       );
     }
 
     return (
       <div className="pt-1 text-clinical-600 font-sans">
-        Direct Email & Phone: <Link href="/sign-in" className="text-med-teal-700 font-bold hover:underline font-mono">Sign in to view direct contact channels</Link>
+        Direct Email & Phone:{" "}
+        <Link href="/sign-in" className="text-med-teal-700 font-bold hover:underline font-mono">
+          Sign in to view direct contact channels
+        </Link>
       </div>
+    );
+  }
+
+  if (variant === "careers") {
+    if (authenticated) {
+      return (
+        <a
+          href="tel:+919811340469"
+          className="px-4 py-2.5 rounded-xl bg-navy-950 text-white hover:bg-navy-900 shadow-2xs flex items-center gap-2 transition-all select-text"
+        >
+          <Phone className="w-4 h-4 text-med-teal-400" />
+          <span className="font-mono">+91 98113 40469</span>
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        href="/sign-in"
+        className="px-4 py-2.5 rounded-xl bg-navy-950 text-white hover:bg-navy-900 shadow-2xs flex items-center gap-2 transition-all"
+      >
+        <Lock className="w-4 h-4 text-med-teal-400" />
+        <span>Sign in to view direct phone</span>
+      </Link>
     );
   }
 

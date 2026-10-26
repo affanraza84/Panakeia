@@ -33,6 +33,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CompanyContactDetails } from "@/components/auth/CompanyContactDetails";
 
 type TabKey = "employment" | "internships" | "training";
 
@@ -1294,13 +1295,7 @@ export function CareersContentClient() {
               <Mail className="w-4 h-4 text-med-teal-600" />
               <span>panakeia.india@gmail.com</span>
             </a>
-            <a
-              href="tel:+918008316238"
-              className="px-4 py-2.5 rounded-xl bg-navy-950 text-white hover:bg-navy-900 shadow-2xs flex items-center gap-2 transition-all"
-            >
-              <Phone className="w-4 h-4 text-med-teal-400" />
-              <span>+91 80083 16238</span>
-            </a>
+            <CompanyContactDetails variant="careers" />
           </div>
         </div>
       </section>

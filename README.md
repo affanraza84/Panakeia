@@ -157,7 +157,7 @@ Panakeia/
 
 **Panakeia Medtech Private Limited**  
 - **Facility Address**: Panakeia Manufacturing Facility, Pragati Maidan, VM Steel Project S.O., Visakhapatnam, Andhra Pradesh – 530031, India  
-- **Phone**: [+91-9811340469](tel:+919811340469)  
+- **Phone**: [+91 98113 40469](tel:+919811340469)  
 - **Clinical & Procurement Email**: [contact@panakeiacare.com](mailto:contact@panakeiacare.com)  
 - **Website**: [https://panakeiacare.com](https://panakeiacare.com)
 
