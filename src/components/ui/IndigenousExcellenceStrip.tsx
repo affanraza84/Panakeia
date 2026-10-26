@@ -180,13 +180,13 @@ const CLINICAL_ENVIRONMENTS: ClinicalEnvironment[] = [
     ],
     compatibleProducts: [
       {
-        name: "Three-Gas System Advanced Anaesthesia Machine",
+        name: "Three-Gas System Advanced Anaesthesia Workstation",
         category: "Anaesthesia",
         href: "/products/three-gas-system-advanced-anaesthesia-workstation",
         tag: "Flagship OT System",
       },
       {
-        name: "Two-Gas System Basic Anaesthesia Machine",
+        name: "Two-Gas System Basic Anaesthesia Workstation",
         category: "Anaesthesia",
         href: "/products/two-gas-system-basic-anaesthesia-workstation",
         tag: "High-Throughput OT",
@@ -321,13 +321,13 @@ const CLINICAL_ENVIRONMENTS: ClinicalEnvironment[] = [
     ],
     compatibleProducts: [
       {
-        name: "Two-Gas System Basic Anaesthesia Machine",
+        name: "Two-Gas System Basic Anaesthesia Workstation",
         category: "Anaesthesia",
         href: "/products/two-gas-system-basic-anaesthesia-workstation",
         tag: "Low Cost of Ownership",
       },
       {
-        name: "Basic Premium Anaesthesia Machine",
+        name: "Basic Premium Anaesthesia Workstation",
         category: "Anaesthesia",
         href: "/products/basic-premium-anaesthesia-machine",
         tag: "Stainless Steel Trolley",
@@ -760,7 +760,7 @@ export function IndigenousExcellenceStrip() {
                 href="/products#anaesthesia"
                 className="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-navy-900 font-medium transition-colors"
               >
-                Anaesthesia Machines
+                Anaesthesia Workstations
               </Link>
               <Link
                 href="/products#ventilator"

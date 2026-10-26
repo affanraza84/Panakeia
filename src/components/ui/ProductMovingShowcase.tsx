@@ -24,7 +24,7 @@ interface ProductMovingShowcaseProps {
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
-  anaesthesia: "Anaesthesia Machine",
+  anaesthesia: "Anaesthesia Workstation",
   ventilator: "Ventilator",
   monitoring: "Patient Monitor",
   infusion: "Syringe & Infusion Pump",
@@ -170,7 +170,9 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
               CATEGORY_BADGE_STYLES[product.category] ||
               "bg-slate-100 text-slate-700 border-slate-200";
             const categoryLabel =
-              CATEGORY_LABELS[product.category] || product.category;
+              product.slug === "12-channel-diagnostic-ecg-machine" || product.name.toLowerCase().includes("ecg")
+                ? "ECG"
+                : CATEGORY_LABELS[product.category] || product.category;
             const primaryImage = product.images[0] || "/placeholder-product.jpg";
 
             return (
@@ -392,7 +394,9 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                             "bg-slate-100 text-slate-700 border-slate-200"
                           }`}
                         >
-                          {CATEGORY_LABELS[selectedProduct.category] || selectedProduct.category}
+                          {selectedProduct.slug === "12-channel-diagnostic-ecg-machine" || selectedProduct.name.toLowerCase().includes("ecg")
+                            ? "ECG"
+                            : CATEGORY_LABELS[selectedProduct.category] || selectedProduct.category}
                         </span>
                         <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-navy-50 text-navy-900 border border-navy-200">
                           Make in India

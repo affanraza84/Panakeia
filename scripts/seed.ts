@@ -71,11 +71,11 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
   },
   {
     slug: "basic-premium-anaesthesia-machine",
-    name: "Basic Premium Anaesthesia Machine",
+    name: "Basic Premium Anaesthesia Workstation",
     category: "anaesthesia",
-    tagline: "Ruggedized Ergonomic Anaesthesia Delivery Machine with Modular Monitor Mounting & Precision Vaporizers",
+    tagline: "Ruggedized Ergonomic Anaesthesia Delivery Workstation with Modular Monitor Mounting & Precision Vaporizers",
     description:
-      "A versatile, heavy-duty clinical anaesthesia machine designed for seamless reliability across general surgical theaters. Equipped with a robust stainless-steel chassis, high-precision dual flowmeter cascade, integrated drawer storage, and multi-parameter vital signs monitor mounting arm.",
+      "A versatile, heavy-duty clinical anaesthesia workstation designed for seamless reliability across general surgical theaters. Equipped with a robust stainless-steel chassis, high-precision dual flowmeter cascade, integrated drawer storage, and multi-parameter vital signs monitor mounting arm.",
     features: [
       "Precision dual gas flowmeter with fine micro-adjustment for low-flow anaesthetic delivery",
       "Overhead monitor swivel arm accommodating 10-15\" multi-parameter patient monitors",
@@ -308,7 +308,7 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
   },
   {
     slug: "volumetric-infusion-pump",
-    name: "Intelligent Volumetric Infusion Pump",
+    name: "Volumetric Infusion Pump",
     category: "infusion",
     tagline: "High-Accuracy Volumetric IV Infusion Platform with Ultrasonic Air-in-Line Detection & Multi-Drip Rate Control",
     description:

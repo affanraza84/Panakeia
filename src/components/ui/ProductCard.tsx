@@ -14,10 +14,13 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const getCategoryLabel = (cat: string) => {
+  const getCategoryLabel = (cat: string, slug?: string) => {
+    if (slug === "12-channel-diagnostic-ecg-machine" || product.name.toLowerCase().includes("ecg")) {
+      return "ECG";
+    }
     switch (cat) {
       case "anaesthesia":
-        return "Anaesthesia Machine";
+        return "Anaesthesia Workstation";
       case "ventilator":
         return "ICU Ventilator";
       case "monitoring":
@@ -33,8 +36,11 @@ export function ProductCard({ product }: ProductCardProps) {
     }
   };
 
-  const categoryLabel = getCategoryLabel(product.category);
+  const categoryLabel = getCategoryLabel(product.category, product.slug);
   const primaryImage = product.images?.[0] || "/image/three-gas-system-advanced-anaesthesia-workstation.jpeg";
+  const productName = product.name
+    .replace(/^Intelligent\s+/i, "")
+    .replace(/Anaesthesia Machine/i, "Anaesthesia Workstation");
 
   return (
     <motion.div
@@ -61,7 +67,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="relative w-full h-full flex items-center justify-center">
           <Image
             src={primaryImage}
-            alt={`Panakeia ${product.name} — ${categoryLabel}`}
+            alt={`Panakeia ${productName} — ${categoryLabel}`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-contain object-center filter drop-shadow-sm group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -73,7 +79,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="flex-1 p-6 flex flex-col justify-between">
         <div>
           <h3 className="text-xl font-bold text-navy-950 font-heading group-hover:text-med-teal-600 transition-colors">
-            {product.name}
+            {productName}
           </h3>
           <p className="mt-2 text-sm text-clinical-600 line-clamp-2 leading-relaxed">
             {product.tagline}

@@ -19,7 +19,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Panakeia Medtech | Anaesthesia & ICU Equipment Manufacturer in India",
   description:
-    "Panakeia Medtech is an indigenous medical equipment manufacturer in Visakhapatnam, Andhra Pradesh, India. We engineer clinical-grade Anaesthesia Machines, ICU Ventilators, Patient Monitors, and OT equipment with 100% in-house manufactured parts.",
+    "Panakeia Medtech is an indigenous medical equipment manufacturer in Visakhapatnam, Andhra Pradesh, India. We engineer clinical-grade Anaesthesia Workstations, ICU Ventilators, Patient Monitors, and OT equipment with 100% in-house manufactured parts.",
   alternates: {
     canonical: "/",
   },
@@ -63,6 +63,7 @@ export default async function HomePage() {
     "multi-parameter-patient-monitoring-sensors-cables",
     "anaesthesia-breathing-circuits-and-filters",
     "hd-video-laryngoscope-system",
+    "video-laryngoscope-reusable-blades-set",
   ]);
 
   const showcaseProducts = products.filter(
@@ -71,7 +72,8 @@ export default async function HomePage() {
       product.name !== "Modular Multi-Pump Docking & Extension Station" &&
       product.name !== "Multi-Parameter Monitoring Sensor & Cable Pack" &&
       product.name !== "Anaesthesia & Ventilator Breathing Circuits & Filter System" &&
-      product.name !== "HD Digital Video Laryngoscope System"
+      product.name !== "HD Digital Video Laryngoscope System" &&
+      product.name !== "Video Laryngoscope Reusable Blades & Airway Set"
   );
 
   const featuredClients = clients.filter((c) => c.featured);

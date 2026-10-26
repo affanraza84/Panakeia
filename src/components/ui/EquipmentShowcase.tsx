@@ -33,9 +33,9 @@ interface EquipmentItem {
 const equipmentData: EquipmentItem[] = [
   {
     id: "three-gas-advanced",
-    name: "Three-Gas Advanced Anaesthesia Machine",
+    name: "Three-Gas Advanced Anaesthesia Workstation",
     slug: "three-gas-system-advanced-anaesthesia-workstation",
-    categoryLabel: "High-Acuity Surgical Anaesthesia Machine",
+    categoryLabel: "High-Acuity Surgical Anaesthesia Workstation",
     badge: "Flagship OT System",
     tagline: "Indigenous Multi-Gas Pneumatic Blending with 12.1-inch Capacitive Touchscreen Ventilator",
     description: "Engineered for complex cardiothoracic, neuro, and pediatric surgical operations. Integrates electronic gas mixing (O2, N2O, Medical Air) with dual-vaporizer manifold and advanced spirometry loops.",
@@ -59,12 +59,12 @@ const equipmentData: EquipmentItem[] = [
   },
   {
     id: "two-gas-basic",
-    name: "Two-Gas System Basic Anaesthesia Machine",
+    name: "Two-Gas System Basic Anaesthesia Workstation",
     slug: "two-gas-system-basic-anaesthesia-workstation",
     categoryLabel: "Compact OT Delivery Station",
     badge: "Workhorse Reliability",
     tagline: "Agile Dual-Gas Precision Anaesthesia Delivery for Daycare & Secondary Surgical Suites",
-    description: "A compact, highly mobile anaesthesia machine engineered for maximum surgical uptime in high-throughput operating rooms. Features anti-hypoxic safety guard and autoclavable patient circuit.",
+    description: "A compact, highly mobile anaesthesia workstation engineered for maximum surgical uptime in high-throughput operating rooms. Features anti-hypoxic safety guard and autoclavable patient circuit.",
     highlights: [
       "Dual-tube flowmeter cascade with mechanical anti-hypoxic linkage (≥25% O2)",
       "Pneumatically driven ventilator with electronic pressure/volume telemetry",
@@ -85,7 +85,7 @@ const equipmentData: EquipmentItem[] = [
   },
   {
     id: "basic-premium",
-    name: "Basic Premium Anaesthesia Machine",
+    name: "Basic Premium Anaesthesia Workstation",
     slug: "basic-premium-anaesthesia-machine",
     categoryLabel: "Modular Surgical Platform",
     badge: "Heavy-Duty Ergonomics",

@@ -8,11 +8,11 @@ export const fallbackProducts: IProduct[] = [
   {
     _id: "prod-1",
     slug: "three-gas-system-advanced-anaesthesia-workstation",
-    name: "Three-Gas System Advanced Anaesthesia Machine",
+    name: "Three-Gas System Advanced Anaesthesia Workstation",
     category: "anaesthesia",
-    tagline: "High-Acuity Digital O2/N2O/Air Anaesthesia Machine with Integrated Touchscreen Ventilator for Multi-Speciality OT",
+    tagline: "High-Acuity Digital O2/N2O/Air Anaesthesia Workstation with Integrated Touchscreen Ventilator for Multi-Speciality OT",
     description:
-      "Indigenously engineered with all parts manufactured directly by Panakeia itself, this advanced three-gas anaesthesia machine integrates digital pneumatic gas blending with an intuitive color touchscreen monitor. Features dual vaporizer Selectatec manifold, active gas scavenging (AGSS), and fail-safe mechanical backups for complex cardiac and neuro surgical suites.",
+      "Indigenously engineered with all parts manufactured directly by Panakeia itself, this advanced three-gas anaesthesia workstation integrates digital pneumatic gas blending with an intuitive color touchscreen monitor. Features dual vaporizer Selectatec manifold, active gas scavenging (AGSS), and fail-safe mechanical backups for complex cardiac and neuro surgical suites.",
     features: [
       "12.1-inch Color High-Resolution Touchscreen with simultaneous P-T, F-T, V-T loops and spirometry",
       "Three-Gas Delivery System (O2, N2O, Air) with cascade electronic flowmeters and mechanical backup",
@@ -41,11 +41,11 @@ export const fallbackProducts: IProduct[] = [
   {
     _id: "prod-2",
     slug: "two-gas-system-basic-anaesthesia-workstation",
-    name: "Two-Gas System Basic Anaesthesia Machine",
+    name: "Two-Gas System Basic Anaesthesia Workstation",
     category: "anaesthesia",
     tagline: "Compact Precision O2/N2O Anaesthesia System with Hypoxic Guard for Daycare & Secondary Surgical Centers",
     description:
-      "The Two-Gas System Anaesthesia Machine delivers dependable critical care volatile delivery in an agile, space-efficient frame. Engineered for high OT throughput in daycare centers and district hospitals, featuring anti-hypoxic mechanical linking and quick-release autoclavable absorber systems.",
+      "The Two-Gas System Anaesthesia Workstation delivers dependable critical care volatile delivery in an agile, space-efficient frame. Engineered for high OT throughput in daycare centers and district hospitals, featuring anti-hypoxic mechanical linking and quick-release autoclavable absorber systems.",
     features: [
       "Dual-tube flowmeter cascade for Oxygen and Nitrous Oxide with anti-hypoxic safety guard (min 25% O2)",
       "Pneumatically driven, electronically monitored ventilator with real-time pressure & volume telemetry",
@@ -74,11 +74,11 @@ export const fallbackProducts: IProduct[] = [
   {
     _id: "prod-3",
     slug: "basic-premium-anaesthesia-machine",
-    name: "Basic Premium Anaesthesia Machine",
+    name: "Basic Premium Anaesthesia Workstation",
     category: "anaesthesia",
-    tagline: "Ruggedized Ergonomic Anaesthesia Delivery Machine with Modular Monitor Mounting & Precision Vaporizers",
+    tagline: "Ruggedized Ergonomic Anaesthesia Delivery Workstation with Modular Monitor Mounting & Precision Vaporizers",
     description:
-      "A versatile, heavy-duty clinical anaesthesia machine designed for seamless reliability across general surgical theaters. Equipped with a robust stainless-steel chassis, high-precision dual flowmeter cascade, integrated drawer storage, and multi-parameter vital signs monitor mounting arm.",
+      "A versatile, heavy-duty clinical anaesthesia workstation designed for seamless reliability across general surgical theaters. Equipped with a robust stainless-steel chassis, high-precision dual flowmeter cascade, integrated drawer storage, and multi-parameter vital signs monitor mounting arm.",
     features: [
       "Precision dual gas flowmeter with fine micro-adjustment for low-flow anaesthetic delivery",
       "Overhead monitor swivel arm accommodating 10-15\" multi-parameter patient monitors",
@@ -318,7 +318,7 @@ export const fallbackProducts: IProduct[] = [
   {
     _id: "prod-10",
     slug: "volumetric-infusion-pump",
-    name: "Intelligent Volumetric Infusion Pump",
+    name: "Volumetric Infusion Pump",
     category: "infusion",
     tagline: "High-Accuracy Volumetric IV Infusion Platform with Ultrasonic Air-in-Line Detection & Multi-Drip Rate Control",
     description:
@@ -710,6 +710,23 @@ export const fallbackCertifications: ICertification[] = [
   },
 ];
 
+function normalizeProduct(p: IProduct): IProduct {
+  let name = p.name;
+  if (name.includes("Intelligent Volumetric Infusion Pump")) {
+    name = "Volumetric Infusion Pump";
+  }
+  if (p.slug === "three-gas-system-advanced-anaesthesia-workstation" && name.includes("Machine")) {
+    name = "Three-Gas System Advanced Anaesthesia Workstation";
+  }
+  if (p.slug === "two-gas-system-basic-anaesthesia-workstation" && name.includes("Machine")) {
+    name = "Two-Gas System Basic Anaesthesia Workstation";
+  }
+  if (p.slug === "basic-premium-anaesthesia-machine" && name.includes("Machine")) {
+    name = "Basic Premium Anaesthesia Workstation";
+  }
+  return { ...p, name };
+}
+
 export async function getProducts(options?: { category?: string }): Promise<IProduct[]> {
   try {
     if (process.env.MONGODB_URI) {
@@ -720,7 +737,8 @@ export async function getProducts(options?: { category?: string }): Promise<IPro
       }
       const products = await Product.find(query).sort({ order: 1 }).lean<IProduct[]>();
       if (products && products.length > 0) {
-        return JSON.parse(JSON.stringify(products));
+        const parsed = JSON.parse(JSON.stringify(products)) as IProduct[];
+        return parsed.map(normalizeProduct);
       }
     }
   } catch (err) {
@@ -728,9 +746,11 @@ export async function getProducts(options?: { category?: string }): Promise<IPro
   }
 
   if (options?.category) {
-    return fallbackProducts.filter((p) => p.category === options.category);
+    return fallbackProducts
+      .filter((p) => p.category === options.category)
+      .map(normalizeProduct);
   }
-  return fallbackProducts;
+  return fallbackProducts.map(normalizeProduct);
 }
 
 export async function getProductBySlug(slug: string): Promise<IProduct | null> {
@@ -739,7 +759,7 @@ export async function getProductBySlug(slug: string): Promise<IProduct | null> {
       await connectToDatabase();
       const product = await Product.findOne({ slug: slug.toLowerCase(), published: true }).lean<IProduct>();
       if (product) {
-        return JSON.parse(JSON.stringify(product));
+        return normalizeProduct(JSON.parse(JSON.stringify(product)));
       }
     }
   } catch (err) {
@@ -747,7 +767,7 @@ export async function getProductBySlug(slug: string): Promise<IProduct | null> {
   }
 
   const found = fallbackProducts.find((p) => p.slug.toLowerCase() === slug.toLowerCase());
-  return found || null;
+  return found ? normalizeProduct(found) : null;
 }
 
 export async function getClients(options?: { featured?: boolean }): Promise<IClient[]> {
