@@ -40,6 +40,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const primaryImage = product.images?.[0] || "/image/three-gas-system-advanced-anaesthesia-workstation.jpeg";
   const productName = product.name
     .replace(/^Intelligent\s+/i, "")
+    .replace(/^PanFlow\s+/i, "")
     .replace(/Anaesthesia Machine/i, "Anaesthesia Workstation");
 
   return (

@@ -283,7 +283,7 @@ export const fallbackProducts: IProduct[] = [
   {
     _id: "prod-9",
     slug: "pan-flow-syringe-pump",
-    name: "PanFlow High-Precision Syringe Pump",
+    name: "High-Precision Syringe Pump",
     category: "infusion",
     tagline: "Micro-Infusion Syringe Pump with Automatic Syringe Size Calibration & Dynamic Anti-Bolus Occlusion Guard",
     description:
@@ -714,6 +714,9 @@ function normalizeProduct(p: IProduct): IProduct {
   let name = p.name;
   if (name.includes("Intelligent Volumetric Infusion Pump")) {
     name = "Volumetric Infusion Pump";
+  }
+  if (name.includes("PanFlow")) {
+    name = name.replace(/PanFlow\s*/g, "");
   }
   if (p.slug === "three-gas-system-advanced-anaesthesia-workstation" && name.includes("Machine")) {
     name = "Three-Gas System Advanced Anaesthesia Workstation";

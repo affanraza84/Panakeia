@@ -274,7 +274,7 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
   },
   {
     slug: "pan-flow-syringe-pump",
-    name: "PanFlow High-Precision Syringe Pump",
+    name: "High-Precision Syringe Pump",
     category: "infusion",
     tagline: "Micro-Infusion Syringe Pump with Automatic Syringe Size Calibration & Dynamic Anti-Bolus Occlusion Guard",
     description:
