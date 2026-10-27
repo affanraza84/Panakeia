@@ -68,10 +68,8 @@ export default async function HomePage() {
 
   const showcaseProducts = products.filter(
     (product) =>
+      product.category !== "accessories" &&
       !excludedHomeProductSlugs.has(product.slug) &&
-      product.name !== "Modular Multi-Pump Docking & Extension Station" &&
-      product.name !== "Multi-Parameter Monitoring Sensor & Cable Pack" &&
-      product.name !== "Anaesthesia & Ventilator Breathing Circuits & Filter System" &&
       product.name !== "HD Digital Video Laryngoscope System" &&
       product.name !== "Video Laryngoscope Reusable Blades & Airway Set"
   );

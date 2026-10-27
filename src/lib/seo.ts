@@ -189,29 +189,29 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
     h1: "Medical & Critical Care Accessories",
     title: "Medical Equipment Accessories & Consumables Supplier in India",
     description:
-      "Clinical-grade patient monitoring sensors, anaesthesia breathing circuits, video laryngoscope blades, and infusion docking stations manufactured and supplied by Panakeia Medtech.",
+      "Clinical-grade breathing circuits, Bains circuits, Jackson-Rees circuits, laryngoscopes, video laryngoscopes, BiPAP tubes, and BiPAP masks manufactured and supplied by Panakeia Medtech.",
     intro:
-      "Panakeia Medtech manufactures and supplies clinical-grade biomedical accessories, telemetry cables, and specialized patient interface hardware indigenously at our Visakhapatnam medical device facility. Designed to seamlessly pair with operating theater workstations, intensive care platforms, and emergency transport units, our accessories portfolio spans autoclavable medical-grade silicone breathing circuits with dual bacterial-viral HME filtration, shielded low-noise 5-lead ECG trunk cables with anti-motion SpO2 sensors, IPX8 immersible surgical video laryngoscope blades, and modular multi-channel IV pole docking stations. Every accessory is manufactured to rigorous biomedical standards ensuring flawless signal fidelity, gas-tight mechanical coupling, and long clinical service life.",
+      "Panakeia Medtech supplies clinical-grade biomedical accessories, anaesthesia circuits, and airway management systems. Designed to seamlessly pair with operating theater workstations, intensive care ventilators, and non-invasive positive pressure therapy units, our accessories portfolio spans autoclavable Breathing Circuits, coaxial Bains Circuits, Mapleson F Jackson-Rees pediatric circuits, surgical stainless steel Laryngoscopes, high-definition Video Laryngoscopes, smooth-bore BiPAP Tubing, and ergonomic BiPAP Masks.",
     faqs: [
       {
-        question: "Are Panakeia breathing circuits compatible with third-party ventilators?",
+        question: "Are Panakeia breathing circuits compatible with standard ventilators and anaesthesia workstations?",
         answer:
-          "Yes. Our corrugated silicone breathing circuits and HME filter manifolds feature standard 22mm / 15mm ISO 5356-1 conical connectors, making them fully compatible with Panakeia workstations as well as international ICU ventilators and anaesthesia platforms.",
+          "Yes. Our corrugated breathing circuits and Bains circuits feature standard 22mm / 15mm ISO 5356-1 conical connectors, making them fully compatible with all standard ICU ventilators and anaesthesia workstations.",
       },
       {
-        question: "What sensor types are included in the Panakeia monitoring sensor pack?",
+        question: "What is the primary application of the Jackson-Rees circuit?",
         answer:
-          "The sensor pack includes adult and paediatric digital SpO2 finger probes with anti-motion shielding, defib-proof 5-lead ECG cables with snap/clip leadwires, dual-tube quick-release NIBP cuffs across multiple arm circumference sizes, and precision skin surface temperature probes.",
+          "The Jackson-Rees circuit is a Mapleson F system specifically engineered for pediatric, infant, and neonatal critical airway care, providing low apparatus dead space and tactile respiratory feedback via an open tail-bleed reservoir bag.",
       },
       {
-        question: "How are Panakeia video laryngoscope blades sterilized?",
+        question: "How are Panakeia laryngoscopes and video laryngoscopes sterilized?",
         answer:
-          "Our surgical stainless steel and titanium video laryngoscope blades are built with IPX8 hermetic sealing, supporting standard hospital autoclaving (134°C), ethylene oxide (EtO) sterilization, and high-level liquid disinfectant immersion.",
+          "Our surgical stainless steel blades and video laryngoscopes are IPX8 hermetically sealed, supporting steam autoclave sterilization (134°C), EtO gas sterilization, and high-level chemical disinfection.",
       },
       {
-        question: "Can the modular pump docking station power multiple infusion devices simultaneously?",
+        question: "Are Panakeia BiPAP tubes and masks compatible with all CPAP/BiPAP machines?",
         answer:
-          "Yes. The modular docking station features an integrated power management bus that consolidates power cords into a single hospital-grade mains inlet, allowing up to 4 syringe and infusion pumps to operate and recharge concurrently on a single IV drip stand.",
+          "Yes. Our BiPAP tubing and masks use standard 22mm ISO connections and medical-grade liquid silicone cushions suitable for continuous non-invasive positive pressure therapy.",
       },
     ],
   },

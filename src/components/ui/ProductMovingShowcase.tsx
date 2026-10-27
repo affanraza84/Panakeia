@@ -179,14 +179,7 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
               <div
                 key={`${product._id || product.slug}-${idx}`}
                 onClick={() => handleOpenProduct(product)}
-                style={{
-                  width: "340px",
-                  minWidth: "340px",
-                  maxWidth: "340px",
-                  height: "260px",
-                  flexShrink: 0,
-                }}
-                className="w-[300px] sm:w-[340px] min-w-[300px] sm:min-w-[340px] h-[230px] sm:h-[260px] shrink-0 bg-slate-100 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-xl hover:border-med-teal-500/70 transition-all duration-300 cursor-pointer overflow-hidden relative group/card flex items-center justify-center p-4 sm:p-5"
+                className="w-[220px] sm:w-[260px] md:w-[290px] lg:w-[340px] min-w-[220px] sm:min-w-[260px] md:min-w-[290px] lg:min-w-[340px] max-w-[220px] sm:max-w-[260px] md:max-w-[290px] lg:max-w-[340px] h-[170px] sm:h-[200px] md:h-[225px] lg:h-[260px] shrink-0 bg-slate-100 rounded-2xl lg:rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-xl hover:border-med-teal-500/70 transition-all duration-300 cursor-pointer overflow-hidden relative group/card flex items-center justify-center p-3 sm:p-4 lg:p-5"
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
@@ -200,35 +193,35 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                 <div className="absolute inset-0 bg-slate-100 pointer-events-none" />
                 <div className="absolute w-44 h-44 rounded-full bg-med-teal-500/5 blur-xl group-hover/card:bg-med-teal-500/20 transition-all duration-300 pointer-events-none" />
 
-                {/* Pure Image Viewport with Larger Dimensions */}
+                {/* Pure Image Viewport */}
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={primaryImage}
                     alt={`Panakeia ${product.name}`}
                     fill
-                    sizes="(max-width: 640px) 300px, 340px"
-                    className="object-contain p-2 sm:p-3 group-hover/card:scale-110 transition-transform duration-500 ease-out drop-shadow-md"
+                    sizes="(max-width: 640px) 220px, (max-width: 1024px) 290px, 340px"
+                    className="object-contain p-1.5 sm:p-2 lg:p-3 group-hover/card:scale-110 transition-transform duration-500 ease-out drop-shadow-md"
                   />
                 </div>
 
                 {/* Top Left: Category Badge */}
-                <div className="absolute top-3 left-3 z-10">
+                <div className="absolute top-2 sm:top-2.5 lg:top-3 left-2 sm:left-2.5 lg:left-3 z-10">
                   <span
-                    className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border shadow-2xs font-mono ${categoryBadge}`}
+                    className={`text-[9px] sm:text-[10px] lg:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border shadow-2xs font-mono ${categoryBadge}`}
                   >
                     {categoryLabel}
                   </span>
                 </div>
 
                 {/* Top Right: Enlarge Icon Indicator */}
-                <div className="absolute top-3 right-3 z-10 w-7 h-7 rounded-lg bg-white/95 backdrop-blur-xs border border-slate-200 shadow-2xs text-navy-900 flex items-center justify-center opacity-85 group-hover/card:opacity-100 group-hover/card:bg-med-teal-600 group-hover/card:text-white group-hover/card:border-med-teal-600 transition-all duration-300">
-                  <Maximize2 className="w-3.5 h-3.5" />
+                <div className="absolute top-2 sm:top-2.5 lg:top-3 right-2 sm:right-2.5 lg:right-3 z-10 w-6 h-6 sm:w-6.5 sm:h-6.5 lg:w-7 lg:h-7 rounded-lg bg-white/95 backdrop-blur-xs border border-slate-200 shadow-2xs text-navy-900 flex items-center justify-center opacity-85 group-hover/card:opacity-100 group-hover/card:bg-med-teal-600 group-hover/card:text-white group-hover/card:border-med-teal-600 transition-all duration-300">
+                  <Maximize2 className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </div>
 
                 {/* Bottom Overlay Pill: Product Name + View All Button */}
-                <div className="absolute inset-x-2.5 sm:inset-x-3 bottom-2.5 z-10 opacity-95 group-hover/card:opacity-100 transition-opacity">
-                  <div className="bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 shadow-xs flex items-center justify-between gap-2">
-                    <p className="text-xs sm:text-sm font-bold text-navy-950 truncate group-hover/card:text-med-teal-700 transition-colors min-w-0 flex-1">
+                <div className="absolute inset-x-2 sm:inset-x-2.5 lg:inset-x-3 bottom-2 sm:bottom-2.5 z-10 opacity-95 group-hover/card:opacity-100 transition-opacity">
+                  <div className="bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl px-2 sm:px-2.5 lg:px-3 py-1 sm:py-1.5 lg:py-2 shadow-xs flex items-center justify-between gap-1.5 sm:gap-2">
+                    <p className="text-[11px] sm:text-xs lg:text-sm font-bold text-navy-950 truncate group-hover/card:text-med-teal-700 transition-colors min-w-0 flex-1">
                       {product.name}
                     </p>
                     <Link
@@ -236,11 +229,11 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                       onClick={(e) => {
                         e.stopPropagation();
                       }}
-                      className="shrink-0 inline-flex items-center gap-1 text-[10.5px] sm:text-[11px] font-bold text-med-teal-700 hover:text-white bg-med-teal-50 hover:bg-med-teal-600 px-2 sm:px-2.5 py-1 rounded-lg border border-med-teal-200/80 hover:border-med-teal-600 transition-all duration-200 shadow-2xs cursor-pointer"
+                      className="shrink-0 inline-flex items-center gap-1 text-[9.5px] sm:text-[10.5px] lg:text-[11px] font-bold text-med-teal-700 hover:text-white bg-med-teal-50 hover:bg-med-teal-600 px-1.5 sm:px-2 lg:px-2.5 py-0.5 sm:py-1 rounded-lg border border-med-teal-200/80 hover:border-med-teal-600 transition-all duration-200 shadow-2xs cursor-pointer"
                       title="View all products"
                     >
                       <span>View All</span>
-                      <ArrowRight className="w-3 h-3" />
+                      <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                     </Link>
                   </div>
                 </div>
@@ -371,16 +364,6 @@ export function ProductMovingShowcase({ products }: ProductMovingShowcaseProps) 
                         ))}
                       </div>
                     )}
-
-                    {/* Quality Assurance Strip */}
-                    <div className="rounded-xl bg-clinical-50 p-3.5 border border-clinical-200 flex items-start gap-3 text-xs text-clinical-700">
-                      <Building2 className="w-5 h-5 text-med-teal-600 shrink-0 mt-0.5" />
-                      <div className="leading-snug">
-                        <span className="font-bold text-navy-950">In-House Manufacturing:</span> All parts,
-                        electronic microprocessors, and pneumatic manifolds are manufactured directly by
-                        Panakeia itself in Visakhapatnam.
-                      </div>
-                    </div>
                   </div>
 
                   {/* RIGHT: RICH PRODUCT DESCRIPTION & CLINICAL SPECS */}

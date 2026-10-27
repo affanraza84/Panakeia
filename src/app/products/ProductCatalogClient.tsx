@@ -7,6 +7,7 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { Container } from "@/components/ui/Container";
 import { staggerContainerVariant, fadeUpVariant } from "@/lib/animations";
 import { Stethoscope, Wind, LayoutGrid, Activity, Syringe, BriefcaseMedical, ArrowRight, CheckCircle2, Sliders, Boxes } from "lucide-react";
+import { AccessoryModal } from "@/components/ui/AccessoryModal";
 
 interface ProductCatalogClientProps {
   initialProducts: IProduct[];
@@ -18,6 +19,7 @@ export function ProductCatalogClient({
   initialCategory = "all",
 }: ProductCatalogClientProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
+  const [selectedAccessory, setSelectedAccessory] = useState<IProduct | null>(null);
 
   const categories = [
     { id: "all", label: "All Equipment", icon: LayoutGrid, count: initialProducts.length },
@@ -158,7 +160,10 @@ export function ProductCatalogClient({
           >
             {filteredProducts.map((product) => (
               <motion.div key={product.slug} variants={fadeUpVariant}>
-                <ProductCard product={product} />
+                <ProductCard
+                  product={product}
+                  onSelectAccessory={(p) => setSelectedAccessory(p)}
+                />
               </motion.div>
             ))}
           </motion.div>
@@ -172,6 +177,27 @@ export function ProductCatalogClient({
           </div>
         )}
       </Container>
+
+      {/* Accessory Modal for Catalog Page */}
+      <AccessoryModal
+        product={
+          selectedAccessory
+            ? {
+                title: selectedAccessory.name
+                  .replace(/^Intelligent\s+/i, "")
+                  .replace(/^PanFlow\s+/i, "")
+                  .replace(/Anaesthesia Machine/i, "Anaesthesia Workstation"),
+                description: selectedAccessory.description || selectedAccessory.tagline,
+                image:
+                  selectedAccessory.images?.[0] ||
+                  "/image/accessories/breathing-circuit.png",
+                features: selectedAccessory.features,
+                specs: selectedAccessory.specs,
+              }
+            : null
+        }
+        onClose={() => setSelectedAccessory(null)}
+      />
     </div>
   );
 }

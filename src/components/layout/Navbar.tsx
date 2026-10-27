@@ -9,7 +9,8 @@ import { Container } from "../ui/Container";
 import { ChevronDown, Lock, Menu, X } from "lucide-react";
 import { useUser, UserButton } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
-import { ProductMegaMenu, MEGA_MENU_DEPARTMENTS } from "./ProductMegaMenu";
+import { ProductMegaMenu, MEGA_MENU_DEPARTMENTS, MegaProductItem } from "./ProductMegaMenu";
+import { AccessoryModal } from "../ui/AccessoryModal";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
@@ -31,11 +32,18 @@ export function Navbar() {
   const { isSignedIn, isLoaded } = useUser();
   const [isScrolled, setIsScrolled] = useState(false);
   const [productDropdownOpen, setProductDropdownOpen] = useState(false);
+  const [selectedAccessoryModal, setSelectedAccessoryModal] = useState<MegaProductItem | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDepartmentTab, setMobileDepartmentTab] = useState("ot");
   const [currentHash, setCurrentHash] = useState("");
   const pathname = usePathname();
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleAccessoryClick = (product: MegaProductItem) => {
+    setProductDropdownOpen(false);
+    setMobileMenuOpen(false);
+    setSelectedAccessoryModal(product);
+  };
 
   const handleOpenDropdown = () => {
     if (hoverTimeoutRef.current) {
@@ -214,6 +222,7 @@ export function Navbar() {
                             handleNavClick("/products");
                             setProductDropdownOpen(false);
                           }}
+                          onSelectAccessory={handleAccessoryClick}
                         />
                       </motion.div>
                     )}
@@ -404,38 +413,75 @@ export function Navbar() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
                   {MEGA_MENU_DEPARTMENTS.find(
                     (d) => d.id === mobileDepartmentTab
-                  )?.products.map((prod) => (
-                    <Link
-                      key={prod.id}
-                      href={prod.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-100/70 transition-colors"
-                    >
-                      <div className="relative w-12 h-12 bg-white rounded-lg border border-slate-200/60 shrink-0 p-1">
-                        <Image
-                          src={prod.image}
-                          alt={prod.title}
-                          fill
-                          sizes="48px"
-                          className="object-contain"
-                        />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <div className="text-xs font-bold text-navy-950 truncate">
-                          {prod.title}
+                  )?.products.map((prod) => {
+                    if (mobileDepartmentTab === "accessories") {
+                      return (
+                        <button
+                          key={prod.id}
+                          type="button"
+                          onClick={() => handleAccessoryClick(prod)}
+                          className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-100/70 transition-colors text-left w-full cursor-pointer"
+                        >
+                          <div className="relative w-12 h-12 bg-white rounded-lg border border-slate-200/60 shrink-0 p-1">
+                            <Image
+                              src={prod.image}
+                              alt={prod.title}
+                              fill
+                              sizes="48px"
+                              className="object-contain"
+                            />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <div className="text-xs font-bold text-navy-950 truncate">
+                              {prod.title}
+                            </div>
+                            <div className="text-[11px] text-slate-500 line-clamp-1">
+                              {prod.description}
+                            </div>
+                          </div>
+                        </button>
+                      );
+                    }
+
+                    return (
+                      <Link
+                        key={prod.id}
+                        href={prod.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-100/70 transition-colors"
+                      >
+                        <div className="relative w-12 h-12 bg-white rounded-lg border border-slate-200/60 shrink-0 p-1">
+                          <Image
+                            src={prod.image}
+                            alt={prod.title}
+                            fill
+                            sizes="48px"
+                            className="object-contain"
+                          />
                         </div>
-                        <div className="text-[11px] text-slate-500 line-clamp-1">
-                          {prod.description}
+                        <div className="min-w-0 flex-1">
+                          <div className="text-xs font-bold text-navy-950 truncate">
+                            {prod.title}
+                          </div>
+                          <div className="text-[11px] text-slate-500 line-clamp-1">
+                            {prod.description}
+                          </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </Container>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Product Detail Modal for Accessories */}
+      <AccessoryModal
+        product={selectedAccessoryModal}
+        onClose={() => setSelectedAccessoryModal(null)}
+      />
     </header>
   );
 }
