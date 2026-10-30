@@ -181,7 +181,7 @@ const equipmentData: EquipmentItem[] = [
       { label: "Trends", value: "160 Hours tabular & graphic data" },
       { label: "Battery", value: "4+ Hours continuous monitoring" }
     ],
-    imageSrc: "/image/multi-para-patient-monitor.jpeg",
+    imageSrc: "/image/multi-para-monitor-1.jpeg",
   },
   {
     id: "syringe-infusion-pump",

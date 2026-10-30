@@ -71,7 +71,7 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
         id: "ot-patient-monitor",
         title: "Patient Monitor",
         description: "Specialized monitoring systems for tracking patient...",
-        image: "/image/multi-para-patient-monitor.jpeg",
+        image: "/image/multi-para-monitor-1.jpeg",
         href: "/products/multi-para-patient-monitor",
       },
       {
@@ -105,7 +105,7 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
         id: "icu-vital-monitor",
         title: "Patient Monitor",
         description: "Specialized monitoring systems for tracking patient vital signs and telemetry...",
-        image: "/image/multi-para-patient-monitor.jpeg",
+        image: "/image/multi-para-monitor-1.jpeg",
         href: "/products/multi-para-patient-monitor",
       },
       {

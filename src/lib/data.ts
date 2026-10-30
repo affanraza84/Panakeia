@@ -241,8 +241,9 @@ export const fallbackProducts: IProduct[] = [
       { label: "Battery Autonomy", value: "4+ Hours Lithium-Ion Internal Pack" },
     ],
     images: [
-      "/image/multi-para-patient-monitor.jpeg",
-      "/image/patient-multi-paramonitor.jpeg",
+      "/image/multi-para-monitor-1.jpeg",
+      "/image/multi-para-monitor-2.jpeg",
+      "/image/multi-para-monitor-3.jpeg",
     ],
     brochurePdfUrl: "/pdfs/panakeia-new-booklet.pdf",
     order: 7,
@@ -805,6 +806,17 @@ function normalizeProduct(p: IProduct): IProduct {
   }
   if (p.slug === "basic-premium-anaesthesia-machine" && name.includes("Machine")) {
     name = "Basic Premium Anaesthesia Workstation";
+  }
+  if (p.slug === "multi-para-patient-monitor") {
+    return {
+      ...p,
+      name,
+      images: [
+        "/image/multi-para-monitor-1.jpeg",
+        "/image/multi-para-monitor-2.jpeg",
+        "/image/multi-para-monitor-3.jpeg",
+      ],
+    };
   }
   return { ...p, name };
 }

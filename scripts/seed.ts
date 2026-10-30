@@ -234,8 +234,9 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
       { label: "Battery Autonomy", value: "4+ Hours Lithium-Ion Internal Pack" },
     ],
     images: [
-      "/image/multi-para-patient-monitor.jpeg",
-      "/image/patient-multi-paramonitor.jpeg",
+      "/image/multi-para-monitor-1.jpeg",
+      "/image/multi-para-monitor-2.jpeg",
+      "/image/multi-para-monitor-3.jpeg",
     ],
     brochurePdfUrl: "/pdfs/panakeia-new-booklet.pdf",
     order: 7,
