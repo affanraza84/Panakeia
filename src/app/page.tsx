@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "Amtz",
     "AMTZ",
     "AMTZ Visakhapatnam",
-    "Anaesthesia Machine India",
+    "Anaesthesia Workstation India",
     "ICU Ventilator Manufacturer India",
     "Indigenous Medical Devices",
     "In-House Medical Device Manufacturer",

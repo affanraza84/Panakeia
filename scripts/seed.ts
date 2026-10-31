@@ -176,7 +176,7 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
     category: "ventilator",
     tagline: "Versatile Ascending Bellows Anaesthesia Ventilator with 7-Inch Touchscreen for Operation Theatres",
     description:
-      "The Panakeia ANAEVENT is a versatile, microprocessor-based, electronically controlled and pneumatically driven ascending bellows ventilator specifically designed for operation theatres. Calibrated for both low and high flow anaesthetic applications, it supports IPPV, Manual, PCV, PSV, and SIMV modes for adult and pediatric patients with clear calibrated bellows (300 to 1200 mL), real-time pressure-time graph telemetry, and universal compatibility with any anaesthesia machine frame.",
+      "The Panakeia ANAEVENT is a versatile, microprocessor-based, electronically controlled and pneumatically driven ascending bellows ventilator specifically designed for operation theatres. Calibrated for both low and high flow anaesthetic applications, it supports IPPV, Manual, PCV, PSV, and SIMV modes for adult and pediatric patients with clear calibrated bellows (300 to 1200 mL), real-time pressure-time graph telemetry, and universal compatibility with any anaesthesia workstation frame.",
     features: [
       "7-inch Color Touchscreen Display with real-time Peak Pressure & Pressure-Time waveforms",
       "Clear ascending silicone bellows lung cylinder calibrated up to 1200 mL with high accuracy calibration",

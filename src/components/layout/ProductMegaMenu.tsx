@@ -371,7 +371,7 @@ export function ProductMegaMenu({ onItemClick, onSelectAccessory }: ProductMegaM
         </span>
         <div className="flex flex-wrap items-center gap-3">
           <Link
-            href="/products/category/anaesthesia-machines"
+            href="/products/category/anaesthesia-workstations"
             onClick={onItemClick}
             className="text-slate-600 hover:text-med-teal-700 font-semibold transition-colors"
           >

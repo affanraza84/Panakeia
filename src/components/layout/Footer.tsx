@@ -166,10 +166,10 @@ export function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link
-                  href="/products/category/anaesthesia-machines"
+                  href="/products/category/anaesthesia-workstations"
                   className="hover:text-white transition-colors"
                 >
-                  Anaesthesia Machines & Workstations
+                  Anaesthesia Workstations
                 </Link>
               </li>
               <li>

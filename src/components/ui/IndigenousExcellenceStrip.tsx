@@ -160,7 +160,7 @@ export function IndigenousExcellenceStrip() {
               </span>
             </h2>
             <p className="text-sm sm:text-base text-clinical-600 max-w-2xl mx-auto leading-relaxed">
-              Advanced anaesthesia machines and life-support ventilators indigenously designed
+              Advanced anaesthesia workstations and life-support ventilators indigenously designed
               and manufactured to international clinical standards — safeguarding patients across
               high-acuity hospital suites.
             </p>

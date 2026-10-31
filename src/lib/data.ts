@@ -182,7 +182,7 @@ export const fallbackProducts: IProduct[] = [
     category: "ventilator",
     tagline: "Versatile Ascending Bellows Anaesthesia Ventilator with 7-Inch Touchscreen for Operation Theatres",
     description:
-      "The Panakeia ANAEVENT is a versatile, microprocessor-based, electronically controlled and pneumatically driven ascending bellows ventilator specifically designed for operation theatres. Calibrated for both low and high flow anaesthetic applications, it supports IPPV, Manual, PCV, PSV, and SIMV modes for adult and pediatric patients with clear calibrated bellows (300 to 1200 mL), real-time pressure-time graph telemetry, and universal compatibility with any anaesthesia machine frame.",
+      "The Panakeia ANAEVENT is a versatile, microprocessor-based, electronically controlled and pneumatically driven ascending bellows ventilator specifically designed for operation theatres. Calibrated for both low and high flow anaesthetic applications, it supports IPPV, Manual, PCV, PSV, and SIMV modes for adult and pediatric patients with clear calibrated bellows (300 to 1200 mL), real-time pressure-time graph telemetry, and universal compatibility with any anaesthesia workstation frame.",
     features: [
       "7-inch Color Touchscreen Display with real-time Peak Pressure & Pressure-Time waveforms",
       "Clear ascending silicone bellows lung cylinder calibrated up to 1200 mL with high accuracy calibration",
@@ -666,7 +666,7 @@ export const fallbackClients: IClient[] = [
     state: "Andhra Pradesh",
     logoUrl: "/images/clients/apollo-logo.webp",
     testimonial:
-      "Panakeia's Aesthetica anaesthesia machine demonstrated remarkable stability during high-risk cardiac and neuro cases. Having 100% in-house parts manufacturing by Panakeia itself ensures parts availability within hours rather than weeks.",
+      "Panakeia's Aesthetica anaesthesia workstation demonstrated remarkable stability during high-risk cardiac and neuro cases. Having 100% in-house parts manufacturing by Panakeia itself ensures parts availability within hours rather than weeks.",
     doctorName: "Dr. K. Srinivas Rao, MD (Anaesthesiology), Senior Consultant",
     featured: true,
   },
@@ -699,7 +699,7 @@ export const fallbackClients: IClient[] = [
     state: "Andhra Pradesh",
     logoUrl: "/images/clients/care-logo.webp",
     testimonial:
-      "We evaluated the Aesthetica anaesthesia machine in our trauma OT suites. The gas scavenging system, responsive vaporizer manifold, and crisp UI earned unanimous appreciation from our anaesthesia team.",
+      "We evaluated the Aesthetica anaesthesia workstation in our trauma OT suites. The gas scavenging system, responsive vaporizer manifold, and crisp UI earned unanimous appreciation from our anaesthesia team.",
     doctorName: "Dr. S. Meenakshi, Senior Consultant Anaesthetist",
     featured: true,
   },
@@ -797,6 +797,9 @@ function normalizeProduct(p: IProduct): IProduct {
   }
   if (name.includes("PanFlow")) {
     name = name.replace(/PanFlow\s*/g, "");
+  }
+  if (name.includes("Anaesthesia Machine")) {
+    name = name.replace(/Anaesthesia Machine/gi, "Anaesthesia Workstation");
   }
   if (p.slug === "three-gas-system-advanced-anaesthesia-workstation" && name.includes("Machine")) {
     name = "Three-Gas System Advanced Anaesthesia Workstation";

@@ -220,7 +220,7 @@ const TRAINING_MODULES: TrainingModule[] = [
       "Master the sterile protocols, clinical etiquette, and physiological language required to converse authoritatively with Anaesthesiologists and Intensivists.",
     topics: [
       "OT zoning, aseptic techniques, and surgeon/anaesthetist workflow priorities.",
-      "Pre-operative machine check protocols (checklist verification before induction).",
+      "Pre-operative workstation check protocols (checklist verification before induction).",
       "Troubleshooting critical intraoperative scenarios: Pipeline failure, high airway pressure, apnea alerts.",
       "Communicating device advantages using evidence-based clinical terminology.",
     ],
@@ -489,7 +489,7 @@ export function CareersContentClient() {
                 Build Lifesaving Medical Hardware & Transform Clinical Care
               </h2>
               <p className="mt-3 text-xs sm:text-sm text-clinical-600 leading-relaxed">
-                Join our multidisciplinary engineering, clinical, and sales teams in Visakhapatnam. We offer high ownership, direct leadership access, competitive compensation, and the rare opportunity to build 100% indigenous critical care machines.
+                Join our multidisciplinary engineering, clinical, and sales teams in Visakhapatnam. We offer high ownership, direct leadership access, competitive compensation, and the rare opportunity to build 100% indigenous critical care workstations and ventilators.
               </p>
             </div>
 
