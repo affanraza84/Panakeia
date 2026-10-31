@@ -3,12 +3,11 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { CleanHeroVideo } from "@/components/ui/CleanHeroVideo";
 import { IndigenousExcellenceStrip } from "@/components/ui/IndigenousExcellenceStrip";
 import { ProductMovingShowcase } from "@/components/ui/ProductMovingShowcase";
 import { AwardsSection } from "@/components/ui/AwardsSection";
-import { getClients, getProducts } from "@/lib/data";
+import { getProducts } from "@/lib/data";
 import {
   Zap,
   Wrench,
@@ -52,10 +51,7 @@ export const metadata: Metadata = {
 export const revalidate = 3600; // ISR 1 hour
 
 export default async function HomePage() {
-  const [clients, products] = await Promise.all([
-    getClients(),
-    getProducts(),
-  ]);
+  const products = await getProducts();
 
   // Exclude specific accessories/products requested from the home screen showcase
   const excludedHomeProductSlugs = new Set([
@@ -73,8 +69,6 @@ export default async function HomePage() {
       product.name !== "HD Digital Video Laryngoscope System" &&
       product.name !== "Video Laryngoscope Reusable Blades & Airway Set"
   );
-
-  const featuredClients = clients.filter((c) => c.featured);
 
   return (
     <div className="flex flex-col gap-0 overflow-hidden">
@@ -139,18 +133,6 @@ export default async function HomePage() {
       {/* 5. AWARDS & RECOGNITIONS SECTION (Matching Reference Design) */}
       <AwardsSection />
 
-      {/* 7. TESTIMONIAL PREVIEW */}
-      <section className="py-16 lg:py-24 bg-white">
-        <Container>
-          <SectionHeading
-            eyebrow="Hospital References"
-            title="Trusted by Leading Surgical Suites"
-            description="Read clinical feedback from senior anaesthesiologists and intensive care specialists evaluating Panakeia systems in high-acuity environments."
-          />
-
-          <TestimonialCarousel testimonials={featuredClients.length > 0 ? featuredClients : clients} />
-        </Container>
-      </section>
 
       {/* 7. PROCUREMENT CTA STRIP */}
       <section className="py-16 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white relative overflow-hidden">
