@@ -107,12 +107,12 @@ export const fallbackProducts: IProduct[] = [
     slug: "icu-critical-care-ventilator",
     name: "Advanced ICU Critical Care Ventilator",
     category: "ventilator",
-    tagline: "Turbine-Driven Multi-Functional Intensive Care Ventilator for Adult & Paediatric Life Support",
+    tagline: "Advanced Multi-Functional Intensive Care Ventilator for Adult & Paediatric Life Support",
     description:
-      "An advanced indigenously engineered intensive care ventilator designed for high-acuity ICUs and emergency trauma wards. Powered by an ultra-quiet blower turbine that eliminates compressed air cylinder dependencies, it delivers high-performance invasive and non-invasive ventilation (NIV & HFNC).",
+      "An advanced indigenously engineered intensive care ventilator designed for high-acuity ICUs and emergency trauma wards. Powered by an ultra-quiet internal blower system that eliminates compressed air cylinder dependencies, it delivers high-performance invasive and non-invasive ventilation (NIV & HFNC).",
     features: [
       "15.6-inch High-Resolution Tiltable Capacitive Touchscreen with 360-degree top alarm beacon bar",
-      "Ultra-quiet high-performance blower turbine (rated for 40,000 hrs) requiring zero external air compressors",
+      "Ultra-quiet high-performance internal blower (rated for 40,000 hrs) requiring zero external air compressors",
       "Modes: V-A/C, P-A/C, V-SIMV, P-SIMV, CPAP/PSV, DuoLevel, APRV, PRVC, HFNC (High Flow Nasal Cannula)",
       "High Flow Oxygen Therapy (HFNC) with flow rate from 2 to 80 L/min and precise FiO2 titration (21-100%)",
       "Comprehensive Pulmonary Mechanics: P0.1, NIF, Auto-PEEP, RSBI, Static Compliance & Resistance loops",
@@ -121,7 +121,7 @@ export const fallbackProducts: IProduct[] = [
     specs: [
       { label: "Patient Group", value: "Adult & Paediatric" },
       { label: "Tidal Volume", value: "10 mL to 2,000 mL" },
-      { label: "Peak Flow", value: "Up to 240 L/min (high-speed turbine response)" },
+      { label: "Peak Flow", value: "Up to 240 L/min (high-speed pneumatic response)" },
       { label: "PEEP / CPAP", value: "0 to 50 cmH2O electronic precision valve" },
       { label: "FiO2 Range", value: "21% to 100% titration" },
       { label: "Display", value: "15.6\" Full HD multi-touch color screen" },
@@ -254,7 +254,7 @@ export const fallbackProducts: IProduct[] = [
     slug: "12-channel-diagnostic-ecg-machine",
     name: "12-Channel Diagnostic ECG Machine",
     category: "monitoring",
-    tagline: "Indigenously Engineered 12-Lead Diagnostic ECG Workstation with High-Resolution Color Display & Automated Waveform Analysis",
+    tagline: "Indigenously Engineered 12-Lead ECG Channel with High-Resolution Color Display & Automated Waveform Analysis",
     description:
       "Indigenously engineered for diagnostic accuracy in high-acuity cardiology units, emergency departments, and intensive care clinics. Featuring simultaneous 12-lead acquisition, high-fidelity digital filtering, real-time waveform preview, built-in thermal array printing, and comprehensive arrhythmia detection.",
     features: [
@@ -420,39 +420,6 @@ export const fallbackProducts: IProduct[] = [
     published: true,
   },
   {
-    _id: "prod-13",
-    slug: "hd-video-laryngoscope-system",
-    name: "HD Digital Video Laryngoscope System",
-    category: "emergency",
-    tagline: "High-Definition Portable Airway Visualization Platform with Anti-Fog Camera and Ergonomic Interchangeable Blades",
-    description:
-      "Indigenously engineered for difficult airway management and rapid tracheal intubation across Emergency Departments, ICUs, and Operation Theatres. Features a high-definition anti-glare color display, ultra-bright medical LED illumination, real-time image and video capture telemetry, anti-fog optical lens technology, and reusable clinical titanium/stainless steel blades.",
-    features: [
-      "High-Definition anti-glare medical-grade color monitor with 180° rotation and tilt adjustability",
-      "Instant anti-fog optical CMOS sensor delivering high-contrast visualization of the vocal cords and glottis",
-      "One-touch real-time photo recording and HD video telemetry for clinical documentation and teaching",
-      "Ergonomic rechargeable handle with 4+ hours continuous operation and fast USB charging",
-      "Interchangeable blade series: Macintosh, Miller, and hyper-curved difficult airway blades (Adult, Paediatric, Infant)",
-      "High-grade waterproof IPX8 immersible blade construction for standard autoclaving and chemical sterilization",
-    ],
-    specs: [
-      { label: "Display Resolution", value: "HD Color TFT Monitor (1024 x 768 px) with Anti-Glare Coating" },
-      { label: "Camera Sensor", value: "2.0 Megapixel CMOS Anti-Fog Optical Lens" },
-      { label: "Illumination", value: "High-Luminance Medical Cold LED (≥800 Lux)" },
-      { label: "Angle of View", value: "66° Wide-Angle Clinical Field of View" },
-      { label: "Blade Compatibility", value: "Macintosh 1, 2, 3, 4 & Difficult Airway Hyper-Curved D-Blade" },
-      { label: "Battery Autonomy", value: "4+ Hours Continuous Runtime with Rechargeable Lithium Battery" },
-      { label: "Sterilization", value: "IPX8 Autoclavable Blades & Gas Sterilization Safe" },
-    ],
-    images: [
-      "/image/video-laryngoscope.jpg",
-      "/image/video-laryngoscope-blades-set.jpeg",
-    ],
-    brochurePdfUrl: "/pdfs/panakeia-new-booklet.pdf",
-    order: 13,
-    published: true,
-  },
-  {
     _id: "prod-14",
     slug: "breathing-circuit",
     name: "Breathing Circuit",
@@ -570,35 +537,6 @@ export const fallbackProducts: IProduct[] = [
     published: true,
   },
   {
-    _id: "prod-18",
-    slug: "video-laryngoscope",
-    name: "Video Laryngoscope",
-    category: "accessories",
-    tagline: "High-Definition Digital Airway Visualization Platform with Anti-Fog CMOS Sensor & Tilting Color Screen",
-    description:
-      "High-definition digital video airway visualization platform with anti-fog CMOS micro-camera and rotating color monitor. Provides clear glottic exposure during emergency intubation, difficult airway scenarios, and ICU clinical training.",
-    features: [
-      "2.0 Megapixel anti-fog optical CMOS sensor for clear vocal cord exposure",
-      "Multi-angle tilt and swivel high-resolution color TFT clinical monitor",
-      "One-touch real-time photo recording and HD video telemetry for teaching",
-      "Rechargeable ergonomic handle providing 4+ hours of continuous runtime",
-      "Universal quick-lock blade mount compatible with adult and pediatric blades",
-    ],
-    specs: [
-      { label: "Display", value: "3.5-inch High-Resolution Color TFT LCD (Multi-Angle Tilt)" },
-      { label: "Camera Resolution", value: "2.0 MP CMOS Anti-Fog Optical Lens" },
-      { label: "Battery Runtime", value: "≥4 Hours Continuous Operation (Rechargeable Li-Ion)" },
-      { label: "Recording", value: "Integrated Photo & Video Telemetry Storage" },
-      { label: "Blade Compatibility", value: "Macintosh, Miller & Difficult Airway D-Blade" },
-    ],
-    images: [
-      "/image/accessories/video-laryngoscope.jpg",
-    ],
-    brochurePdfUrl: "/pdfs/panakeia-new-booklet.pdf",
-    order: 18,
-    published: true,
-  },
-  {
     _id: "prod-19",
     slug: "bipap-tube",
     name: "Bipap Tube",
@@ -677,7 +615,7 @@ export const fallbackClients: IClient[] = [
     state: "Karnataka",
     logoUrl: "/images/clients/manipal-logo.webp",
     testimonial:
-      "The RespiCare ICU 900 turbine ventilator provides clinical precision on par with top European systems, but with intuitive controls and remarkably responsive local technical support.",
+      "The RespiCare ICU 900 ventilator provides clinical precision on par with top European systems, but with intuitive controls and remarkably responsive local technical support.",
     doctorName: "Dr. Arvind Menon, Head of Critical Care Medicine",
     featured: true,
   },
@@ -710,7 +648,7 @@ export const fallbackClients: IClient[] = [
     state: "Kerala",
     logoUrl: "/images/clients/kims-logo.webp",
     testimonial:
-      "The turbine performance of the Panakeia ICU ventilator allows seamless patient mobility and zero downtime. A commendable milestone for Indian medtech engineering.",
+      "The responsive flow performance of the Panakeia ICU ventilator allows seamless patient mobility and zero downtime. A commendable milestone for Indian medtech engineering.",
     doctorName: "Dr. R. Rajesh, Medical Superintendent & Critical Care Specialist",
     featured: false,
   },
@@ -810,10 +748,23 @@ function normalizeProduct(p: IProduct): IProduct {
   if (p.slug === "basic-premium-anaesthesia-machine" && name.includes("Machine")) {
     name = "Basic Premium Anaesthesia Workstation";
   }
+  let tagline = p.tagline;
+  if (tagline && tagline.includes("Turbine-Driven")) {
+    tagline = tagline.replace(/Turbine-Driven\s*/gi, "Advanced ");
+  }
+  if (p.slug === "12-channel-diagnostic-ecg-machine" && tagline?.includes("Workstation")) {
+    tagline = tagline.replace(/12-Lead Diagnostic ECG Workstation/gi, "12-Lead ECG Channel").replace(/Workstation/gi, "ECG Channel");
+  }
+  let description = p.description;
+  if (description && description.includes("turbine")) {
+    description = description.replace(/blower turbine/gi, "internal blower system").replace(/turbine/gi, "blower");
+  }
   if (p.slug === "multi-para-patient-monitor") {
     return {
       ...p,
       name,
+      tagline,
+      description,
       images: [
         "/image/multi-para-monitor-1.jpeg",
         "/image/multi-para-monitor-2.jpeg",
@@ -821,8 +772,13 @@ function normalizeProduct(p: IProduct): IProduct {
       ],
     };
   }
-  return { ...p, name };
+  return { ...p, name, tagline, description };
 }
+
+const EXCLUDED_PRODUCT_SLUGS = new Set([
+  "hd-video-laryngoscope-system",
+  "video-laryngoscope",
+]);
 
 export async function getProducts(options?: { category?: string }): Promise<IProduct[]> {
   try {
@@ -835,7 +791,9 @@ export async function getProducts(options?: { category?: string }): Promise<IPro
       const products = await Product.find(query).sort({ order: 1 }).lean<IProduct[]>();
       if (products && products.length > 0) {
         const parsed = JSON.parse(JSON.stringify(products)) as IProduct[];
-        return parsed.map(normalizeProduct);
+        return parsed
+          .filter((p) => !EXCLUDED_PRODUCT_SLUGS.has(p.slug))
+          .map(normalizeProduct);
       }
     }
   } catch (err) {
@@ -844,13 +802,18 @@ export async function getProducts(options?: { category?: string }): Promise<IPro
 
   if (options?.category) {
     return fallbackProducts
-      .filter((p) => p.category === options.category)
+      .filter((p) => p.category === options.category && !EXCLUDED_PRODUCT_SLUGS.has(p.slug))
       .map(normalizeProduct);
   }
-  return fallbackProducts.map(normalizeProduct);
+  return fallbackProducts
+    .filter((p) => !EXCLUDED_PRODUCT_SLUGS.has(p.slug))
+    .map(normalizeProduct);
 }
 
 export async function getProductBySlug(slug: string): Promise<IProduct | null> {
+  if (EXCLUDED_PRODUCT_SLUGS.has(slug.toLowerCase())) {
+    return null;
+  }
   try {
     if (process.env.MONGODB_URI) {
       await connectToDatabase();

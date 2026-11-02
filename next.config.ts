@@ -7,7 +7,7 @@ const cspHeader = `
   font-src 'self' https://fonts.gstatic.com data:;
   img-src 'self' data: blob: https://img.clerk.com https://images.clerk.dev https://*.clerk.accounts.dev https://res.cloudinary.com https://images.unsplash.com;
   media-src 'self' data: blob:;
-  connect-src 'self' https://api.resend.com https://*.clerk.accounts.dev https://*.clerk.com https://api.clerk.com https://challenges.cloudflare.com;
+  connect-src 'self' ws: wss: https://api.resend.com https://*.clerk.accounts.dev https://*.clerk.com https://api.clerk.com https://challenges.cloudflare.com;
   worker-src 'self' blob:;
   frame-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://challenges.cloudflare.com;
   frame-ancestors 'none';

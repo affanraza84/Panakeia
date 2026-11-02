@@ -121,7 +121,7 @@ export default function AboutPage() {
               </p>
 
               <p className="text-sm sm:text-base text-clinical-700 leading-relaxed">
-                Panakeia was engineered from the ground up to solve these realities. Our workstations incorporate dual mechanical gas flow backups, heated absorber canisters that prevent condensation in humid coastal climates, and robust turbine-driven blowers that operate seamlessly without central compressed air pipelines.
+                Panakeia was engineered from the ground up to solve these realities. Our workstations incorporate dual mechanical gas flow backups, heated absorber canisters that prevent condensation in humid coastal climates, and robust high-performance internal blowers that operate seamlessly without central compressed air pipelines.
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-4">

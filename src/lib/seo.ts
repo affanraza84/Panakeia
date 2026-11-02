@@ -76,14 +76,14 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
     h1: "ICU, Portable & Anaesthesia Ventilators",
     title: "ICU Ventilator & Portable Ventilator Manufacturer in India",
     description:
-      "High-performance turbine-driven ICU ventilators, portable ventilators, and anaesthesia ventilators manufactured indigenously in India by Panakeia Medtech for adult and paediatric critical care.",
+      "High-performance ICU ventilators, portable ventilators, and anaesthesia ventilators manufactured indigenously in India by Panakeia Medtech for adult and paediatric critical care.",
     intro:
-      "Panakeia Medtech engineers advanced medical ventilators indigenously in Visakhapatnam to deliver dependable life support across intensive care units, emergency transport, and surgical suites. Our critical care ventilator portfolio features high-performance blower-turbine ICU ventilators capable of generating responsive peak flow up to 240 L/min without requiring external medical air compressors or central pipeline gas dependencies. Designed for adult and paediatric patients, our intensive care platforms provide comprehensive invasive and non-invasive ventilation (NIV), High Flow Nasal Cannula (HFNC) oxygen therapy, and real-time pulmonary diagnostic metrics including P0.1, Auto-PEEP, and RSBI. For surgical suites, our dedicated ANAEVENT anaesthesia ventilator delivers precise ascending bellows tidal volume control with touchscreen waveform loops. In addition, our lightweight portable and transport ventilator architectures ensure continuous, synchronized respiratory support during inter-departmental transport and ambulance care.",
+      "Panakeia Medtech engineers advanced medical ventilators indigenously in Visakhapatnam to deliver dependable life support across intensive care units, emergency transport, and surgical suites. Our critical care ventilator portfolio features high-performance ICU ventilators capable of generating responsive peak flow up to 240 L/min without requiring external medical air compressors or central pipeline gas dependencies. Designed for adult and paediatric patients, our intensive care platforms provide comprehensive invasive and non-invasive ventilation (NIV), High Flow Nasal Cannula (HFNC) oxygen therapy, and real-time pulmonary diagnostic metrics including P0.1, Auto-PEEP, and RSBI. For surgical suites, our dedicated ANAEVENT anaesthesia ventilator delivers precise ascending bellows tidal volume control with touchscreen waveform loops. In addition, our lightweight portable and transport ventilator architectures ensure continuous, synchronized respiratory support during inter-departmental transport and ambulance care.",
     faqs: [
       {
         question: "Do Panakeia ICU ventilators require external medical air compressors?",
         answer:
-          "No. Panakeia's advanced ICU critical care ventilators utilize an ultra-quiet, high-performance internal blower turbine rated for up to 40,000 hours, eliminating the requirement for external compressed air infrastructure.",
+          "No. Panakeia's advanced ICU critical care ventilators utilize an ultra-quiet, high-performance internal blower system rated for up to 40,000 hours, eliminating the requirement for external compressed air infrastructure.",
       },
       {
         question: "Can Panakeia ventilators deliver High Flow Oxygen Therapy (HFNC)?",
@@ -110,7 +110,7 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
     description:
       "Indigenously developed multi-parameter patient monitors and 12-channel diagnostic ECG machines by Panakeia Medtech for intensive care and surgical suites.",
     intro:
-      "Panakeia Medtech provides precision physiological monitoring solutions designed for continuous, high-fidelity monitoring across operation theatres, intensive care units, and diagnostic cardiology clinics. Indigenously manufactured at our Visakhapatnam facility, our multi-parameter patient monitors deliver multi-lead ECG acquisition with 23 arrhythmia classifications and ST-segment telemetry, anti-motion SpO2 perfusion tracking with low-perfusion compensation, smart NIBP with dual overpressure safety relief, dual-channel temperature monitoring, and modular expansion for Dual Invasive Blood Pressure (IBP) and End-Tidal Carbon Dioxide (EtCO2) gas monitoring. Alongside multi-parameter patient monitors, Panakeia produces 12-channel diagnostic ECG workstations equipped with high-resolution color displays, simultaneous 12-lead acquisition, advanced baseline-drift filtration, and integrated high-resolution thermal array recorders for rapid clinical assessment.",
+      "Panakeia Medtech provides precision physiological monitoring solutions designed for continuous, high-fidelity monitoring across operation theatres, intensive care units, and diagnostic cardiology clinics. Indigenously manufactured at our Visakhapatnam facility, our multi-parameter patient monitors deliver multi-lead ECG acquisition with 23 arrhythmia classifications and ST-segment telemetry, anti-motion SpO2 perfusion tracking with low-perfusion compensation, smart NIBP with dual overpressure safety relief, dual-channel temperature monitoring, and modular expansion for Dual Invasive Blood Pressure (IBP) and End-Tidal Carbon Dioxide (EtCO2) gas monitoring. Alongside multi-parameter patient monitors, Panakeia produces 12-channel diagnostic ECG machines equipped with high-resolution color displays, simultaneous 12-lead acquisition, advanced baseline-drift filtration, and integrated high-resolution thermal array recorders for rapid clinical assessment.",
     faqs: [
       {
         question: "What physiological parameters do Panakeia patient monitors track?",
@@ -120,7 +120,7 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
       {
         question: "Are Panakeia diagnostic ECG machines equipped with automated analysis?",
         answer:
-          "Yes. Our 12-channel diagnostic ECG workstations incorporate automated interpretation algorithms with real-time arrhythmia detection, interval calculations (PR, QRS, QT/QTc), and built-in thermal array printing.",
+          "Yes. Our 12-channel diagnostic ECG machines incorporate automated interpretation algorithms with real-time arrhythmia detection, interval calculations (PR, QRS, QT/QTc), and built-in thermal array printing.",
       },
       {
         question: "How do Panakeia monitors handle patient motion and low perfusion?",
@@ -162,19 +162,14 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
     h1: "Emergency Resuscitation & Airway Kits",
     title: "Emergency Kit & Resuscitation Kit Supplier in India",
     description:
-      "Field-ready emergency resuscitation kits and HD digital video laryngoscope systems manufactured and supplied across India by Panakeia Medtech.",
+      "Field-ready emergency resuscitation kits and trauma airway systems manufactured and supplied across India by Panakeia Medtech.",
     intro:
-      "Panakeia Medtech delivers ruggedized emergency trauma resuscitation kits and high-definition video laryngoscopy platforms engineered for rapid airway access across emergency departments, crash carts, intensive care units, and ambulance services. Housed in heavy-duty IP67 waterproof, dustproof, and shockproof copolymer hard cases with custom foam organizers, our emergency kits provide 100% medical-grade autoclavable silicone manual resuscitators for adult and paediatric patients, fiber-optic LED laryngoscopes with multi-sized stainless steel blades, non-rebreathing oxygen reservoirs, cushioned anatomical face masks, and color-coded Guedel airways. For difficult airway management, Panakeia's HD Digital Video Laryngoscope features an anti-fog 2.0-megapixel optical sensor, high-luminance cold LED illumination, and a 180° tiltable monitor that enables rapid visualization of the vocal cords and glottis during emergency intubations.",
+      "Panakeia Medtech delivers ruggedized emergency trauma resuscitation kits engineered for rapid airway access across emergency departments, crash carts, intensive care units, and ambulance services. Housed in heavy-duty IP67 waterproof, dustproof, and shockproof copolymer hard cases with custom foam organizers, our emergency kits provide 100% medical-grade autoclavable silicone manual resuscitators for adult and paediatric patients, fiber-optic LED laryngoscopes with multi-sized stainless steel blades, non-rebreathing oxygen reservoirs, cushioned anatomical face masks, and color-coded Guedel airways.",
     faqs: [
       {
         question: "What is included in the Panakeia Emergency Resuscitation & Airway Kit?",
         answer:
           "The kit includes autoclavable medical-grade silicone adult (1500mL) and paediatric (550mL) manual resuscitators, a stainless steel fiber-optic LED laryngoscope with 4 blades, cushioned silicone masks (sizes 0-5), color-coded Guedel airways, Magill intubation forceps, stylets, and manual suction housed in an IP67 waterproof hard-shell case.",
-      },
-      {
-        question: "How does the Panakeia HD Video Laryngoscope assist with difficult intubations?",
-        answer:
-          "It features an anti-fog CMOS camera, high-luminance cold LED illumination (≥800 Lux), and a 180° tiltable HD monitor, enabling clear visualization of the vocal cords and glottis even in challenging anatomical conditions.",
       },
       {
         question: "Are the components in Panakeia resuscitation kits autoclavable?",
@@ -189,9 +184,9 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
     h1: "Medical & Critical Care Accessories",
     title: "Medical Equipment Accessories & Consumables Supplier in India",
     description:
-      "Clinical-grade breathing circuits, Bains circuits, Jackson-Rees circuits, laryngoscopes, video laryngoscopes, BiPAP tubes, and BiPAP masks manufactured and supplied by Panakeia Medtech.",
+      "Clinical-grade breathing circuits, Bains circuits, Jackson-Rees circuits, laryngoscopes, BiPAP tubes, and BiPAP masks manufactured and supplied by Panakeia Medtech.",
     intro:
-      "Panakeia Medtech supplies clinical-grade biomedical accessories, anaesthesia circuits, and airway management systems. Designed to seamlessly pair with operating theater workstations, intensive care ventilators, and non-invasive positive pressure therapy units, our accessories portfolio spans autoclavable Breathing Circuits, coaxial Bains Circuits, Mapleson F Jackson-Rees pediatric circuits, surgical stainless steel Laryngoscopes, high-definition Video Laryngoscopes, smooth-bore BiPAP Tubing, and ergonomic BiPAP Masks.",
+      "Panakeia Medtech supplies clinical-grade biomedical accessories, anaesthesia circuits, and airway management systems. Designed to seamlessly pair with operating theater workstations, intensive care ventilators, and non-invasive positive pressure therapy units, our accessories portfolio spans autoclavable Breathing Circuits, coaxial Bains Circuits, Mapleson F Jackson-Rees pediatric circuits, surgical stainless steel Laryngoscopes, smooth-bore BiPAP Tubing, and ergonomic BiPAP Masks.",
     faqs: [
       {
         question: "Are Panakeia breathing circuits compatible with standard ventilators and anaesthesia workstations?",
@@ -204,9 +199,9 @@ export const CATEGORY_SEO: Record<ProductCategory, CategorySeoConfig> = {
           "The Jackson-Rees circuit is a Mapleson F system specifically engineered for pediatric, infant, and neonatal critical airway care, providing low apparatus dead space and tactile respiratory feedback via an open tail-bleed reservoir bag.",
       },
       {
-        question: "How are Panakeia laryngoscopes and video laryngoscopes sterilized?",
+        question: "How are Panakeia laryngoscopes sterilized?",
         answer:
-          "Our surgical stainless steel blades and video laryngoscopes are IPX8 hermetically sealed, supporting steam autoclave sterilization (134°C), EtO gas sterilization, and high-level chemical disinfection.",
+          "Our surgical stainless steel blades and laryngoscopes are IPX8 hermetically sealed, supporting steam autoclave sterilization (134°C), EtO gas sterilization, and high-level chemical disinfection.",
       },
       {
         question: "Are Panakeia BiPAP tubes and masks compatible with all CPAP/BiPAP machines?",

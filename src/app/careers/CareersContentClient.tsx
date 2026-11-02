@@ -204,7 +204,7 @@ const TRAINING_MODULES: TrainingModule[] = [
     title: "ICU Ventilator Mechanics & Advanced Ventilatory Modes",
     category: "product",
     description:
-      "Comprehensive mastery over turbine & pneumatic ventilator mechanics, patient-ventilator synchrony, and diagnostic loops.",
+      "Comprehensive mastery over electronic & pneumatic ventilator mechanics, patient-ventilator synchrony, and diagnostic loops.",
     topics: [
       "Core modes: Volume Control (VCV), Pressure Control (PCV), Pressure Support (PSV), SIMV, and PRVC.",
       "Flow triggers vs. Pressure triggers, rise time, expiratory sensitivity (Esens), and Auto-PEEP.",

@@ -147,12 +147,24 @@ export default async function HomePage() {
             Schedule an OT Evaluation or Request a Commercial Quotation
           </h2>
 
+          <p className="mt-3 text-lg sm:text-xl font-semibold text-med-teal-300">
+            Book an online demo video now and request quotation
+          </p>
+
           <p className="mt-4 text-sm sm:text-base text-clinical-200 leading-relaxed">
             Speak directly with our clinical biomedical engineering team at Panakeia&apos;s dedicated in-house manufacturing facility in Visakhapatnam to discuss device specifications, tender participation, or dealership opportunities.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Button href="/contact" variant="primary" size="lg">
+            <Button href="/contact?type=product-enquiry" variant="primary" size="lg">
+              Book Online Demo & Request Quote
+            </Button>
+            <Button
+              href="/contact"
+              variant="outline"
+              size="lg"
+              className="border-navy-700 text-white hover:bg-navy-800"
+            >
               Contact Procurement Desk
             </Button>
             <Button

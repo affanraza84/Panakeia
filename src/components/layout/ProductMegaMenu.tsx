@@ -34,13 +34,6 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
         href: "/products/emergency-resuscitation-kit",
       },
       {
-        id: "video-laryngoscope-emerg",
-        title: "Video Laryngoscope",
-        description: "Provides enhanced visualization during emergency intubation and difficult airway procedures...",
-        image: "/image/accessories/video-laryngoscope.jpg",
-        href: "/products/hd-video-laryngoscope-system",
-      },
-      {
         id: "ecg-machine-emerg",
         title: "12-Channel ECG Machine",
         description: "Simultaneous 12-lead diagnostic acquisition with automated arrhythmia interpretation...",
@@ -81,13 +74,6 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
         image: "/image/anaevent-anaesthesia-ventilator.jpeg",
         href: "/products/anaevent-anaesthesia-ventilator",
       },
-      {
-        id: "ot-video-laryngoscope",
-        title: "Video Laryngoscope",
-        description: "Provides enhanced visualization during intubation...",
-        image: "/image/accessories/video-laryngoscope.jpg",
-        href: "/products/hd-video-laryngoscope-system",
-      },
     ],
   },
   {
@@ -97,7 +83,7 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
       {
         id: "icu-critical-ventilator",
         title: "Ventilator",
-        description: "Turbine-driven critical care ventilator for adult & paediatric continuous life support...",
+        description: "Advanced critical care ventilator for adult & paediatric continuous life support...",
         image: "/image/icu-ventilator.jpeg",
         href: "/products/icu-critical-care-ventilator",
       },
@@ -118,7 +104,7 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
       {
         id: "icu-ecg-machine",
         title: "12-Channel ECG Machine",
-        description: "Diagnostic 12-lead workstation with high-resolution color display and arrhythmia analysis...",
+        description: "Diagnostic 12-lead ECG channel with high-resolution color display and arrhythmia analysis...",
         image: "/image/ecg-machine.jpeg",
         href: "/products/12-channel-diagnostic-ecg-machine",
       },
@@ -182,20 +168,6 @@ export const MEGA_MENU_DEPARTMENTS: MegaDepartment[] = [
           "High-intensity cold white medical LED illumination delivering ≥800 Lux brightness",
           "Ergonomic knurled anti-slip handle with fast-twist battery access bay",
           "Autoclavable and high-level chemical disinfection compatible (IPX8 rated)",
-        ],
-      },
-      {
-        id: "video-laryngoscope-acc",
-        title: "Video Laryngoscope",
-        description:
-          "High-definition digital video airway visualization platform with anti-fog CMOS micro-camera and rotating color monitor.",
-        image: "/image/accessories/video-laryngoscope.jpg",
-        href: "/products/video-laryngoscope",
-        features: [
-          "2.0 Megapixel anti-fog optical CMOS sensor for clear vocal cord exposure",
-          "Multi-angle tilt and swivel high-resolution color TFT clinical monitor",
-          "One-touch real-time photo recording and HD video telemetry for teaching",
-          "Rechargeable ergonomic handle providing 4+ hours of continuous runtime",
         ],
       },
       {
