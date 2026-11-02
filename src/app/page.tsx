@@ -7,7 +7,8 @@ import { CleanHeroVideo } from "@/components/ui/CleanHeroVideo";
 import { IndigenousExcellenceStrip } from "@/components/ui/IndigenousExcellenceStrip";
 import { ProductMovingShowcase } from "@/components/ui/ProductMovingShowcase";
 import { AwardsSection } from "@/components/ui/AwardsSection";
-import { getProducts } from "@/lib/data";
+import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
+import { getProducts, getClients } from "@/lib/data";
 import {
   Zap,
   Wrench,
@@ -51,7 +52,10 @@ export const metadata: Metadata = {
 export const revalidate = 3600; // ISR 1 hour
 
 export default async function HomePage() {
-  const products = await getProducts();
+  const [products, clients] = await Promise.all([
+    getProducts(),
+    getClients(),
+  ]);
 
   // Exclude specific accessories/products requested from the home screen showcase
   const excludedHomeProductSlugs = new Set([
@@ -133,6 +137,17 @@ export default async function HomePage() {
       {/* 5. AWARDS & RECOGNITIONS SECTION (Matching Reference Design) */}
       <AwardsSection />
 
+      {/* 6. CLINICAL EVALUATION & OPERATIONAL FEEDBACK */}
+      <section className="py-16 lg:py-24 bg-clinical-50/60 border-t border-clinical-200">
+        <Container>
+          <SectionHeading
+            eyebrow="Clinical Endorsements • Operational Rigor"
+            title="Clinical Evaluation & Operational Feedback"
+            description="Verified clinical evaluations and operational feedback from leading anaesthesiologists, surgeons, and department directors across India."
+          />
+          <TestimonialCarousel testimonials={clients} />
+        </Container>
+      </section>
 
       {/* 7. PROCUREMENT CTA STRIP */}
       <section className="py-16 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white relative overflow-hidden">

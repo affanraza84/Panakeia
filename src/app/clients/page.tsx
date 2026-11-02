@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { getClients } from "@/lib/data";
 import {
   Building2,
@@ -44,6 +45,18 @@ export default async function ClientsPage() {
           <p className="mt-4 text-base sm:text-lg text-clinical-200 leading-relaxed">
             Panakeia critical care platforms are evaluated and deployed across leading tertiary hospitals, emergency trauma centers, and high-volume surgical institutes.
           </p>
+        </Container>
+      </section>
+
+      {/* Featured Clinical Feedback Carousel */}
+      <section className="py-12 lg:py-16 bg-white border-b border-clinical-200">
+        <Container>
+          <SectionHeading
+            eyebrow="Clinical Evaluations"
+            title="Clinical Evaluation & Operational Feedback"
+            description="Verified clinical evaluations and operational feedback from senior anaesthesiologists, surgeons, and specialists across India."
+          />
+          <TestimonialCarousel testimonials={clients} />
         </Container>
       </section>
 

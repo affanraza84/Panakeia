@@ -580,64 +580,76 @@ const seedProducts: Omit<IProduct, "_id" | "createdAt" | "updatedAt">[] = [
 
 const seedClients: Omit<IClient, "_id" | "createdAt" | "updatedAt">[] = [
   {
-    name: "Apollo Speciality Hospitals",
-    city: "Visakhapatnam",
+    name: "Sun Life Hospital",
+    city: "Guntakal",
     state: "Andhra Pradesh",
-    logoUrl: "/images/clients/apollo-logo.webp",
     testimonial:
-      "Panakeia's Aesthetica anaesthesia workstation demonstrated remarkable stability during high-risk cardiac and neuro cases. Having 100% in-house parts manufacturing by Panakeia itself ensures parts availability within hours rather than weeks.",
-    doctorName: "Dr. K. Srinivas Rao, MD (Anaesthesiology), Senior Consultant",
+      "Panakeia's Aesthetica anaesthesia workstation delivers rock-solid pneumatic stability and precise low-flow delivery in high-turnaround surgical cases. The in-house engineering and immediate service responsiveness set a new benchmark for Indian medtech.",
+    doctorName: "Dr. Sudheer Kodekonda, Anaesthetist",
     featured: true,
   },
   {
-    name: "Manipal Hospital",
-    city: "Bengaluru",
-    state: "Karnataka",
-    logoUrl: "/images/clients/manipal-logo.webp",
-    testimonial:
-      "The RespiCare ICU 900 ventilator provides clinical precision on par with top European systems, but with intuitive controls and remarkably responsive local technical support.",
-    doctorName: "Dr. Arvind Menon, Head of Critical Care Medicine",
-    featured: true,
-  },
-  {
-    name: "Yashoda Super Speciality Hospital",
-    city: "Hyderabad",
-    state: "Telangana",
-    logoUrl: "/images/clients/yashoda-logo.webp",
-    testimonial:
-      "Indigenous manufacturing in critical care has reached maturity with Panakeia. Their devices offer unmatched pneumatic precision and low total cost of ownership for high-volume surgical departments.",
-    doctorName: "Dr. P. V. Ramanathan, Chief Anaesthetist & OT Director",
-    featured: true,
-  },
-  {
-    name: "CARE Hospitals",
-    city: "Visakhapatnam",
+    name: "Tirumala Maternity Hospital",
+    city: "Galiveedu, Annamayya District",
     state: "Andhra Pradesh",
-    logoUrl: "/images/clients/care-logo.webp",
     testimonial:
-      "We evaluated the Aesthetica workstation in our trauma OT suites. The gas scavenging system, responsive vaporizer manifold, and crisp UI earned unanimous appreciation from our anaesthesia team.",
-    doctorName: "Dr. S. Meenakshi, Senior Consultant Anaesthetist",
+      "During complex laparoscopic and gynaecological surgeries, the Panakeia workstation provides stable intra-abdominal compliance monitoring and smooth gas flow transitions, ensuring optimal surgical safety.",
+    doctorName: "Dr. Hari Kadapa, Laparoscopic Surgeon",
     featured: true,
   },
   {
-    name: "KIMS Health",
-    city: "Thiruvananthapuram",
-    state: "Kerala",
-    logoUrl: "/images/clients/kims-logo.webp",
+    name: "Miracle College and Hospital",
+    city: "Mandsaur",
+    state: "Madhya Pradesh",
     testimonial:
-      "The responsive flow performance of the Panakeia ICU ventilator allows seamless patient mobility and zero downtime. A commendable milestone for Indian medtech engineering.",
-    doctorName: "Dr. R. Rajesh, Medical Superintendent & Critical Care Specialist",
-    featured: false,
+      "We evaluated Panakeia's anaesthesia and critical care systems across our operating theaters. The mechanical safety backups, intuitive interface, and heated absorber canisters perform exceptionally well in heavy clinical workloads.",
+    doctorName: "Dr. Kailash Garg, Senior Consultant",
+    featured: true,
   },
   {
-    name: "Narayana Institute of Cardiac Sciences",
-    city: "Bengaluru",
-    state: "Karnataka",
-    logoUrl: "/images/clients/narayana-logo.webp",
+    name: "Medicare Nursing Home",
+    city: "Kolkata",
+    state: "West Bengal",
     testimonial:
-      "Panakeia brings deep clinical insights into their hardware ergonomics. The flow control and ventilator loops are exceptionally accurate.",
-    doctorName: "Dr. V. Chandrasekhar, Consultant Anaesthesiologist",
-    featured: false,
+      "The responsive vaporizer manifold and integrated ventilator dynamics in Panakeia workstations give our anaesthesia team immense clinical confidence during long surgical procedures.",
+    doctorName: "Dr. Mijanur Rahaman Shaikh, Anaesthesiologist",
+    featured: true,
+  },
+  {
+    name: "Bhosale Hospital",
+    city: "Narayangaon",
+    state: "Maharashtra",
+    testimonial:
+      "Panakeia's indigenous workstations provide European-level precision and ergonomic simplicity. The rapid pneumatic response and low apparatus dead space are outstanding for minimally invasive laparoscopic surgeries.",
+    doctorName: "Dr. Hanumant Bhosale, Laparoscopic Surgeon",
+    featured: true,
+  },
+  {
+    name: "Premier Hospital",
+    city: "Bangalore",
+    state: "Karnataka",
+    testimonial:
+      "Having served in high-acuity defence and civilian clinical environments, I value equipment reliability above all. Panakeia's robust pneumatic architecture and continuous life-support capability are indigenously engineered to the highest standards.",
+    doctorName: "Dr. Deepak Kumar Sinha, Cardiologist (Defence Medical Services)",
+    featured: true,
+  },
+  {
+    name: "Gade Hospital",
+    city: "Pune",
+    state: "Maharashtra",
+    testimonial:
+      "For ophthalmic surgical procedures requiring absolute patient immobility and whisper-quiet operation, the smooth ventilation and silent delivery of Panakeia workstations provide an ideal microsurgical environment.",
+    doctorName: "Dr. Sachin V. Gade, Ophthalmologist (Eye Specialist)",
+    featured: true,
+  },
+  {
+    name: "Sahyadri Super Speciality Hospital & KIMS-ICON Hospital",
+    city: "Pune & Visakhapatnam",
+    state: "Maharashtra & Andhra Pradesh",
+    testimonial:
+      "Major HPB and liver transplant surgeries demand unflinching haemodynamic and respiratory fidelity. Panakeia's workstations and ventilators have proven their endurance and precision in our high-acuity surgical suites.",
+    doctorName: "Dr. Abhijeet Jagdale, Gastrointestinal (GI) & HPB / Liver Transplant Surgeon",
+    featured: true,
   },
 ];
 
